@@ -3,43 +3,55 @@
  <head>
  <meta charset="utf-8">
  <link href="css/bootstrap.css" rel="stylesheet">
- <link href="css/mystyle.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
 <title>WEB SHIFT</title>
 </head>
 <body>
- <div class="card shadow-sm bg-white rounded ">
+<div align="center" style="padding-top:100px">
+ <div class="card shadow-sm bg-white rounded" style="width:600px;">
                     <article class="card-body">
-                        <h4 class="card-title text-info text-center mb-4 mt-1">Welcome</h4>
+                        <h4 class="card-title text-info text-center mb-4 mt-1">WORK SCHEDULE V0.1</h4>
                         <hr>
+                        <p class="text-info">NOC JI-NET WORK SCHEDULE WEB APPLICATION</p>
                         <form name="form1" method="post" action="check-newlogin.php">
                         <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                             </div>
-                            <input name="txtUsername" id="txtUsername" type="Username" placeholder="Username" value="26-924" class="form-control" onkeydown="upperCaseF(this)">
+                            <input name="txtUsername" id="txtUsername" type="Username" placeholder="Username" class="form-control" onkeydown="upperCaseF(this)">
                         </div> <!-- input-group.// -->
                         </div> <!-- form-group// -->
                         <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                             </div>
-                            <input name="txtPassword" id="txtPassword" type="password" placeholder="Password" value="0816789959" class="form-control">
+                            <input name="txtPassword" id="txtPassword" type="password" placeholder="Password" class="form-control">
                         </div> <!-- input-group.// -->
                         </div> <!-- form-group// -->
                         <div class="form-group">
-                            <div class="checkbox">
-                              	<input type="checkbox" name="remember" id="remember" checked=""> <small class="text-muted">Save password</small>
-                            </div> <!-- checkbox .// -->
-                        </div> <!-- form-group// -->
-                        <div class="form-group">
-                        <button type="submit" class="btn btn-outline-primary btn-block"> Login  </button>
-                        <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#forgotPWModal">Get password</button>
+                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal">Reset</button>
                         </div> <!-- form-group// -->
                         </form>
                     </article>
   </div>
+</div>
+
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        test test system ทดสอบๆๆๆสวดาวกาเกเ
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
