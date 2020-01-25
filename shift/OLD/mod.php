@@ -7,7 +7,7 @@
 <title>Super</title>
 </head>
 <body>
- <h1>ssee</h1>
+ <h1>mod</h1>
  <table class="table table-hover table-bordered table-striped">
   <thead>
     <tr class="table-primary">
