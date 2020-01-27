@@ -34,6 +34,10 @@
 		$email       =  e($_POST['email']);
 		$password_1  =  e($_POST['password_1']);
 		$password_2  =  e($_POST['password_2']);
+		$shift			 =  e($_POST['shift']);
+		$user_name    =  e($_POST['user_name']);
+		$user_nickname    =  e($_POST['user_nickname']);
+
 
 		// form validation: ensure that the form is correctly filled
 		if (empty($username)) {
@@ -55,14 +59,14 @@
 
 			if (isset($_POST['user_type'])) {
 				$user_type = e($_POST['user_type']);
-				$query = "INSERT INTO users (username, email, user_type, password)
-						  VALUES('$username', '$email', '$user_type', '$password')";
+				$query = "INSERT INTO users (username, email, user_type, shift, user_name, user_nickname, password)
+						  VALUES('$username', '$email', '$user_type', '$shift',  '$user_name',  '$user_nickname', '$password')";
 				mysqli_query($db, $query);
 				$_SESSION['success']  = "New user successfully created!!";
 				header('location: home.php');
 			}else{
-				$query = "INSERT INTO users (username, email, user_type, password)
-						  VALUES('$username', '$email', 'user', '$password')";
+				$query = "INSERT INTO users (username, email, user_type, shift, user_name, user_nickname, password)
+						  VALUES('$username', '$email', 'user', '$shift',  '$user_name',  '$user_nickname', '$password')";
 				mysqli_query($db, $query);
 
 				// get id of the created user

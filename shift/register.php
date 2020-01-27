@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL</title>
+	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<?php echo display_error(); ?>
 
 		<div class="input-group">
-			<label>Username (รหัสพนักงาน)</label>
+			<label>รหัสพนักงาน</label>
 			<input type="text" onkeyup="this.value = this.value.toUpperCase();" name="username" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
