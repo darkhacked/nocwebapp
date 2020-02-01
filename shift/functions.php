@@ -164,6 +164,7 @@
 		}
 	}
 
+
 	// escape string
 	function e($val) {
 		global $db;
