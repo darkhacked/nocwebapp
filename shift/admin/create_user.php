@@ -1,8 +1,17 @@
-<?php include('../functions.php') ?>
+<?php
+	include('../functions.php');
+
+	if (!isLoggedIn()) {
+		header('location: ../login.php');
+	}elseif (!isAdmin()) {
+		header('location: ../login.php');
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL - Create user</title>
+	<title>ADD NEW MEMBER</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<style>
 		.header {
@@ -15,7 +24,7 @@
 </head>
 <body>
 	<div class="header">
-		<h2>Admin - create user</h2>
+		<h2>Create User</h2>
 	</div>
 
 	<form method="post" action="create_user.php">
@@ -23,7 +32,7 @@
 		<?php echo display_error(); ?>
 
 		<div class="input-group">
-			<label>Username</label>
+			<label>รหัสพนักงาน</label>
 			<input type="text" onkeyup="this.value = this.value.toUpperCase();" name="username" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
@@ -33,10 +42,26 @@
 		<div class="input-group">
 			<label>User type</label>
 			<select name="user_type" id="user_type" >
-				<option value=""></option>
-				<option value="admin">Admin</option>
 				<option value="user">User</option>
+			<!--	<option value="admin">Admin</option> -->
+			  <option value="mod">Moderator</option>
 			</select>
+		</div>
+		<div class="input-group">
+			<label>Shift</label>
+			<select name="shift" id="user_type">
+				<option value="A">A</option>
+			<!--	<option value="admin">Admin</option> -->
+				<option value="B">B</option>
+			</select>
+		</div>
+		<div class="input-group">
+			<label>ชื่อ นามสกุล</label>
+			<input type="text" name="user_name">
+		</div>
+		<div class="input-group">
+			<label>ชื่อเล่น</label>
+			<input type="text" name="user_nickname">
 		</div>
 		<div class="input-group">
 			<label>Password</label>
@@ -48,6 +73,7 @@
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="register_btn"> + Create user</button>
+			<button class="btn" onclick="history.go(-1);">Back</button>
 		</div>
 	</form>
 </body>

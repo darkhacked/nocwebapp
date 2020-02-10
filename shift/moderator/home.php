@@ -1,64 +1,58 @@
 <?php
 	include('../functions.php');
 
-	if (!isMod()) {
+	if (!isLoggedIn()) {
 		header('location: ../login.php');
+	}elseif (isUser()) {
+		header('location: ../index.php');
+	}elseif (isAdmin()) {
+		header('location: ../admin/home.php');
 	}
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
-	<style>
-	.header {
-		background: #003366;
-	}
-	button[name=register_btn] {
-		background: #003366;
-	}
-	</style>
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="header">
-		<h2>Moderator - Home Page</h2>
-	</div>
-	<div class="content">
-		<!-- notification message -->
-		<?php if (isset($_SESSION['success'])) : ?>
-			<div class="error success" >
-				<h3>
-					<?php
-						echo $_SESSION['success'];
-						unset($_SESSION['success']);
-					?>
-				</h3>
-			</div>
-		<?php endif ?>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">LOGO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-		<!-- logged in user information -->
-		<div class="profile_info">
-			<img src="../images/mod_profile.png"  >
-
-			<div>
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-						<br>
-						<a href="home.php?logout='1'" style="color: red;">logout</a>&nbsp;
-						<a href="create_user.php"> + add user</a>&nbsp;
-						<a href="../backend/schedule.php">ตารางงาน</a>
-					</small>
-
-				<?php endif ?>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../backend/schedule.php">ตารางงาน</a>
+      </li>
+    </ul>
+		<ul class="navbar-nav ml-auto">
+      <?php  if (isset($_SESSION['user'])) ; ?>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Change Password</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+			<a class="nav-link" href="../index.php?logout='1'">Logout</a>
+    </ul>
+  </div>
+</nav>
 			</div>
 		</div>
-
-
-
 	</div>
-
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

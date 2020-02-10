@@ -1,3 +1,9 @@
+﻿## V0.2.0 (10-02-2020)
+
+### Features
+* **NEW UI
+* **Function Month picker
+
 ﻿## V0.1.1 (27-01-2020)
 
 ### Features

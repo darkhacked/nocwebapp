@@ -164,6 +164,14 @@
 		}
 	}
 
+	function isUser() {
+		if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'user' ) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 	// escape string
 	function e($val) {
