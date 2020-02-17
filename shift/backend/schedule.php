@@ -207,8 +207,8 @@ echo "<th scope=\"col\">Shift</th><th scope=\"col\">member</th><th scope=\"col\"
 <div class="credit">
 	<hr>
     <center>
-          <small class="text-muted">© 2020-2021 Management by Mawmasing.<br>This Web application All rights reserved under <a href="LICENSE.txt"><font color="#444">WTFPL LICENSE</font></a>.<br></small>
-          <a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" alt="WTFPL" width="80" height="15"></a>
+          <small class="text-muted">© 2020-2021 Management by Mawmasing.<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
     </center>
 	</div>
 <br>
