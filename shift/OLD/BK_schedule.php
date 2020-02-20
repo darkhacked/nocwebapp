@@ -75,7 +75,7 @@
 			//Dropdown ปี
 			$txtYear = (isset($_POST['txt_year']) && $_POST['txt_year'] != '') ? $_POST['txt_year'] : date('Y');
 			$yearStart = date('Y');
-			$yearEnd = $txtYear-2;
+			$yearEnd = $txtYear-5;
 			for($year=$yearStart;$year > $yearEnd;$year--){
 			 $selected = '';
 			 if($txtYear == $year) $selected = 'selected="selected"';
@@ -91,7 +91,7 @@
 	</div>
 	</form>
 			<?php
-			//รับค่าจาก Dropdown เดือน/ปี
+			//รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
 			$year = isset($_POST['txt_year']) ? mysqli_real_escape_string($db, $_POST['txt_year']) : '';
 			$month = isset($_POST['txt_month']) ? mysqli_real_escape_string($db, $_POST['txt_month']) : '';
 			if($year == '' || $month == '') exit('<p><center>กรุณาระบุ "เดือน-ปี" ที่ต้องการเรียกดู</center></p>');
@@ -102,119 +102,199 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-8">
-			<center><h2>Schedule <?php echo $month; ?> / <?php echo $year; ?></h2></center>
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
-			$allEmpDataA = array();
-			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift , remark";
+			$allEmpData = array();
+			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
 			while($row = mysqli_fetch_assoc($qry)){
-			 $allEmpDataA[$row['username']] = $row['user_name'];
-			}
-
-
-			$allEmpDataB = array();
-			$SQL = "SELECT * FROM users WHERE shift='B' ORDER BY shift , remark";
-			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
-			while($row = mysqli_fetch_assoc($qry)){
-			 $allEmpDataB[$row['username']] = $row['user_name'];
+			 $allEmpData[$row['code']] = $row['user_name'];
 			}
 
 
 			// แสดงผล array
 			/*echo "<pre>";
-			print_r($allEmpDataA);
+			echo "$year";
+			print_r($month);
+			echo "w";
+			print_r($allEmpData);
 			echo "</pre>";*/
+
 
 			//เรียกข้อมูลการจองของเดือนที่ต้องการ
 			$allReportData = array();
-			$SQL = "SELECT w_code, DAY(`w_date`) AS w_day, w_type FROM `work`
+			$SQL = "SELECT w_code, DAY(`w_date`) AS w_day, w_type FROM `tb_report_booking`
 			WHERE `w_date` LIKE '$year-$month%'	GROUP by w_code,DAY(`w_date`)";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
 			while($row = mysqli_fetch_assoc($qry)){
 				$allReportData[$row['w_code']][$row['w_day']] = $row['w_type'];
 			}
-
-			//HTML TABLE HEAD SHIFT A
-			echo "<table class=\"table table-bordered table-hover\" align='center'>";
+			echo "<table class=\"table table-hover\" border='1' align='center'>";
 			echo "<thead>";
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
-			echo "<th scope=\"col\">CODE</th>";
-			echo "<th scope=\"col\">MEMBER SHIFT A</th>";
-
-			//คำนวณวันที่สุดท้ายของเดือน
+			echo "<th scope=\"col\">code</th>";
+			echo "<th scope=\"col\">รายชื่อพนักงาน</th>";
+			//Code วันที่
+			//วันที่สุดท้ายของเดือน
 			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
 			$lastDay = date("t", $timeDate);       //จำนวนวันของเดือน
-			// echo "$timeDate";  // แสดง timestamp
-			//สร้างหัวตารางตั้งแต่วันที่ 1 ถึงวันที่สุดท้ายของเดือน
+			// echo "$timeDate";  แสดง timestamp
+			//สร้างหัวตารางตั้งแต่วันที่ 1 ถึงวันที่สุดท้ายของดือน
 			for($day=1;$day<=$lastDay;$day++){
 			 echo '<th>' . substr("".$day, -2) . '</th>';
 			}
+			//end Code วันที่
 			echo "</tr>";
 			echo "</thead>";
-			//END HTML TABLE HEAD
-			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
-	    foreach($allEmpDataA as $empCode=>$empName){
-	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			//วนลูปเพื่อสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
+	    foreach($allEmpData as $empCode=>$empName){
+	     echo "<tr align='center'>";//เปิดแถวใหม่ ตาราง HTML
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
-	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
+	      //เรียกข้อมูลการจองของพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
-		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<div>'.$allReportData[$empCode][$d].'</div>' : "";
-		      echo "<td>", $workDay, "</td>";
+		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็น 0
+		      $numBook = isset($allReportData[$empCode][$d]) ? '<div>'.$allReportData[$empCode][$d].'</div>' : "";
+		      echo "<td class='number'>", $numBook, "</td>";
 					}
 		  }
 			echo '</tr>';//ปิดแถวตาราง HTML
-
+	    echo "</table>";
 			/*ไว้แสดงผล array
 	    echo "<pre>";
-			print_r($workDay);
+			print_r($numBook);
 			echo "<br>";
 			echo "allreport data";
 			echo "<br>";
 	    print_r($allReportData);
 	    echo "</pre>";*/
 
-			//HTML TABLE HEAD SHIFT B
-			echo "<thead>";
-			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
-			echo "<th scope=\"col\">CODE</th>";
-			echo "<th scope=\"col\">MEMBER SHIFT B</th>";
-
-			//คำนวณวันที่สุดท้ายของเดือน
-			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
-			$lastDay = date("t", $timeDate);       //จำนวนวันของเดือน
-			 //echo "$timeDate";  // แสดง timestamp
-			//สร้างหัวตารางตั้งแต่วันที่ 1 ถึงวันที่สุดท้ายของเดือน
-			for($day=1;$day<=$lastDay;$day++){
-			 echo '<th>' . substr("".$day, -2) . '</th>';
-			}
-
-			echo "</tr>";
-			echo "</thead>";
-			//END HTML TABLE HEAD
-			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
-	    foreach($allEmpDataB as $empCode=>$empName){
-	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-	     echo '<td>'. $empCode .'</td>';
-	     echo '<td>'. $empName .'</td>';
-	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
-		     for($d=1;$d<=$lastDay;$d++){
-		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<div>'.$allReportData[$empCode][$d].'</div>' : "";
-		      echo "<td>", $workDay, "</td>";
-					}
-		  }
-			echo '</tr>';//ปิดแถวตาราง HTML
-	    echo "</table>";
 			mysqli_close($db);//ปิดการเชื่อมต่อฐานข้อมูล
 			?>
 
+
+
+
+			<center><h2>Schedule <?php echo $month; ?> / <?php echo $year; ?></h2></center>
+				  <?php
+				  include('connection.php');
+				  // Query SHIFT A
+				  $queryA = "SELECT users.shift, 202001w.*
+				FROM users
+				RIGHT JOIN 202001w ON 202001w.member = users.user_name
+				WHERE users.shift='A'
+				ORDER BY 202001w.list; " or die("Error:" . mysqli_error());
+
+				  $resultA = mysqli_query($con, $queryA);
+					// END Query SHIFT A
+					// Query SHIFT B
+					$queryB = "SELECT users.shift, 202001w.*
+				FROM users
+				RIGHT JOIN 202001w ON 202001w.member = users.user_name
+				WHERE users.shift='B'
+				ORDER BY 202001w.list; " or die("Error:" . mysqli_error());
+
+				  $resultB = mysqli_query($con, $queryB);
+					// END Query SHIFT B
+				  //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
+					print_r($resultA);
+					echo '<br>';
+					print_r($queryA);
+				  echo "<table class=\"table table-hover\" border='1' align='center'>";
+				  //หัวข้อตาราง
+					echo "<thead>";
+					echo "<tr class=\"table-primary\" align='center'>";
+					echo "<th scope=\"col\">Shift</th><th scope=\"col\">member</th><th scope=\"col\">1</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">4</th><th scope=\"col\">5</th><th scope=\"col\">6</th><th scope=\"col\">7</th><th scope=\"col\">8</th><th scope=\"col\">9</th><th scope=\"col\">10</th><th scope=\"col\">11</th><th scope=\"col\">12</th><th scope=\"col\">13</th><th scope=\"col\">14</th><th scope=\"col\">15</th><th scope=\"col\">16</th><th scope=\"col\">17</th><th scope=\"col\">18</th><th scope=\"col\">19</th><th scope=\"col\">20</th><th scope=\"col\">21</th><th scope=\"col\">22</th><th scope=\"col\">23</th><th scope=\"col\">24</th><th scope=\"col\">25</th><th scope=\"col\">26</th><th scope=\"col\">27</th><th scope=\"col\">28</th><th scope=\"col\">29</th><th scope=\"col\">30</th><th scope=\"col\">31</th></tr>";
+				 	echo "</tr>";
+					echo "</thead>";
+				 	//เนื้อหาที่ query มา
+				  while($rowA = mysqli_fetch_array($resultA)) {
+				  echo "<tr align='center' >";
+					echo "<th scope=\"row\">".$rowA["Shift"]."</th> ";
+				  echo "<td>".$rowA["member"]."</td> ";
+				  echo "<td>".$rowA["1"]."</td> ";
+				  echo "<td>".$rowA["2"]."</td> ";
+					echo "<td>".$rowA["3"]."</td> ";
+					echo "<td>".$rowA["4"]."</td> ";
+					echo "<td>".$rowA["5"]."</td> ";
+					echo "<td>".$rowA["6"]."</td> ";
+				  echo "<td>".$rowA["7"]."</td> ";
+					echo "<td>".$rowA["8"]."</td> ";
+					echo "<td>".$rowA["9"]."</td> ";
+					echo "<td>".$rowA["10"]."</td> ";
+					echo "<td>".$rowA["11"]."</td> ";
+				  echo "<td>".$rowA["12"]."</td> ";
+					echo "<td>".$rowA["13"]."</td> ";
+					echo "<td>".$rowA["14"]."</td> ";
+					echo "<td>".$rowA["15"]."</td> ";
+					echo "<td>".$rowA["16"]."</td> ";
+				  echo "<td>".$rowA["17"]."</td> ";
+					echo "<td>".$rowA["18"]."</td> ";
+					echo "<td>".$rowA["19"]."</td> ";
+					echo "<td>".$rowA["20"]."</td> ";
+					echo "<td>".$rowA["21"]."</td> ";
+				  echo "<td>".$rowA["22"]."</td> ";
+					echo "<td>".$rowA["23"]."</td> ";
+					echo "<td>".$rowA["24"]."</td> ";
+					echo "<td>".$rowA["25"]."</td> ";
+					echo "<td>".$rowA["26"]."</td> ";
+				  echo "<td>".$rowA["27"]."</td> ";
+					echo "<td>".$rowA["28"]."</td> ";
+					echo "<td>".$rowA["29"]."</td> ";
+					echo "<td>".$rowA["30"]."</td> ";
+					echo "<td>".$rowA["31"]."</td> ";
+				  echo "</tr>";
+				  }
+					echo "<thead>";
+					echo "<tr class=\"table-primary\" align='center'>";
+					echo "<th scope=\"col\">Shift</th><th scope=\"col\">member</th><th scope=\"col\">1</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">4</th><th scope=\"col\">5</th><th scope=\"col\">6</th><th scope=\"col\">7</th><th scope=\"col\">8</th><th scope=\"col\">9</th><th scope=\"col\">10</th><th scope=\"col\">11</th><th scope=\"col\">12</th><th scope=\"col\">13</th><th scope=\"col\">14</th><th scope=\"col\">15</th><th scope=\"col\">16</th><th scope=\"col\">17</th><th scope=\"col\">18</th><th scope=\"col\">19</th><th scope=\"col\">20</th><th scope=\"col\">21</th><th scope=\"col\">22</th><th scope=\"col\">23</th><th scope=\"col\">24</th><th scope=\"col\">25</th><th scope=\"col\">26</th><th scope=\"col\">27</th><th scope=\"col\">28</th><th scope=\"col\">29</th><th scope=\"col\">30</th><th scope=\"col\">31</th></tr>";
+				 	echo "</tr>";
+					echo "</thead>";
+					while($rowB = mysqli_fetch_array($resultB)) {
+					echo "<tr align='center' >";
+					echo "<th scope=\"row\">".$rowB["Shift"]."</th> ";
+					echo "<td>".$rowB["member"]."</td> ";
+					echo "<td>".$rowB["1"]."</td> ";
+					echo "<td>".$rowB["2"]."</td> ";
+					echo "<td>".$rowB["3"]."</td> ";
+					echo "<td>".$rowB["4"]."</td> ";
+					echo "<td>".$rowB["5"]."</td> ";
+					echo "<td>".$rowB["6"]."</td> ";
+					echo "<td>".$rowB["7"]."</td> ";
+					echo "<td>".$rowB["8"]."</td> ";
+					echo "<td>".$rowB["9"]."</td> ";
+					echo "<td>".$rowB["10"]."</td> ";
+					echo "<td>".$rowB["11"]."</td> ";
+					echo "<td>".$rowB["12"]."</td> ";
+					echo "<td>".$rowB["13"]."</td> ";
+					echo "<td>".$rowB["14"]."</td> ";
+					echo "<td>".$rowB["15"]."</td> ";
+					echo "<td>".$rowB["16"]."</td> ";
+					echo "<td>".$rowB["17"]."</td> ";
+					echo "<td>".$rowB["18"]."</td> ";
+					echo "<td>".$rowB["19"]."</td> ";
+					echo "<td>".$rowB["20"]."</td> ";
+					echo "<td>".$rowB["21"]."</td> ";
+					echo "<td>".$rowB["22"]."</td> ";
+					echo "<td>".$rowB["23"]."</td> ";
+					echo "<td>".$rowB["24"]."</td> ";
+					echo "<td>".$rowB["25"]."</td> ";
+					echo "<td>".$rowB["26"]."</td> ";
+					echo "<td>".$rowB["27"]."</td> ";
+					echo "<td>".$rowB["28"]."</td> ";
+					echo "<td>".$rowB["29"]."</td> ";
+					echo "<td>".$rowB["30"]."</td> ";
+					echo "<td>".$rowB["31"]."</td> ";
+					echo "</tr>";
+					}
+				  echo "</table>";
+				  //5. close connection
+					mysqli_close($con);
+				  ?>
 		 </div>
 		 <div class="col-4">
-			 <center><h2>ระบบ แลก/ลา<br>(ยังใช้ไม่ได้ ทำยังไม่เสร็จ กดเล่นได้)</h2></center>
+			 <center><h2>ระบบ แลก/ลา</h2></center>
 			 <div class="accordion" id="menuall">
 				 <!-- menu 1 -->
 					<div class="card">
@@ -621,7 +701,7 @@
 									 <label class="control-label" for="disabledInput">Shift</label>
 									 <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $_SESSION['user']['shift']; ?>" disabled="">
 								 </fieldset>
-								<div class="mt-3">ระบุวันที่ต้องการสลับกะของท่าน</div>
+								<div class="mt-3">ระบุวันที่ต้องการสลับกะ</div>
 								<div class="form-row">
 									<div class="col-md-2 mt-3">
 									<select class="custom-select custom-select-sm">
