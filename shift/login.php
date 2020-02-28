@@ -23,7 +23,7 @@
 							<?php echo display_error(); ?>
 	          <div class="form-group">
 	          <div class="input-group">
-	              <input name="username" id="username" type="text" placeholder="รหัสพนักงาน" class="form-control">
+	              <input name="username" id="username" type="text" onkeyup="this.value = this.value.toUpperCase();" placeholder="รหัสพนักงาน" class="form-control">
 	          </div> <!-- input-group.// -->
 	          </div> <!-- form-group// -->
 	          <div class="form-group">
