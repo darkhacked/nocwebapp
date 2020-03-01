@@ -3,6 +3,7 @@
 
 	$db = mysqli_connect('localhost', 'root', 'toor', 'shift');
 
+
 	if (isset($_POST['swapmenu1'])) {
 		$codeHost    =  ($_POST['c_code_host']);
 		$nameHost  =  ($_POST['c_name_host']);
@@ -15,11 +16,14 @@
 		$codeVisit	=  ($_POST['c_code_visit']);
 		$nameVisit	=  ($_POST['c_name_visit']);
 
-		$dateHost = $year.$month.$day;
+		$date = $year.$month.$day;
 
+		$selectType = "SELECT w_type FROM work WHERE w_date='$date' w_code='$codeHost' ";
+		$qry =  mysqli_query($db, $selectType);
+		$type = mysqli_fetch_array($qry);
 
-		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit)
-		VALUES('$codeHost', '$nameHost', '$dateHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit') ";
+		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_type_host, c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit, c_date_visit)
+		VALUES('$codeHost', '$nameHost', '$date', '$type', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$date') ";
 		mysqli_query($db, $insSQL);
 
 	}
@@ -30,6 +34,7 @@
 	print $label; echo "<br>";
 	print $codeVisit; echo "<br>";
  	print $nameVisit; echo "<br>";
-	print $dateHost;
+	print $date; echo "<br>";
+	print $type;
 
 	?>

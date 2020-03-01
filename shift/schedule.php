@@ -326,7 +326,6 @@
 								<div class="col-md-3 mt-3">
 								<select name="c_year_host" class="custom-select custom-select-sm">
 									<option selected>ปี</option>
-									<option value="2021-">2021</option>
 									<option value="2020-">2020</option>
 								</select>
 								</div>
