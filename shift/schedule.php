@@ -229,6 +229,8 @@
 			//mysqli_close($db);//ปิดการเชื่อมต่อฐานข้อมูล
 			?>
 		 </div>
+
+		 <!-- menu swap -->
 		 <div class="col-3">
 			 <center><h2>ระบบ แลก/ลา<br>(ใช้ไม่ได้ยังทำยังไม่เสร็จ)</h2></center>
 			 <div class="accordion" id="menuall">
@@ -257,21 +259,21 @@
 						      <label class="custom-control-label" for="customRadio1">ลาป่วย</label>
 						    </div>
 								<div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio4" value="ลาป่วย (ไม่มีคนแทน)" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio4">ลาป่วย (ไม่มีคนแทน)</label>
+						      <input type="radio" id="customRadio2" value="ลาป่วย (ไม่มีคนแทน)" name="c_label" class="custom-control-input">
+						      <label class="custom-control-label" for="customRadio2">ลาป่วย (ไม่มีคนแทน)</label>
 						    </div>
 						    <div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio2" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio2">ลาพักผ่อน</label>
+						      <input type="radio" id="customRadio3" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+						      <label class="custom-control-label" for="customRadio3">ลาพักผ่อน</label>
 						    </div>
 						    <div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio3" value="ลากิจ" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio3">ลากิจ</label>
+						      <input type="radio" id="customRadio4" value="ลากิจ" name="c_label" class="custom-control-input">
+						      <label class="custom-control-label" for="customRadio4">ลากิจ</label>
 						    </div><hr>
 								ระบุวันลา
 								<div class="form-row">
-									<div class="col-md-3 mt-3">
-									<select name="c_day_host" class="custom-select custom-select-sm">
+									<div class="col-md-3">
+									<select name="day_host" class="custom-select custom-select-sm">
 										<option selected>วัน</option>
 										<option value="01">1</option>
 										<option value="02">2</option>
@@ -306,8 +308,8 @@
 										<option value="31">31</option>
 									</select>
 									</div>
-								<div class="col-md-4 mt-3">
-								<select name="c_month_host" class="custom-select custom-select-sm">
+								<div class="col-md-4">
+								<select name="month_host" class="custom-select custom-select-sm">
 									<option selected>เดือน</option>
 									<option value="01-">มกราคม</option>
 									<option value="02-">กุมพาพันธ์</option>
@@ -323,17 +325,30 @@
 									<option value="12-">ธันวาคม</option>
 								</select>
 								</div>
-								<div class="col-md-3 mt-3">
-								<select name="c_year_host" class="custom-select custom-select-sm">
+								<div class="col-md-3">
+								<select name="year_host" class="custom-select custom-select-sm">
 									<option selected>ปี</option>
 									<option value="2020-">2020</option>
 								</select>
 								</div>
-							</div><br>
+							</div><hr>
+							ระบุ Seat ในวันที่ลาของท่าน
+							<div class="form-row">
+								<div>
+								<select name="c_seat_host" class="custom-select custom-select-sm">
+									<option value="A1">A1</option>
+									<option value="A2">A2</option>
+									<option value="D1">D1</option>
+									<option value="D2">D2</option>
+									<option value="N">N</option>
+								</select>
+								</div>
+							</div><hr>
+								(หากลาแบบไม่มีคนแทนข้ามไปเลยครับ)
 								<div class="form-row">
 									<div>
 									<select name="c_code_visit" class="custom-select custom-select-sm">
-										<option value="">ผู้ปฏิบัติงานแทน</option>
+										<option value="-">ผู้ปฏิบัติงานแทน</option>
 										<?php
 										$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
 										$qry = mysqli_query($db, $SQL);
@@ -349,7 +364,7 @@
 										<br>
 										<div>
 										<select name="c_name_visit" class="custom-select custom-select-sm">
-											<option value="">ยืนยันผู้ปฏิบัติงานแทน</option>
+											<option value="-">ยืนยันผู้ปฏิบัติงานแทน</option>
 											<?php
 											$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
 											$qry = mysqli_query($db, $SQL);
@@ -882,6 +897,7 @@
 					<!-- end menu 4 -->
 				</div>
 		 </div>
+		 <!-- End menu swap-->
 	 </div>
 		 <br>
 		 <center><button class="btn btn-info" onclick="history.go(-1);">Back</button></center>

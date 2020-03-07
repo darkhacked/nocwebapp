@@ -57,43 +57,52 @@
 					<table class="table table-striped table-bordered js-table" id="myTable">
 				  <thead class="thead-dark js-thead">
 						<tr align="center">
+							<th scope="col">ID</th>
 				      <th scope="col">ชื่อพนักงาน</th>
-				      <th scope="col">การลา</th>
-				      <th scope="col">ประเภท</th>
 							<th scope="col">วันที่ลา</th>
+							<th scope="col">Seat</th>
+							<th scope="col">การลา</th>
+				      <th scope="col">ประเภท</th>
+							<th scope="col">ID</th>
 							<th scope="col">ผู้ปฏิบัติงานแทน</th>
+							<th scope="col">วันที่แลก</th>
+							<th scope="col">Seat</th>
 							<th scope="col">หมายเหตุ</th>
 							<th scope="col">สถานะ</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr align="center">
-				      <td>Mark</td>
-				      <td>ลาพักผ่อน</td>
-				      <td>ลาระบุช่วงเวลา</td>
-							<td>2020-02-07</td>
-				      <td>-</td>
-							<td>16:00 - 19:00</td>
-				      <td><span class="badge badge-success">Approve</span></td>
-				    </tr>
-				    <tr align="center">
-				      <td>Mark</td>
-				      <td>ลาพักผ่อน</td>
-				      <td>ลาปกติ</td>
-							<td>2020-02-10</td>
-				      <td>Jacob</td>
-							<td>-</td>
-				      <td><span class="badge badge-warning">Pending</span></td>
-				    </tr>
-				    <tr align="center">
-				      <td>Mark</td>
-				      <td>ลาป่วย</td>
-				      <td>ลาปกติ</td>
-							<td>2020-02-11</td>
-				      <td>Larry</td>
-							<td>-</td>
-				      <td><span class="badge badge-danger">Cancel</span></td>
-				    </tr>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
+
+
+							//เลือกแสดงผลจาก session
+							$user = $_SESSION['user']['user_name'];
+
+							$swapQry = "SELECT * FROM swap WHERE c_name_host = '$user' ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry);
+
+
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+				      echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_label"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_code_visit"]."</td>";
+							echo "<td>".$row["c_name_visit"]."</td>";
+							echo "<td>".$row["c_date_visit"]."</td>";
+							echo "<td>".$row["c_seat_visit"]."</td>";
+				      echo "<td>".$row["c_remark"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							//echo "<td>".$row["c_status"]."</td>";
+							echo "</tr>";
+							}
+							?>
 				  </tbody>
 				</table>
 				<br><br><br><br><br><br>
