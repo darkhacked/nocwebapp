@@ -30,17 +30,20 @@
 		VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit') ";
 		mysqli_query($db, $insSQL);
 
-		print $codeHost; echo "<br>";
+		$updateTable = "UPDATE work SET w_type = '$seatHost*' WHERE work . w_code = '$codeHost' AND w_date ='$dateHost'";
+		mysqli_query($db, $updateTable);
+
+		/*print $codeHost; echo "<br>";
 		print $nameHost; echo "<br>";
 		print $seatHost; echo "<br>";
 		print $shiftHost; echo "<br>";
 		print $labelM; echo "<br>";
 		print $label; echo "<br>";
 		print $codeVisit; echo "<br>";
-	 	print $nameVisit; echo "<br>";
-
+	 	print $nameVisit; echo "<br>";*/
 		header('location: index.php');
-
 	}
+
+
 
 	?>

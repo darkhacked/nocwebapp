@@ -98,7 +98,7 @@
 			?>
 </div>
 	<hr>
-
+<!-- start container -->
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-9">
@@ -179,7 +179,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<div>'.$allReportData[$empCode][$d].'</div>' : "";
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<div><b>'.$allReportData[$empCode][$d].'</b></div>' : '<div style="background-color:lightgray"><font color="lightgray">.</font></div>';
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 					echo "<td>".$workDay."</td>";
 				}
@@ -219,7 +219,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<div>'.$allReportData[$empCode][$d].'</div>' : "";
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<div><b>'.$allReportData[$empCode][$d].'</b></div>' : '<div style="background-color:lightgray"><font color="lightgray">.</font></div>';
 		      echo "<td>", $workDay, "</td>";
 
 					}
@@ -233,9 +233,8 @@
 		 <!-- menu swap -->
 		 <div class="col-3">
 			 <center><h2>ระบบ แลก/ลา<br>(ใช้ไม่ได้ยังทำยังไม่เสร็จ)</h2></center>
-			 <div class="accordion" id="menuall">
-				 <!-- menu 1 -->
-					<div class="card">
+			 <div class="accordion" id="menuall"> <!-- menu accordion -->
+					<div class="card"> <!-- menu 1 -->
 					<div class="card-header" id="headingOne">
 					<h2 class="mb-0">
 						<center>
@@ -894,11 +893,24 @@
 					</div>
 					</div>
 					</div>
-					<!-- end menu 4 -->
-				</div>
-		 </div>
-		 <!-- End menu swap-->
-	 </div>
+				</div> <!-- End menu accordion swap-->
+				<br>
+						<div class="alert alert-dismissible alert-secondary">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong>ความหมายอักษรย่อของ Seat</strong>
+								<p>* หลัง Seat คือมีการยื่นแลก/ลาไปแล้วอยู่ระหว่างพิจารณา</p>
+								<p>- คือมีการแลก/ลาไปเรียบร้อยแล้ว</p>
+								<p>D = กะ Day (D1 , D2)</p>
+								<p>N = กะ Night</p>
+								<p>A1 = Assist 1</p>
+								<p>A2 = Assist 2</p>
+								<p>OD = OT แทนอัตราสรรหากะ Day</p>
+								<p>OD1 = OT แทนอัตราสรรหากะ Day ดู Mon D1</p>
+								<p>ON = OT แทนอัตราสรรหากะ Night</p>
+								<p>G = เรียนงาน</p>
+						</div>  <!-- End menu swap-->
+		 </div> <!-- end menu swap -->
+	 </div> <!-- end container -->
 		 <br>
 		 <center><button class="btn btn-info" onclick="history.go(-1);">Back</button></center>
 <br><br>

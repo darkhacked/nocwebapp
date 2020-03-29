@@ -48,10 +48,77 @@
     </ul>
   </div>
 </nav>
-			</div>
-		</div>
+
+<div class="container-fluid mt-3">
+			<h3>DASHBOARD</h3>
+			<p class="lead">สถานะคำขออนุมัติที่รอพิจารณา</p>
+			<hr class="my-4">
+			<input type="text" class="form-control" id="js-search" placeholder="ค้นหา....">
+			<table class="table table-striped table-bordered js-table" id="myTable">
+			<thead class="thead-dark js-thead">
+				<tr align="center">
+					<th scope="col">Ticket</th>
+					<th scope="col">ID</th>
+					<th scope="col">ชื่อพนักงาน</th>
+					<th scope="col">วันที่ลา</th>
+					<th scope="col">Seat</th>
+					<th scope="col">การลา</th>
+					<th scope="col">ประเภท</th>
+					<th scope="col">ID</th>
+					<th scope="col">ผู้ปฏิบัติงานแทน</th>
+					<th scope="col">วันที่แลก</th>
+					<th scope="col">Seat</th>
+					<th scope="col">หมายเหตุ</th>
+					<th scope="col">สถานะ</th>
+					<th scope="col">พิจารณา</th>
+				</tr>
+			</thead>
+			<tbody>
+					<?php
+					/*แสดงทั้งหมด
+					$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+					$qry = mysqli_query($db, $swapQry); */
+
+
+					//เลือกแสดงผลจาก status Pending
+					$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' ORDER BY c_id desc";
+					$qry = mysqli_query($db, $swapQry);
+
+
+					while ($row = mysqli_fetch_array($qry)) {
+					echo "<tr align='center'>";
+					echo "<td>".$row["c_id"]."</td>";
+					echo "<td>".$row["c_code_host"]."</td>";
+					echo "<td>".$row["c_name_host"]."</td>";
+					echo "<td>".$row["c_date_host"]."</td>";
+					echo "<td>".$row["c_seat_host"]."</td>";
+					echo "<td>".$row["c_label"]."</td>";
+					echo "<td>".$row["c_labelmain"]."</td>";
+					echo "<td>".$row["c_code_visit"]."</td>";
+					echo "<td>".$row["c_name_visit"]."</td>";
+					echo "<td>".$row["c_date_visit"]."</td>";
+					echo "<td>".$row["c_seat_visit"]."</td>";
+					echo "<td>".$row["c_remark"]."</td>";
+					echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+					echo "<td><button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-primary btn-sm\" name=\"accept\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-danger btn-sm\" name=\"denied\">Denied</button></td>";
+					echo "</tr>";
+					}
+					?>
+			</tbody>
+		</table>
+		<br><br><br><br><br><br>
 	</div>
+<div class="credit">
+<hr>
+<center>
+			<small class="text-muted">© 2020-2021 Management by Mawmasing.<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
+</center>
+</div>
+<br>
+
 	<script src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/search.js"></script>
 	<script src="../js/popper.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </body>
