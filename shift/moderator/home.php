@@ -27,10 +27,10 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">สถานะคำขออนุมัติ<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../backend/schedule.php">ตารางงาน</a>
+        <a class="nav-link" href="../schedule.php">ตารางงาน</a>
       </li>
     </ul>
 		<ul class="navbar-nav ml-auto">
@@ -57,7 +57,7 @@
 			<table class="table table-striped table-bordered js-table" id="myTable">
 			<thead class="thead-dark js-thead">
 				<tr align="center">
-					<th scope="col">Ticket</th>
+					<th scope="col">#</th>
 					<th scope="col">ID</th>
 					<th scope="col">ชื่อพนักงาน</th>
 					<th scope="col">วันที่ลา</th>
@@ -79,15 +79,14 @@
 					$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
 					$qry = mysqli_query($db, $swapQry); */
 
-
 					//เลือกแสดงผลจาก status Pending
 					$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' ORDER BY c_id desc";
 					$qry = mysqli_query($db, $swapQry);
 
-
+					$i = 1; // รันเลขหน้าตาราง
 					while ($row = mysqli_fetch_array($qry)) {
 					echo "<tr align='center'>";
-					echo "<td>".$row["c_id"]."</td>";
+					echo "<td>".$i."</td>";
 					echo "<td>".$row["c_code_host"]."</td>";
 					echo "<td>".$row["c_name_host"]."</td>";
 					echo "<td>".$row["c_date_host"]."</td>";
@@ -102,6 +101,7 @@
 					echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
 					echo "<td><button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-primary btn-sm\" name=\"accept\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-danger btn-sm\" name=\"denied\">Denied</button></td>";
 					echo "</tr>";
+					$i++;
 					}
 					?>
 			</tbody>

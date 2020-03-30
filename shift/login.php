@@ -12,7 +12,7 @@
 	<div align="center" style="padding-top:100px">
 	 <div class="card shadow-lg bg-white rounded" style="width:600px;">
 	      <article class="card-body">
-	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE v0.6.0 <a href="changelog.md" target="_blank">Changelog</a></h4>
+	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE v0.7.0 <a href="changelog.md" target="_blank">Changelog</a></h4>
 	          <hr>
 	          <!--<p class="text-primary small">V0.1.1 <a href="changelog.md" target="_blank">Changelog</a></p>-->
 	          <div class="alert alert-warning">

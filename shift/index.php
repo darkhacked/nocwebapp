@@ -49,7 +49,7 @@
   </div>
 </nav>
 <!-- End NAV BAR -->
-		<div class="container-xl mt-3">
+		<div class="container-fluid mt-3">
 				  <h3>DASHBOARD</h3>
 				  <p class="lead">สถานะคำขออนุมัติของท่าน</p>
 				  <hr class="my-4">
@@ -57,18 +57,21 @@
 					<table class="table table-striped table-bordered js-table" id="myTable">
 				  <thead class="thead-dark js-thead">
 						<tr align="center">
+							<th scope="col">#</th>
 							<th scope="col">ID</th>
 				      <th scope="col">ชื่อพนักงาน</th>
 							<th scope="col">วันที่ลา</th>
 							<th scope="col">Seat</th>
 							<th scope="col">การลา</th>
 				      <th scope="col">ประเภท</th>
+							<th scope="col"></th>
 							<th scope="col">ID</th>
 							<th scope="col">ผู้ปฏิบัติงานแทน</th>
 							<th scope="col">วันที่แลก</th>
 							<th scope="col">Seat</th>
 							<th scope="col">หมายเหตุ</th>
 							<th scope="col">สถานะ</th>
+							<th scope="col">ยกเลิก</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -84,15 +87,17 @@
 							$swapQry = "SELECT * FROM swap WHERE c_name_host = '$user' ORDER BY c_id desc";
 							$qry = mysqli_query($db, $swapQry);
 
-
+							$i = 1;
 							while ($row = mysqli_fetch_array($qry)) {
 							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
 				      echo "<td>".$row["c_code_host"]."</td>";
 							echo "<td>".$row["c_name_host"]."</td>";
 							echo "<td>".$row["c_date_host"]."</td>";
 							echo "<td>".$row["c_seat_host"]."</td>";
 							echo "<td>".$row["c_label"]."</td>";
 							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td><img src=\"images/swap2.png\"></td>";
 							echo "<td>".$row["c_code_visit"]."</td>";
 							echo "<td>".$row["c_name_visit"]."</td>";
 							echo "<td>".$row["c_date_visit"]."</td>";
@@ -100,7 +105,10 @@
 				      echo "<td>".$row["c_remark"]."</td>";
 							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
 							//echo "<td>".$row["c_status"]."</td>";
+							echo "<td><button type=\"button\" onclick=\"return confirm('คุณต้องการยกเลิกคำขออนุมัตินี้ทิ้งใช่หรือไม่ ?');\" class=\"btn btn-danger btn-sm\">
+<a href=\"deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF;\">Cancel</a></button></td>";
 							echo "</tr>";
+							$i++;
 							}
 							?>
 				  </tbody>
