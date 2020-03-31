@@ -260,7 +260,7 @@
 
 		 <!-- menu swap -->
 		 <div class="col-3">
-			 <center><h2>ระบบ แลก/ลา<br>(ใช้ไม่ได้ยังทำยังไม่เสร็จ)</h2></center>
+			 <center><h2>ระบบ แลก/ลา/สลับกะ</h2></center>
 			 <div class="accordion" id="menuall"> <!-- menu accordion -->
 					<div class="card"> <!-- menu 1 -->
 					<div class="card-header" id="headingOne">
@@ -746,20 +746,16 @@
 					</div>
 					<div id="menu4" class="collapse" aria-labelledby="headingFour" data-parent="#menuall">
 					<div class="card-body">
-						<form method="post" action="menu4.php">
+						<form method="post" action="shift_functions.php">
 							 <div class="form-group">
-								 <!--- <fieldset disabled="">
-									 <label class="control-label" for="disabledInput">ชื่อ - สกุล</label>
-									 <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $_SESSION['user']['user_name']; ?>" disabled="">
-									 <label class="control-label" for="disabledInput">WorkID</label>
-									 <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $_SESSION['user']['username']; ?>" disabled="">
-									 <label class="control-label" for="disabledInput">Shift</label>
-									 <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $_SESSION['user']['shift']; ?>" disabled="">
-								 </fieldset> -->
-								<div class="mt-3">ระบุวันที่สลับกะของท่าน</div>
+								 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+								 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+								 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								 <input type="hidden" name="c_labelmain" value="สลับกะ (ระหว่างกะ)">
+								ระบุวันทีของท่าน
 								<div class="form-row">
-									<div class="col-md-3 mt-3">
-									<select class="custom-select custom-select-sm">
+									<div class="col-md-3">
+									<select name="day_host" class="custom-select custom-select-sm">
 										<option selected>วัน</option>
 										<option value="01">1</option>
 										<option value="02">2</option>
@@ -794,8 +790,8 @@
 										<option value="31">31</option>
 									</select>
 									</div>
-								<div class="col-md-4 mt-3">
-								<select class="custom-select custom-select-sm">
+								<div class="col-md-4">
+								<select name="month_host" class="custom-select custom-select-sm">
 									<option selected>เดือน</option>
 									<option value="01">มกราคม</option>
 									<option value="02">กุมพาพันธ์</option>
@@ -810,9 +806,9 @@
 									<option value="11">พฤศจิกายน</option>
 									<option value="12">ธันวาคม</option>
 								</select>
-								</div>
-								<div class="col-md-3 mt-3">
-								<select class="custom-select custom-select-sm">
+							</div>
+								<div class="col-md-3">
+								<select name="year_host" class="custom-select custom-select-sm">
 									<option selected>ปี</option>
 									<option value="2020">2020</option>
 								</select>
@@ -821,14 +817,14 @@
 								 เลือกพนักงานที่ต้องการสลับกะ
 								<div class="form-row">
 									<div class="col">
-									<select class="custom-select custom-select-sm">
-										<option value="">Please Select Item</option>
+									<select name="c_code_visit" class="custom-select custom-select-sm">
 										<?php
-										$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
+										$sft = $_SESSION['user']['shift'];
+										$SQL = "SELECT * FROM users WHERE user_type='user' AND shift!='$sft' ORDER BY shift , remark";
 										$qry = mysqli_query($db, $SQL);
 										while ($listEmp = mysqli_fetch_array($qry)) {
 										?>
-										<option value="<?php echo $listEmp["username"]["user_name"]; ?>">
+										<option value="<?php echo $listEmp["username"]; ?>">
 											<?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
 										<?php
 										}
@@ -836,10 +832,10 @@
 										</select>
 										</div>
 									</div>
-									<div class="mt-3">ระบุวันที่ต้องการสลับกะ</div>
+									ระบุวันที่ต้องการสลับกะ
  								<div class="form-row">
- 									<div class="col-md-3 mt-3">
- 									<select class="custom-select custom-select-sm">
+ 									<div class="col-md-3">
+ 									<select name="day_visit" class="custom-select custom-select-sm">
  										<option selected>วัน</option>
  										<option value="01">1</option>
  										<option value="02">2</option>
@@ -874,8 +870,8 @@
  										<option value="31">31</option>
  									</select>
  									</div>
- 								<div class="col-md-4 mt-3">
- 								<select class="custom-select custom-select-sm">
+ 								<div class="col-md-4">
+ 								<select name="month_visit" class="custom-select custom-select-sm">
  									<option selected>เดือน</option>
  									<option value="01">มกราคม</option>
  									<option value="02">กุมพาพันธ์</option>
@@ -891,14 +887,14 @@
  									<option value="12">ธันวาคม</option>
  								</select>
  								</div>
- 								<div class="col-md-3 mt-3">
- 								<select class="custom-select custom-select-sm">
+ 								<div class="col-md-3">
+ 								<select name="year_visit" class="custom-select custom-select-sm">
  									<option selected>ปี</option>
  									<option value="2020">2020</option>
  								</select>
  								</div>
  							</div><br>
-									 <center><button class="btn btn-primary" data-toggle="modal" data-target="#submenu4"type="button">SEND</button></center>
+									 <center><button class="btn btn-primary" type="submit" name="swapmenu4">SEND</button></center>
 							 </div>
 				 </form>
 					</div>
@@ -922,125 +918,11 @@
 		 </div> <!-- end menu swap -->
 	 </div> <!-- end container -->
 		 <br>
-		 <center><button class="btn btn-info" onclick="history.go(-1);">Back</button></center>
-<br><br>
-<!-- modal menu 1
-<div class="modal fade bd-example-modal-lg" id="submenu1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">โปรดตรวจสอบข้อมูลให้ถูกต้อง / ลาปกติ (เต็มวัน)</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <tr>
-					<th>
-						ID : <?php echo $_SESSION['user']['username']; ?><br>
-						Name : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ประเภทการลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						วันที่ลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ผู้ปฏิบัติงานแทน : <?php echo $_SESSION['user']['user_name']; ?><br>
-						รูปลาในระบบ JPM : <?php echo $_SESSION['user']['user_name']; ?><br>
-					</th>
-				</tr>
-      </div>
-      <div class="modal-footer">
-				<button type="submit" class="btn btn-primary" name="#">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
- End modal menu 1 -->
-<!-- modal menu 2
-<div class="modal fade bd-example-modal-lg" id="submenu2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">โปรดตรวจสอบข้อมูลให้ถูกต้อง / ลาระบุช่วงเวลา</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-				<table class="table">
-				<td>
-						ID : <?php echo $_SESSION['user']['user_name']; ?><br>
-						Name : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ประเภทการลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						วันที่ลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ผู้ปฏิบัติงานแทน : <?php echo $_SESSION['user']['user_name']; ?><br>
-						รูปลาในระบบ JPM : <?php echo $_SESSION['user']['user_name']; ?><br>
-				</td>
-				<td>
-					...
-				</td>
-				<td>
-						ID : <?php echo $_SESSION['user']['user_name']; ?><br>
-						Name : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ประเภทการลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						วันที่ลา : <?php echo $_SESSION['user']['user_name']; ?><br>
-						ผู้ปฏิบัติงานแทน : <?php echo $_SESSION['user']['user_name']; ?><br>
-						รูปลาในระบบ JPM : <?php echo $_SESSION['user']['user_name']; ?><br>
-				</td>
-			</table>
-      </div>
-      <div class="modal-footer">
-				<button type="button" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
- End modal menu 2
- modal menu 3
-<div class="modal fade bd-example-modal-lg" id="submenu3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">โปรดตรวจสอบข้อมูลให้ถูกต้อง / ขออนุมัติสลับวันทำงาน (กะเดียวกัน)</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-				<button type="button" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
- End modal menu 3
- modal menu 4
-<div class="modal fade bd-example-modal-lg" id="submenu4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">โปรดตรวจสอบข้อมูลให้ถูกต้อง / ขออนุมัติสลับวันทำงาน (ระหว่างกะ)</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-				<button type="button" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
- End modal menu 4 -->
-<div class="credit">
+<div class="credit" >
 	<hr>
     <center>
-          <small class="text-muted">© 2020-2021 Management by Mawmasing.<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
+          <small class="text-muted">© 2020-2021 Management by Mawmasing. | <a href="changelog.html" target="_blank"><font color="#444">Changelog</font></a>
+						<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
     </center>
 	</div>
