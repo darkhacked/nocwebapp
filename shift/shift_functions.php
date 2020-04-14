@@ -6,7 +6,6 @@
 	if (isset($_POST['swapmenu1'])) {
 		$codeHost    =  ($_POST['c_code_host']);
 		$nameHost  =  ($_POST['c_name_host']);
-		$seatHost  = ($_POST['c_seat_host']);
 		$shiftHost  =  ($_POST['c_shift_host']);
 		$labelM    =  ($_POST['c_labelmain']);
 		$label    =  ($_POST['c_label']);
@@ -24,9 +23,16 @@
 			$nameVisit = $qryname["user_name"];
 		}
 
+		// select seat host
+		$selectSeathost = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+		$qry = mysqli_query($db, $selectSeathost);
+		while ($qryname = mysqli_fetch_array($qry)) {
+			$seatHost = $qryname["w_type"];
+		}
 
-		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit)
-				VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit') ";
+
+		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit, c_date_visit)
+				VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost') ";
 				mysqli_query($db, $insSQL);
 
 		$updateTable = "UPDATE work SET w_type = '$seatHost*' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
@@ -40,7 +46,6 @@ if (isset($_POST['swapmenu2'])) {
 	$codeHost    =  ($_POST['c_code_host']);
 	$nameHost  =  ($_POST['c_name_host']);
 	$shiftHost  =  ($_POST['c_shift_host']);
-	$seatHost  = ($_POST['c_seat_host']);
 	$labelM    =  ($_POST['c_labelmain']);
 	$label    =  ($_POST['c_label']);
 	$day			=  ($_POST['day_host']);
@@ -51,6 +56,13 @@ if (isset($_POST['swapmenu2'])) {
 
 	$dateHost = $year.$month.$day;
 	$remark  = $re." - ".$re2;
+
+	// select seat host
+	$selectSeathost = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $selectSeathost);
+	while ($qryname = mysqli_fetch_array($qry)) {
+		$seatHost = $qryname["w_type"];
+	}
 
 	$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_shift_host, c_seat_host,c_labelmain, c_label, c_remark)
 	VALUES('$codeHost', '$nameHost', '$dateHost', '$shiftHost', '$seatHost', '$labelM', '$label', '$remark') ";
@@ -69,6 +81,7 @@ if (isset($_POST['swapmenu3'])){
 	$nameHost  =  ($_POST['c_name_host']);
 	$shiftHost  =  ($_POST['c_shift_host']);
 	$labelM    =  ($_POST['c_labelmain']);
+	$remark 	=  ($_POST['c_remark']);
 	$day			=  ($_POST['day_host']);
 	$month			=  ($_POST['month_host']);
 	$year 	=  ($_POST['year_host']);
@@ -84,21 +97,21 @@ if (isset($_POST['swapmenu3'])){
 	}
 
 	// select seat host
-	$selectDatevisit = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
-	$qry = mysqli_query($db, $selectDatevisit);
+	$selectSeathost = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $selectSeathost);
 	while ($qryname = mysqli_fetch_array($qry)) {
 		$seatHost = $qryname["w_type"];
 	}
 
 	// select seat visit
-	$selectDatevisit = "SELECT w_type FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost'";
-	$qry = mysqli_query($db, $selectDatevisit);
+	$selectSeatvisit = "SELECT w_type FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $selectSeatvisit);
 	while ($qryname = mysqli_fetch_array($qry)) {
 		$seatVisit = $qryname["w_type"];
 	}
 
-	$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_code_visit, c_name_visit, c_date_visit, c_seat_visit, c_shift_visit, c_labelmain)
-	VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$codeVisit', '$nameVisit', '$dateHost', '$seatVisit', '$shiftHost', '$labelM') ";
+	$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_code_visit, c_name_visit, c_date_visit, c_seat_visit, c_shift_visit, c_labelmain, c_remark)
+	VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$codeVisit', '$nameVisit', '$dateHost', '$seatVisit', '$shiftHost', '$labelM', '$remark') ";
 	mysqli_query($db, $insSQL);
 
 	$updateTable = "UPDATE work SET w_type = '$seatHost*' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
@@ -114,6 +127,7 @@ if (isset($_POST['swapmenu4'])) {
 	$nameHost  =  ($_POST['c_name_host']);
 	$shiftHost  =  ($_POST['c_shift_host']);
 	$labelM    =  ($_POST['c_labelmain']);
+	$remark 	=  ($_POST['c_remark']);
 	$day			=  ($_POST['day_host']);
 	$month			=  ($_POST['month_host']);
 	$year 	=  ($_POST['year_host']);
@@ -128,8 +142,8 @@ if (isset($_POST['swapmenu4'])) {
 	$dateVisit = $year2.$month2.$day2;
 
 // select seat host
-$selectDatevisit = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
-$qry = mysqli_query($db, $selectDatevisit);
+$selectSeathost = "SELECT w_type FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+$qry = mysqli_query($db, $selectSeathost);
 while ($qryname = mysqli_fetch_array($qry)) {
 	$seatHost = $qryname["w_type"];
 }
@@ -143,15 +157,15 @@ while ($qryname = mysqli_fetch_array($qry)) {
 }
 
 //select seat visit
-$selectDatevisit = "SELECT w_type FROM work WHERE w_code='$codeVisit' AND w_date='$dateVisit'";
-$qry = mysqli_query($db, $selectDatevisit);
+$selectSeatvisit = "SELECT w_type FROM work WHERE w_code='$codeVisit' AND w_date='$dateVisit'";
+$qry = mysqli_query($db, $selectSeatvisit);
 while ($qryname = mysqli_fetch_array($qry)) {
 	$seatVisit = $qryname["w_type"];
 }
 
 //insert swap
-$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_code_visit, c_name_visit, c_date_visit, c_seat_visit, c_shift_visit, c_labelmain)
-VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$codeVisit', '$nameVisit', '$dateHost', '$seatVisit', '$shiftVisit', '$labelM') ";
+$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_shift_host, c_code_visit, c_name_visit, c_date_visit, c_seat_visit, c_shift_visit, c_labelmain, c_remark)
+VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$shiftHost', '$codeVisit', '$nameVisit', '$dateVisit', '$seatVisit', '$shiftVisit', '$labelM', '$remark') ";
 mysqli_query($db, $insSQL);
 
 //update *

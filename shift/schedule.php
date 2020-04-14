@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
 <head>
 	<title>table</title>
 </head>
@@ -101,7 +100,640 @@
 <!-- start container -->
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-9">
+		<!-- menu swap -->
+		<div class="col-3">
+			<center><h2>ระบบ แลก/ลา/สลับกะ</h2></center>
+			<div class="accordion" id="menuall"> <!-- menu accordion -->
+				 <div class="card border-primary"> <!-- menu 1 -->
+				 <div class="card-header border-primary" id="headingOne">
+				 <h2 class="mb-0">
+					 <center>
+						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu1" aria-expanded="true" aria-controls="menu1">
+							ลาปกติ (เต็มวัน)
+						</button>
+				 </center>
+				 </h2>
+				 </div>
+				 <div id="menu1" class="collapse" aria-labelledby="headingOne" data-parent="#menuall">
+				 <div class="card-body">
+					 <form method="post" action="shift_functions.php">
+						 <div class="form-group">
+								 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+								 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+								 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								 <input type="hidden" name="c_labelmain" value="ลาปกติ (เต็มวัน)">
+							 เลือกประเภทการลา
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio1" value="ลาป่วย" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio1">ลาป่วย</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio2" value="ลาป่วย (ไม่มีคนแทน)" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio2">ลาป่วย (ไม่มีคนแทน)</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio3" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio3">ลาพักผ่อน</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio4" value="ลากิจ" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio4">ลากิจ</label>
+							 </div><hr>
+							 ระบุวันลา
+							 <div class="form-row">
+								 <div class="col-md-3">
+								 <select name="day_host" class="custom-select custom-select-sm">
+									 <option selected>วัน</option>
+									 <option value="01">1</option>
+									 <option value="02">2</option>
+									 <option value="03">3</option>
+									 <option value="04">4</option>
+									 <option value="05">5</option>
+									 <option value="06">6</option>
+									 <option value="07">7</option>
+									 <option value="08">8</option>
+									 <option value="09">9</option>
+									 <option value="10">10</option>
+									 <option value="11">11</option>
+									 <option value="12">12</option>
+									 <option value="13">13</option>
+									 <option value="14">14</option>
+									 <option value="15">15</option>
+									 <option value="16">16</option>
+									 <option value="17">17</option>
+									 <option value="18">18</option>
+									 <option value="19">19</option>
+									 <option value="20">20</option>
+									 <option value="21">21</option>
+									 <option value="22">22</option>
+									 <option value="23">23</option>
+									 <option value="24">24</option>
+									 <option value="25">25</option>
+									 <option value="26">26</option>
+									 <option value="27">27</option>
+									 <option value="28">28</option>
+									 <option value="29">29</option>
+									 <option value="30">30</option>
+									 <option value="31">31</option>
+								 </select>
+								 </div>
+							 <div class="col-md-4">
+							 <select name="month_host" class="custom-select custom-select-sm">
+								 <option selected>เดือน</option>
+								 <option value="01-">มกราคม</option>
+								 <option value="02-">กุมพาพันธ์</option>
+								 <option value="03-">มีนาคม</option>
+								 <option value="04-">เมษายน</option>
+								 <option value="05-">พฤษภาคม</option>
+								 <option value="06-">มิถุนายน</option>
+								 <option value="07-">กรกฎาคม</option>
+								 <option value="08-">สิงหาคม</option>
+								 <option value="09-">กันยายน</option>
+								 <option value="10-">ตุลาคม</option>
+								 <option value="11-">พฤศจิกายน</option>
+								 <option value="12-">ธันวาคม</option>
+							 </select>
+							 </div>
+							 <div class="col-md-3">
+							 <select name="year_host" class="custom-select custom-select-sm">
+								 <option selected>ปี</option>
+								 <option value="2020-">2020</option>
+							 </select>
+							 </div>
+						 </div>
+						 <hr>
+							 (หากลาแบบไม่มีคนแทนข้ามไปเลยครับ)
+							<div>
+								<div class="form-row">
+								<select name="c_code_visit" class="custom-select custom-select-sm">
+									 <option value="-">เลือกผู้ปฏิบัติงานแทน</option>
+									 <?php
+									 $SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
+									 $qry = mysqli_query($db, $SQL);
+									 while ($listEmp = mysqli_fetch_array($qry)) {
+									 ?>
+									 <option value="<?php echo $listEmp["username"]; ?>">
+										 <?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
+									 <?php
+									 }
+									 ?>
+									 </select>
+									 </div>
+								</div><br>
+								 <center><button type="submit" class="btn btn-primary" name="swapmenu1">SEND</button></center>
+						 </div>
+			 </form>
+				 </div>
+				 </div>
+				 </div>
+				 <!-- end menu 1 -->
+				 <!-- menu 2 -->
+				 <div class="card border-primary">
+				 <div class="card-header border-primary" id="headingTwo">
+				 <h2 class="mb-0">
+					 <center>
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu2" aria-expanded="false" aria-controls="menu2">
+								ลาระบุช่วงเวลา
+							</button>
+					 </center>
+				 </h2>
+				 </div>
+				 <div id="menu2" class="collapse" aria-labelledby="headingTwo" data-parent="#menuall">
+				 <div class="card-body">
+					 <form method="post" action="shift_functions.php">
+						<div class="form-group">
+							<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+							<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+							<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+							<input type="hidden" name="c_labelmain" value="ลาระบุช่วงเวลา">
+							เลือกประเภทการลา
+							<div class="custom-control custom-radio">
+								<input type="radio" id="customRadio5" value="ลาป่วย" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio5">ลาป่วย</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="customRadio6" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio6">ลาพักผ่อน</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio7">ลากิจ</label>
+							</div><hr>
+							ระบุวันลา
+							<div class="form-row">
+								<div class="col-md-3">
+								<select name="day_host" class="custom-select custom-select-sm">
+									<option selected>วัน</option>
+									<option value="01">1</option>
+									<option value="02">2</option>
+									<option value="03">3</option>
+									<option value="04">4</option>
+									<option value="05">5</option>
+									<option value="06">6</option>
+									<option value="07">7</option>
+									<option value="08">8</option>
+									<option value="09">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+								</select>
+								</div>
+							<div class="col-md-4">
+							<select name="month_host" class="custom-select custom-select-sm">
+								<option selected>เดือน</option>
+								<option value="01-">มกราคม</option>
+								<option value="02-">กุมพาพันธ์</option>
+								<option value="03-">มีนาคม</option>
+								<option value="04-">เมษายน</option>
+								<option value="05-">พฤษภาคม</option>
+								<option value="06-">มิถุนายน</option>
+								<option value="07-">กรกฎาคม</option>
+								<option value="08-">สิงหาคม</option>
+								<option value="09-">กันยายน</option>
+								<option value="10-">ตุลาคม</option>
+								<option value="11-">พฤศจิกายน</option>
+								<option value="12-">ธันวาคม</option>
+							</select>
+							</div>
+							<div class="col-md-3">
+							<select name="year_host" class="custom-select custom-select-sm">
+								<option selected>ปี</option>
+								<option value="2020-">2020</option>
+							</select>
+							</div>
+						</div><hr>
+							ระบุช่วงเวลา
+							<div class="form-row">
+								<div>ตั้งแต่</div>
+								<div class="col-md-4">
+								<select name="c_re1" class="custom-select custom-select-sm">
+									<option value="00:00">00:00</option>
+									<option value="00:30">00:30</option>
+									<option value="01:00">01:00</option>
+									<option value="01:30">01:30</option>
+									<option value="02:00">02:00</option>
+									<option value="02:30">02:30</option>
+									<option value="03:00">03:00</option>
+									<option value="03:30">03:30</option>
+									<option value="04:00">04:00</option>
+									<option value="04:30">04:30</option>
+									<option value="05:00">05:00</option>
+									<option value="05:30">05:30</option>
+									<option value="06:00">06:00</option>
+									<option value="06:30">06:30</option>
+									<option value="07:00">07:00</option>
+									<option value="07:30">07:30</option>
+									<option value="08:00">08:00</option>
+									<option value="08:30">08:30</option>
+									<option value="09:00">09:00</option>
+									<option value="09:30">09:30</option>
+									<option value="10:00">10:00</option>
+									<option value="10:30">10:30</option>
+									<option value="11:00">11:00</option>
+									<option value="11:30">11:30</option>
+									<option value="12:00">12:00</option>
+									<option value="12:30">12:30</option>
+									<option value="13:00">13:00</option>
+									<option value="13:30">13:30</option>
+									<option value="14:00">14:00</option>
+									<option value="14:30">14:30</option>
+									<option value="15:00">15:00</option>
+									<option value="15:30">15:30</option>
+									<option value="16:00">16:00</option>
+									<option value="16:30">16:30</option>
+									<option value="17:00">17:00</option>
+									<option value="17:30">17:30</option>
+									<option value="18:00">18:00</option>
+									<option value="18:30">18:30</option>
+									<option value="19:00">19:00</option>
+									<option value="19:30">19:30</option>
+									<option value="20:00">20:00</option>
+									<option value="20:30">20:30</option>
+									<option value="21:00">21:00</option>
+									<option value="21:30">21:30</option>
+									<option value="22:00">22:00</option>
+									<option value="22:30">22:30</option>
+									<option value="23:00">23:00</option>
+									<option value="23:30">23:30</option>
+								</select>
+								</div>
+								<div>ถึง</div>
+								<div class="col-md-4">
+									<select name="c_re2" class="custom-select custom-select-sm">
+										<option value="00:00">00:00</option>
+										<option value="00:30">00:30</option>
+										<option value="01:00">01:00</option>
+										<option value="01:30">01:30</option>
+										<option value="02:00">02:00</option>
+										<option value="02:30">02:30</option>
+										<option value="03:00">03:00</option>
+										<option value="03:30">03:30</option>
+										<option value="04:00">04:00</option>
+										<option value="04:30">04:30</option>
+										<option value="05:00">05:00</option>
+										<option value="05:30">05:30</option>
+										<option value="06:00">06:00</option>
+										<option value="06:30">06:30</option>
+										<option value="07:00">07:00</option>
+										<option value="07:30">07:30</option>
+										<option value="08:00">08:00</option>
+										<option value="08:30">08:30</option>
+										<option value="09:00">09:00</option>
+										<option value="09:30">09:30</option>
+										<option value="10:00">10:00</option>
+										<option value="10:30">10:30</option>
+										<option value="11:00">11:00</option>
+										<option value="11:30">11:30</option>
+										<option value="12:00">12:00</option>
+										<option value="12:30">12:30</option>
+										<option value="13:00">13:00</option>
+										<option value="13:30">13:30</option>
+										<option value="14:00">14:00</option>
+										<option value="14:30">14:30</option>
+										<option value="15:00">15:00</option>
+										<option value="15:30">15:30</option>
+										<option value="16:00">16:00</option>
+										<option value="16:30">16:30</option>
+										<option value="17:00">17:00</option>
+										<option value="17:30">17:30</option>
+										<option value="18:00">18:00</option>
+										<option value="18:30">18:30</option>
+										<option value="19:00">19:00</option>
+										<option value="19:30">19:30</option>
+										<option value="20:00">20:00</option>
+										<option value="20:30">20:30</option>
+										<option value="21:00">21:00</option>
+										<option value="21:30">21:30</option>
+										<option value="22:00">22:00</option>
+										<option value="22:30">22:30</option>
+										<option value="23:00">23:00</option>
+										<option value="23:30">23:30</option>
+									</select>
+								</div>
+						</div><br>
+						<center><button type="submit" class="btn btn-primary" name="swapmenu2">SEND</button></center>
+								<!--<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submenu2">SEND</button></center>-->
+						</div>
+			</form>
+				 </div>
+				 </div>
+				 </div>
+				 <!-- end menu 2 -->
+				 <!-- menu 3 -->
+				 <div class="card border-primary">
+				 <div class="card-header border-primary" id="headingThree">
+				 <h2 class="mb-0">
+					 <center>
+						 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu3" aria-expanded="false" aria-controls="menu3">
+							 ขออนุมัติสลับกะ (กะเดียวกัน)
+						 </button>
+					 </center>
+				 </h2>
+				 </div>
+				 <div id="menu3" class="collapse" aria-labelledby="headingThree" data-parent="#menuall">
+				 <div class="card-body">
+					 <form method="post" action="shift_functions.php">
+							<div class="form-group">
+								<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+								<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+								<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								<input type="hidden" name="c_labelmain" value="สลับกะ">
+								<input type="hidden" name="c_remark" value="กะเดียวกัน">
+								ระบุวันที่ต้องการสลับ
+							 <div class="form-row">
+								 <div class="col-md-3">
+								 <select name="day_host" class="custom-select custom-select-sm">
+									 <option selected>วัน</option>
+									 <option value="01">1</option>
+									 <option value="02">2</option>
+									 <option value="03">3</option>
+									 <option value="04">4</option>
+									 <option value="05">5</option>
+									 <option value="06">6</option>
+									 <option value="07">7</option>
+									 <option value="08">8</option>
+									 <option value="09">9</option>
+									 <option value="10">10</option>
+									 <option value="11">11</option>
+									 <option value="12">12</option>
+									 <option value="13">13</option>
+									 <option value="14">14</option>
+									 <option value="15">15</option>
+									 <option value="16">16</option>
+									 <option value="17">17</option>
+									 <option value="18">18</option>
+									 <option value="19">19</option>
+									 <option value="20">20</option>
+									 <option value="21">21</option>
+									 <option value="22">22</option>
+									 <option value="23">23</option>
+									 <option value="24">24</option>
+									 <option value="25">25</option>
+									 <option value="26">26</option>
+									 <option value="27">27</option>
+									 <option value="28">28</option>
+									 <option value="29">29</option>
+									 <option value="30">30</option>
+									 <option value="31">31</option>
+								 </select>
+								 </div>
+							 <div class="col-md-4">
+							 <select name="month_host" class="custom-select custom-select-sm">
+								 <option selected>เดือน</option>
+								 <option value="01">มกราคม</option>
+								 <option value="02">กุมพาพันธ์</option>
+								 <option value="03">มีนาคม</option>
+								 <option value="04">เมษายน</option>
+								 <option value="05">พฤษภาคม</option>
+								 <option value="06">มิถุนายน</option>
+								 <option value="07">กรกฎาคม</option>
+								 <option value="08">สิงหาคม</option>
+								 <option value="09">กันยายน</option>
+								 <option value="10">ตุลาคม</option>
+								 <option value="11">พฤศจิกายน</option>
+								 <option value="12">ธันวาคม</option>
+							 </select>
+							 </div>
+							 <div class="col-md-3">
+							 <select name="year_host" class="custom-select custom-select-sm">
+								 <option selected>ปี</option>
+								 <option value="2020">2020</option>
+							 </select>
+							 </div>
+						 </div>
+								<hr>
+								เลือกพนักงานที่ต้องการสลับกะ
+							 <div class="form-row">
+								 <div class="col">
+								 <select name="c_code_visit" class="custom-select custom-select-sm">
+									 <?php
+									 $sft = $_SESSION['user']['shift']; // กำหนดตัวแปร
+									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift='$sft' ORDER BY shift , remark";
+									 $qry = mysqli_query($db, $SQL);
+									 while ($listEmp = mysqli_fetch_array($qry)) {
+									 ?>
+									 <option value="<?php echo $listEmp["username"]; ?>">
+										 <?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
+									 <?php
+									 }
+									 ?>
+									 </select>
+									 </div>
+								 </div><br>
+									<center><button class="btn btn-primary" type="submit" name="swapmenu3">SEND</button></center>
+							</div>
+				</form>
+				 </div>
+				 </div>
+				 </div>
+				 <!-- end menu 3 -->
+				 <!-- menu 4 -->
+				 <div class="card border-primary">
+				 <div class="card-header border-primary" id="headingFour">
+				 <h2 class="mb-0">
+					 <center>
+						 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu4" aria-expanded="false" aria-controls="menu4">
+							 ขออนุมัติสลับกะ (ระหว่างกะ)
+						 </button>
+					 </center>
+				 </h2>
+				 </div>
+				 <div id="menu4" class="collapse" aria-labelledby="headingFour" data-parent="#menuall">
+				 <div class="card-body">
+					 <form method="post" action="shift_functions.php">
+							<div class="form-group">
+								<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+								<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+								<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								<input type="hidden" name="c_labelmain" value="สลับกะ">
+								<input type="hidden" name="c_remark" value="ระหว่างกะ">
+							 ระบุวันที่ต้องการสลับกะของท่าน
+							 <div class="form-row">
+								 <div class="col-md-3">
+								 <select name="day_host" class="custom-select custom-select-sm">
+									 <option selected>วัน</option>
+									 <option value="01">1</option>
+									 <option value="02">2</option>
+									 <option value="03">3</option>
+									 <option value="04">4</option>
+									 <option value="05">5</option>
+									 <option value="06">6</option>
+									 <option value="07">7</option>
+									 <option value="08">8</option>
+									 <option value="09">9</option>
+									 <option value="10">10</option>
+									 <option value="11">11</option>
+									 <option value="12">12</option>
+									 <option value="13">13</option>
+									 <option value="14">14</option>
+									 <option value="15">15</option>
+									 <option value="16">16</option>
+									 <option value="17">17</option>
+									 <option value="18">18</option>
+									 <option value="19">19</option>
+									 <option value="20">20</option>
+									 <option value="21">21</option>
+									 <option value="22">22</option>
+									 <option value="23">23</option>
+									 <option value="24">24</option>
+									 <option value="25">25</option>
+									 <option value="26">26</option>
+									 <option value="27">27</option>
+									 <option value="28">28</option>
+									 <option value="29">29</option>
+									 <option value="30">30</option>
+									 <option value="31">31</option>
+								 </select>
+								 </div>
+							 <div class="col-md-4">
+							 <select name="month_host" class="custom-select custom-select-sm">
+								 <option selected>เดือน</option>
+								 <option value="01">มกราคม</option>
+								 <option value="02">กุมพาพันธ์</option>
+								 <option value="03">มีนาคม</option>
+								 <option value="04">เมษายน</option>
+								 <option value="05">พฤษภาคม</option>
+								 <option value="06">มิถุนายน</option>
+								 <option value="07">กรกฎาคม</option>
+								 <option value="08">สิงหาคม</option>
+								 <option value="09">กันยายน</option>
+								 <option value="10">ตุลาคม</option>
+								 <option value="11">พฤศจิกายน</option>
+								 <option value="12">ธันวาคม</option>
+							 </select>
+						 </div>
+							 <div class="col-md-3">
+							 <select name="year_host" class="custom-select custom-select-sm">
+								 <option selected>ปี</option>
+								 <option value="2020">2020</option>
+							 </select>
+							 </div>
+						 </div><hr>
+								เลือกพนักงานที่ต้องการสลับกะ
+							 <div class="form-row">
+								 <div class="col">
+								 <select name="c_code_visit" class="custom-select custom-select-sm">
+									 <?php
+									 $sft = $_SESSION['user']['shift'];
+									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift!='$sft' ORDER BY shift , remark";
+									 $qry = mysqli_query($db, $SQL);
+									 while ($listEmp = mysqli_fetch_array($qry)) {
+									 ?>
+									 <option value="<?php echo $listEmp["username"]; ?>">
+										 <?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
+									 <?php
+									 }
+									 ?>
+									 </select>
+									 </div>
+								 </div>
+								 ระบุวันที่ต้องการสลับกะ
+							 <div class="form-row">
+								 <div class="col-md-3">
+								 <select name="day_visit" class="custom-select custom-select-sm">
+									 <option selected>วัน</option>
+									 <option value="01">1</option>
+									 <option value="02">2</option>
+									 <option value="03">3</option>
+									 <option value="04">4</option>
+									 <option value="05">5</option>
+									 <option value="06">6</option>
+									 <option value="07">7</option>
+									 <option value="08">8</option>
+									 <option value="09">9</option>
+									 <option value="10">10</option>
+									 <option value="11">11</option>
+									 <option value="12">12</option>
+									 <option value="13">13</option>
+									 <option value="14">14</option>
+									 <option value="15">15</option>
+									 <option value="16">16</option>
+									 <option value="17">17</option>
+									 <option value="18">18</option>
+									 <option value="19">19</option>
+									 <option value="20">20</option>
+									 <option value="21">21</option>
+									 <option value="22">22</option>
+									 <option value="23">23</option>
+									 <option value="24">24</option>
+									 <option value="25">25</option>
+									 <option value="26">26</option>
+									 <option value="27">27</option>
+									 <option value="28">28</option>
+									 <option value="29">29</option>
+									 <option value="30">30</option>
+									 <option value="31">31</option>
+								 </select>
+								 </div>
+							 <div class="col-md-4">
+							 <select name="month_visit" class="custom-select custom-select-sm">
+								 <option selected>เดือน</option>
+								 <option value="01">มกราคม</option>
+								 <option value="02">กุมพาพันธ์</option>
+								 <option value="03">มีนาคม</option>
+								 <option value="04">เมษายน</option>
+								 <option value="05">พฤษภาคม</option>
+								 <option value="06">มิถุนายน</option>
+								 <option value="07">กรกฎาคม</option>
+								 <option value="08">สิงหาคม</option>
+								 <option value="09">กันยายน</option>
+								 <option value="10">ตุลาคม</option>
+								 <option value="11">พฤศจิกายน</option>
+								 <option value="12">ธันวาคม</option>
+							 </select>
+							 </div>
+							 <div class="col-md-3">
+							 <select name="year_visit" class="custom-select custom-select-sm">
+								 <option selected>ปี</option>
+								 <option value="2020">2020</option>
+							 </select>
+							 </div>
+						 </div><br>
+									<center><button class="btn btn-primary" type="submit" name="swapmenu4">SEND</button></center>
+							</div>
+				</form>
+				 </div>
+				 </div>
+				 </div>
+			 </div> <!-- End menu accordion swap-->
+			 <br>
+			 <div class="alert alert-dismissible alert-info">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>ความหมายอักษรย่อของ Seat</strong><br>
+					<small>* หลัง Seat คือมีการยื่นแลก/ลาไปแล้วอยู่ระหว่างพิจารณา</small><br>
+					<small>x หน้า Seat = ลาไม่มีคนแทน</small><br>
+					<small>ช่องว่างสีขาว = มีการแลกหรือลาวันทำงานออกไปแล้ว</small><br>
+					<small>D = กะ Day (D1 , D2)</small><br>
+					<small>N = กะ Night</small><br>
+					<small>A1 = Assist 1</small><br>
+					<small>A2 = Assist 2</small><br>
+					<small>OD = OT แทนอัตราสรรหากะ Day</small><br>
+					<small>OD1 = OT แทนอัตราสรรหากะ Day ดู Mon D1</small><br>
+					<small>ON = OT แทนอัตราสรรหากะ Night</small><br>
+					<small>G = เรียนงาน</small><br>
+				</div>  <!-- End menu swap-->
+		</div> <!-- end menu swap -->
+
+		<div class="col-9"><!-- Shift table -->
 			<center><h2>Schedule <?php echo $month; ?> / <?php echo $year; ?></h2></center>
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
@@ -200,8 +832,8 @@
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
 	    foreach($allEmpDataA as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-	     echo '<td>'. $empCode .'</td>';
-	     echo '<td>'. $empName .'</td>';
+	     echo '<td class="text-nowrap">'. $empCode .'</td>';
+	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
@@ -256,666 +888,7 @@
 	    echo "</table>";
 			//mysqli_close($db);//ปิดการเชื่อมต่อฐานข้อมูล
 			?>
-		 </div>
-
-		 <!-- menu swap -->
-		 <div class="col-3">
-			 <center><h2>ระบบ แลก/ลา/สลับกะ</h2></center>
-			 <div class="accordion" id="menuall"> <!-- menu accordion -->
-					<div class="card"> <!-- menu 1 -->
-					<div class="card-header" id="headingOne">
-					<h2 class="mb-0">
-						<center>
-						 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu1" aria-expanded="true" aria-controls="menu1">
-							 ลาปกติ (เต็มวัน)
-						 </button>
-				 	</center>
-					</h2>
-					</div>
-					<div id="menu1" class="collapse" aria-labelledby="headingOne" data-parent="#menuall">
-					<div class="card-body">
-						<form method="post" action="shift_functions.php">
-							<div class="form-group">
-									<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
-							    <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
-							    <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
-									<input type="hidden" name="c_labelmain" value="ลาปกติ (เต็มวัน)">
-								เลือกประเภทการลา
-								<div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio1" value="ลาป่วย" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio1">ลาป่วย</label>
-						    </div>
-								<div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio2" value="ลาป่วย (ไม่มีคนแทน)" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio2">ลาป่วย (ไม่มีคนแทน)</label>
-						    </div>
-						    <div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio3" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio3">ลาพักผ่อน</label>
-						    </div>
-						    <div class="custom-control custom-radio">
-						      <input type="radio" id="customRadio4" value="ลากิจ" name="c_label" class="custom-control-input">
-						      <label class="custom-control-label" for="customRadio4">ลากิจ</label>
-						    </div><hr>
-								ระบุวันลา
-								<div class="form-row">
-									<div class="col-md-3">
-									<select name="day_host" class="custom-select custom-select-sm">
-										<option selected>วัน</option>
-										<option value="01">1</option>
-										<option value="02">2</option>
-										<option value="03">3</option>
-										<option value="04">4</option>
-										<option value="05">5</option>
-										<option value="06">6</option>
-										<option value="07">7</option>
-										<option value="08">8</option>
-										<option value="09">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
-										<option value="15">15</option>
-										<option value="16">16</option>
-										<option value="17">17</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
-										<option value="20">20</option>
-										<option value="21">21</option>
-										<option value="22">22</option>
-										<option value="23">23</option>
-										<option value="24">24</option>
-										<option value="25">25</option>
-										<option value="26">26</option>
-										<option value="27">27</option>
-										<option value="28">28</option>
-										<option value="29">29</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-									</select>
-									</div>
-								<div class="col-md-4">
-								<select name="month_host" class="custom-select custom-select-sm">
-									<option selected>เดือน</option>
-									<option value="01-">มกราคม</option>
-									<option value="02-">กุมพาพันธ์</option>
-									<option value="03-">มีนาคม</option>
-									<option value="04-">เมษายน</option>
-									<option value="05-">พฤษภาคม</option>
-									<option value="06-">มิถุนายน</option>
-									<option value="07-">กรกฎาคม</option>
-									<option value="08-">สิงหาคม</option>
-									<option value="09-">กันยายน</option>
-									<option value="10-">ตุลาคม</option>
-									<option value="11-">พฤศจิกายน</option>
-									<option value="12-">ธันวาคม</option>
-								</select>
-								</div>
-								<div class="col-md-3">
-								<select name="year_host" class="custom-select custom-select-sm">
-									<option selected>ปี</option>
-									<option value="2020-">2020</option>
-								</select>
-								</div>
-							</div><hr>
-							ระบุ Seat ในวันที่ลาของท่าน
-							<div class="form-row">
-								<div>
-								<select name="c_seat_host" class="custom-select custom-select-sm">
-									<option value="A1">A1</option>
-									<option value="A2">A2</option>
-									<option value="D1">D1</option>
-									<option value="D2">D2</option>
-									<option value="N">N</option>
-									<option value="OD">OD</option>
-									<option value="ON">ON</option>
-									<option value="G">G</option>
-								</select>
-								</div>
-							</div><hr>
-								(หากลาแบบไม่มีคนแทนข้ามไปเลยครับ)
-								<div class="form-row">
-									<div>
-									<select name="c_code_visit" class="custom-select custom-select-sm">
-										<option value="-">เลือกผู้ปฏิบัติงานแทน</option>
-										<?php
-										$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
-										$qry = mysqli_query($db, $SQL);
-										while ($listEmp = mysqli_fetch_array($qry)) {
-										?>
-										<option value="<?php echo $listEmp["username"]; ?>">
-											<?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
-										<?php
-										}
-										?>
-										</select>
-										</div>
-										<br>
-										</div><hr><br>
-									<center><button type="submit" class="btn btn-primary" name="swapmenu1">SEND</button></center>
-							</div>
-				</form>
-					</div>
-					</div>
-					</div>
-					<!-- end menu 1 -->
-					<!-- menu 2 -->
-					<div class="card">
-					<div class="card-header" id="headingTwo">
-					<h2 class="mb-0">
-						<center>
-							 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu2" aria-expanded="false" aria-controls="menu2">
-								 ลาระบุช่วงเวลา
-							 </button>
-						</center>
-					</h2>
-					</div>
-					<div id="menu2" class="collapse" aria-labelledby="headingTwo" data-parent="#menuall">
-					<div class="card-body">
-						<form method="post" action="shift_functions.php">
- 						 <div class="form-group">
-							 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
-							 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
-							 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
-							 <input type="hidden" name="c_labelmain" value="ลาระบุช่วงเวลา">
- 							 เลือกประเภทการลา
-							 <div class="custom-control custom-radio">
-								 <input type="radio" id="customRadio5" value="ลาป่วย" name="c_label" class="custom-control-input">
-								 <label class="custom-control-label" for="customRadio5">ลาป่วย</label>
-							 </div>
-							 <div class="custom-control custom-radio">
-								 <input type="radio" id="customRadio6" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
-								 <label class="custom-control-label" for="customRadio6">ลาพักผ่อน</label>
-							 </div>
-							 <div class="custom-control custom-radio">
-								 <input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
-								 <label class="custom-control-label" for="customRadio7">ลากิจ</label>
-							 </div><hr>
-							 ระบุวันลา
-							 <div class="form-row">
-								 <div class="col-md-3">
-								 <select name="day_host" class="custom-select custom-select-sm">
-									 <option selected>วัน</option>
-									 <option value="01">1</option>
-									 <option value="02">2</option>
-									 <option value="03">3</option>
-									 <option value="04">4</option>
-									 <option value="05">5</option>
-									 <option value="06">6</option>
-									 <option value="07">7</option>
-									 <option value="08">8</option>
-									 <option value="09">9</option>
-									 <option value="10">10</option>
-									 <option value="11">11</option>
-									 <option value="12">12</option>
-									 <option value="13">13</option>
-									 <option value="14">14</option>
-									 <option value="15">15</option>
-									 <option value="16">16</option>
-									 <option value="17">17</option>
-									 <option value="18">18</option>
-									 <option value="19">19</option>
-									 <option value="20">20</option>
-									 <option value="21">21</option>
-									 <option value="22">22</option>
-									 <option value="23">23</option>
-									 <option value="24">24</option>
-									 <option value="25">25</option>
-									 <option value="26">26</option>
-									 <option value="27">27</option>
-									 <option value="28">28</option>
-									 <option value="29">29</option>
-									 <option value="30">30</option>
-									 <option value="31">31</option>
-								 </select>
-								 </div>
-							 <div class="col-md-4">
-							 <select name="month_host" class="custom-select custom-select-sm">
-								 <option selected>เดือน</option>
-								 <option value="01-">มกราคม</option>
-								 <option value="02-">กุมพาพันธ์</option>
-								 <option value="03-">มีนาคม</option>
-								 <option value="04-">เมษายน</option>
-								 <option value="05-">พฤษภาคม</option>
-								 <option value="06-">มิถุนายน</option>
-								 <option value="07-">กรกฎาคม</option>
-								 <option value="08-">สิงหาคม</option>
-								 <option value="09-">กันยายน</option>
-								 <option value="10-">ตุลาคม</option>
-								 <option value="11-">พฤศจิกายน</option>
-								 <option value="12-">ธันวาคม</option>
-							 </select>
-							 </div>
-							 <div class="col-md-3">
-							 <select name="year_host" class="custom-select custom-select-sm">
-								 <option selected>ปี</option>
-								 <option value="2020-">2020</option>
-							 </select>
-							 </div>
-						 </div><hr>
-						 ระบุ Seat ในวันที่ลาของท่าน
-						 <div class="form-row">
-							 <div>
-							 <select name="c_seat_host" class="custom-select custom-select-sm">
-								 <option value="A1">A1</option>
-								 <option value="A2">A2</option>
-								 <option value="D1">D1</option>
-								 <option value="D2">D2</option>
-								 <option value="N">N</option>
-								 <option value="OD">OD</option>
-								 <option value="ON">ON</option>
-								 <option value="G">G</option>
-							 </select>
-							 </div>
-						 </div><hr>
- 							 ระบุช่วงเวลา
- 							 <div class="form-row">
-								 <div>ตั้งแต่</div>
- 								 <div class="col-md-4">
- 								 <select name="c_re1" class="custom-select custom-select-sm">
-									 <option value="00:00">00:00</option>
-									 <option value="00:30">00:30</option>
-									 <option value="01:00">01:00</option>
-									 <option value="01:30">01:30</option>
-									 <option value="02:00">02:00</option>
-									 <option value="02:30">02:30</option>
-									 <option value="03:00">03:00</option>
-									 <option value="03:30">03:30</option>
-									 <option value="04:00">04:00</option>
-									 <option value="04:30">04:30</option>
-									 <option value="05:00">05:00</option>
-									 <option value="05:30">05:30</option>
-									 <option value="06:00">06:00</option>
-									 <option value="06:30">06:30</option>
-									 <option value="07:00">07:00</option>
-									 <option value="07:30">07:30</option>
-									 <option value="08:00">08:00</option>
-									 <option value="08:30">08:30</option>
-									 <option value="09:00">09:00</option>
-									 <option value="09:30">09:30</option>
-									 <option value="10:00">10:00</option>
-									 <option value="10:30">10:30</option>
-									 <option value="11:00">11:00</option>
-									 <option value="11:30">11:30</option>
-									 <option value="12:00">12:00</option>
-									 <option value="12:30">12:30</option>
-									 <option value="13:00">13:00</option>
-									 <option value="13:30">13:30</option>
-									 <option value="14:00">14:00</option>
-									 <option value="14:30">14:30</option>
-									 <option value="15:00">15:00</option>
-									 <option value="15:30">15:30</option>
-									 <option value="16:00">16:00</option>
-									 <option value="16:30">16:30</option>
-									 <option value="17:00">17:00</option>
-									 <option value="17:30">17:30</option>
-									 <option value="18:00">18:00</option>
-									 <option value="18:30">18:30</option>
-									 <option value="19:00">19:00</option>
-									 <option value="19:30">19:30</option>
-									 <option value="20:00">20:00</option>
-									 <option value="20:30">20:30</option>
-									 <option value="21:00">21:00</option>
-									 <option value="21:30">21:30</option>
-									 <option value="22:00">22:00</option>
-									 <option value="22:30">22:30</option>
-									 <option value="23:00">23:00</option>
-									 <option value="23:30">23:30</option>
- 								 </select>
- 								 </div>
-								 <div>ถึง</div>
-	 							 <div class="col-md-4">
-		 							 <select name="c_re2" class="custom-select custom-select-sm">
-										 <option value="00:00">00:00</option>
-										 <option value="00:30">00:30</option>
-										 <option value="01:00">01:00</option>
-										 <option value="01:30">01:30</option>
-										 <option value="02:00">02:00</option>
-										 <option value="02:30">02:30</option>
-										 <option value="03:00">03:00</option>
-										 <option value="03:30">03:30</option>
-										 <option value="04:00">04:00</option>
-										 <option value="04:30">04:30</option>
-										 <option value="05:00">05:00</option>
-										 <option value="05:30">05:30</option>
-										 <option value="06:00">06:00</option>
-										 <option value="06:30">06:30</option>
-										 <option value="07:00">07:00</option>
-										 <option value="07:30">07:30</option>
-										 <option value="08:00">08:00</option>
-										 <option value="08:30">08:30</option>
-										 <option value="09:00">09:00</option>
-										 <option value="09:30">09:30</option>
-										 <option value="10:00">10:00</option>
-										 <option value="10:30">10:30</option>
-										 <option value="11:00">11:00</option>
-										 <option value="11:30">11:30</option>
-										 <option value="12:00">12:00</option>
-										 <option value="12:30">12:30</option>
-										 <option value="13:00">13:00</option>
-										 <option value="13:30">13:30</option>
-										 <option value="14:00">14:00</option>
-										 <option value="14:30">14:30</option>
-										 <option value="15:00">15:00</option>
-										 <option value="15:30">15:30</option>
-										 <option value="16:00">16:00</option>
-										 <option value="16:30">16:30</option>
-										 <option value="17:00">17:00</option>
-										 <option value="17:30">17:30</option>
-										 <option value="18:00">18:00</option>
-										 <option value="18:30">18:30</option>
-										 <option value="19:00">19:00</option>
-										 <option value="19:30">19:30</option>
-										 <option value="20:00">20:00</option>
-										 <option value="20:30">20:30</option>
-										 <option value="21:00">21:00</option>
-										 <option value="21:30">21:30</option>
-										 <option value="22:00">22:00</option>
-										 <option value="22:30">22:30</option>
-										 <option value="23:00">23:00</option>
-										 <option value="23:30">23:30</option>
-		 							 </select>
-	 							 </div>
- 						 </div><hr>
-						 <center><button type="submit" class="btn btn-primary" name="swapmenu2">SEND</button></center>
- 								 <!--<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submenu2">SEND</button></center>-->
- 						 </div>
- 			 </form>
-					</div>
-					</div>
-					</div>
-					<!-- end menu 2 -->
-					<!-- menu 3 -->
-					<div class="card">
-					<div class="card-header" id="headingThree">
-					<h2 class="mb-0">
-						<center>
-					 		<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu3" aria-expanded="false" aria-controls="menu3">
-						 		ขออนุมัติสลับกะ (กะเดียวกัน)
-					 		</button>
-						</center>
-					</h2>
-					</div>
-					<div id="menu3" class="collapse" aria-labelledby="headingThree" data-parent="#menuall">
-					<div class="card-body">
-						<form method="post" action="shift_functions.php">
-							 <div class="form-group">
-								 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
-								 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
-								 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
-								 <input type="hidden" name="c_labelmain" value="สลับกะ (กะเดียวกัน)">
-								 ระบุวันที่ต้องการสลับ
- 								<div class="form-row">
- 									<div class="col-md-3">
- 									<select name="day_host" class="custom-select custom-select-sm">
- 										<option selected>วัน</option>
- 										<option value="01">1</option>
- 										<option value="02">2</option>
- 										<option value="03">3</option>
- 										<option value="04">4</option>
- 										<option value="05">5</option>
- 										<option value="06">6</option>
- 										<option value="07">7</option>
- 										<option value="08">8</option>
- 										<option value="09">9</option>
- 										<option value="10">10</option>
- 										<option value="11">11</option>
- 										<option value="12">12</option>
- 										<option value="13">13</option>
- 										<option value="14">14</option>
- 										<option value="15">15</option>
- 										<option value="16">16</option>
- 										<option value="17">17</option>
- 										<option value="18">18</option>
- 										<option value="19">19</option>
- 										<option value="20">20</option>
- 										<option value="21">21</option>
- 										<option value="22">22</option>
- 										<option value="23">23</option>
- 										<option value="24">24</option>
- 										<option value="25">25</option>
- 										<option value="26">26</option>
- 										<option value="27">27</option>
- 										<option value="28">28</option>
- 										<option value="29">29</option>
- 										<option value="30">30</option>
- 										<option value="31">31</option>
- 									</select>
- 									</div>
- 								<div class="col-md-4">
- 								<select name="month_host" class="custom-select custom-select-sm">
- 									<option selected>เดือน</option>
- 									<option value="01">มกราคม</option>
- 									<option value="02">กุมพาพันธ์</option>
- 									<option value="03">มีนาคม</option>
- 									<option value="04">เมษายน</option>
- 									<option value="05">พฤษภาคม</option>
- 									<option value="06">มิถุนายน</option>
- 									<option value="07">กรกฎาคม</option>
- 									<option value="08">สิงหาคม</option>
- 									<option value="09">กันยายน</option>
- 									<option value="10">ตุลาคม</option>
- 									<option value="11">พฤศจิกายน</option>
- 									<option value="12">ธันวาคม</option>
- 								</select>
- 								</div>
- 								<div class="col-md-3">
- 								<select name="year_host" class="custom-select custom-select-sm">
- 									<option selected>ปี</option>
- 									<option value="2020">2020</option>
- 								</select>
- 								</div>
- 							</div>
-								 <hr>
-								 เลือกพนักงานที่ต้องการสลับกะ
- 								<div class="form-row">
- 									<div class="col">
- 									<select name="c_code_visit" class="custom-select custom-select-sm">
-										<?php
-										$sft = $_SESSION['user']['shift']; // กำหนดตัวแปร
-										$SQL = "SELECT * FROM users WHERE user_type='user' AND shift='$sft' ORDER BY shift , remark";
-										$qry = mysqli_query($db, $SQL);
-										while ($listEmp = mysqli_fetch_array($qry)) {
-										?>
-										<option value="<?php echo $listEmp["username"]; ?>">
-											<?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
-										<?php
-										}
-										?>
- 										</select>
- 										</div>
- 									</div><br>
-									 <center><button class="btn btn-primary" type="submit" name="swapmenu3">SEND</button></center>
-							 </div>
-				 </form>
-					</div>
-					</div>
-					</div>
-					<!-- end menu 3 -->
-					<!-- menu 4 -->
-					<div class="card">
-					<div class="card-header" id="headingFour">
-					<h2 class="mb-0">
-						<center>
-							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu4" aria-expanded="false" aria-controls="menu4">
-								ขออนุมัติสลับกะ (ระหว่างกะ)
-							</button>
-						</center>
-					</h2>
-					</div>
-					<div id="menu4" class="collapse" aria-labelledby="headingFour" data-parent="#menuall">
-					<div class="card-body">
-						<form method="post" action="shift_functions.php">
-							 <div class="form-group">
-								 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
-								 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
-								 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
-								 <input type="hidden" name="c_labelmain" value="สลับกะ (ระหว่างกะ)">
-								ระบุวันทีของท่าน
-								<div class="form-row">
-									<div class="col-md-3">
-									<select name="day_host" class="custom-select custom-select-sm">
-										<option selected>วัน</option>
-										<option value="01">1</option>
-										<option value="02">2</option>
-										<option value="03">3</option>
-										<option value="04">4</option>
-										<option value="05">5</option>
-										<option value="06">6</option>
-										<option value="07">7</option>
-										<option value="08">8</option>
-										<option value="09">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
-										<option value="15">15</option>
-										<option value="16">16</option>
-										<option value="17">17</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
-										<option value="20">20</option>
-										<option value="21">21</option>
-										<option value="22">22</option>
-										<option value="23">23</option>
-										<option value="24">24</option>
-										<option value="25">25</option>
-										<option value="26">26</option>
-										<option value="27">27</option>
-										<option value="28">28</option>
-										<option value="29">29</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-									</select>
-									</div>
-								<div class="col-md-4">
-								<select name="month_host" class="custom-select custom-select-sm">
-									<option selected>เดือน</option>
-									<option value="01">มกราคม</option>
-									<option value="02">กุมพาพันธ์</option>
-									<option value="03">มีนาคม</option>
-									<option value="04">เมษายน</option>
-									<option value="05">พฤษภาคม</option>
-									<option value="06">มิถุนายน</option>
-									<option value="07">กรกฎาคม</option>
-									<option value="08">สิงหาคม</option>
-									<option value="09">กันยายน</option>
-									<option value="10">ตุลาคม</option>
-									<option value="11">พฤศจิกายน</option>
-									<option value="12">ธันวาคม</option>
-								</select>
-							</div>
-								<div class="col-md-3">
-								<select name="year_host" class="custom-select custom-select-sm">
-									<option selected>ปี</option>
-									<option value="2020">2020</option>
-								</select>
-								</div>
-							</div><hr>
-								 เลือกพนักงานที่ต้องการสลับกะ
-								<div class="form-row">
-									<div class="col">
-									<select name="c_code_visit" class="custom-select custom-select-sm">
-										<?php
-										$sft = $_SESSION['user']['shift'];
-										$SQL = "SELECT * FROM users WHERE user_type='user' AND shift!='$sft' ORDER BY shift , remark";
-										$qry = mysqli_query($db, $SQL);
-										while ($listEmp = mysqli_fetch_array($qry)) {
-										?>
-										<option value="<?php echo $listEmp["username"]; ?>">
-											<?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
-										<?php
-										}
-										?>
-										</select>
-										</div>
-									</div>
-									ระบุวันที่ต้องการสลับกะ
- 								<div class="form-row">
- 									<div class="col-md-3">
- 									<select name="day_visit" class="custom-select custom-select-sm">
- 										<option selected>วัน</option>
- 										<option value="01">1</option>
- 										<option value="02">2</option>
- 										<option value="03">3</option>
- 										<option value="04">4</option>
- 										<option value="05">5</option>
- 										<option value="06">6</option>
- 										<option value="07">7</option>
- 										<option value="08">8</option>
- 										<option value="09">9</option>
- 										<option value="10">10</option>
- 										<option value="11">11</option>
- 										<option value="12">12</option>
- 										<option value="13">13</option>
- 										<option value="14">14</option>
- 										<option value="15">15</option>
- 										<option value="16">16</option>
- 										<option value="17">17</option>
- 										<option value="18">18</option>
- 										<option value="19">19</option>
- 										<option value="20">20</option>
- 										<option value="21">21</option>
- 										<option value="22">22</option>
- 										<option value="23">23</option>
- 										<option value="24">24</option>
- 										<option value="25">25</option>
- 										<option value="26">26</option>
- 										<option value="27">27</option>
- 										<option value="28">28</option>
- 										<option value="29">29</option>
- 										<option value="30">30</option>
- 										<option value="31">31</option>
- 									</select>
- 									</div>
- 								<div class="col-md-4">
- 								<select name="month_visit" class="custom-select custom-select-sm">
- 									<option selected>เดือน</option>
- 									<option value="01">มกราคม</option>
- 									<option value="02">กุมพาพันธ์</option>
- 									<option value="03">มีนาคม</option>
- 									<option value="04">เมษายน</option>
- 									<option value="05">พฤษภาคม</option>
- 									<option value="06">มิถุนายน</option>
- 									<option value="07">กรกฎาคม</option>
- 									<option value="08">สิงหาคม</option>
- 									<option value="09">กันยายน</option>
- 									<option value="10">ตุลาคม</option>
- 									<option value="11">พฤศจิกายน</option>
- 									<option value="12">ธันวาคม</option>
- 								</select>
- 								</div>
- 								<div class="col-md-3">
- 								<select name="year_visit" class="custom-select custom-select-sm">
- 									<option selected>ปี</option>
- 									<option value="2020">2020</option>
- 								</select>
- 								</div>
- 							</div><br>
-									 <center><button class="btn btn-primary" type="submit" name="swapmenu4">SEND</button></center>
-							 </div>
-				 </form>
-					</div>
-					</div>
-					</div>
-				</div> <!-- End menu accordion swap-->
-				<br>
-						<div class="alert alert-dismissible alert-secondary">
-								<button type="button" class="close" data-dismiss="alert">&times;</button>
-								<strong>ความหมายอักษรย่อของ Seat</strong>
-								<p>* หลัง Seat คือมีการยื่นแลก/ลาไปแล้วอยู่ระหว่างพิจารณา</p>
-								<p>D = กะ Day (D1 , D2)</p>
-								<p>N = กะ Night</p>
-								<p>A1 = Assist 1</p>
-								<p>A2 = Assist 2</p>
-								<p>OD = OT แทนอัตราสรรหากะ Day</p>
-								<p>OD1 = OT แทนอัตราสรรหากะ Day ดู Mon D1</p>
-								<p>ON = OT แทนอัตราสรรหากะ Night</p>
-								<p>G = เรียนงาน</p>
-						</div>  <!-- End menu swap-->
-		 </div> <!-- end menu swap -->
+		</div><!-- End Shift table -->
 	 </div> <!-- end container -->
 		 <br>
 <div class="credit" >

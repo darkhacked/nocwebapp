@@ -39,9 +39,9 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Change Password</a>
-          <div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Manage User</a>
         </div>
       </li>
 			<a class="nav-link" href="../index.php?logout='1'">Logout</a>
@@ -50,119 +50,236 @@
 </nav>
 
 <div class="container-fluid mt-3">
-			<h3>DASHBOARD</h3>
-			<p class="lead">สถานะคำขออนุมัติที่รอพิจารณา</p>
-			<table class="table table-striped table-bordered">
-			<thead class="thead-dark js-thead">
-				<tr align="center">
-					<th scope="col">#</th>
-					<th scope="col">ID</th>
-					<th scope="col">ชื่อพนักงาน</th>
-					<th scope="col">วันปฏิบัติงาน</th>
-					<th scope="col">Seat</th>
-					<th scope="col">ประเภทการลา</th>
-					<th scope="col">ประเภทคำขอ</th>
-					<th scope="col"></th>
-					<th scope="col">ID</th>
-					<th scope="col">ผู้ปฏิบัติงานแทน</th>
-					<th scope="col">วันปฏิบัติงาน</th>
-					<th scope="col">Seat</th>
-					<th scope="col">หมายเหตุ</th>
-					<th scope="col">สถานะ</th>
-					<th scope="col">พิจารณา</th>
-				</tr>
-			</thead>
-			<tbody>
-					<?php
-					/*แสดงทั้งหมด
-					$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
-					$qry = mysqli_query($db, $swapQry); */
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <a class="nav-link active" data-toggle="tab" href="#menu1">คำขออนุมัติที่รอพิจารณา</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" data-toggle="tab" href="#menu2">คำขออนุมัติที่พิจารณาแล้ว</a>
+			  </li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+			  <div class="tab-pane fade active show" id="menu1">
+					<div class="container-fluid" style="padding-top:20px">
+					<p class="lead">คำขออนุมัติแลก / ลา</p>
+					<table class="table table-striped table-bordered">
+					<thead class="thead-dark js-thead">
+						<tr align="center">
+							<th scope="col">#</th>
+							<th scope="col">ID</th>
+							<th scope="col">ชื่อพนักงาน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">ประเภทการลา</th>
+							<th scope="col">ประเภทคำขอ</th>
+							<th scope="col">หมายเหตุ</th>
+							<th scope="col"></th>
+							<th scope="col">ID</th>
+							<th scope="col">ผู้ปฏิบัติงานแทน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">สถานะ</th>
+							<th scope="col">พิจารณา</th>
+						</tr>
+					</thead>
+					<tbody>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
 
-					//เลือกแสดงผลจาก status Pending
-					$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' ORDER BY c_id desc";
-					$qry = mysqli_query($db, $swapQry);
+							//เลือกแสดงผลจาก status Pending
+							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาป่วย (ไม่มีคนแทน)', 'ลาพักผ่อน', 'ลากิจ') ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry);
 
-					$i = 1; // รันเลขหน้าตาราง
-					while ($row = mysqli_fetch_array($qry)) {
-					echo "<tr align='center'>";
-					echo "<td>".$i."</td>";
-					echo "<td>".$row["c_code_host"]."</td>";
-					echo "<td>".$row["c_name_host"]."</td>";
-					echo "<td>".$row["c_date_host"]."</td>";
-					echo "<td>".$row["c_seat_host"]."</td>";
-					echo "<td>".$row["c_label"]."</td>";
-					echo "<td>".$row["c_labelmain"]."</td>";
-					echo "<td><img src=\"../images/swap2.png\"></td>";
-					echo "<td>".$row["c_code_visit"]."</td>";
-					echo "<td>".$row["c_name_visit"]."</td>";
-					echo "<td>".$row["c_date_visit"]."</td>";
-					echo "<td>".$row["c_seat_visit"]."</td>";
-					echo "<td>".$row["c_remark"]."</td>";
-					echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-					echo "<td><button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-primary btn-sm\" name=\"accept\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '#';\" class=\"btn btn-danger btn-sm\" name=\"denied\">Denied</button></td>";
-					echo "</tr>";
-					$i++;
-					}
-					?>
-			</tbody>
-		</table>
+							$i = 1; // รันเลขหน้าตาราง
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
+							echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_label"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_remark"]."</td>";
+							echo "<td><img src=\"../images/swap2.png\"></td>";
+							echo "<td>".$row["c_code_visit"]."</td>";
+							echo "<td>".$row["c_name_visit"]."</td>";
+							echo "<td>".$row["c_date_visit"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "</tr>";
+							$i++;
+							}
+							?>
+					</tbody>
+					</table>
+					<br><br>
+					<p class="lead">คำขออนุมัติแลก / ลาแบบไม่มีคนแทน</p>
+					<table class="table table-striped table-bordered">
+					<thead class="thead-dark js-thead">
+						<tr align="center">
+							<th scope="col">#</th>
+							<th scope="col">ID</th>
+							<th scope="col">ชื่อพนักงาน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">ประเภทการลา</th>
+							<th scope="col">ประเภทคำขอ</th>
+							<th scope="col">หมายเหตุ</th>
+							<th scope="col">สถานะ</th>
+							<th scope="col">พิจารณา</th>
+						</tr>
+					</thead>
+					<tbody>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
+
+							//เลือกแสดงผลจาก status Pending
+							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_code_visit='-' ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry);
+
+							$i = 1; // รันเลขหน้าตาราง
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
+							echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_label"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_remark"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept2.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "</tr>";
+							$i++;
+							}
+							?>
+					</tbody>
+					</table>
+					<br><br>
+					<p class="lead">คำขออนุมัติสลับกะ</p>
+					<table class="table table-striped table-bordered">
+					<thead class="thead-dark js-thead">
+						<tr align="center">
+							<th scope="col">#</th>
+							<th scope="col">ID</th>
+							<th scope="col">ชื่อพนักงาน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">ประเภทการลา</th>
+							<th scope="col">ประเภทคำขอ</th>
+							<th scope="col">หมายเหตุ</th>
+							<th scope="col"></th>
+							<th scope="col">ID</th>
+							<th scope="col">ผู้ปฏิบัติงานแทน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">สถานะ</th>
+							<th scope="col">พิจารณา</th>
+						</tr>
+					</thead>
+					<tbody>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
+
+							//เลือกแสดงผลจาก status Pending
+							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_labelmain='สลับกะ' ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry);
+
+							$i = 1; // รันเลขหน้าตาราง
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
+							echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_label"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_remark"]."</td>";
+							echo "<td><img src=\"../images/swap2.png\"></td>";
+							echo "<td>".$row["c_code_visit"]."</td>";
+							echo "<td>".$row["c_name_visit"]."</td>";
+							echo "<td>".$row["c_date_visit"]."</td>";
+							echo "<td>".$row["c_seat_visit"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept3.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "</tr>";
+							$i++;
+							}
+							?>
+					</tbody>
+					</table>
+
+
+
+					</div>
+				</div>
+			  <div class="tab-pane fade" id="menu2">
+					<div class="container-fluid" style="padding-top:20px">
+								<input type="text" class="form-control" id="js-search" placeholder="ค้นหา....">
+								<table class="table table-striped table-bordered js-table" id="myTable">
+								<thead class="thead-dark js-thead">
+									<tr align="center">
+										<th scope="col">#</th>
+										<th scope="col">ID</th>
+										<th scope="col">ชื่อพนักงาน</th>
+										<th scope="col">วันปฏิบัติงาน</th>
+										<th scope="col">Seat</th>
+										<th scope="col">ประเภทการลา</th>
+										<th scope="col">ประเภทคำขอ</th>
+										<th scope="col">หมายเหตุ</th>
+										<th scope="col"></th>
+										<th scope="col">ID</th>
+										<th scope="col">ผู้ปฏิบัติงานแทน</th>
+										<th scope="col">วันปฏิบัติงาน</th>
+										<th scope="col">Seat</th>
+										<th scope="col">สถานะ</th>
+									</tr>
+								</thead>
+								<tbody>
+										<?php
+										/*แสดงทั้งหมด
+										$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+										$qry = mysqli_query($db, $swapQry); */
+
+										//เลือกแสดงผลจาก status Pending
+										$swapQry = "SELECT * FROM swap WHERE c_status IN ('Approve', 'Cancel') ORDER BY c_id desc";
+										$qry = mysqli_query($db, $swapQry);
+
+										$i = 1; // รันเลขหน้าตาราง
+										while ($row = mysqli_fetch_array($qry)) {
+										echo "<tr align='center'>";
+										echo "<td>".$i."</td>";
+										echo "<td>".$row["c_code_host"]."</td>";
+										echo "<td>".$row["c_name_host"]."</td>";
+										echo "<td>".$row["c_date_host"]."</td>";
+										echo "<td>".$row["c_seat_host"]."</td>";
+										echo "<td>".$row["c_label"]."</td>";
+										echo "<td>".$row["c_labelmain"]."</td>";
+										echo "<td>".$row["c_remark"]."</td>";
+										echo "<td><img src=\"../images/swap2.png\"></td>";
+										echo "<td>".$row["c_code_visit"]."</td>";
+										echo "<td>".$row["c_name_visit"]."</td>";
+										echo "<td>".$row["c_date_visit"]."</td>";
+										echo "<td>".$row["c_seat_visit"]."</td>";
+										echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+										echo "</tr>";
+										$i++;
+										}
+										?>
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
 	</div>
-	<div class="container-fluid" style="padding-top:100px">
-				<p class="lead">คำขออนุมัติที่ผ่านการพิจารณาแล้ว</p>
-				<input type="text" class="form-control" id="js-search" placeholder="ค้นหา....">
-				<table class="table table-striped table-bordered js-table" id="myTable">
-				<thead class="thead-dark js-thead">
-					<tr align="center">
-						<th scope="col">#</th>
-						<th scope="col">ID</th>
-						<th scope="col">ชื่อพนักงาน</th>
-						<th scope="col">วันปฏิบัติงาน</th>
-						<th scope="col">Seat</th>
-						<th scope="col">ประเภทการลา</th>
-						<th scope="col">ประเภทคำขอ</th>
-						<th scope="col"></th>
-						<th scope="col">ID</th>
-						<th scope="col">ผู้ปฏิบัติงานแทน</th>
-						<th scope="col">วันปฏิบัติงาน</th>
-						<th scope="col">Seat</th>
-						<th scope="col">หมายเหตุ</th>
-						<th scope="col">สถานะ</th>
-					</tr>
-				</thead>
-				<tbody>
-						<?php
-						/*แสดงทั้งหมด
-						$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
-						$qry = mysqli_query($db, $swapQry); */
-
-						//เลือกแสดงผลจาก status Pending
-						$swapQry = "SELECT * FROM swap WHERE c_status IN ('Approve', 'Cancel') ORDER BY c_id desc";
-						$qry = mysqli_query($db, $swapQry);
-
-						$i = 1; // รันเลขหน้าตาราง
-						while ($row = mysqli_fetch_array($qry)) {
-						echo "<tr align='center'>";
-						echo "<td>".$i."</td>";
-						echo "<td>".$row["c_code_host"]."</td>";
-						echo "<td>".$row["c_name_host"]."</td>";
-						echo "<td>".$row["c_date_host"]."</td>";
-						echo "<td>".$row["c_seat_host"]."</td>";
-						echo "<td>".$row["c_label"]."</td>";
-						echo "<td>".$row["c_labelmain"]."</td>";
-						echo "<td><img src=\"../images/swap2.png\"></td>";
-						echo "<td>".$row["c_code_visit"]."</td>";
-						echo "<td>".$row["c_name_visit"]."</td>";
-						echo "<td>".$row["c_date_visit"]."</td>";
-						echo "<td>".$row["c_seat_visit"]."</td>";
-						echo "<td>".$row["c_remark"]."</td>";
-						echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-						echo "</tr>";
-						$i++;
-						}
-						?>
-				</tbody>
-			</table>
-		</div>
 <div class="credit" style="padding-top:150px">
 <hr>
 <center>

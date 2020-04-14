@@ -62,12 +62,12 @@
 							<th scope="col">Seat</th>
 							<th scope="col">ประเภทการลา</th>
 				      <th scope="col">ประเภทคำขอ</th>
+							<th scope="col">หมายเหตุ</th>
 							<th scope="col"></th>
 							<th scope="col">ID</th>
 							<th scope="col">ผู้ปฏิบัติงานแทน</th>
 							<th scope="col">วันปฏิบัติงาน</th>
 							<th scope="col">Seat</th>
-							<th scope="col">หมายเหตุ</th>
 							<th scope="col">สถานะ</th>
 							<th scope="col">ยกเลิก</th>
 				    </tr>
@@ -95,13 +95,13 @@
 							echo "<td>".$row["c_seat_host"]."</td>";
 							echo "<td>".$row["c_label"]."</td>";
 							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_remark"]."</td>";
 							echo "<td><img src=\"images/swap2.png\"></td>";
 							echo "<td>".$row["c_code_visit"]."</td>";
 							echo "<td>".$row["c_name_visit"]."</td>";
 							echo "<td>".$row["c_date_visit"]."</td>";
 							echo "<td>".$row["c_seat_visit"]."</td>";
-				      echo "<td>".$row["c_remark"]."</td>";
-							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+				      echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
 							//echo "<td>".$row["c_status"]."</td>";
 							echo "<td><button type=\"button\" onclick=\"return confirm('คุณต้องการยกเลิกคำขออนุมัตินี้ทิ้งใช่หรือไม่ ?');\" class=\"btn btn-danger btn-sm\">
 <a href=\"deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
@@ -126,12 +126,12 @@
 								<th scope="col">Seat</th>
 								<th scope="col">ประเภทการลา</th>
 								<th scope="col">ประเภทคำขอ</th>
+								<th scope="col">หมายเหตุ</th>
 								<th scope="col"></th>
 								<th scope="col">ID</th>
 								<th scope="col">ผู้ปฏิบัติงานแทน</th>
 								<th scope="col">วันปฏิบัติงาน</th>
 								<th scope="col">Seat</th>
-								<th scope="col">หมายเหตุ</th>
 								<th scope="col">สถานะ</th>
 							</tr>
 						</thead>
@@ -156,12 +156,12 @@
 								echo "<td>".$row["c_seat_host"]."</td>";
 								echo "<td>".$row["c_label"]."</td>";
 								echo "<td>".$row["c_labelmain"]."</td>";
+								echo "<td>".$row["c_remark"]."</td>";
 								echo "<td><img src=\"images/swap2.png\"></td>";
 								echo "<td>".$row["c_code_visit"]."</td>";
 								echo "<td>".$row["c_name_visit"]."</td>";
 								echo "<td>".$row["c_date_visit"]."</td>";
 								echo "<td>".$row["c_seat_visit"]."</td>";
-								echo "<td>".$row["c_remark"]."</td>";
 								echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
 								echo "</tr>";
 								$i++;

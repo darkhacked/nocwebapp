@@ -6,18 +6,17 @@
 <head>
 	<title>Login</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 	<div align="center" style="padding-top:100px; padding-bottom:150px">
 	 <div class="card shadow-lg bg-white rounded" style="width:600px;">
 	      <article class="card-body">
-	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE Beta v0.8.0 <br><a href="changelog.html" target="_blank">ดู Changelog</a></h4>
+	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE Beta v0.9.0 <br><a href="changelog.html" target="_blank">ดู Changelog</a></h4>
 	          <hr>
 	          <!--<p class="text-primary small">V0.1.1 <a href="changelog.md" target="_blank">Changelog</a></p>-->
 	          <div class="alert alert-warning">
 	              <h4 class="alert-heading">!! ประกาศ !!</h4>
-	                <p class="mb-0">รบกวนเข้าไปลองระบบแลก ลา สลับกะให้ด้วยครับ <br>หากเจอจุดที่ระบบทำงานผิดพลาดบอกด้วยนะครับ <br>(user = รหัสพนง / pass = รหัสพนง ของใครเข้าไม่ได้บอกด้วยนาคราบบ)</p>
+	                <p class="mb-0">รบกวนเข้าไปลองระบบแลก ลา สลับกะให้ด้วยครับ <br>หากเจอจุดที่ระบบทำงานผิดพลาดบอกด้วยนะครับ <br>(user = รหัสพนง / pass = 1234)</p>
 	          </div>
 	          <form method="POST" action="login.php">
 							<?php echo display_error(); ?>
