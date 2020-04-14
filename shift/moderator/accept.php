@@ -17,7 +17,7 @@ while ($qryname = mysqli_fetch_array($qry)) {
   $seatVisit = $qryname["c_seat_visit"];
 
 
-  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type) VALUES ('$codeVisit', '$dateHost', '$seatHost')";
+  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type) VALUES ('$codeVisit', '$dateHost', 'O$seatHost')";
   mysqli_query($db, $updatewdayVisit);
 
   $updatewdayHost = "UPDATE work SET w_type = '$seatVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
