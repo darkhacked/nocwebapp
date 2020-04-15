@@ -870,8 +870,6 @@
 						<td>วันหยุด</td>
 				  </tr>
 				</table>
-				<br>
-					<small>ช่องว่าง = มีการแลกหรือลาวันทำงานออกไปแล้ว</small><br>
 				</div>  <!-- End menu swap-->
 		</div> <!-- end menu swap -->
 
