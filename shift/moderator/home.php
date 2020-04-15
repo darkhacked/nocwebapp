@@ -13,13 +13,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>WORK SCHEDULE WEB APPLICATION</title>
 	<link href="../css/bootstrap.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">LOGO</a>
+  <a class="navbar-brand" href="#"><img src="../images/logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -40,8 +40,9 @@
           <?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Change Password</a>
-					<a class="dropdown-item" href="#">Manage User</a>
+          <a class="dropdown-item" href="../changepass.php">Change Password</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item disabled" href="#">Manage User</a>
         </div>
       </li>
 			<a class="nav-link" href="../index.php?logout='1'">Logout</a>
@@ -60,9 +61,9 @@
 			</ul>
 			<div id="myTabContent" class="tab-content">
 			  <div class="tab-pane fade active show" id="menu1">
-					<div class="container-fluid" style="padding-top:20px">
-					<p class="lead">คำขออนุมัติแลก / ลา</p>
-					<table class="table table-striped table-bordered">
+					<div class="container-fluid" style="padding-top:20px; padding-bottom:100px">
+					<p class="lead">คำขออนุมัติแลก / ลา</p> <!-- Table 1 -->
+					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
 						<tr align="center">
 							<th scope="col">#</th>
@@ -88,7 +89,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาป่วย (ไม่มีคนแทน)', 'ลาพักผ่อน', 'ลากิจ') ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') ORDER BY c_id desc";
 							$qry = mysqli_query($db, $swapQry);
 
 							$i = 1; // รันเลขหน้าตาราง
@@ -113,10 +114,10 @@
 							}
 							?>
 					</tbody>
-					</table>
-					<br><br>
-					<p class="lead">คำขออนุมัติแลก / ลาแบบไม่มีคนแทน</p>
-					<table class="table table-striped table-bordered">
+				</table> <!-- Table 1 -->
+					<br><br><br>
+					<p class="lead">คำขออนุมัติแลก / ลาแบบไม่มีคนแทน</p> <!-- Table 2 -->
+					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
 						<tr align="center">
 							<th scope="col">#</th>
@@ -159,10 +160,10 @@
 							}
 							?>
 					</tbody>
-					</table>
-					<br><br>
-					<p class="lead">คำขออนุมัติสลับกะ</p>
-					<table class="table table-striped table-bordered">
+				</table> <!-- Table 2 -->
+					<br><br><br>
+					<p class="lead">คำขออนุมัติสลับกะ</p> <!-- Table 3 -->
+					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
 						<tr align="center">
 							<th scope="col">#</th>
@@ -215,16 +216,65 @@
 							}
 							?>
 					</tbody>
-					</table>
+				</table> <!-- Table 3 -->
+					<br><br><br>
+					<p class="lead">คำขออนุมัติยก OT</p> <!-- Table 4 -->
+					<table class="table table-striped table-hover table-bordered">
+					<thead class="thead-dark js-thead">
+						<tr align="center">
+							<th scope="col">#</th>
+							<th scope="col">ID</th>
+							<th scope="col">ชื่อพนักงาน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">ประเภทคำขอ</th>
+							<th scope="col"></th>
+							<th scope="col">ID</th>
+							<th scope="col">ผู้ปฏิบัติงานแทน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">สถานะ</th>
+							<th scope="col">พิจารณา</th>
+						</tr>
+					</thead>
+					<tbody>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
 
+							//เลือกแสดงผลจาก status Pending
+							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_labelmain='ยก OT' ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry);
+
+							$i = 1; // รันเลขหน้าตาราง
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
+							echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td><img src=\"../images/swap2.png\"></td>";
+							echo "<td>".$row["c_code_visit"]."</td>";
+							echo "<td>".$row["c_name_visit"]."</td>";
+							echo "<td>".$row["c_date_visit"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept4.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "</tr>";
+							$i++;
+							}
+							?>
+					</tbody>
+				</table> <!-- Table 4 -->
 
 
 					</div>
 				</div>
 			  <div class="tab-pane fade" id="menu2">
-					<div class="container-fluid" style="padding-top:20px">
+					<div class="container-fluid" style="padding-top:20px; padding-bottom:100px">
 								<input type="text" class="form-control" id="js-search" placeholder="ค้นหา....">
-								<table class="table table-striped table-bordered js-table" id="myTable">
+								<table class="table table-striped table-hover table-bordered js-table" id="myTable">
 								<thead class="thead-dark js-thead">
 									<tr align="center">
 										<th scope="col">#</th>
@@ -280,15 +330,8 @@
 			  </div>
 			</div>
 	</div>
-<div class="credit" style="padding-top:150px">
-<hr>
-<center>
-			<small class="text-muted">© 2020-2021 Management by Mawmasing. | <a href="changelog.html" target="_blank"><font color="#444">Changelog</font></a>
-			<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
-</center>
-</div>
-<br>
+		<div><iframe src="../credit.html" width="100%" frameBorder="0"></iframe></div>
+		<br>
 
 	<script src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/search.js"></script>

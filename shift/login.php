@@ -4,19 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>WORK SCHEDULE WEB APPLICATION</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 	<div align="center" style="padding-top:100px; padding-bottom:150px">
 	 <div class="card shadow-lg bg-white rounded" style="width:600px;">
 	      <article class="card-body">
-	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE Beta v0.9.0 <br><a href="changelog.html" target="_blank">ดู Changelog</a></h4>
+	          <h4 class="card-title text-primary text-center mb-4 mt-1">NOC JI-NET WORK SCHEDULE Beta v0.10.0 <br><a href="changelog.html" target="_blank">ดู Changelog</a></h4>
 	          <hr>
 	          <!--<p class="text-primary small">V0.1.1 <a href="changelog.md" target="_blank">Changelog</a></p>-->
 	          <div class="alert alert-warning">
 	              <h4 class="alert-heading">!! ประกาศ !!</h4>
-	                <p class="mb-0">รบกวนเข้าไปลองระบบแลก ลา สลับกะให้ด้วยครับ <br>หากเจอจุดที่ระบบทำงานผิดพลาดบอกด้วยนะครับ <br>(user = รหัสพนง / pass = 1234)</p>
+	                <p class="mb-0">สามารถเข้าทดสอบใช้งานได้แล้วโดยใช้ user = รหัสพนง / pass = 1234<br>Login แล้วเข้าไปเปลี่ยนรหัสผ่านกันเองนะครับ<br></p>
 	          </div>
 	          <form method="POST" action="login.php">
 							<?php echo display_error(); ?>
@@ -32,7 +32,7 @@
 	          </div> <!-- form-group// -->
 	          <div class="form-group">
 	          <button type="submit" class="btn btn-success" name="login_btn">Login</button>
-	          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#repass">Reset</button>
+	          <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#repass">Reset</button> -->
 	          </div> <!-- form-group// -->
 	          </form>
 	      </article>
@@ -59,14 +59,7 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="credit">
-	<hr>
-	<center>
-				<small class="text-muted">© 2020-2021 Management by Mawmasing. | <a href="changelog.html" target="_blank"><font color="#444">Changelog</font></a>
-				<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
-	</center>
-	</div>
+	<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 	<br>
 	<script src="js/jquery.js"></script>
 	<script src="js/popper.min.js"></script>

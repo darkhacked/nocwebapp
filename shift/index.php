@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>WORK SCHEDULE WEB APPLICATION</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<script type="text/javascript" src="js/draw_table.js"></script>
@@ -20,7 +20,7 @@
 <body>
 	<!-- Start NAV BAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">LOGO</a>
+  <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -41,7 +41,7 @@
           <?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Change Password</a>
+          <a class="dropdown-item" href="changepass.php">Change Password</a>
         </div>
       </li>
 			<a class="nav-link" href="index.php?logout='1'">Logout</a>
@@ -52,7 +52,7 @@
 		<div class="container-fluid mt-3">
 				  <h3>DASHBOARD</h3>
 				  <p class="lead">สถานะคำขออนุมัติของท่าน</p>
-					<table class="table table-striped table-bordered">
+					<table class="table table-striped table-hover table-bordered">
 				  <thead class="thead-dark js-thead">
 						<tr align="center">
 							<th scope="col">#</th>
@@ -113,10 +113,10 @@
 				</table>
 			</div>
 
-			<div class="container-fluid" style="padding-top:100px">
+			<div class="container-fluid" style="padding-top:100px; padding-bottom:100px">
 						<p class="lead">คำขออนุมัติที่ผ่านการพิจารณาแล้ว</p>
 						<input type="text" class="form-control" id="js-search" placeholder="ค้นหา....">
-						<table class="table table-striped table-bordered js-table" id="myTable">
+						<table class="table table-striped table-hover table-bordered js-table" id="myTable">
 						<thead class="thead-dark js-thead">
 							<tr align="center">
 								<th scope="col">#</th>
@@ -170,16 +170,8 @@
 						</tbody>
 					</table>
 				</div>
-
-<div class="credit" style="padding-top:150px">
-	<hr>
-    <center>
-          <small class="text-muted">© 2020-2021 Management by Mawmasing. | <a href="changelog.html" target="_blank"><font color="#444">Changelog</font></a>
-					<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
-    </center>
-	</div>
-<br>
+				<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
+				<br>
 	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/search.js"></script>
 	<script src="js/popper.min.js"></script>

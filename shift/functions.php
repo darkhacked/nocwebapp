@@ -19,11 +19,15 @@
 		login();
 	}
 
+	if (isset($_POST['changepass_btn'])) {
+		changepass();
+	}
+
 
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['user']);
-		header("location: ../login.php");
+		header("location: login.php");
 	}
 
 	// REGISTER USER
@@ -173,6 +177,52 @@
 		}
 	}
 
+	function changepass() {
+		global $db, $errors;
+
+		$user =  e($_POST['username']);
+		$oldpass  =  e($_POST['oldpass']);
+		$newpass  =  e($_POST['newpass']);
+		$confirmnewpass  =  e($_POST['confirmnewpass']);
+		$passmd5 = md5($oldpass);
+
+		$qryoldpass = "SELECT password FROM users WHERE username = '$user'";
+		$qry = mysqli_query($db, $qryoldpass);
+		while ($qrypass = mysqli_fetch_array($qry)) {
+			$oldpass2 = $qrypass["password"];
+		}
+
+
+		if (empty($oldpass)) {
+			array_push($errors, "โปรดระบุรหัสผ่านเดิม");
+		}
+		if ($passmd5 != $oldpass2) {
+			array_push($errors, "รหัสผ่านเดิมไม่ถูกต้อง");
+		}
+		if (empty($newpass)) {
+			array_push($errors, "โปรดระบุรหัสผ่านที่ต้องการใหม่");
+		}
+		if (empty($confirmnewpass)) {
+			array_push($errors, "โปรดยืนยันรหัสผ่านใหม่");
+		}
+		if ($newpass != $confirmnewpass) {
+			array_push($errors, "รหัสยืนยันไม่ตรงกับรหัสใหม่");
+		}
+
+		if (count($errors) == 0) {
+			$password = md5($newpass);
+
+			if (isset($_POST['newpass'])) {
+				$query = "UPDATE users SET password='$password' WHERE username='$user'";
+				mysqli_query($db, $query);
+
+				array_push($errors, "รหัสผ่านถูกเปลี่ยนแล้วเรียบร้อย");
+
+				session_destroy();
+			}
+
+	}
+}
 
 	// escape string
 	function e($val) {

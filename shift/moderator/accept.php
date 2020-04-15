@@ -16,11 +16,12 @@ while ($qryname = mysqli_fetch_array($qry)) {
   $dateVisit = $qryname["c_date_visit"];
   $seatVisit = $qryname["c_seat_visit"];
 
+  $color = "#00ff00";
 
-  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type) VALUES ('$codeVisit', '$dateHost', 'O$seatHost')";
+  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status) VALUES ('$codeVisit', '$dateHost', '$seatHost', '$color')";
   mysqli_query($db, $updatewdayVisit);
 
-  $updatewdayHost = "UPDATE work SET w_type = '$seatVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+  $updatewdayHost = "DELETE FROM work WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
   mysqli_query($db, $updatewdayHost);
 
   $updateSwap = "UPDATE swap SET c_status ='Approve', c_badge='success' WHERE c_id='$c_id' ";

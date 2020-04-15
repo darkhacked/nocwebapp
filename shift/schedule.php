@@ -10,12 +10,12 @@
 <html>
 <link href="css/bootstrap.css" rel="stylesheet">
 <head>
-	<title>table</title>
+	<title>WORK SCHEDULE WEB APPLICATION</title>
 </head>
 <body>
 	<!-- Start NAV BAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#">อิอิ</a>
+	<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -36,7 +36,7 @@
 					<?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
 				</a>
 				<div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Change Password</a>
+					<a class="dropdown-item" href="changepass.php">Change Password</a>
 				</div>
 			</li>
 			<a class="nav-link" href="index.php?logout='1'">Logout</a>
@@ -102,14 +102,13 @@
 	<div class="row">
 		<!-- menu swap -->
 		<div class="col-3">
-			<center><h2>ระบบ แลก/ลา/สลับกะ</h2></center>
 			<div class="accordion" id="menuall"> <!-- menu accordion -->
 				 <div class="card border-primary"> <!-- menu 1 -->
 				 <div class="card-header border-primary" id="headingOne">
 				 <h2 class="mb-0">
 					 <center>
 						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu1" aria-expanded="true" aria-controls="menu1">
-							ลาปกติ (เต็มวัน)
+							<h5>ขออนุมัติลาปกติ (เต็มวัน)</h5>
 						</button>
 				 </center>
 				 </h2>
@@ -180,33 +179,33 @@
 							 <div class="col-md-4">
 							 <select name="month_host" class="custom-select custom-select-sm">
 								 <option selected>เดือน</option>
-								 <option value="01-">มกราคม</option>
-								 <option value="02-">กุมพาพันธ์</option>
-								 <option value="03-">มีนาคม</option>
-								 <option value="04-">เมษายน</option>
-								 <option value="05-">พฤษภาคม</option>
-								 <option value="06-">มิถุนายน</option>
-								 <option value="07-">กรกฎาคม</option>
-								 <option value="08-">สิงหาคม</option>
-								 <option value="09-">กันยายน</option>
-								 <option value="10-">ตุลาคม</option>
-								 <option value="11-">พฤศจิกายน</option>
-								 <option value="12-">ธันวาคม</option>
+								 <option value="01">มกราคม</option>
+								 <option value="02">กุมพาพันธ์</option>
+								 <option value="03">มีนาคม</option>
+								 <option value="04">เมษายน</option>
+								 <option value="05">พฤษภาคม</option>
+								 <option value="06">มิถุนายน</option>
+								 <option value="07">กรกฎาคม</option>
+								 <option value="08">สิงหาคม</option>
+								 <option value="09">กันยายน</option>
+								 <option value="10">ตุลาคม</option>
+								 <option value="11">พฤศจิกายน</option>
+								 <option value="12">ธันวาคม</option>
 							 </select>
 							 </div>
 							 <div class="col-md-3">
 							 <select name="year_host" class="custom-select custom-select-sm">
 								 <option selected>ปี</option>
-								 <option value="2020-">2020</option>
+								 <option value="2020">2020</option>
 							 </select>
 							 </div>
 						 </div>
 						 <hr>
-							 (หากลาแบบไม่มีคนแทนข้ามไปเลยครับ)
+						 	เลือกพนักงานแทน (หากไม่มีคนแทนข้ามไปเลยครับ)
 							<div>
 								<div class="form-row">
 								<select name="c_code_visit" class="custom-select custom-select-sm">
-									 <option value="-">เลือกผู้ปฏิบัติงานแทน</option>
+									 <option value="-">-</option>
 									 <?php
 									 $SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
 									 $qry = mysqli_query($db, $SQL);
@@ -219,7 +218,7 @@
 									 ?>
 									 </select>
 									 </div>
-								</div><br>
+								</div><br><br>
 								 <center><button type="submit" class="btn btn-primary" name="swapmenu1">SEND</button></center>
 						 </div>
 			 </form>
@@ -233,7 +232,7 @@
 				 <h2 class="mb-0">
 					 <center>
 							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu2" aria-expanded="false" aria-controls="menu2">
-								ลาระบุช่วงเวลา
+								<h5>ขออนุมัติลาระบุช่วงเวลา</h5>
 							</button>
 					 </center>
 				 </h2>
@@ -248,15 +247,15 @@
 							<input type="hidden" name="c_labelmain" value="ลาระบุช่วงเวลา">
 							เลือกประเภทการลา
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio5" value="ลาป่วย" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio5" value="ลาป่วย(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio5">ลาป่วย</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio6" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio6" value="ลาพักผ่อน(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio6">ลาพักผ่อน</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio7" value="ลากิจ(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio7">ลากิจ</label>
 							</div><hr>
 							ระบุวันลา
@@ -300,24 +299,24 @@
 							<div class="col-md-4">
 							<select name="month_host" class="custom-select custom-select-sm">
 								<option selected>เดือน</option>
-								<option value="01-">มกราคม</option>
-								<option value="02-">กุมพาพันธ์</option>
-								<option value="03-">มีนาคม</option>
-								<option value="04-">เมษายน</option>
-								<option value="05-">พฤษภาคม</option>
-								<option value="06-">มิถุนายน</option>
-								<option value="07-">กรกฎาคม</option>
-								<option value="08-">สิงหาคม</option>
-								<option value="09-">กันยายน</option>
-								<option value="10-">ตุลาคม</option>
-								<option value="11-">พฤศจิกายน</option>
-								<option value="12-">ธันวาคม</option>
+								<option value="01">มกราคม</option>
+								<option value="02">กุมพาพันธ์</option>
+								<option value="03">มีนาคม</option>
+								<option value="04">เมษายน</option>
+								<option value="05">พฤษภาคม</option>
+								<option value="06">มิถุนายน</option>
+								<option value="07">กรกฎาคม</option>
+								<option value="08">สิงหาคม</option>
+								<option value="09">กันยายน</option>
+								<option value="10">ตุลาคม</option>
+								<option value="11">พฤศจิกายน</option>
+								<option value="12">ธันวาคม</option>
 							</select>
 							</div>
 							<div class="col-md-3">
 							<select name="year_host" class="custom-select custom-select-sm">
 								<option selected>ปี</option>
-								<option value="2020-">2020</option>
+								<option value="2020">2020</option>
 							</select>
 							</div>
 						</div><hr>
@@ -429,7 +428,7 @@
 										<option value="23:30">23:30</option>
 									</select>
 								</div>
-						</div><br>
+						</div><br><br>
 						<center><button type="submit" class="btn btn-primary" name="swapmenu2">SEND</button></center>
 								<!--<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submenu2">SEND</button></center>-->
 						</div>
@@ -444,7 +443,7 @@
 				 <h2 class="mb-0">
 					 <center>
 						 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu3" aria-expanded="false" aria-controls="menu3">
-							 ขออนุมัติสลับกะ (กะเดียวกัน)
+							 <h5>ขออนุมัติสลับกะ (กะเดียวกัน)</h5>
 						 </button>
 					 </center>
 				 </h2>
@@ -538,7 +537,7 @@
 									 ?>
 									 </select>
 									 </div>
-								 </div><br>
+								 </div><br><br>
 									<center><button class="btn btn-primary" type="submit" name="swapmenu3">SEND</button></center>
 							</div>
 				</form>
@@ -552,7 +551,7 @@
 				 <h2 class="mb-0">
 					 <center>
 						 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#menu4" aria-expanded="false" aria-controls="menu4">
-							 ขออนุมัติสลับกะ (ระหว่างกะ)
+							 <h5>ขออนุมัติสลับกะ (ระหว่างกะ)</h5>
 						 </button>
 					 </center>
 				 </h2>
@@ -645,7 +644,7 @@
 									 ?>
 									 </select>
 									 </div>
-								 </div>
+								 </div><br>
 								 ระบุวันที่ต้องการสลับกะ
 							 <div class="form-row">
 								 <div class="col-md-3">
@@ -707,34 +706,176 @@
 								 <option value="2020">2020</option>
 							 </select>
 							 </div>
-						 </div><br>
+						 </div><br><br>
 									<center><button class="btn btn-primary" type="submit" name="swapmenu4">SEND</button></center>
 							</div>
 				</form>
 				 </div>
 				 </div>
+			 </div> <!-- End menu 4-->
+				 <div class="card border-primary"> <!-- menu 5 -->
+				 <div class="card-header border-primary" id="headingFive">
+				 <h2 class="mb-0">
+				 	<center>
+				 	 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu5" aria-expanded="true" aria-controls="menu5">
+				 		 <h5>ขออนุมัติยก OT</h5>
+				 	 </button>
+				 </center>
+				 </h2>
 				 </div>
+				 <div id="menu5" class="collapse" aria-labelledby="headingFive" data-parent="#menuall">
+				 <div class="card-body">
+				 	<form method="post" action="shift_functions.php">
+				 		<div class="form-group">
+				 				<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
+				 				<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
+				 				<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+				 				<input type="hidden" name="c_labelmain" value="ยก OT">
+								<input type="hidden" name="c_label" value="-">
+				 			ระบุวัน
+				 			<div class="form-row">
+				 				<div class="col-md-3">
+				 				<select name="day_host" class="custom-select custom-select-sm">
+				 					<option selected>วัน</option>
+				 					<option value="01">1</option>
+				 					<option value="02">2</option>
+				 					<option value="03">3</option>
+				 					<option value="04">4</option>
+				 					<option value="05">5</option>
+				 					<option value="06">6</option>
+				 					<option value="07">7</option>
+				 					<option value="08">8</option>
+				 					<option value="09">9</option>
+				 					<option value="10">10</option>
+				 					<option value="11">11</option>
+				 					<option value="12">12</option>
+				 					<option value="13">13</option>
+				 					<option value="14">14</option>
+				 					<option value="15">15</option>
+				 					<option value="16">16</option>
+				 					<option value="17">17</option>
+				 					<option value="18">18</option>
+				 					<option value="19">19</option>
+				 					<option value="20">20</option>
+				 					<option value="21">21</option>
+				 					<option value="22">22</option>
+				 					<option value="23">23</option>
+				 					<option value="24">24</option>
+				 					<option value="25">25</option>
+				 					<option value="26">26</option>
+				 					<option value="27">27</option>
+				 					<option value="28">28</option>
+				 					<option value="29">29</option>
+				 					<option value="30">30</option>
+				 					<option value="31">31</option>
+				 				</select>
+				 				</div>
+				 			<div class="col-md-4">
+				 			<select name="month_host" class="custom-select custom-select-sm">
+				 				<option selected>เดือน</option>
+				 				<option value="01">มกราคม</option>
+				 				<option value="02">กุมพาพันธ์</option>
+				 				<option value="03">มีนาคม</option>
+				 				<option value="04">เมษายน</option>
+				 				<option value="05">พฤษภาคม</option>
+				 				<option value="06">มิถุนายน</option>
+				 				<option value="07">กรกฎาคม</option>
+				 				<option value="08">สิงหาคม</option>
+				 				<option value="09">กันยายน</option>
+				 				<option value="10">ตุลาคม</option>
+				 				<option value="11">พฤศจิกายน</option>
+				 				<option value="12">ธันวาคม</option>
+				 			</select>
+				 			</div>
+				 			<div class="col-md-3">
+				 			<select name="year_host" class="custom-select custom-select-sm">
+				 				<option selected>ปี</option>
+				 				<option value="2020">2020</option>
+				 			</select>
+				 			</div>
+				 		</div>
+				 		<hr>
+				 			เลือกพนักงานปฏิบัติงานแทน
+				 		 <div>
+				 			 <div class="form-row">
+				 			 <select name="c_code_visit" class="custom-select custom-select-sm">
+				 					<?php
+				 					$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
+				 					$qry = mysqli_query($db, $SQL);
+				 					while ($listEmp = mysqli_fetch_array($qry)) {
+				 					?>
+				 					<option value="<?php echo $listEmp["username"]; ?>">
+				 						<?php echo $listEmp["username"]." - ".$listEmp["user_name"]." (".$listEmp["shift"].")"; ?></option>
+				 					<?php
+				 					}
+				 					?>
+				 					</select>
+				 					</div>
+				 			 </div><br><br>
+				 				<center><button type="submit" class="btn btn-primary" name="swapmenu5">SEND</button></center>
+				 		</div>
+				 </form>
+				 </div>
+				 </div>
+			 </div>  <!-- End menu 5-->
+
 			 </div> <!-- End menu accordion swap-->
 			 <br>
 			 <div class="alert alert-dismissible alert-info">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>ความหมายอักษรย่อของ Seat</strong><br>
-					<small>* หลัง Seat คือมีการยื่นแลก/ลาไปแล้วอยู่ระหว่างพิจารณา</small><br>
-					<small>x หน้า Seat = ลาไม่มีคนแทน</small><br>
-					<small>ช่องว่างสีขาว = มีการแลกหรือลาวันทำงานออกไปแล้ว</small><br>
-					<small>D = กะ Day (D1 , D2)</small><br>
-					<small>N = กะ Night</small><br>
-					<small>A1 = Assist 1</small><br>
-					<small>A2 = Assist 2</small><br>
-					<small>OD = OT แทนอัตราสรรหากะ Day</small><br>
-					<small>OD1 = OT แทนอัตราสรรหากะ Day ดู Mon D1</small><br>
-					<small>ON = OT แทนอัตราสรรหากะ Night</small><br>
-					<small>G = เรียนงาน</small><br>
+					<h5>Status color</h5>
+					<table>
+				  <tr>
+				    <td style="background-color:#00ffff" width="20px"></td>
+						<td>Seat A1 / A2</td>
+				  </tr>
+				  <tr>
+						<td style="background-color:#80d2ff"></td>
+						<td>Seat D1</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#fff"></td>
+						<td>Seat D2</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ffcccc"></td>
+						<td>Seat N</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#b7dee8"></td>
+						<td>Seat GH</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff96ff"></td>
+						<td>OD / ON จัดสรร</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ffff00"></td>
+						<td>คำขออยู่ระหว่างพิจารณา</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#00ff00"></td>
+						<td>คำขออนุมัติแล้ว / OT ที่ได้จากการแลกหรือลา</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff7b00"></td>
+						<td>ลาไม่มีคนแทน</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff0000"></td>
+						<td>ขาดงาน</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#d3d3d3"></td>
+						<td>วันหยุด</td>
+				  </tr>
+				</table>
+				<br>
+					<small>ช่องว่าง = มีการแลกหรือลาวันทำงานออกไปแล้ว</small><br>
 				</div>  <!-- End menu swap-->
 		</div> <!-- end menu swap -->
 
 		<div class="col-9"><!-- Shift table -->
-			<center><h2>Schedule <?php echo $month; ?> / <?php echo $year; ?></h2></center>
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
@@ -754,61 +895,25 @@
 			}
 
 
-			// แสดงผล array
-			/*echo "<pre>";
-			print_r($allEmpDataA);
-			echo "</pre>";*/
-
 			//เรียกข้อมูลของเดือนที่เลือก
 			$allReportData = array();
-			//$tablecl = "";
 			$SQL = "SELECT w_code, DAY(`w_date`) AS w_day, w_type FROM `work`
 			WHERE `w_date` LIKE '$year-$month%'	GROUP by w_code,DAY(`w_date`)";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
 			while($row = mysqli_fetch_assoc($qry)){
 				$allReportData[$row['w_code']][$row['w_day']] = $row['w_type'];
 
-		 	// ทำที่บ้านเบ้น
-			//$cif = $row['w_type'];
-
-			// if($cif==''){ $tablecl=""; }
-			//	elseif($cif=='D'){ $tablecl = "#FF0000";}
-			//	elseif ($cif=='N') { $tablecl = "#FFFF00";}
-			//	elseif ($cif=='D2') { $tablecl = "#00FF00";}
-			//	elseif ($cif=='A1') { $tablecl = "#00FFFF";}
-			//	elseif ($cif=='A2') { $tablecl = "#CCFF00";}
-			//	elseif ($cif=='OD') { $tablecl = "#FFCC00";}
-			//	elseif ($cif=='G') { $tablecl = "#FFFFCC";}
-			//	elseif ($cif=='GH') { $tablecl = "#CCFFCC";}
-				//echo $tablecl;
-			//echo $cif;
 			}
 
-			/*if($cif==''){ $tablecl=""; }
-			elseif($cif=='D'){ $tablecl = "#FF0000";}
-			elseif ($cif=='N') { $tablecl = "#FFFF00";}
-			elseif ($cif=='D2') { $tablecl = "#00FF00";}
-			elseif ($cif=='A1') { $tablecl = "#00FFFF";}
-			elseif ($cif=='A2') { $tablecl = "#CCFF00";}
-			elseif ($cif=='OD') { $tablecl = "#FFCC00";}
-			elseif ($cif=='G') { $tablecl = "#FFFFCC";}
-			elseif ($cif=='GH') { $tablecl = "#CCFFCC";}*/
+			//event สี
+			$allColor = array();
+			$SQL = "SELECT w_code, DAY(`w_date`) AS w_day, w_status FROM `work`
+			WHERE `w_date` LIKE '$year-$month%'	GROUP by w_code,DAY(`w_date`)";
+			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
+			while($row = mysqli_fetch_assoc($qry)){
+				$allColor[$row['w_code']][$row['w_day']] = $row['w_status'];
 
-			//echo ค่าสี่เฉยๆ
-			/*$cusColor = "SELECT w_type FROM `work`" or die("Error:" . mysqli_error());
-			$qry = mysqli_query($db, $cusColor);
-			while ($qry2 = mysqli_fetch_array($qry)) {
-				switch ($qry2["w_type"]) {
-					case 'N':$ccolor = "#FF0000";break;
-					case 'D':$ccolor = "#FFFFFF";break;
-
-					default:$ccolor ="#C0C0C0";
-						break;
-				}
-				//echo "<td>".$ccolor["w_type"]."</td> ";
-			}*/
-
-
+			}
 
 
 			//HTML TABLE HEAD SHIFT A
@@ -837,20 +942,13 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<td><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 					echo $workDay;
 				}
 		  }
 			echo '</tr>';//ปิดแถวตาราง HTML
-			//ไว้แสดงผล array
-	    /*echo "<pre>";
-			print_r($allEmpDataA);
-			echo "allreport data";
-			echo "<br>";
-	    print_r($allReportData);
-	    echo "</pre>";*/
 
 			//HTML TABLE HEAD SHIFT B
 			echo "<thead>";
@@ -878,8 +976,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<td><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';
-					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
+					$workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					echo $workDay;
 
 					}
@@ -891,15 +988,8 @@
 		</div><!-- End Shift table -->
 	 </div> <!-- end container -->
 		 <br>
-<div class="credit" >
-	<hr>
-    <center>
-          <small class="text-muted">© 2020-2021 Management by Mawmasing. | <a href="changelog.html" target="_blank"><font color="#444">Changelog</font></a>
-						<br>This Web application All rights reserved under <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank"><font color="#444">GNU GENERAL PUBLIC LICENSE V3</font></a>.<br></small>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/64px-GPLv3_Logo.svg.png"></a>
-    </center>
-	</div>
-<br>
+		<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
+		<br>
 </div>
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>
