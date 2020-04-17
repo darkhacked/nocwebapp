@@ -1,9 +1,12 @@
 <?php
-	include('functions.php');
+	include('Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: login.php');
+	}elseif (isSpector()) {
+		header('location: spector/index.php');
 	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -115,11 +118,12 @@
 				 </div>
 				 <div id="menu1" class="collapse" aria-labelledby="headingOne" data-parent="#menuall">
 				 <div class="card-body">
-					 <form method="post" action="shift_functions.php">
+					 <form method="post" action="Functions/shift_functions.php">
 						 <div class="form-group">
 								 <input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
 								 <input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
 								 <input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								 <input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								 <input type="hidden" name="c_labelmain" value="ลาปกติ (เต็มวัน)">
 							 เลือกประเภทการลา
 							 <div class="custom-control custom-radio">
@@ -239,23 +243,24 @@
 				 </div>
 				 <div id="menu2" class="collapse" aria-labelledby="headingTwo" data-parent="#menuall">
 				 <div class="card-body">
-					 <form method="post" action="shift_functions.php">
+					 <form method="post" action="Functions/shift_functions.php">
 						<div class="form-group">
 							<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
 							<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
 							<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+							<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 							<input type="hidden" name="c_labelmain" value="ลาระบุช่วงเวลา">
 							เลือกประเภทการลา
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio5" value="ลาป่วย(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio5" value="ลาป่วย" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio5">ลาป่วย</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio6" value="ลาพักผ่อน(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio6" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio6">ลาพักผ่อน</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio7" value="ลากิจ(ระบุช่วงเวลา)" name="c_label" class="custom-control-input">
+								<input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio7">ลากิจ</label>
 							</div><hr>
 							ระบุวันลา
@@ -450,11 +455,12 @@
 				 </div>
 				 <div id="menu3" class="collapse" aria-labelledby="headingThree" data-parent="#menuall">
 				 <div class="card-body">
-					 <form method="post" action="shift_functions.php">
+					 <form method="post" action="Functions/shift_functions.php">
 							<div class="form-group">
 								<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
 								<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
 								<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								<input type="hidden" name="c_labelmain" value="สลับกะ">
 								<input type="hidden" name="c_remark" value="กะเดียวกัน">
 								ระบุวันที่ต้องการสลับ
@@ -558,11 +564,12 @@
 				 </div>
 				 <div id="menu4" class="collapse" aria-labelledby="headingFour" data-parent="#menuall">
 				 <div class="card-body">
-					 <form method="post" action="shift_functions.php">
+					 <form method="post" action="Functions/shift_functions.php">
 							<div class="form-group">
 								<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
 								<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
 								<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
+								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								<input type="hidden" name="c_labelmain" value="สลับกะ">
 								<input type="hidden" name="c_remark" value="ระหว่างกะ">
 							 ระบุวันที่ต้องการสลับกะของท่าน
@@ -718,19 +725,20 @@
 				 <h2 class="mb-0">
 				 	<center>
 				 	 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu5" aria-expanded="true" aria-controls="menu5">
-				 		 <h5>ขออนุมัติยก OT</h5>
+				 		 <h5>ขออนุมัติสลับ OT</h5>
 				 	 </button>
 				 </center>
 				 </h2>
 				 </div>
 				 <div id="menu5" class="collapse" aria-labelledby="headingFive" data-parent="#menuall">
 				 <div class="card-body">
-				 	<form method="post" action="shift_functions.php">
+				 	<form method="post" action="Functions/shift_functions.php">
 				 		<div class="form-group">
 				 				<input type="hidden" name="c_code_host" value="<?php echo $_SESSION['user']['username']; ?>">
 				 				<input type="hidden" name="c_name_host" value="<?php echo $_SESSION['user']['user_name']; ?>">
 				 				<input type="hidden" name="c_shift_host" value="<?php echo $_SESSION['user']['shift']; ?>">
-				 				<input type="hidden" name="c_labelmain" value="ยก OT">
+								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
+				 				<input type="hidden" name="c_labelmain" value="สลับ OT">
 								<input type="hidden" name="c_label" value="-">
 				 			ระบุวัน
 				 			<div class="form-row">

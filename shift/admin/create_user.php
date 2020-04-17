@@ -1,5 +1,5 @@
 <?php
-	include('../functions.php');
+	include('../Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
@@ -42,16 +42,17 @@
 		<div class="input-group">
 			<label>User type</label>
 			<select name="user_type" id="user_type" >
+				<option value="spector">Spector</option>
 				<option value="user">User</option>
-			<!--	<option value="admin">Admin</option> -->
 			  <option value="mod">Moderator</option>
+				<!--	<option value="admin">Admin</option> -->
 			</select>
 		</div>
 		<div class="input-group">
 			<label>Shift</label>
 			<select name="shift" id="user_type">
+				<option value=""></option>
 				<option value="A">A</option>
-			<!--	<option value="admin">Admin</option> -->
 				<option value="B">B</option>
 			</select>
 		</div>

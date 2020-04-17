@@ -1,5 +1,5 @@
 <?php
-	include('functions.php');
+	include('Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: login.php');
@@ -7,6 +7,8 @@
 		header('location: moderator/home.php');
 	}elseif (isAdmin()) {
 		header('location: admin/home.php');
+	}elseif (isSpector()) {
+		header('location: spector/index.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -104,7 +106,7 @@
 				      echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
 							//echo "<td>".$row["c_status"]."</td>";
 							echo "<td><button type=\"button\" onclick=\"return confirm('คุณต้องการยกเลิกคำขออนุมัตินี้ทิ้งใช่หรือไม่ ?');\" class=\"btn btn-danger btn-sm\">
-<a href=\"deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
+<a href=\"Functions/deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
 							echo "</tr>";
 							$i++;
 							}

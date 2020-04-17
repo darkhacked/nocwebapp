@@ -1,5 +1,5 @@
 <?php
-	include('../functions.php');
+	include('../Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
@@ -41,7 +41,7 @@
           <?php echo $_SESSION['user']['user_name']; ?> <?php echo $_SESSION['user']['username']; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Change Password</a>
+          <a class="dropdown-item" href="../changepass.php">Change Password</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>

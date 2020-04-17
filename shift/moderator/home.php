@@ -1,12 +1,12 @@
 <?php
-	include('../functions.php');
+	include('../Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
 	}elseif (isUser()) {
 		header('location: ../index.php');
-	}elseif (isAdmin()) {
-		header('location: ../admin/home.php');
+	}elseif (isSpector()) {
+		header('location: ../spector/index.php');
 	}
 
 ?>
@@ -89,7 +89,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";
 							$qry = mysqli_query($db, $swapQry);
 
 							$i = 1; // รันเลขหน้าตาราง
@@ -108,7 +108,7 @@
 							echo "<td>".$row["c_name_visit"]."</td>";
 							echo "<td>".$row["c_date_visit"]."</td>";
 							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = '../Functions/accept.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '../Functions/cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
 							echo "</tr>";
 							$i++;
 							}
@@ -154,7 +154,7 @@
 							echo "<td>".$row["c_labelmain"]."</td>";
 							echo "<td>".$row["c_remark"]."</td>";
 							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept2.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = '../Functions/accept2.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '../Functions/cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
 							echo "</tr>";
 							$i++;
 							}
@@ -210,7 +210,7 @@
 							echo "<td>".$row["c_date_visit"]."</td>";
 							echo "<td>".$row["c_seat_visit"]."</td>";
 							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept3.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = '../Functions/accept3.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '../Functions/cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
 							echo "</tr>";
 							$i++;
 							}
@@ -243,7 +243,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_labelmain='ยก OT' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_labelmain='สลับ OT' ORDER BY c_id desc";
 							$qry = mysqli_query($db, $swapQry);
 
 							$i = 1; // รันเลขหน้าตาราง
@@ -260,7 +260,7 @@
 							echo "<td>".$row["c_name_visit"]."</td>";
 							echo "<td>".$row["c_date_visit"]."</td>";
 							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-							echo "<td><button type=\"button\" onclick=\"window.location.href = 'accept4.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = 'cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = '../Functions/accept4.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '../Functions/cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
 							echo "</tr>";
 							$i++;
 							}
