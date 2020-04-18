@@ -31,6 +31,9 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="schedule.php">ตารางงาน<span class="sr-only">(current)</span></a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="ot.php">เบิก OT</a>
+			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<?php  if (isset($_SESSION['user'])) ; ?>
