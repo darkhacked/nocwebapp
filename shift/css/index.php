@@ -1,5 +1,5 @@
 <?php
-	include('functions.php');
+	include('../Functions/functions.php');
 
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
