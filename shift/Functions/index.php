@@ -4,7 +4,7 @@
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
 	}elseif (isAdmin()) {
-		header('location: ../moderator/home.php');
+		header('location: ../admin/home.php');
 	}elseif (isMod()) {
 		header('location: ../moderator/home.php');
 	}elseif (isUser()) {

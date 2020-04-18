@@ -59,19 +59,14 @@
 
 		if ($codeVisit == "-") {
 
-			// Instantiation and passing `true` enables exceptions
 			$mail = new PHPMailer(true);
 
 			try {
-			    //Server settings
-			    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 			    $mail->CharSet = "utf-8";
 			    $mail->isSMTP();                                            // Send using SMTP
 			    $mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-			    //$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 			    $mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 			    $mail->Password   = 'darkhacked_123';                               // SMTP password
-			    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			    $mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 			    //Recipients
@@ -138,7 +133,6 @@
 			    </html>
 
 			    ';
-			    //$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 			    $mail->send();
 			    header('location: ../index.php');
@@ -149,19 +143,14 @@
 
 		}else {
 
-			// Instantiation and passing `true` enables exceptions
 			$mail = new PHPMailer(true);
 
 			try {
-					//Server settings
-					//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 					$mail->CharSet = "utf-8";
 					$mail->isSMTP();                                            // Send using SMTP
 					$mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-					//$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 					$mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 					$mail->Password   = 'darkhacked_123';                               // SMTP password
-					//$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 					$mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 					//Recipients
@@ -232,7 +221,6 @@
 					</html>
 
 					';
-					//$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 					$mail->send();
 					header('location: ../index.php');
@@ -282,19 +270,14 @@ if (isset($_POST['swapmenu2'])) {
 	mysqli_query($db, $updateStatus);
 
 
-	// Instantiation and passing `true` enables exceptions
 	$mail = new PHPMailer(true);
 
 	try {
-			//Server settings
-			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 			$mail->CharSet = "utf-8";
 			$mail->isSMTP();                                            // Send using SMTP
 			$mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-			//$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 			$mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 			$mail->Password   = 'darkhacked_123';                               // SMTP password
-			//$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 			//Recipients
@@ -365,7 +348,6 @@ if (isset($_POST['swapmenu2'])) {
 			</html>
 
 			';
-			//$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 			$mail->send();
 			header('location: ../index.php');
@@ -428,19 +410,14 @@ if (isset($_POST['swapmenu3'])){
 	mysqli_query($db, $updateStatus2);
 
 
-	// Instantiation and passing `true` enables exceptions
 	$mail = new PHPMailer(true);
 
 	try {
-			//Server settings
-			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 			$mail->CharSet = "utf-8";
 			$mail->isSMTP();                                            // Send using SMTP
 			$mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-			//$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 			$mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 			$mail->Password   = 'darkhacked_123';                               // SMTP password
-			//$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 			//Recipients
@@ -515,7 +492,6 @@ if (isset($_POST['swapmenu3'])){
 			</html>
 
 			';
-			//$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 			$mail->send();
 			header('location: ../index.php');
@@ -588,19 +564,14 @@ $updateStatus2 = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeVisit'
 mysqli_query($db, $updateStatus2);
 
 
-// Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
-		//Server settings
-		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 		$mail->CharSet = "utf-8";
 		$mail->isSMTP();                                            // Send using SMTP
 		$mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-		//$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 		$mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 		$mail->Password   = 'darkhacked_123';                               // SMTP password
-		//$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 		$mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 		//Recipients
@@ -675,7 +646,6 @@ try {
 		</html>
 
 		';
-		//$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 		$mail->send();
 		header('location: ../index.php');
@@ -730,19 +700,14 @@ if (isset($_POST['swapmenu5'])) {
 	mysqli_query($db, $updateStatus);
 
 
-	// Instantiation and passing `true` enables exceptions
 	$mail = new PHPMailer(true);
 
 	try {
-			//Server settings
-			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 			$mail->CharSet = "utf-8";
 			$mail->isSMTP();                                            // Send using SMTP
 			$mail->Host       = 'smtp.jasmine.com';                    // Set the SMTP server to send through
-			//$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 			$mail->Username   = 'anaphat.r@jasmine.com';                     // SMTP username
 			$mail->Password   = 'darkhacked_123';                               // SMTP password
-			//$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 			$mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 			//Recipients
@@ -813,7 +778,6 @@ if (isset($_POST['swapmenu5'])) {
 			</html>
 
 			';
-			//$mail->AltBody = 'ทดสอบการส่ง หัวข้อรอง This is the body in plain text for non-HTML mail clients';
 
 			$mail->send();
 			header('location: ../index.php');

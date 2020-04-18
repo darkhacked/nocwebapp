@@ -34,12 +34,13 @@
               </div>
             <div class="form-group">
             <button type="submit" class="btn btn-success" name="changepass_btn">SUBMIT</button>
-            <button class="btn btn-secondary"><a href="index.php" style="color:#FFFFFF; text-decoration:none;">BACK</a></button>
+            <button class="btn btn-secondary"><a href="Functions/index.php" style="color:#FFFFFF; text-decoration:none;">BACK</a></button>
             </div>
             </form>
         </article>
     </div>
   </div>
+	<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 
 <script src="js/jquery.js"></script>
 <script src="js/popper.min.js"></script>

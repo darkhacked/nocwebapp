@@ -169,6 +169,14 @@
 		}
 	}
 
+	function isAssist() {
+		if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'assist' ) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function isUser() {
 		if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'user' ) {
 			return true;
