@@ -854,7 +854,7 @@
 				  </tr>
 					<tr>
 						<td style="background-color:#b7dee8"></td>
-						<td>Seat GH</td>
+						<td>Seat G / GH</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ff96ff"></td>
