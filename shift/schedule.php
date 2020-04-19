@@ -966,7 +966,7 @@
 			echo '</tr>';//ปิดแถวตาราง HTML
 
 			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
 			echo '</tr>';
 
 			//HTML TABLE HEAD SHIFT B
@@ -1007,10 +1007,10 @@
 			echo '</tr>';//ปิดแถวตาราง HTML
 
 			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
 			echo '</tr>';
 			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
 			echo '</tr>';
 
 	    echo "</table>";
