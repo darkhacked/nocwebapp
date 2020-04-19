@@ -888,6 +888,9 @@
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
+			$ia = 1;
+			$ib = 1;
+
 			$allEmpDataA = array();
 			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift , remark";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
@@ -929,6 +932,7 @@
 			echo "<table class=\"table table-bordered table-hover\" align='center'>";
 			echo "<thead>";
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
+			echo "<th scope=\"col\">No.</th>";
 			echo "<th scope=\"col\">CODE</th>";
 			echo "<th scope=\"col\">MEMBER SHIFT A</th>";
 
@@ -946,6 +950,7 @@
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
 	    foreach($allEmpDataA as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			 echo '<td>'. $ia .'</td>';
 	     echo '<td class="text-nowrap">'. $empCode .'</td>';
 	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -954,14 +959,20 @@
 		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
-					echo $workDay;
+				echo $workDay;
 				}
+				$ia++;
 		  }
 			echo '</tr>';//ปิดแถวตาราง HTML
+
+			echo "<tr align='center'>";
+			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '</tr>';
 
 			//HTML TABLE HEAD SHIFT B
 			echo "<thead>";
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
+			echo "<th scope=\"col\">No.</th>";
 			echo "<th scope=\"col\">CODE</th>";
 			echo "<th scope=\"col\">MEMBER SHIFT B</th>";
 
@@ -978,8 +989,10 @@
 			echo "</thead>";
 			//END HTML TABLE HEAD
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
+
 	    foreach($allEmpDataB as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			 echo '<td>'. $ib .'</td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -989,8 +1002,17 @@
 					echo $workDay;
 
 					}
+					$ib++;
 		  }
 			echo '</tr>';//ปิดแถวตาราง HTML
+
+			echo "<tr align='center'>";
+			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '</tr>';
+			echo "<tr align='center'>";
+			echo '<td style="background-color:#ffff00" colspan="33" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '</tr>';
+
 	    echo "</table>";
 			//mysqli_close($db);//ปิดการเชื่อมต่อฐานข้อมูล
 			?>
