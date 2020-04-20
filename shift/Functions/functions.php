@@ -1,6 +1,22 @@
 <?php
 	session_start();
 
+	$sessionlifetime = 20; //กำหนดเป็นนาที
+
+	if(isset($_SESSION["timeLasetdActive"])){
+		$seclogin = (time()-$_SESSION["timeLasetdActive"])/60;
+		//หากไม่ได้ Active ในเวลาที่กำหนด
+		if($seclogin>$sessionlifetime){
+			session_destroy();
+			header("location:login.php");
+			exit;
+		}else{
+			$_SESSION["timeLasetdActive"] = time();
+		}
+	}else{
+		$_SESSION["timeLasetdActive"] = time();
+	}
+
 	// connect to database
 	$db = mysqli_connect('localhost', 'root', 'toor', 'shift');
 
