@@ -1,5 +1,5 @@
 <?php
-	include('../Functions/functions.php');
+	include('../Functions/functions_spector.php');
 
 	if (!isLoggedIn()) {
 		header('location: ../login.php');
@@ -155,7 +155,7 @@
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
 			$ia = 1;
 			$ib = 1;
-			
+
 			$allEmpDataA = array();
 			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift , remark";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
