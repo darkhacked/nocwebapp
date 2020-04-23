@@ -102,17 +102,10 @@
 					<h5>Status color</h5>
 					<table>
 				  <tr>
-				    <td style="background-color:#00ffff" width="20px"></td>
-						<td>Seat A1 / A2</td>
-				  </tr>
-				  <tr>
-						<td style="background-color:#80d2ff"></td>
-						<td>Seat D1</td>
-				  </tr>
 					<tr>
-						<td style="background-color:#fff"></td>
-						<td>Seat D2</td>
-				  </tr>
+						<td style="background-color:#fff" width="20px"></td>
+						<td>Seat A1 / A2 / D1 / D2</td>
+					</tr>
 					<tr>
 						<td style="background-color:#ffcccc"></td>
 						<td>Seat N</td>
@@ -124,6 +117,10 @@
 					<tr>
 						<td style="background-color:#ff96ff"></td>
 						<td>OD / ON จัดสรร</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff66cc"></td>
+						<td>OT Training</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ffff00"></td>
