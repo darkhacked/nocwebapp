@@ -495,9 +495,7 @@
 			echo "<tr align='center'>";
 			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
 			echo '</tr>';
-			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
-			echo '</tr>';
+
 
 	    echo "</table>";
 			//mysqli_close($db);//ปิดการเชื่อมต่อฐานข้อมูล
