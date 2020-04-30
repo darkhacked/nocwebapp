@@ -75,6 +75,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress($emailHost);     // TO host
+      $mail->addCC('spanyaphol@ji-net.com');
       $mail->addCC('nocchief@ji-net.com');
 
 			// Content
