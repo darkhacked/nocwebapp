@@ -73,6 +73,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			$mail->addAddress($emailHost);     // TO host
 			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 			$mail->addCC($emailVisit);						// CC Visit
+      $mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML

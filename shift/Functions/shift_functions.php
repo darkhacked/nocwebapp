@@ -74,7 +74,7 @@
 			    $mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
 			    $mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 			    $mail->addCC($emailHost);						// CC Host
-					//$mail->addCC($emailVisit);						// CC Visit
+					$mail->addCC('nocchief@ji-net.com');						// CC Visit
 
 			    // Content
 			    $mail->isHTML(true);                                  // Set email format to HTML
@@ -159,6 +159,7 @@
 					$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 					$mail->addCC($emailHost);						// CC Host
 					$mail->addCC($emailVisit);						// CC Visit
+					$mail->addCC('nocchief@ji-net.com');
 
 					// Content
 					$mail->isHTML(true);                                  // Set email format to HTML
@@ -285,6 +286,7 @@ if (isset($_POST['swapmenu2'])) {
 			$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
 			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
+			$mail->addCC('nocchief@ji-net.com');
 			//$mail->addCC($emailVisit);						// CC Visit
 
 			// Content
@@ -426,6 +428,7 @@ if (isset($_POST['swapmenu3'])){
 			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
+			$mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
@@ -580,6 +583,7 @@ try {
 		$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 		$mail->addCC($emailHost);						// CC Host
 		$mail->addCC($emailVisit);						// CC Visit
+		$mail->addCC('nocchief@ji-net.com');
 
 		// Content
 		$mail->isHTML(true);                                  // Set email format to HTML
@@ -716,6 +720,7 @@ if (isset($_POST['swapmenu5'])) {
 			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
+			$mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML

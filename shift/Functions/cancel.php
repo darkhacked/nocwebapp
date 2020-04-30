@@ -75,6 +75,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress($emailHost);     // TO host
+      $mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
@@ -162,6 +163,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress($emailHost);     // TO host
 			$mail->addCC($emailVisit);						// CC Visit
+      $mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
