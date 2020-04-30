@@ -52,7 +52,7 @@
             echo "<td>".$row["c_label"]."</td>";
             echo "<td>".$row["c_labelmain"]."</td>";
             echo "<td>".$row["c_remark"]."</td>";
-            echo "<td><img src=\"../images/swap2.png\"></td>";
+            echo "<td><img src=\"images/swap2.png\"></td>";
             echo "<td>".$row["c_code_visit"]."</td>";
             echo "<td>".$row["c_name_visit"]."</td>";
             echo "<td>".$row["c_date_visit"]."</td>";
@@ -68,9 +68,9 @@
 </div>
 <div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 
-<script src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/search.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
