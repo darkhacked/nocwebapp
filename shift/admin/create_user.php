@@ -39,7 +39,7 @@
 									<option value="spector">Spector</option>
 									<option value="user">User</option>
 									<option value="assist">Assist</option>
-									<option value="mod">Moderator</option>
+									<option value="moderator">Moderator</option>
 									<!--	<option value="admin">Admin</option> -->
 								</select>
 							</div>
