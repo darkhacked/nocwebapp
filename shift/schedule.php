@@ -834,6 +834,8 @@
 			 <br>
 			 <div class="alert alert-dismissible alert-info">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<center><h5>ลาป่วย/ลากิจ/ลาพักผ่อน</h5>
+					<h5>ต้องไปกรอกในระบบ JPM ด้วยนะครับ</h5></center><hr>
 					<h5>Status color</h5>
 					<table>
 				  <tr>
