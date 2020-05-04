@@ -137,7 +137,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   			</tr>
   		</table>
   		<br><br><br>
-  		<span>This is an automated email, please dont\'t reply.</span><br>
+  		<span>This is an automated email, please don\'t reply.</span><br>
   		<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
   		</body>
   		</html>

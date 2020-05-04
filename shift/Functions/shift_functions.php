@@ -127,7 +127,7 @@
 			      </tr>
 			    </table>
 			    <br><br><br>
-			    <span>This is an automated email, please dont\'t reply.</span><br>
+			    <span>This is an automated email, please don\'t reply.</span><br>
 			    <span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			    </body>
 			    </html>
@@ -216,7 +216,7 @@
 						</tr>
 					</table>
 					<br><br><br>
-					<span>This is an automated email, please dont\'t reply.</span><br>
+					<span>This is an automated email, please don\'t reply.</span><br>
 					<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 					</body>
 					</html>
@@ -344,7 +344,7 @@ if (isset($_POST['swapmenu2'])) {
 				</tr>
 			</table>
 			<br><br><br>
-			<span>This is an automated email, please dont\'t reply.</span><br>
+			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
 			</html>
@@ -489,7 +489,7 @@ if (isset($_POST['swapmenu3'])){
 				</tr>
 			</table>
 			<br><br><br>
-			<span>This is an automated email, please dont\'t reply.</span><br>
+			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
 			</html>
@@ -644,7 +644,7 @@ try {
 			</tr>
 		</table>
 		<br><br><br>
-		<span>This is an automated email, please dont\'t reply.</span><br>
+		<span>This is an automated email, please don\'t reply.</span><br>
 		<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 		</body>
 		</html>
@@ -777,7 +777,7 @@ if (isset($_POST['swapmenu5'])) {
 				</tr>
 			</table>
 			<br><br><br>
-			<span>This is an automated email, please dont\'t reply.</span><br>
+			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
 			</html>
