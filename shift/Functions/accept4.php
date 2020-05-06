@@ -23,11 +23,12 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   $codeHost = $qrydata["c_code_host"];
   $dateHost = $qrydata["c_date_host"];
   $seatHost = $qrydata["c_seat_host"];
-  $statusHost = $qrydata["c_seat_stahost"];
 
   $codeVisit = $qrydata["c_code_visit"];
   $dateVisit = $qrydata["c_date_visit"];
   $seatVisit = $qrydata["c_seat_visit"];
+
+  $color = "#ff96ff";
 
   $selectemailHost = "SELECT user_name, email FROM users WHERE username='$codeHost'";
   $qry = mysqli_query($db, $selectemailHost);
@@ -43,7 +44,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
     $emailVisit = $qrydata["email"];
   }
 
-  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status) VALUES ('$codeVisit', '$dateHost', '$seatHost', '$statusHost')";
+  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status) VALUES ('$codeVisit', '$dateHost', '$seatHost', '$color')";
   mysqli_query($db, $updatewdayVisit);
 
   $updatewdayHost = "DELETE FROM work WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
