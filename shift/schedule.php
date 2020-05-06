@@ -575,7 +575,7 @@
 								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								<input type="hidden" name="c_labelmain" value="สลับกะ">
 								<input type="hidden" name="c_remark" value="ระหว่างกะ">
-							 ระบุวันที่ต้องการสลับกะของท่าน
+							 ระบุวันทำงานของท่าน
 							 <div class="form-row">
 								 <div class="col-md-3">
 								 <select name="day_host" class="custom-select custom-select-sm">
@@ -655,7 +655,7 @@
 									 </select>
 									 </div>
 								 </div><br>
-								 ระบุวันที่ต้องการสลับกะ
+								 ระบุวันทำงานของพนักงานที่ต้องการสลับกะ
 							 <div class="form-row">
 								 <div class="col-md-3">
 								 <select name="day_visit" class="custom-select custom-select-sm">
