@@ -71,8 +71,8 @@
 
 			    //Recipients
 			    $mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-			    $mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-			    $mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+			    $mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+			    $mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 			    $mail->addCC($emailHost);						// CC Host
 					$mail->addCC('nocchief@ji-net.com');						// CC Visit
 
@@ -155,8 +155,8 @@
 
 					//Recipients
 					$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-					$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-					$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+					$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+					$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 					$mail->addCC($emailHost);						// CC Host
 					$mail->addCC($emailVisit);						// CC Visit
 					$mail->addCC('nocchief@ji-net.com');
@@ -283,8 +283,8 @@ if (isset($_POST['swapmenu2'])) {
 
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-			$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC('nocchief@ji-net.com');
 			//$mail->addCC($emailVisit);						// CC Visit
@@ -424,8 +424,8 @@ if (isset($_POST['swapmenu3'])){
 
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-			$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
 			$mail->addCC('nocchief@ji-net.com');
@@ -579,8 +579,8 @@ try {
 
 		//Recipients
 		$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-		$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-		$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+		$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+		$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 		$mail->addCC($emailHost);						// CC Host
 		$mail->addCC($emailVisit);						// CC Visit
 		$mail->addCC('nocchief@ji-net.com');
@@ -716,8 +716,8 @@ if (isset($_POST['swapmenu5'])) {
 
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
-			$mail->addAddress('spanyaphol@ji-net.com');     // TO พี่ดิท
-			$mail->addCC('wpacharaporn@ji-net.com');          // CC พี่เจน
+			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
+			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
 			$mail->addCC('nocchief@ji-net.com');
