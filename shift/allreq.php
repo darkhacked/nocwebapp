@@ -38,7 +38,7 @@
             $qry = mysqli_query($db, $swapQry); */
 
             //เลือกแสดงผลจาก status Pending
-            $swapQry = "SELECT * FROM swap WHERE c_status='Approve' ORDER BY c_id desc";
+            $swapQry = "SELECT * FROM swap ORDER BY c_id desc";
             $qry = mysqli_query($db, $swapQry);
 
             $i = 1; // รันเลขหน้าตาราง
