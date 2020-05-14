@@ -700,7 +700,7 @@ if (isset($_POST['swapmenu5'])) {
 			VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost') ";
 			mysqli_query($db, $insSQL);
 
-	$updateStatus = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+	$updateStatus = "UPDATE work SET w_status='$color', w_status_temp='$statusHost' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 	mysqli_query($db, $updateStatus);
 
 

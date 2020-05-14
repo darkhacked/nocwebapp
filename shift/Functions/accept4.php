@@ -28,7 +28,12 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   $dateVisit = $qrydata["c_date_visit"];
   $seatVisit = $qrydata["c_seat_visit"];
 
-  $color = "#ff96ff";
+
+  $selectStatus = "SELECT w_status_temp FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+  $qry = mysqli_query($db, $selectStatus);
+  while ($qrydata = mysqli_fetch_array($qry)) {
+    $color = $qrydata["w_status_temp"];
+  }
 
   $selectemailHost = "SELECT user_name, email FROM users WHERE username='$codeHost'";
   $qry = mysqli_query($db, $selectemailHost);
