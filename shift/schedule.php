@@ -9,6 +9,7 @@
 
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -103,6 +104,138 @@
 			?>
 </div>
 	<hr>
+
+	<div class="container" align="center">
+	<div class="alert alert-dismissible alert-warning">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <h4 class="alert-heading">ประกาศ!</h4>
+	  <p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> D0, D1, D2, B1, B5, B6, B7 และ TR</strong></p><p></p>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
+			เรื่องปรับตารางใหม่และการ Training
+		</button>
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal2">
+		หน้าที่ของแต่ละ Seat
+		</button>
+		<!-- Button trigger modal -->
+		</div>
+	</div>
+
+<!-- Modal1 -->
+<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel1">เรื่องปรับตารางใหม่และการ Training</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
+				<small>2.ปรับชาตรีเข้ากะ CD</small><br>
+				<small>3.AB รวมวริศ 13 คน CD รวมชาตรี 12 คน เพื่อ Balance Seat Day 10+Night 3 จัด OD กะ AB 1 Seat</small><br>
+				<small>4. ใส่ OG ให้คนสอนงาน Solution 3BB (มีสลับ OT นัตตี้กับโจ้ จาก Sheet เดิม)</small><br><br>
+				<small>Train งาน (เพื่อความต่อเนื่อง อบรมวันทำงาน จัด OT แทน)</small><br>
+				<small>5. อดิสัย ณรรฏร์ธนน ประกบ HQ Seat D1</small><br>
+				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat Shell, MK</small><br>
+				<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
+				<small>8. สกลชัย กิตติ train Hosting</small><br>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal2 -->
+<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">หน้าที่ของแต่ละ Seat</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<table class="table table-bordered" align='center'>
+  <thead>
+    <tr class="table-primary" align='center'>
+      <th scope="col">ตัวแปร</th>
+      <th scope="col"></th>
+      <th scope="col">หน้าที่</th>
+      <th scope="col">จำนวน Seat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr align='center'>
+      <td>B</td>
+      <td style="vertical-align : middle;text-align:center;" rowspan="9">Daytime</td>
+      <td>Assist</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B1</td>
+      <td>D1</td>
+      <td>2</td>
+    </tr>
+		<tr align='center'>
+      <td>B2</td>
+      <td>D2 Mon 2 (SSUP)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B3</td>
+      <td>D2 Mon 3 (SSUP KM_Interlap)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B4</td>
+      <td>D2 Mon 4 (Seed)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B5</td>
+      <td>D2 Mon 5 (Shell)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B6</td>
+      <td>D2 Mon 6 (Minor) + Hosting</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B7</td>
+      <td>D2 Mon 7 (Dunkin GFDD)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B8</td>
+      <td>D2 Mon 8 (MK)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N7</td>
+      <td style="vertical-align : middle;text-align:center;" rowspan="3">Nighttime</td>
+      <td>Assist+B1+B2</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N8</td>
+      <td>B3+B4+B5</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N9</td>
+      <td>B6+B7+B8</td>
+      <td>1</td>
+    </tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+
 <!-- start container -->
 <div class="container-fluid">
 	<div class="row">
@@ -887,8 +1020,12 @@
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
+			$in1 = 1;
+			$in2 = 1;
 			$ia = 1;
 			$ib = 1;
+			$ic = 1;
+			$id = 1;
 
 			$allEmpDataA = array();
 			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift , remark";
@@ -897,12 +1034,25 @@
 			 $allEmpDataA[$row['username']] = $row['user_name'];
 			}
 
-
 			$allEmpDataB = array();
 			$SQL = "SELECT * FROM users WHERE shift='B' ORDER BY shift , remark";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
 			while($row = mysqli_fetch_assoc($qry)){
 			 $allEmpDataB[$row['username']] = $row['user_name'];
+			}
+
+			$allEmpDataC = array();
+			$SQL = "SELECT * FROM users WHERE shift='C' ORDER BY shift , remark";
+			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
+			while($row = mysqli_fetch_assoc($qry)){
+			 $allEmpDataC[$row['username']] = $row['user_name'];
+			}
+
+			$allEmpDataD = array();
+			$SQL = "SELECT * FROM users WHERE shift='D' ORDER BY shift , remark";
+			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
+			while($row = mysqli_fetch_assoc($qry)){
+			 $allEmpDataD[$row['username']] = $row['user_name'];
 			}
 
 
@@ -927,11 +1077,12 @@
 			}
 
 
-			//HTML TABLE HEAD SHIFT A
+			//HTML TABLE HEAD SHIFT AB
 			echo "<table class=\"table table-bordered table-hover\" align='center'>";
 			echo "<thead>";
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
+			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">MEMBER SHIFT A</th>";
 
@@ -1061,7 +1212,8 @@
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
 	    foreach($allEmpDataA as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $ia .'</td>';
+			 echo '<td>'. $in1 .'</td>';
+			 echo '<td>A'. $ia .'</td>';
 	     echo '<td class="text-nowrap">'. $empCode .'</td>';
 	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -1072,20 +1224,41 @@
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 				echo $workDay;
 				}
+				$in1++;
 				$ia++;
+				echo '</tr>';//ปิดแถวตาราง HTML
 		  }
-			echo '</tr>';//ปิดแถวตาราง HTML
 
-			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
-			echo '</tr>';
+			foreach($allEmpDataB as $empCode=>$empName){
+	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			 echo '<td>'. $in1 .'</td>';
+			 echo '<td>B'. $ib .'</td>';
+	     echo '<td class="text-nowrap">'. $empCode .'</td>';
+	     echo '<td class="text-nowrap">'. $empName .'</td>';
+	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
+		     for($d=1;$d<=$lastDay;$d++){
+		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';
+					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
+					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
+				echo $workDay;
+				}
+				$in1++;
+				$ib++;
+				echo '</tr>';//ปิดแถวตาราง HTML
+		  }
+
+			/*echo "<tr align='center'>";
+			echo '<td style="background-color:#ffff00" colspan="35" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '</tr>';*/
 
 
 
-			//HTML TABLE HEAD SHIFT B
+			//HTML TABLE HEAD SHIFT CD
 			echo "<thead>";
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
+			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">MEMBER SHIFT B</th>";
 
@@ -1213,9 +1386,10 @@
 			//END HTML TABLE HEAD
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
 
-	    foreach($allEmpDataB as $empCode=>$empName){
+	    foreach($allEmpDataC as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $ib .'</td>';
+			 echo '<td>'. $in2 .'</td>';
+			 echo '<td>C'. $ic .'</td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -1225,12 +1399,31 @@
 					echo $workDay;
 
 					}
-					$ib++;
+					$in2++;
+					$ic++;
+				echo '</tr>';//ปิดแถวตาราง HTML
 		  }
-			echo '</tr>';//ปิดแถวตาราง HTML
+
+			foreach($allEmpDataD as $empCode=>$empName){
+	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			 echo '<td>'. $in2 .'</td>';
+			 echo '<td>D'. $id .'</td>';
+	     echo '<td>'. $empCode .'</td>';
+	     echo '<td>'. $empName .'</td>';
+	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
+		     for($d=1;$d<=$lastDay;$d++){
+		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
+					$workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b>'.$allReportData[$empCode][$d].'</b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
+					echo $workDay;
+
+					}
+					$in2++;
+					$id++;
+				echo '</tr>';//ปิดแถวตาราง HTML
+		  }
 
 			echo "<tr align='center'>";
-			echo '<td style="background-color:#ffff00" colspan="34" class="text-nowrap">รออัตราสรรหา</td>';
+			echo '<td style="background-color:#ffff00" colspan="35" class="text-nowrap">รออัตราสรรหา</td>';
 			echo '</tr>';
 
 
