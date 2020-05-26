@@ -347,7 +347,7 @@
 								<select name="c_code_visit" class="custom-select custom-select-sm">
 									 <option value="-">-</option>
 									 <?php
-									 $SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
+									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift IN ('A','B','C','D') ORDER BY shift , remark";
 									 $qry = mysqli_query($db, $SQL);
 									 while ($listEmp = mysqli_fetch_array($qry)) {
 									 ?>
@@ -667,8 +667,18 @@
 								 <div class="col">
 								 <select name="c_code_visit" class="custom-select custom-select-sm">
 									 <?php
-									 $sft = $_SESSION['user']['shift']; // กำหนดตัวแปร
-									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift='$sft' ORDER BY shift , remark";
+									 $selectsft = $_SESSION['user']['shift']; // กำหนดตัวแปร
+									 if ($selectsft == "A") {
+									 	$sft = "'A','B'";
+									}elseif ($selectsft == "B") {
+										$sft = "'A','B'";
+									}elseif ($selectsft == "C") {
+										$sft = "'C','D'";
+									}else {
+										$sft = "'C','D'";
+									}
+
+									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift IN ($sft) ORDER BY shift , remark";
 									 $qry = mysqli_query($db, $SQL);
 									 while ($listEmp = mysqli_fetch_array($qry)) {
 									 ?>
@@ -775,8 +785,18 @@
 								 <div class="col">
 								 <select name="c_code_visit" class="custom-select custom-select-sm">
 									 <?php
-									 $sft = $_SESSION['user']['shift'];
-									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift!='$sft' ORDER BY shift , remark";
+									 $selectsft = $_SESSION['user']['shift']; // กำหนดตัวแปร
+									 if ($selectsft == "A") {
+									  $sft = "'C','D'";
+									 }elseif ($selectsft == "B") {
+									  $sft = "'C','D'";
+									 }elseif ($selectsft == "C") {
+									  $sft = "'A','B'";
+									 }else {
+									  $sft = "'A','B'";
+									 }
+
+									 $SQL = "SELECT * FROM users WHERE user_type='user' AND shift IN ($sft) ORDER BY shift , remark";
 									 $qry = mysqli_query($db, $SQL);
 									 while ($listEmp = mysqli_fetch_array($qry)) {
 									 ?>
@@ -944,7 +964,7 @@
 				 			 <div class="form-row">
 				 			 <select name="c_code_visit" class="custom-select custom-select-sm">
 				 					<?php
-				 					$SQL = "SELECT * FROM users WHERE user_type='user' ORDER BY shift , remark";
+				 					$SQL = "SELECT * FROM users WHERE user_type='user' AND shift IN ('A','B','C','D') ORDER BY shift , remark";
 				 					$qry = mysqli_query($db, $SQL);
 				 					while ($listEmp = mysqli_fetch_array($qry)) {
 				 					?>
