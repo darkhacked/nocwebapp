@@ -109,7 +109,7 @@
 	<div class="alert alert-dismissible alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
-	  <p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> D0, D1, D2, B1, B5, B6, B7 และ TR</strong></p><p></p>
+	  <p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> D0, D1, D2, B1, B4, B6, B7 และ TR</strong></p><p></p>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
 			เรื่องปรับตารางใหม่และการ Training
