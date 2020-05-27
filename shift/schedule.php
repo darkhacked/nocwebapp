@@ -138,7 +138,7 @@
 				<small>4. ใส่ OG ให้คนสอนงาน Solution 3BB (มีสลับ OT นัตตี้กับโจ้ จาก Sheet เดิม)</small><br><br>
 				<small>Train งาน (เพื่อความต่อเนื่อง อบรมวันทำงาน จัด OT แทน)</small><br>
 				<small>5. อดิสัย ณรรฏร์ธนน ประกบ HQ Seat D1</small><br>
-				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat Shell, MK</small><br>
+				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat SE-ED, GFDD</small><br>
 				<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
 				<small>8. สกลชัย กิตติ train Hosting</small><br>
 
