@@ -72,7 +72,7 @@
 			    //Recipients
 			    $mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			    $mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-			    $mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+			    $mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 			    $mail->addCC($emailHost);						// CC Host
 					$mail->addCC('nocchief@ji-net.com');						// CC Visit
 
@@ -102,7 +102,7 @@
 			    </head>
 			    <body>
 			    <span>เรียน คุณปรัชญา สีทอง</span><br>
-			    <span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.'</span><br>
+			    <span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span><br>
 			    <br><br>
 			    <span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			    <table>
@@ -156,7 +156,7 @@
 					//Recipients
 					$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 					$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-					$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+					$mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 					$mail->addCC($emailHost);						// CC Host
 					$mail->addCC($emailVisit);						// CC Visit
 					$mail->addCC('nocchief@ji-net.com');
@@ -187,7 +187,7 @@
 					</head>
 					<body>
 					<span>เรียน คุณปรัชญา สีทอง</span><br>
-					<span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+					<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
 					<br><br>
 					<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 					<table>
@@ -284,7 +284,7 @@ if (isset($_POST['swapmenu2'])) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+			$mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC('nocchief@ji-net.com');
 			//$mail->addCC($emailVisit);						// CC Visit
@@ -315,7 +315,7 @@ if (isset($_POST['swapmenu2'])) {
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span><br>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -425,7 +425,7 @@ if (isset($_POST['swapmenu3'])){
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+			$mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
 			$mail->addCC('nocchief@ji-net.com');
@@ -456,7 +456,7 @@ if (isset($_POST['swapmenu3'])){
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -580,7 +580,7 @@ try {
 		//Recipients
 		$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 		$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-		$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+		$mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 		$mail->addCC($emailHost);						// CC Host
 		$mail->addCC($emailVisit);						// CC Visit
 		$mail->addCC('nocchief@ji-net.com');
@@ -611,7 +611,7 @@ try {
 		</head>
 		<body>
 		<span>เรียน คุณปรัชญา สีทอง</span><br>
-		<span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+		<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
 		<br><br>
 		<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 		<table>
@@ -717,7 +717,7 @@ if (isset($_POST['swapmenu5'])) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress('panyaphol.s@jasmine.com');     // TO พี่ดิท
-			$mail->addCC('pacharaporn.w@jasmine.com');          // CC พี่เจน
+			$mail->addCC('alongkorn.pu@jasmine.com');          // CC พี่เจน
 			$mail->addCC($emailHost);						// CC Host
 			$mail->addCC($emailVisit);						// CC Visit
 			$mail->addCC('nocchief@ji-net.com');
@@ -748,7 +748,7 @@ if (isset($_POST['swapmenu5'])) {
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณพัชราพร วัฒนสุวรรณโชติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
