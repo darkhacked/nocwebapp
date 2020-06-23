@@ -265,7 +265,7 @@
 				  </tr>
 					<tr>
 						<td style="background-color:#ff7b00"></td>
-						<td>ลาไม่มีคนแทน</td>
+						<td>ลาไม่มีคนแทน / ลาระบุช่วงเวลา</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ff0000"></td>
