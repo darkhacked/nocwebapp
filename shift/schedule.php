@@ -109,13 +109,17 @@
 	<div class="alert alert-dismissible alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
-	  <p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> D0, D1, D2, B1, B4, B6, B7 และ TR</strong></p><p></p>
+	  <p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B4, B6, B7 และ TR</strong></p>
+		<p class="mb-0">เดือนกรกฎาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B3, B4, B6, B7 และ TR (เริ่มวันที่ 6 กรกฎาคม 2563)</strong></p><p></p>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
-			เรื่องปรับตารางใหม่และการ Training
+			Log การปรับตารางและการ Training
 		</button>
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal2">
-		หน้าที่ของแต่ละ Seat
+		Monitor Seat มิถุนายน
+		</button>
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal3">
+		Monitor Seat กรกฏาคม
 		</button>
 		<!-- Button trigger modal -->
 		</div>
@@ -126,12 +130,24 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel1">เรื่องปรับตารางใหม่และการ Training</h5>
+				<h5 class="modal-title" id="exampleModalLabel1">LOG การปรับตารางและการ Training</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
+				<h5>เดือนกรกฎาคม</h5>
+				<small>1. ปรับ Seat Call Complaint เป็น Monitor ธกส. (D6) 1 อัตรา (เริ่มวันที่ 2 กรกฎาคม 2563)</small><br>
+				<small>2. ปรับ Project Minor + Wine (B6) สลับกับ SSUP KM Interlap (B3) (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br>
+				<small>3. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 3 อัตรา (เดิม 10 ใหม่ 13 คน) เพิ่ม Seat Minor, SCB (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br><br>
+				<small>อรรถสิทธิ์ ประกบ HQ (DS, D0-D2) 10/07/63 - 6/08/63</small><br>
+				<small>พัชร์ดนัย ประกบ HQ (DS, D0-D2) 6/07/63 - 2/08/63</small><br>
+				<small>ศุภาวุธ ประกบ SCB (D5) 10/07/63 - 6/08/63</small><br>
+				<small>วริศ ประกบ Hosting (B6) 10/07/63 - 6/08/63</small><br>
+				<small>สุมิตร ประกบ Hosting (B6) 6/07/63 - 2/08/63</small><br><br>
+				<small>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</small><br>
+				<hr>
+				<h5>เดือนมิถุนายน</h5>
 				<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
 				<small>2.ปรับชาตรีเข้ากะ CD</small><br>
 				<small>3.AB รวมวริศ 13 คน CD รวมชาตรี 12 คน เพื่อ Balance Seat Day 10+Night 3 จัด OD กะ AB 1 Seat</small><br>
@@ -140,7 +156,10 @@
 				<small>5. อดิสัย ณรรฏร์ธนน ประกบ HQ Seat D1</small><br>
 				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat SE-ED, GFDD</small><br>
 				<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
-				<small>8. สกลชัย กิตติ train Hosting</small><br>
+				<small>8. สกลชัย กิตติ train Hosting</small><br><br>
+				<small>Seat B1, B4, B6, B7 และ TR เข้าออฟฟิศ</small><br><br>
+				<small><b>Monior ของแต่ละ Seat</b></small><br>
+				<img src="images/monitor6-63.png">
 
 			</div>
 		</div>
@@ -152,7 +171,7 @@
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">หน้าที่ของแต่ละ Seat</h5>
+			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat มิถุนายน</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
@@ -235,7 +254,96 @@
 	</div>
 </div>
 </div>
-
+<!-- End Modal2 -->
+<!-- Modal3 -->
+<div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat กรกฏาคม เริ่มมีผลวันที่ 6</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<table class="table table-bordered" align='center'>
+  <thead>
+    <tr class="table-primary" align='center'>
+      <th scope="col">ตัวแปร</th>
+      <th scope="col"></th>
+      <th scope="col">หน้าที่</th>
+      <th scope="col">จำนวน Seat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr align='center'>
+      <td>B</td>
+      <td style="vertical-align : middle;text-align:center;" rowspan="9">Daytime</td>
+      <td>Assist</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B1</td>
+      <td>D1</td>
+      <td>2</td>
+    </tr>
+		<tr align='center'>
+      <td>B2</td>
+      <td>D2 Mon 2 (SSUP)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B3</td>
+      <td>D2 Mon 3 (Minor)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B4</td>
+      <td>D2 Mon 4 (Seed)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B5</td>
+      <td>D2 Mon 5 (Shell)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B6</td>
+      <td>D2 Mon 6 (SSUP KM + Hosting)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B7</td>
+      <td>D2 Mon 7 (Dunkin GFDD)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>B8</td>
+      <td>D2 Mon 8 (MK)</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N7</td>
+      <td style="vertical-align : middle;text-align:center;" rowspan="3">Nighttime</td>
+      <td>Assist+B1+B2</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N8</td>
+      <td>B3+B4+B5</td>
+      <td>1</td>
+    </tr>
+		<tr align='center'>
+      <td>N9</td>
+      <td>B6+B7+B8</td>
+      <td>1</td>
+    </tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- End Modal3 -->
 <!-- start container -->
 <div class="container-fluid">
 	<div class="row">
@@ -1022,7 +1130,7 @@
 				  </tr>
 					<tr>
 						<td style="background-color:#ff7b00"></td>
-						<td>ลาไม่มีคนแทน / ลาระบุช่วงเวลา</td>
+						<td>ลาไม่มีคนแทน</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ff0000"></td>
