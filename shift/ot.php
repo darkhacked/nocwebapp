@@ -58,9 +58,9 @@
 		<center>
 		<h4>Download ใบเบิก OT</h4>
 		<small>กด DOWNLOAD แล้วแก้ไขข้อมูลตามเวลางานจากระบบ JPM</small><br><br>
-				<a href="https://www.dropbox.com/scl/fi/g9go2frhulx91azk8tr3k/Update-29-02-63.docx?dl%3D0%26rlkey%3Drog1qsz89o7rv2eexz3hd06zs&sa=D&ust=1587246227273000&usg=AFQjCNGfSQ9vGUldJRcz1Ij37kjBgnsRAg" target="_blank"><b>ใบขออนุมัติทำงาน</b></a><br>
-				<a href="https://www.dropbox.com/scl/fi/3n41lgepxlm6mjdadac1b/OT-Engineer-NocOfficer.xls?dl%3D0%26rlkey%3Dh0o18ywviqom35jlnrh6y825z&sa=D&ust=1587246227274000&usg=AFQjCNF6l-7IL0nNQ2x0JblM_-gLQAR2mw" target="_blank"><b>ใบขออนุมัติ โอทีของ Engineer-NOC Officer</b></a><br>
-				<a href="https://www.dropbox.com/scl/fi/of00p8167ajktrp9kj2ec/OT-Senior-Officer2.xls?dl%3D0%26rlkey%3Dbaycn0an6fip5ohmdqghw8hag&sa=D&ust=1587246227273000&usg=AFQjCNG1T_4AKAL8cEfq8rlCLsNkmoXMMQ" target="_blank"><b>ใบขออนุมัติ โอทีของ Senior Officer</b></a>
+				<a href="files/OT/ใบขออนุมัติทำงานOT.docx" target="_blank"><b>ใบขออนุมัติทำงาน</b></a><br>
+				<a href="files/OT/ใบOT-Engineer-NocOfficer.xls" target="_blank"><b>ใบขออนุมัติ โอทีของ Engineer-NOC Officer</b></a><br>
+				<a href="files/OT/ใบOT-Senior-Officer.xls" target="_blank"><b>ใบขออนุมัติ โอทีของ Senior Officer</b></a>
 		</center><hr>
 
 		<table class="table table-bordered table-striped">
