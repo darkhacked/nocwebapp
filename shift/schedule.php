@@ -171,7 +171,9 @@
 				<small>ศุภาวุธ ประกบ SCB (D5) 10/07/63 - 6/08/63</small><br>
 				<small>วริศ ประกบ Hosting (B6) 10/07/63 - 6/08/63</small><br>
 				<small>สุมิตร ประกบ Hosting (B6) 6/07/63 - 2/08/63</small><br><br>
-				<b>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br>
+				<b>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br><br>
+				<small><b>Monior ของแต่ละ Seat</b></small><br>
+				<img src="images/monitor7-63.png">
 				<hr>
 				<h5>เดือนมิถุนายน</h5>
 				<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
@@ -197,7 +199,7 @@
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat เริ่มมีผลวันที่ 6/7/2563 เป็นต้นไป</h5>
+			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
@@ -221,42 +223,42 @@
     </tr>
 		<tr align='center'>
       <td>B1</td>
-      <td>D1</td>
+      <td>D1 (HQ CORP-MPLS)</td>
       <td>2</td>
     </tr>
 		<tr align='center'>
       <td>B2</td>
-      <td>D2 Mon 2 (SSUP)</td>
+      <td>Mon 2 (JN_SSUP + ORTHER)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B3</td>
-      <td>D2 Mon 3 (Minor)</td>
+      <td>Mon 3 (SSUP KM + Hosting)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B4</td>
-      <td>D2 Mon 4 (Seed)</td>
+      <td>Mon 4 (Seed)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B5</td>
-      <td>D2 Mon 5 (Shell)</td>
+      <td>Mon 5 (SHELL MERAKI / RBA)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B6</td>
-      <td>D2 Mon 6 (SSUP KM + Hosting)</td>
+      <td>Mon 6 (Minor)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B7</td>
-      <td>D2 Mon 7 (Dunkin GFDD)</td>
+      <td>Mon 7 (Dunkin + Shell_DO)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
       <td>B8</td>
-      <td>D2 Mon 8 (MK)</td>
+      <td>Mon 8 (MK)</td>
       <td>1</td>
     </tr>
 		<tr align='center'>
