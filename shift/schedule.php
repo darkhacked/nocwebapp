@@ -109,7 +109,8 @@
 	<div class="alert alert-dismissible alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
-		<p class="mb-0">เดือนกรกฎาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B3, B4, B6, B7 และ TR (เริ่มวันที่ 6 กรกฎาคม 2563)</strong></p><p></p>
+		<p class="mb-0">เดือนกรกฎาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B3, B4, B6, B7 และ TR (เริ่มวันที่ 6 กรกฎาคม 2563)</strong></p>
+		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B7 และ TR</strong></p>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
 			Log การปรับตารางและการ Training
@@ -132,19 +133,45 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<h5>เดือนสิงหาคม</h5>
+				<b>Helpdesk Team</b><br>
+				<small>1. คุณ สุรศักดิ์ Monitor Seat SCB (G5)</small><br>
+				<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 1 อัตรา (เดิม 13 ใหม่ 14 คน)</small><br>
+				<small>ปรับเรียนงาน SCB เป็น BBL กะ A, B เริ่มวันที่ 11 – 30 สิงหาคม, กะ C, D เริ่ม 7 สิงหา – 3 กันยายน 2563</small><br>
+				<small>• ศุภากร, ปิยพงษ์, เอกกวี, กนกฉัตร ประกบ HQ JI-net Seat B1, Minor B3 </small><br>
+				<small>• กฤตกร, วิรัช, รัฐพล, วัชรินทร์ ประกบ Seat Seed (B4), Dunkin (B7)</small><br><br>
+				<b>JINET Team</b><br>
+				<small>1. ปรับ N 31-3 สิงหาคม เป็น B3 เนื่องจาก คุณ กิตติ เตรียมงานแต่งช่วงวันที่ 5 กันยายน</small><br>
+				<small>• วงศพัทธ์, อนพัทย์, ปาริชาติ, เจษฎาพร ประกบ HQ 3BB Seat DS, D0-D2, BBL</small><br>
+				<small>• สกลชัย (อบรมซ้ำเนื่องจากเดือนมิถุนายน คุณ ศุภณัฐ ลาป่วยไส้ติ่งอักเสบทั้งเดือน, บุญฤทธิ์ ประกบ Hosting (B6)</small><br><br>
+				<b>Training</b><br>
+				<small>ศุภาวุธ Training SCB (10/07/63 - 06/08/63)</small><br>
+				<small>อรรถสิทธิ์ Training HQ 3BB (10/07/63 - 06/08/63)</small><br>
+				<small>วริศ Training Hosting Seat B6 (10/07/63 - 06/08/63)</small><br><br>
+
+				<small>สกลชัย Training Hosting Seat B6 (11-30/08/63)</small><br>
+				<small>วงศพัทย์ Training HQ 3BB (11-20/08/63) | Training BBL (21-30/08/63)</small><br>
+				<small>อนพัทย์ Training BBL (11-20/08/63) | Training HQ 3BB (21-30/08/63)</small><br><br>
+
+				<small>เจษฎาพร Training HQ 3BB (07-18/08/63) | Training BBL (23/08/63 - 03/09/63)</small><br>
+				<small>บุญฤทธิ์ Training Hosting (07/08/63 - 03/09/63)</small><br>
+				<small>ปาริชาติ Training BBL 3BB (07-18/08/63) | Training HQ 3BB (23/08/63 - 03/09/63)</small><br><br>
+				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br>
+				<hr>
 				<h5>เดือนกรกฎาคม</h5>
-				Helpdesk Team<br>
+				<b>Helpdesk Team</b><br>
 				<small>1. ปรับ Seat Call Complaint เป็น Monitor ธกส. (D6) 1 อัตรา (เริ่มวันที่ 2 กรกฎาคม 2563)</small><br>
 				<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 3 อัตรา (เดิม 10 ใหม่ 13 คน) เพิ่ม Seat Minor, SCB (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br><br>
-				JINET Team<br>
+				<b>JINET Team</b><br>
 				<small>1. ปรับ Project Minor + Wine (B6) สลับกับ SSUP KM Interlap (B3) (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br><br>
-				<img src="images/july.jpg"><br>
+				<img src="images/july.jpg"><br><br>
+				<b>Training</b><br>
 				<small>อรรถสิทธิ์ ประกบ HQ (DS, D0-D2) 10/07/63 - 6/08/63</small><br>
 				<small>พัชร์ดนัย ประกบ HQ (DS, D0-D2) 6/07/63 - 2/08/63</small><br>
 				<small>ศุภาวุธ ประกบ SCB (D5) 10/07/63 - 6/08/63</small><br>
 				<small>วริศ ประกบ Hosting (B6) 10/07/63 - 6/08/63</small><br>
 				<small>สุมิตร ประกบ Hosting (B6) 6/07/63 - 2/08/63</small><br><br>
-				<small>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</small><br>
+				<b>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br>
 				<hr>
 				<h5>เดือนมิถุนายน</h5>
 				<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
@@ -156,7 +183,7 @@
 				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat SE-ED, GFDD</small><br>
 				<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
 				<small>8. สกลชัย กิตติ train Hosting</small><br><br>
-				<small>Seat B1, B4, B6, B7 และ TR เข้าออฟฟิศ</small><br><br>
+				<b>Seat B1, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br><br>
 				<small><b>Monior ของแต่ละ Seat</b></small><br>
 				<img src="images/monitor6-63.png">
 
@@ -170,7 +197,7 @@
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat กรกฏาคม เริ่มมีผลวันที่ 6/7/2563</h5>
+			<h5 class="modal-title" id="exampleModalLabel">Monitor Seat เริ่มมีผลวันที่ 6/7/2563 เป็นต้นไป</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
