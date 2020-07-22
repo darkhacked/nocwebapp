@@ -110,7 +110,7 @@
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
 		<p class="mb-0">เดือนกรกฎาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B3, B4, B6, B7 และ TR (เริ่มวันที่ 6 กรกฎาคม 2563)</strong></p>
-		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B7 และ TR</strong></p>
+		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B6, B7 และ TR</strong></p>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
 			Log การปรับตารางและการ Training
@@ -156,7 +156,7 @@
 				<small>เจษฎาพร Training HQ 3BB (07-18/08/63) | Training BBL (23/08/63 - 03/09/63)</small><br>
 				<small>บุญฤทธิ์ Training Hosting (07/08/63 - 03/09/63)</small><br>
 				<small>ปาริชาติ Training BBL 3BB (07-18/08/63) | Training HQ 3BB (23/08/63 - 03/09/63)</small><br><br>
-				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br>
+				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br>
 				<hr>
 				<h5>เดือนกรกฎาคม</h5>
 				<b>Helpdesk Team</b><br>
