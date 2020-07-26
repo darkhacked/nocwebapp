@@ -134,8 +134,6 @@
 			</div>
 			<div class="modal-body">
 				<h5>เดือนสิงหาคม</h5>
-				<b>Helpdesk Team</b><br>
-				---------------------------------------------------------------------<br>
 				<b>Update 24/07/63</b><br>
 				<small>คุณปรัชญา ต้องการโอนย้ายพนักงาน คุณ สิทธิศักดิ์ NOC JI-net ไปทีม TSD ต้นเดือน สิงหาคม</small><br>
 				<small>จึงต้องมีการจัดการปรับตารางงานดังนี้</small><br>
@@ -143,6 +141,17 @@
 				<small>7-31 สิงหาคม ปรับคุณ กิตติ นั่ง Seat B6 (เนื่องจากได้รับการอบรม 1 เดือน)</small><br>
 				<small>7-31 สิงหาคม ปรับ คุณ บุญฤทธิ์ TR ใช้แทน Seat คุณ กิตต</small>ิ<br>
 				<small>ย้าย OT คุณ สิทธิศักดิ์ ให้พนักงานในทีม (19,20 ให้คุณบุญฤทธิ์ / 29,30 ให้คุณมุกดา)</small><br><br>
+				<b>Helpdesk Team</b><br>
+				<small>1. คุณ สุรศักดิ์ Monitor Seat SCB (G5)</small><br>
+				<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 1 อัตรา (เดิม 13 ใหม่ 14 คน)</small><br>
+				<small>ปรับเรียนงาน SCB เป็น BBL กะ A, B เริ่มวันที่ 11 – 30 สิงหาคม, กะ C, D เริ่ม 7 สิงหา – 3 กันยายน 2563</small><br>
+				<small>• ศุภากร, ปิยพงษ์, เอกกวี, กนกฉัตร ประกบ HQ JI-net Seat B1, Minor B3 </small><br>
+				<small>• กฤตกร, วิรัช, รัฐพล, วัชรินทร์ ประกบ Seat Seed (B4), Dunkin (B7)</small><br><br>
+				<b>JINET Team</b><br>
+				<small>1. ปรับ N 31-3 สิงหาคม เป็น B3 เนื่องจาก คุณ กิตติ เตรียมงานแต่งช่วงวันที่ 5 กันยายน</small><br>
+				<small>• วงศพัทธ์, อนพัทย์, ปาริชาติ, เจษฎาพร ประกบ HQ 3BB Seat DS, D0-D2, BBL</small><br>
+				<small>• สกลชัย (อบรมซ้ำเนื่องจากเดือนมิถุนายน คุณ ศุภณัฐ ลาป่วยไส้ติ่งอักเสบทั้งเดือน, บุญฤทธิ์ ประกบ Hosting (B6)</small><br><br>
+
 				<b>Training</b><br>
 				<small>ศุภาวุธ Training SCB (10/07/63 - 06/08/63)</small><br>
 				<small>อรรถสิทธิ์ Training HQ 3BB (10/07/63 - 06/08/63)</small><br>
@@ -155,17 +164,7 @@
 				<small>เจษฎาพร Training HQ 3BB (07-18/08/63) | Training BBL (23/08/63 - 03/09/63)</small><br>
 				<small>ปาริชาติ Training BBL 3BB (07-18/08/63) | Training HQ 3BB (23/08/63 - 03/09/63)</small><br><br>
 				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br>
-				---------------------------------------------------------------------<br>
-				<small>1. คุณ สุรศักดิ์ Monitor Seat SCB (G5)</small><br>
-				<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 1 อัตรา (เดิม 13 ใหม่ 14 คน)</small><br>
-				<small>ปรับเรียนงาน SCB เป็น BBL กะ A, B เริ่มวันที่ 11 – 30 สิงหาคม, กะ C, D เริ่ม 7 สิงหา – 3 กันยายน 2563</small><br>
-				<small>• ศุภากร, ปิยพงษ์, เอกกวี, กนกฉัตร ประกบ HQ JI-net Seat B1, Minor B3 </small><br>
-				<small>• กฤตกร, วิรัช, รัฐพล, วัชรินทร์ ประกบ Seat Seed (B4), Dunkin (B7)</small><br><br>
-				<b>JINET Team</b><br>
-				<small>1. ปรับ N 31-3 สิงหาคม เป็น B3 เนื่องจาก คุณ กิตติ เตรียมงานแต่งช่วงวันที่ 5 กันยายน</small><br>
-				<small>• วงศพัทธ์, อนพัทย์, ปาริชาติ, เจษฎาพร ประกบ HQ 3BB Seat DS, D0-D2, BBL</small><br>
-				<small>• สกลชัย (อบรมซ้ำเนื่องจากเดือนมิถุนายน คุณ ศุภณัฐ ลาป่วยไส้ติ่งอักเสบทั้งเดือน, บุญฤทธิ์ ประกบ Hosting (B6)</small><br><br>
-				<b>Training</b><br>
+				<!-- <b>Training</b><br>
 				<small>ศุภาวุธ Training SCB (10/07/63 - 06/08/63)</small><br>
 				<small>อรรถสิทธิ์ Training HQ 3BB (10/07/63 - 06/08/63)</small><br>
 				<small>วริศ Training Hosting Seat B6 (10/07/63 - 06/08/63)</small><br><br>
@@ -177,7 +176,7 @@
 				<small>เจษฎาพร Training HQ 3BB (07-18/08/63) | Training BBL (23/08/63 - 03/09/63)</small><br>
 				<small>บุญฤทธิ์ Training Hosting (07/08/63 - 03/09/63)</small><br>
 				<small>ปาริชาติ Training BBL 3BB (07-18/08/63) | Training HQ 3BB (23/08/63 - 03/09/63)</small><br><br>
-				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br>
+				<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br> -->
 				<hr>
 				<h5>เดือนกรกฎาคม</h5>
 				<b>Helpdesk Team</b><br>
