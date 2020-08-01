@@ -109,8 +109,7 @@
 	<div class="alert alert-dismissible alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
-		<p class="mb-0">เดือนกรกฎาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> B1, B3, B4, B6, B7 และ TR (เริ่มวันที่ 6 กรกฎาคม 2563)</strong></p>
-		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B6, B7 และ TR</strong></p>
+		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B6, B7 และ TR</strong></p><br>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
 			Log การปรับตารางและการ Training
@@ -191,7 +190,7 @@
 				<small>ศุภาวุธ ประกบ SCB (D5) 10/07/63 - 6/08/63</small><br>
 				<small>วริศ ประกบ Hosting (B6) 10/07/63 - 6/08/63</small><br>
 				<small>สุมิตร ประกบ Hosting (B6) 6/07/63 - 2/08/63</small><br><br>
-				<b>Seat DS, D0-D2, D5, B1, B3, B4, B7 และ TR เข้าออฟฟิศ</b><br><br>
+				<b>Seat DS, D0-D2, D5, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br><br>
 				<small><b>Monior ของแต่ละ Seat</b></small><br>
 				<img src="images/monitor7-63.png">
 				<hr>
