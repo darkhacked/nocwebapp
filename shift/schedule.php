@@ -109,7 +109,7 @@
 	<div class="alert alert-dismissible alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <h4 class="alert-heading">ประกาศ!</h4>
-		<p class="mb-0">เดือนสิงหาคมให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> Seat Assist, B1, B3, B4, B6, B7 และ TR</strong></p><br>
+		<p class="mb-0">ให้พนักงานเข้าปฏิบัติงานที่ออฟฟิตทุกคน พร้อมนำของที่ยืมไปช่วง WFH กลับมาคืนด้วย</strong></p>
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
 			Log การปรับตารางและการ Training
