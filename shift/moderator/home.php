@@ -89,7 +89,8 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE NOT c_status IN('Approve','Cancel') AND NOT c_labelmain IN('สลับ OT','ลาระบุช่วงเวลา','สลับกะ') AND NOT c_code_visit='-' ORDER BY c_id desc";
+							/* $swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";  เงื่อนไขเดิม */
 							$qry = mysqli_query($db, $swapQry);
 
 							$i = 1; // รันเลขหน้าตาราง

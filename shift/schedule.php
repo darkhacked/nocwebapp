@@ -341,8 +341,12 @@
 								 <label class="custom-control-label" for="customRadio3">ลาพักผ่อน</label>
 							 </div>
 							 <div class="custom-control custom-radio">
-								 <input type="radio" id="customRadio4" value="ลากิจ" name="c_label" class="custom-control-input">
-								 <label class="custom-control-label" for="customRadio4">ลากิจ</label>
+								 <input type="radio" id="customRadio4" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio4">ลาพักผ่อน (ไม่มีคนแทน)</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio5" value="ลากิจ" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio5">ลากิจ</label>
 							 </div><hr>
 							 ระบุวันลา
 							 <div class="form-row">
