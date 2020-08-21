@@ -347,7 +347,7 @@
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
-			echo "<th rowspan=\"2\" scope=\"col\">MEMBER SHIFT A</th>";
+			echo "<th rowspan=\"2\" scope=\"col\">MEMBER GROUP 1</th>";
 
 			//ตารางวันที่คำนวณวันที่สุดท้ายของเดือน
 			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
@@ -523,7 +523,7 @@
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
-			echo "<th rowspan=\"2\" scope=\"col\">MEMBER SHIFT B</th>";
+			echo "<th rowspan=\"2\" scope=\"col\">MEMBER GROUP 2</th>";
 
 			//คำนวณวันที่สุดท้ายของเดือน
 			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
