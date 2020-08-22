@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$sessionlifetime = 20; //กำหนดเป็นนาที
+	$sessionlifetime = 60; //กำหนดเป็นนาที
 
 	if(isset($_SESSION["timeLasetdActive"])){
 		$seclogin = (time()-$_SESSION["timeLasetdActive"])/60;
