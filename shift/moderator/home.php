@@ -62,7 +62,7 @@
 			<div id="myTabContent" class="tab-content">
 			  <div class="tab-pane fade active show" id="menu1">
 					<div class="container-fluid" style="padding-top:20px; padding-bottom:100px">
-					<p class="lead">คำขออนุมัติแลก / ลา</p> <!-- Table 1 -->
+					<p class="lead">คำขออนุมัติแลก / ลาปกติ</p> <!-- Table 1 -->
 					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
 						<tr align="center">
@@ -89,7 +89,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE NOT c_status IN('Approve','Cancel') AND NOT c_labelmain IN('สลับ OT','ลาระบุช่วงเวลา','สลับกะ') AND NOT c_code_visit='-' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE NOT c_status IN('Approve','Cancel') AND NOT c_labelmain IN('สลับ OT','ลาระบุช่วงเวลา','สลับกะ') AND NOT c_label IN('ลากิจ') AND NOT c_code_visit='-' ORDER BY c_id desc";
 							/* $swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";  เงื่อนไขเดิม */
 							$qry = mysqli_query($db, $swapQry);
 
@@ -116,7 +116,62 @@
 							?>
 					</tbody>
 				</table> <!-- Table 1 -->
-					<br><br><br>
+				<br><br>
+					<p class="lead">คำขออนุมัติลากิจ</p> <!-- Table 1.2 -->
+					<table class="table table-striped table-hover table-bordered">
+					<thead class="thead-dark js-thead">
+						<tr align="center">
+							<th scope="col">#</th>
+							<th scope="col">ID</th>
+							<th scope="col">ชื่อพนักงาน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">Seat</th>
+							<th scope="col">ประเภทการลา</th>
+							<th scope="col">ประเภทคำขอ</th>
+							<th scope="col">เหตุผลการลา</th>
+							<th scope="col"></th>
+							<th scope="col">ID</th>
+							<th scope="col">ผู้ปฏิบัติงานแทน</th>
+							<th scope="col">วันปฏิบัติงาน</th>
+							<th scope="col">สถานะ</th>
+							<th scope="col">พิจารณา</th>
+						</tr>
+					</thead>
+					<tbody>
+							<?php
+							/*แสดงทั้งหมด
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+							$qry = mysqli_query($db, $swapQry); */
+
+							//เลือกแสดงผลจาก status Pending
+							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_label='ลากิจ' ORDER BY c_id desc";
+							/* $swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";  เงื่อนไขเดิม */
+							$qry = mysqli_query($db, $swapQry);
+
+							$i = 1; // รันเลขหน้าตาราง
+							while ($row = mysqli_fetch_array($qry)) {
+							echo "<tr align='center'>";
+							echo "<td>".$i."</td>";
+							echo "<td>".$row["c_code_host"]."</td>";
+							echo "<td>".$row["c_name_host"]."</td>";
+							echo "<td>".$row["c_date_host"]."</td>";
+							echo "<td>".$row["c_seat_host"]."</td>";
+							echo "<td>".$row["c_label"]."</td>";
+							echo "<td>".$row["c_labelmain"]."</td>";
+							echo "<td>".$row["c_reason"]."</td>";
+							echo "<td><img src=\"../images/swap2.png\"></td>";
+							echo "<td>".$row["c_code_visit"]."</td>";
+							echo "<td>".$row["c_name_visit"]."</td>";
+							echo "<td>".$row["c_date_visit"]."</td>";
+							echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
+							echo "<td><button type=\"button\" onclick=\"window.location.href = '../Functions/accept1.php?c_id=$row[0]';\" class=\"btn btn-primary btn-sm\">Accept</button> <button type=\"button\" onclick=\"window.location.href = '../Functions/cancel.php?c_id=$row[0]';\" class=\"btn btn-danger btn-sm\" name=\"cancel\">Cancel</button></td>";
+							echo "</tr>";
+							$i++;
+							}
+							?>
+					</tbody>
+				</table> <!-- Table 1.2 -->
+					<br><br>
 					<p class="lead">คำขออนุมัติแลก / ลาแบบไม่มีคนแทน</p> <!-- Table 2 -->
 					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
@@ -140,7 +195,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_code_visit='-' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_code_visit='-' AND NOT c_label='ลากิจ' ORDER BY c_id desc";
 							$qry = mysqli_query($db, $swapQry);
 
 							$i = 1; // รันเลขหน้าตาราง
@@ -162,7 +217,7 @@
 							?>
 					</tbody>
 				</table> <!-- Table 2 -->
-					<br><br><br>
+					<br><br>
 					<p class="lead">คำขออนุมัติสลับกะ</p> <!-- Table 3 -->
 					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
@@ -218,7 +273,7 @@
 							?>
 					</tbody>
 				</table> <!-- Table 3 -->
-					<br><br><br>
+					<br><br>
 					<p class="lead">คำขออนุมัติยก OT</p> <!-- Table 4 -->
 					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">

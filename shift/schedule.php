@@ -386,7 +386,11 @@
 							 <div class="custom-control custom-radio">
 								 <input type="radio" id="customRadio5" value="ลากิจ" name="c_label" class="custom-control-input">
 								 <label class="custom-control-label" for="customRadio5">ลากิจ</label>
-							 </div><hr>
+							 </div>
+							 <div class="form-group">
+							   <input type="text" class="form-control" id="formGroupExampleInput" name="c_reason" placeholder="หากท่านลากิจโปรดระบุเหตุผล">
+							 </div>
+							 <hr>
 							 ระบุวันลา
 							 <div class="form-row">
 								 <div class="col-md-3">
@@ -507,7 +511,11 @@
 							<div class="custom-control custom-radio">
 								<input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
 								<label class="custom-control-label" for="customRadio7">ลากิจ</label>
-							</div><hr>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="formGroupExampleInput" name="c_reason" placeholder="หากท่านลากิจโปรดระบุเหตุผล">
+							</div>
+							<hr>
 							ระบุวันลา
 							<div class="form-row">
 								<div class="col-md-3">
@@ -1110,10 +1118,6 @@
 						<td>Seat N</td>
 				  </tr>
 					<tr>
-						<td style="background-color:#b7dee8"></td>
-						<td>Seat G / GH</td>
-				  </tr>
-					<tr>
 						<td style="background-color:#ff96ff"></td>
 						<td>OD / ON จัดสรร</td>
 				  </tr>
@@ -1128,6 +1132,10 @@
 					<tr>
 						<td style="background-color:#00ff00"></td>
 						<td>คำขออนุมัติแล้ว / OT ที่ได้จากการแลกหรือลา</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#00a2ff"></td>
+						<td>ลากิจ / OT มาแทนคนที่ลากิจ</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ff7b00"></td>

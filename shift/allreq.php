@@ -23,6 +23,7 @@
             <th scope="col">ประเภทการลา</th>
             <th scope="col">ประเภทคำขอ</th>
             <th scope="col">หมายเหตุ</th>
+						<th scope="col">สาเหตุการลา</th>
             <th scope="col"></th>
             <th scope="col">ID</th>
             <th scope="col">ผู้ปฏิบัติงานแทน</th>
@@ -52,6 +53,7 @@
             echo "<td>".$row["c_label"]."</td>";
             echo "<td>".$row["c_labelmain"]."</td>";
             echo "<td>".$row["c_remark"]."</td>";
+						echo "<td>".$row["c_reason"]."</td>";
             echo "<td><img src=\"images/swap2.png\"></td>";
             echo "<td>".$row["c_code_visit"]."</td>";
             echo "<td>".$row["c_name_visit"]."</td>";

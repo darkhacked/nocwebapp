@@ -21,6 +21,7 @@
 		$emailHost	=	($_POST['email']);
 		$labelM    =  ($_POST['c_labelmain']);
 		$label    =  ($_POST['c_label']);
+		$reason    =  ($_POST['c_reason']);
 		$day			=  ($_POST['day_host']);
 		$month			=  ($_POST['month_host']);
 		$year 	=  ($_POST['year_host']);
@@ -46,8 +47,8 @@
 		}
 
 
-		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_seat_stahost, c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit, c_date_visit)
-				VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost') ";
+		$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_seat_host, c_seat_stahost, c_shift_host, c_labelmain, c_label, c_code_visit, c_name_visit, c_date_visit, c_reason)
+				VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost', '$reason') ";
 				mysqli_query($db, $insSQL);
 
 		$updateStatus = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
@@ -121,10 +122,14 @@
 			        <td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
 			        <td style="background-color:#d4d4d4;"><span>['.$codeHost.'] <b>'.$nameHost.'</b></span></td>
 			      </tr>
-			      <tr>
-			        <td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
-			        <td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
-			      </tr>
+						<tr>
+					    <td align="right" style="background-color:#bababa;"><span>สาเหตุเพิ่มเติม :</span></td>
+					    <td style="background-color:#e3e3e3;"><span>'.$reason.'</span></td>
+					  </tr>
+					  <tr>
+					    <td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
+					    <td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
+					  </tr>
 			    </table>
 			    <br><br><br>
 			    <span>This is an automated email, please don\'t reply.</span><br>
@@ -211,9 +216,13 @@
 							<td style="background-color:#e3e3e3;"><span>['.$codeVisit.'] <b>'.$nameVisit.'</b></span></td>
 						</tr>
 						<tr>
-							<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
-							<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
-						</tr>
+					    <td align="right" style="background-color:#bababa;"><span>สาเหตุเพิ่มเติม :</span></td>
+					    <td style="background-color:#d4d4d4;"><span>'.$reason.'</span></td>
+					  </tr>
+					  <tr>
+					    <td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
+					    <td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
+					  </tr>
 					</table>
 					<br><br><br>
 					<span>This is an automated email, please don\'t reply.</span><br>
@@ -245,6 +254,7 @@ if (isset($_POST['swapmenu2'])) {
 	$emailHost	=	($_POST['email']);
 	$labelM    =  ($_POST['c_labelmain']);
 	$label    =  ($_POST['c_label']);
+	$reason    =  ($_POST['c_reason']);
 	$day			=  ($_POST['day_host']);
 	$month			=  ($_POST['month_host']);
 	$year 	=  ($_POST['year_host']);
@@ -263,8 +273,8 @@ if (isset($_POST['swapmenu2'])) {
 		$statusHost = $qrydata["w_status"];
 	}
 
-	$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_shift_host, c_seat_host, c_seat_stahost, c_labelmain, c_label, c_remark)
-	VALUES('$codeHost', '$nameHost', '$dateHost', '$shiftHost', '$seatHost', '$statusHost', '$labelM', '$label', '$remark') ";
+	$insSQL = "INSERT INTO swap (c_code_host, c_name_host, c_date_host, c_shift_host, c_seat_host, c_seat_stahost, c_labelmain, c_label, c_remark, c_reason)
+	VALUES('$codeHost', '$nameHost', '$dateHost', '$shiftHost', '$seatHost', '$statusHost', '$labelM', '$label', '$remark', '$reason') ";
 	mysqli_query($db, $insSQL);
 
 	$updateStatus = "UPDATE work SET w_status = '$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
@@ -338,6 +348,10 @@ if (isset($_POST['swapmenu2'])) {
 					<td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
 					<td style="background-color:#e3e3e3;"><span>['.$codeHost.'] <b>'.$nameHost.'</b></span></td>
 				</tr>
+				<tr>
+			    <td align="right" style="background-color:#bababa;"><span>สาเหตุเพิ่มเติม :</span></td>
+			    <td style="background-color:#d4d4d4;"><span>'.$reason.'</span></td>
+			  </tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
 					<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
