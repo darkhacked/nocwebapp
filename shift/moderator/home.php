@@ -89,7 +89,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE NOT c_status IN('Approve','Cancel') AND NOT c_labelmain IN('สลับ OT','ลาระบุช่วงเวลา','สลับกะ') AND NOT c_label IN('ลากิจ') AND NOT c_code_visit='-' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE NOT c_status IN('Approve','Cancel') AND NOT c_labelmain IN('สลับ OT','ลาระบุช่วงเวลา','สลับกะ') AND NOT c_label IN('ลากิจ','ลาสมรส','ลาคลอด','ลาบวช') AND NOT c_code_visit='-' ORDER BY c_id desc";
 							/* $swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";  เงื่อนไขเดิม */
 							$qry = mysqli_query($db, $swapQry);
 
@@ -117,7 +117,7 @@
 					</tbody>
 				</table> <!-- Table 1 -->
 				<br><br>
-					<p class="lead">คำขออนุมัติลากิจ</p> <!-- Table 1.2 -->
+					<p class="lead">คำขออนุมัติลากิจ / ลาสมรส / ลาคลอด / ลาบวช</p> <!-- Table 1.2 -->
 					<table class="table table-striped table-hover table-bordered">
 					<thead class="thead-dark js-thead">
 						<tr align="center">
@@ -144,7 +144,7 @@
 							$qry = mysqli_query($db, $swapQry); */
 
 							//เลือกแสดงผลจาก status Pending
-							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_label='ลากิจ' ORDER BY c_id desc";
+							$swapQry = "SELECT * FROM swap WHERE c_status ='Pending' AND c_label IN ('ลากิจ','ลาสมรส','ลาคลอด','ลาบวช') ORDER BY c_id desc";
 							/* $swapQry = "SELECT * FROM swap WHERE c_status = 'Pending' AND c_label IN ('ลาป่วย', 'ลาพักผ่อน', 'ลากิจ') AND c_labelmain='ลาปกติ (เต็มวัน)' ORDER BY c_id desc";  เงื่อนไขเดิม */
 							$qry = mysqli_query($db, $swapQry);
 

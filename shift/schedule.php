@@ -384,8 +384,20 @@
 								 <label class="custom-control-label" for="customRadio4">ลาพักผ่อน (ไม่มีคนแทน)</label>
 							 </div>
 							 <div class="custom-control custom-radio">
-								 <input type="radio" id="customRadio5" value="ลากิจ" name="c_label" class="custom-control-input">
-								 <label class="custom-control-label" for="customRadio5">ลากิจ</label>
+								 <input type="radio" id="customRadio5" value="ลาสมรส" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio5">ลาสมรส</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio6" value="ลาคลอด" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio6">ลาคลอด</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio7" value="ลาบวช" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio7">ลาบวช</label>
+							 </div>
+							 <div class="custom-control custom-radio">
+								 <input type="radio" id="customRadio8" value="ลากิจ" name="c_label" class="custom-control-input">
+								 <label class="custom-control-label" for="customRadio8">ลากิจ</label>
 							 </div>
 							 <div class="form-group">
 							   <input type="text" class="form-control" id="formGroupExampleInput" name="c_reason" placeholder="หากท่านลากิจโปรดระบุเหตุผล">
@@ -501,16 +513,16 @@
 							<input type="hidden" name="c_labelmain" value="ลาระบุช่วงเวลา">
 							เลือกประเภทการลา
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio5" value="ลาป่วย" name="c_label" class="custom-control-input">
-								<label class="custom-control-label" for="customRadio5">ลาป่วย</label>
+								<input type="radio" id="customRadio9" value="ลาป่วย" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio9">ลาป่วย</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio6" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
-								<label class="custom-control-label" for="customRadio6">ลาพักผ่อน</label>
+								<input type="radio" id="customRadio10" value="ลาพักผ่อน" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio10">ลาพักผ่อน</label>
 							</div>
 							<div class="custom-control custom-radio">
-								<input type="radio" id="customRadio7" value="ลากิจ" name="c_label" class="custom-control-input">
-								<label class="custom-control-label" for="customRadio7">ลากิจ</label>
+								<input type="radio" id="customRadio11" value="ลากิจ" name="c_label" class="custom-control-input">
+								<label class="custom-control-label" for="customRadio11">ลากิจ</label>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="formGroupExampleInput" name="c_reason" placeholder="หากท่านลากิจโปรดระบุเหตุผล">
