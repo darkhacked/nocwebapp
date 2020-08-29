@@ -48,11 +48,11 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status, w_tools) VALUES ('$codeVisit', '$dateHost', 'O$seatHost', '$color', 'แทน$nameHost $label')";
   mysqli_query($db, $updatewdayVisit);
 
-  //$updatewdayHost = "DELETE FROM work WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
-  //mysqli_query($db, $updatewdayHost);
-
-  $updatewdayHost = "UPDATE work SET w_status = '$color', w_tools ='$label $nameVisit มาแทน' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+  $updatewdayHost = "DELETE FROM work WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
   mysqli_query($db, $updatewdayHost);
+
+  //$updatewdayHost = "UPDATE work SET w_status = '$color', w_tools ='$label $nameVisit มาแทน' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+  //mysqli_query($db, $updatewdayHost);
 
   $updateSwap = "UPDATE swap SET c_status ='Approve', c_badge='success' WHERE c_id='$c_id' ";
   mysqli_query($db, $updateSwap);
