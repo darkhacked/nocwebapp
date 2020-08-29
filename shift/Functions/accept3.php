@@ -45,10 +45,10 @@ while ($qrydata = mysqli_fetch_array($qry)) {
     $emailVisit = $qrydata["email"];
   }
 
-  $updatewdayHost = "UPDATE work SET w_type ='$seatVisit', w_date='$dateVisit', w_status='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+  $updatewdayHost = "UPDATE work SET w_type ='$seatVisit', w_date='$dateVisit', w_status='$color', w_tools='$labelM $remark กับ $nameVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
   mysqli_query($db, $updatewdayHost);
 
-  $updatewdayVisit = "UPDATE work SET w_type = '$seatHost', w_date='$dateHost', w_status='$color' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
+  $updatewdayVisit = "UPDATE work SET w_type = '$seatHost', w_date='$dateHost', w_status='$color', w_tools='$labelM $remark กับ $nameHost' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
   mysqli_query($db, $updatewdayVisit);
 
   $updateSwap = "UPDATE swap SET c_status ='Approve', c_badge='success' WHERE c_id='$c_id' ";

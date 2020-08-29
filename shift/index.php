@@ -18,6 +18,9 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<script type="text/javascript" src="js/draw_table.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- Start NAV BAR -->
@@ -180,9 +183,6 @@
 					</table>
 				</div>
 				<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
-	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/search.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

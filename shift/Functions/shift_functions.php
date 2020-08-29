@@ -51,10 +51,11 @@
 				VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost', '$reason') ";
 				mysqli_query($db, $insSQL);
 
-		$updateStatus = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+
+		$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$label $nameVisit มาแทน' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 		mysqli_query($db, $updateStatus);
 
-		$updateStatus2 = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
+		$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='มาแทน $nameHost $label' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
 		mysqli_query($db, $updateStatus2);
 
 
@@ -277,7 +278,7 @@ if (isset($_POST['swapmenu2'])) {
 	VALUES('$codeHost', '$nameHost', '$dateHost', '$shiftHost', '$seatHost', '$statusHost', '$labelM', '$label', '$remark', '$reason') ";
 	mysqli_query($db, $insSQL);
 
-	$updateStatus = "UPDATE work SET w_status = '$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+	$updateStatus = "UPDATE work SET w_status = '$color', w_tools ='$label | $labelM $remark' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 	mysqli_query($db, $updateStatus);
 
 
@@ -419,10 +420,10 @@ if (isset($_POST['swapmenu3'])){
 	VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$codeVisit', '$nameVisit', '$dateHost', '$seatVisit', '$statusVisit', '$shiftHost', '$labelM', '$remark') ";
 	mysqli_query($db, $insSQL);
 
-	$updateStatus = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+	$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 	mysqli_query($db, $updateStatus);
 
-	$updateStatus2 = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
+	$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameHost' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
 	mysqli_query($db, $updateStatus2);
 
 
@@ -574,10 +575,10 @@ VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shif
 mysqli_query($db, $insSQL);
 
 //update status
-$updateStatus = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameVisit ($year2-$month2-$day2)' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 mysqli_query($db, $updateStatus);
 
-$updateStatus2 = "UPDATE work SET w_status ='$color' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
+$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameHost ($year-$month-$day)' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
 mysqli_query($db, $updateStatus2);
 
 
@@ -714,7 +715,7 @@ if (isset($_POST['swapmenu5'])) {
 			VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shiftHost', '$labelM', '$label', '$codeVisit', '$nameVisit', '$dateHost') ";
 			mysqli_query($db, $insSQL);
 
-	$updateStatus = "UPDATE work SET w_status='$color', w_status_temp='$statusHost' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+	$updateStatus = "UPDATE work SET w_status='$color', w_status_temp='$statusHost', w_tools ='$labelM กับ $nameVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 	mysqli_query($db, $updateStatus);
 
 

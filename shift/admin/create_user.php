@@ -13,6 +13,9 @@
 <head>
 	<title>ADD NEW MEMBER</title>
 	<link href="../css/bootstrap.css" rel="stylesheet">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -79,9 +82,5 @@
 		</div>
 	</div>
 	<div><iframe src="../credit.html" width="100%" frameBorder="0"></iframe></div>
-
-	<script src="../js/jquery.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

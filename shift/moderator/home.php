@@ -16,6 +16,9 @@
 	<title>WORK SCHEDULE WEB APPLICATION</title>
 	<link href="../css/bootstrap.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -387,10 +390,6 @@
 			</div>
 	</div>
 		<div><iframe src="../credit.html" width="100%" frameBorder="0"></iframe></div>
-
-	<script src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/search.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

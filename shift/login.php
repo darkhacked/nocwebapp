@@ -6,13 +6,16 @@
 <head>
 	<title>WORK SCHEDULE WEB APPLICATION</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div align="center" style="padding-top:100px; padding-bottom:150px">
 	 <div class="card shadow-lg bg-white rounded" style="width:600px;">
 	      <article class="card-body">
 	          <h4 class="card-title text-primary text-center mt-1">NOC JI-NET WORK SCHEDULE</h4>
-						<h6 class="card-title text-primary text-center">Version 1.7.0 | <a href="changelog.html" target="_blank"><font color="lightblue">Changelog</font></a></h6>
+						<h6 class="card-title text-primary text-center">Version 1.9.0 | <a href="changelog.html" target="_blank"><font color="lightblue">Changelog</font></a></h6>
 	          <hr>
 	          <!--<p class="text-primary small">V0.1.1 <a href="changelog.md" target="_blank">Changelog</a></p>-->
 	          <div class="alert alert-warning">
@@ -61,8 +64,5 @@
 	</div>
 	<div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 	<br>
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

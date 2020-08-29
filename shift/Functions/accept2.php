@@ -26,6 +26,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   $labelM   = $qrydata["c_labelmain"];
   $label    = $qrydata["c_label"];
   $codeVisit = $qrydata["c_code_visit"];
+  $nameVisit = $qrydata["c_name_visit"];
   $dateVisit = $qrydata["c_date_visit"];
   $seatVisit = $qrydata["c_seat_visit"];
   $remark   =  $qrydata["c_remark"];
@@ -39,7 +40,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 		$emailHost = $qrydata["email"];
 	}
 
-  $updatewdayHost = "UPDATE work SET w_status = '$color' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+  $updatewdayHost = "UPDATE work SET w_status = '$color', w_tools = '$label $remark $nameVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
   mysqli_query($db, $updatewdayHost);
 
   $updateSwap = "UPDATE swap SET c_status ='Approve', c_badge='success' WHERE c_id='$c_id' ";

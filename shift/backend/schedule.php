@@ -14,6 +14,9 @@
 <link href="../css/style.css" rel="stylesheet">
 <head>
 	<title>table</title>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- Start NAV BAR -->
@@ -212,8 +215,5 @@ echo "<th scope=\"col\">Shift</th><th scope=\"col\">member</th><th scope=\"col\"
     </center>
 	</div>
 <br>
-<script src="../js/jquery.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
