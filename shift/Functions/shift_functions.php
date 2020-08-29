@@ -575,10 +575,10 @@ VALUES('$codeHost', '$nameHost', '$dateHost', '$seatHost', '$statusHost', '$shif
 mysqli_query($db, $insSQL);
 
 //update status
-$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameVisit ($year2-$month2-$day2)' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameVisit' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 mysqli_query($db, $updateStatus);
 
-$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameHost ($year-$month-$day)' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
+$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='$labelM | $remark กับ $nameHost' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
 mysqli_query($db, $updateStatus2);
 
 
