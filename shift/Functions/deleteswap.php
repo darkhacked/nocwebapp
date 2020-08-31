@@ -14,10 +14,10 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 	$statusHost = $qrydata["c_seat_stahost"];
 	$statusVisit = $qrydata["c_seat_stavisit"];
 
-$updateStatus = "UPDATE work SET w_status = '$statusHost', w_tools ='ปกติ' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
+$updateStatus = "UPDATE work SET w_status = '$statusHost', w_tools ='' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 mysqli_query($db, $updateStatus);
 
-$updateStatus2 = "UPDATE work SET w_status = '$statusVisit', w_tools ='ปกติ' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
+$updateStatus2 = "UPDATE work SET w_status = '$statusVisit', w_tools ='' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
 mysqli_query($db, $updateStatus2);
 
 echo $seat;
