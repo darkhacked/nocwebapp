@@ -350,7 +350,7 @@
 	</div>
 </div>
 </div>
-<!-- End Modal3 -->
+<!-- End Modal2 -->
 <!-- start container -->
 <div class="container-fluid">
 	<div class="row">

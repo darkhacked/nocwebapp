@@ -103,135 +103,236 @@
 	<hr>
 
 	<div class="container" align="center">
-	<div class="alert alert-dismissible alert-warning">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<h4 class="alert-heading">ประกาศ!</h4>
-		<p class="mb-0">เดือนมิถุนายนให้ตำแหน่ง Seat ต่อไปนี้ <strong><u>เข้าทำงานที่ออฟฟิต</u> D0, D1, D2, B1, B4, B6, B7 และ TR</strong></p><p></p>
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1">
-			เรื่องปรับตารางใหม่และการ Training
-		</button>
-		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal2">
-		หน้าที่ของแต่ละ Seat
-		</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Log การปรับตารางและการ Training</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">Monitor Seat</button>
 		<!-- Button trigger modal -->
+	</div>
+	<br>
+
+	<!-- Modal1 -->
+	<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel1">LOG การปรับตารางและการ Training</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="accordion" id="accordionExample">
+						  <div class="card">
+								<div class="card-header" id="heading4">
+						      <h2 class="mb-0">
+						        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+						          <h5>เดือนกันยายน</h5>
+						        </button>
+						      </h2>
+						    </div>
+								<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+						      <div class="card-body">
+										<b>จัดอบรมพนักงานประกบเพื่อเรียนรู้งาน รายละเอียด ดังนี้</b><br>
+										<small>1. ปรับ วงศพัทย์ ย้ายกะ AB to CD</small><br>
+										<small>2. คุณ สุรศักดิ์ Monitor Seat SCB (G5)</small><br>
+										<small>3. อรรถสิทธิ์ และ พัชร์ดนัย นั่ง B3 (Mon 6) Monitor Project ตัดถ่ายวงจรเช่า JI-net to 3BB เช่น Minor, Caltex etc.</small><br>
+										<small>4. กิตติ และปาริชาติ ลากิจ แต่งงาน 8-11 กันยายน 2563</small><br>
+									</div>
+								</div>
+						    <div class="card-header" id="headingOne">
+						      <h2 class="mb-0">
+						        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          <h5>เดือนสิงหาคม</h5>
+						        </button>
+						      </h2>
+						    </div>
+						    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+						      <div class="card-body">
+										<b>Update 24/07/63</b><br>
+										<small>คุณปรัชญา ต้องการโอนย้ายพนักงาน คุณ สิทธิศักดิ์ NOC JI-net ไปทีม TSD ต้นเดือน สิงหาคม</small><br>
+										<small>จึงต้องมีการจัดการปรับตารางงานดังนี้</small><br>
+										<small>1-2 สิงหาคม คุณ สุมิตร TR > B6</small><br>
+										<small>7-31 สิงหาคม ปรับคุณ กิตติ นั่ง Seat B6 (เนื่องจากได้รับการอบรม 1 เดือน)</small><br>
+										<small>7-31 สิงหาคม ปรับ คุณ บุญฤทธิ์ TR ใช้แทน Seat คุณ กิตต</small>ิ<br>
+										<small>ย้าย OT คุณ สิทธิศักดิ์ ให้พนักงานในทีม (19,20 ให้คุณบุญฤทธิ์ / 29,30 ให้คุณมุกดา)</small><br><br>
+										<b>Helpdesk Team</b><br>
+										<small>1. คุณ สุรศักดิ์ Monitor Seat SCB (G5)</small><br>
+										<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 1 อัตรา (เดิม 13 ใหม่ 14 คน)</small><br>
+										<small>ปรับเรียนงาน SCB เป็น BBL กะ A, B เริ่มวันที่ 11 – 30 สิงหาคม, กะ C, D เริ่ม 7 สิงหา – 3 กันยายน 2563</small><br>
+										<small>• ศุภากร, ปิยพงษ์, เอกกวี, กนกฉัตร ประกบ HQ JI-net Seat B1, Minor B3 </small><br>
+										<small>• กฤตกร, วิรัช, รัฐพล, วัชรินทร์ ประกบ Seat Seed (B4), Dunkin (B7)</small><br><br>
+										<b>JINET Team</b><br>
+										<small>1. ปรับ N 31-3 สิงหาคม เป็น B3 เนื่องจาก คุณ กิตติ เตรียมงานแต่งช่วงวันที่ 5 กันยายน</small><br>
+										<small>• วงศพัทธ์, อนพัทย์, ปาริชาติ, เจษฎาพร ประกบ HQ 3BB Seat DS, D0-D2, BBL</small><br>
+										<small>• สกลชัย (อบรมซ้ำเนื่องจากเดือนมิถุนายน คุณ ศุภณัฐ ลาป่วยไส้ติ่งอักเสบทั้งเดือน, บุญฤทธิ์ ประกบ Hosting (B6)</small><br><br>
+
+										<b>Training</b><br>
+										<small>ศุภาวุธ Training SCB (10/07/63 - 06/08/63)</small><br>
+										<small>อรรถสิทธิ์ Training HQ 3BB (10/07/63 - 06/08/63)</small><br>
+										<small>วริศ Training Hosting Seat B6 (10/07/63 - 06/08/63)</small><br><br>
+
+										<small>สกลชัย Training Hosting Seat B6 (11-30/08/63)</small><br>
+										<small>วงศพัทย์ Training HQ 3BB (11-20/08/63) | Training BBL (21-30/08/63)</small><br>
+										<small>อนพัทย์ Training BBL (11-20/08/63) | Training HQ 3BB (21-30/08/63)</small><br><br>
+
+										<small>เจษฎาพร Training HQ 3BB (07-18/08/63) | Training BBL (23/08/63 - 03/09/63)</small><br>
+										<small>ปาริชาติ Training BBL 3BB (07-18/08/63) | Training HQ 3BB (23/08/63 - 03/09/63)</small><br><br>
+										<b>Seat Assist, DS, D0-D2, D4, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br>
+										<small><b>Monior ของแต่ละ Seat</b></small><br>
+										<img src="images/monitor8-63.png">
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card">
+						    <div class="card-header" id="headingTwo">
+						      <h2 class="mb-0">
+						        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						          <h5>เดือนกรกฎาคม</h5>
+						        </button>
+						      </h2>
+						    </div>
+						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						      <div class="card-body">
+										<b>Helpdesk Team</b><br>
+										<small>1. ปรับ Seat Call Complaint เป็น Monitor ธกส. (D6) 1 อัตรา (เริ่มวันที่ 2 กรกฎาคม 2563)</small><br>
+										<small>2. จัดอบรมพนักงาน Helpdesk เพิ่มจากเดือนที่แล้ว 3 อัตรา (เดิม 10 ใหม่ 13 คน) เพิ่ม Seat Minor, SCB (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br><br>
+										<b>JINET Team</b><br>
+										<small>1. ปรับ Project Minor + Wine (B6) สลับกับ SSUP KM Interlap (B3) (เริ่มวันที่ 6 กรกฎาคม 2563)</small><br><br>
+										<img src="images/july.jpg"><br><br>
+										<b>Training</b><br>
+										<small>อรรถสิทธิ์ ประกบ HQ (DS, D0-D2) 10/07/63 - 6/08/63</small><br>
+										<small>พัชร์ดนัย ประกบ HQ (DS, D0-D2) 6/07/63 - 2/08/63</small><br>
+										<small>ศุภาวุธ ประกบ SCB (D5) 10/07/63 - 6/08/63</small><br>
+										<small>วริศ ประกบ Hosting (B6) 10/07/63 - 6/08/63</small><br>
+										<small>สุมิตร ประกบ Hosting (B6) 6/07/63 - 2/08/63</small><br><br>
+										<b>Seat DS, D0-D2, D5, B1, B3, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br><br>
+										<small><b>Monior ของแต่ละ Seat</b></small><br>
+										<img src="images/monitor7-63.png">
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card">
+						    <div class="card-header" id="headingThree">
+						      <h2 class="mb-0">
+						        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						          <h5>เดือนมิถุนายน</h5>
+						        </button>
+						      </h2>
+						    </div>
+						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						      <div class="card-body">
+										<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
+										<small>2.ปรับชาตรีเข้ากะ CD</small><br>
+										<small>3.AB รวมวริศ 13 คน CD รวมชาตรี 12 คน เพื่อ Balance Seat Day 10+Night 3 จัด OD กะ AB 1 Seat</small><br>
+										<small>4. ใส่ OG ให้คนสอนงาน Solution 3BB (มีสลับ OT นัตตี้กับโจ้ จาก Sheet เดิม)</small><br><br>
+										<small>Train งาน (เพื่อความต่อเนื่อง อบรมวันทำงาน จัด OT แทน)</small><br>
+										<small>5. อดิสัย ณรรฏร์ธนน ประกบ HQ Seat D1</small><br>
+										<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat SE-ED, GFDD</small><br>
+										<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
+										<small>8. สกลชัย กิตติ train Hosting</small><br><br>
+										<b>Seat B1, B4, B6, B7 และ TR เข้าออฟฟิศ</b><br><br>
+										<small><b>Monior ของแต่ละ Seat</b></small><br>
+										<img src="images/monitor6-63.png">
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+
+				</div>
+			</div>
 		</div>
 	</div>
 
-<!-- Modal1 -->
-<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
+	<!-- Modal2 -->
+	<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel1">เรื่องปรับตารางใหม่และการ Training</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Monitor Seat</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<small>1.สลับกะ วริศมาอยู่ AB จัด OT หยุดงาน 31/05 - 01/06 จัด OT แทนวันที่ 1/06/63</small><br>
-				<small>2.ปรับชาตรีเข้ากะ CD</small><br>
-				<small>3.AB รวมวริศ 13 คน CD รวมชาตรี 12 คน เพื่อ Balance Seat Day 10+Night 3 จัด OD กะ AB 1 Seat</small><br>
-				<small>4. ใส่ OG ให้คนสอนงาน Solution 3BB (มีสลับ OT นัตตี้กับโจ้ จาก Sheet เดิม)</small><br><br>
-				<small>Train งาน (เพื่อความต่อเนื่อง อบรมวันทำงาน จัด OT แทน)</small><br>
-				<small>5. อดิสัย ณรรฏร์ธนน ประกบ HQ Seat D1</small><br>
-				<small>6. บรรพต วุฒิชัย กนกวรรณ อาดุลย์ ประกบ Seat SE-ED, GFDD</small><br>
-				<small>7. ณัฐวุฒิ ชินกฤต ประกบ HQ 3BB Seat 3-6</small><br>
-				<small>8. สกลชัย กิตติ train Hosting</small><br>
-
+				<table class="table table-bordered" align='center'>
+	  <thead>
+	    <tr class="table-primary" align='center'>
+	      <th scope="col">ตัวแปร</th>
+	      <th scope="col"></th>
+	      <th scope="col">หน้าที่</th>
+	      <th scope="col">จำนวน Seat</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr align='center'>
+	      <td>B</td>
+	      <td style="vertical-align : middle;text-align:center;" rowspan="9">Daytime</td>
+	      <td>Assist</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B1</td>
+	      <td>D1 (HQ CORP-MPLS)</td>
+	      <td>2</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B2</td>
+	      <td>Mon 2 (JN_SSUP + ORTHER)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B3</td>
+	      <td>Mon 3 (SSUP KM + Hosting)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B4</td>
+	      <td>Mon 4 (Seed)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B5</td>
+	      <td>Mon 5 (SHELL MERAKI / RBA)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B6</td>
+	      <td>Mon 6 (Minor)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B7</td>
+	      <td>Mon 7 (Dunkin + Shell_DO)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>B8</td>
+	      <td>Mon 8 (MK)</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>N7</td>
+	      <td style="vertical-align : middle;text-align:center;" rowspan="3">Nighttime</td>
+	      <td>Assist+B1+B2</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>N8</td>
+	      <td>B3+B4+B5</td>
+	      <td>1</td>
+	    </tr>
+			<tr align='center'>
+	      <td>N9</td>
+	      <td>B6+B7+B8</td>
+	      <td>1</td>
+	    </tr>
+				</table>
 			</div>
 		</div>
 	</div>
-</div>
-
-<!-- Modal2 -->
-<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">หน้าที่ของแต่ละ Seat</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="modal-body">
-			<table class="table table-bordered" align='center'>
-	<thead>
-		<tr class="table-primary" align='center'>
-			<th scope="col">ตัวแปร</th>
-			<th scope="col"></th>
-			<th scope="col">หน้าที่</th>
-			<th scope="col">จำนวน Seat</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr align='center'>
-			<td>B</td>
-			<td style="vertical-align : middle;text-align:center;" rowspan="9">Daytime</td>
-			<td>Assist</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B1</td>
-			<td>D1</td>
-			<td>2</td>
-		</tr>
-		<tr align='center'>
-			<td>B2</td>
-			<td>D2 Mon 2 (SSUP)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B3</td>
-			<td>D2 Mon 3 (SSUP KM_Interlap)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B4</td>
-			<td>D2 Mon 4 (Seed)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B5</td>
-			<td>D2 Mon 5 (Shell)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B6</td>
-			<td>D2 Mon 6 (Minor) + Hosting</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B7</td>
-			<td>D2 Mon 7 (Dunkin GFDD)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>B8</td>
-			<td>D2 Mon 8 (MK)</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>N7</td>
-			<td style="vertical-align : middle;text-align:center;" rowspan="3">Nighttime</td>
-			<td>Assist+B1+B2</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>N8</td>
-			<td>B3+B4+B5</td>
-			<td>1</td>
-		</tr>
-		<tr align='center'>
-			<td>N9</td>
-			<td>B6+B7+B8</td>
-			<td>1</td>
-		</tr>
-			</table>
-		</div>
 	</div>
-</div>
-</div>
+	<!-- End Modal2 -->
 
 
 <!-- start container -->
