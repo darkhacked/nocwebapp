@@ -29,10 +29,11 @@ while ($qrydata = mysqli_fetch_array($qry)) {
   $seatVisit = $qrydata["c_seat_visit"];
 
 
-  $selectStatus = "SELECT w_status_temp FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+  $selectStatus = "SELECT w_status_temp, w_tools FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
   $qry = mysqli_query($db, $selectStatus);
   while ($qrydata = mysqli_fetch_array($qry)) {
     $color = $qrydata["w_status_temp"];
+    $tools = $qrydata["w_tools"];
   }
 
   $selectemailHost = "SELECT user_name, email FROM users WHERE username='$codeHost'";
@@ -49,7 +50,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
     $emailVisit = $qrydata["email"];
   }
 
-  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status) VALUES ('$codeVisit', '$dateHost', '$seatHost', '$color')";
+  $updatewdayVisit = "INSERT INTO work (w_code, w_date, w_type, w_status, w_tools) VALUES ('$codeVisit', '$dateHost', '$seatHost', '$color', '$tools')";
   mysqli_query($db, $updatewdayVisit);
 
   $updatewdayHost = "DELETE FROM work WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
