@@ -37,13 +37,24 @@
         </thead>
         <tbody>
             <?php
-            /*แสดงทั้งหมด
-            $swapQry = "SELECT * FROM swap ORDER BY c_id desc";
-            $qry = mysqli_query($db, $swapQry); */
+						//แสดงผล 100 ค่าต่อหน้า
+						$perpage = 100;
+							if (isset($_GET['page'])) {
+							$page = $_GET['page'];
+							} else {
+							$page = 1;
+							}
 
-            //เลือกแสดงผลจาก status Pending
-            $swapQry = "SELECT * FROM swap ORDER BY c_id desc";
-            $qry = mysqli_query($db, $swapQry);
+							$start = ($page - 1) * $perpage;
+
+							$swapQry = "SELECT * FROM swap ORDER BY c_id desc limit {$start} , {$perpage}";
+							$qry = mysqli_query($db, $swapQry);
+
+
+						//เลือกแสดงผลทั้งหมด
+            //$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
+            //$qry = mysqli_query($db, $swapQry);
+
 
             $i = 1; // รันเลขหน้าตาราง
             while ($row = mysqli_fetch_array($qry)) {
@@ -69,8 +80,36 @@
             ?>
         </tbody>
       </table>
+			<!-- Pagination button-->
+			<?php
+			 $sql2 = "SELECT * FROM swap";
+			 $query2 = mysqli_query($db, $sql2);
+			 $total_record = mysqli_num_rows($query2);
+			 $total_page = ceil($total_record / $perpage);
+			 ?>
+
+			 <nav>
+				<ul class="pagination">
+						<li class="page-item">
+							<a class="page-link" href="allreq.php?page=1" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+				<?php for($i=1;$i<=$total_page;$i++){ ?>
+						<li class="page-item">
+							<a class="page-link" href="allreq.php?page=<?php echo $i; ?>"><?php echo $i; ?>
+							</a>
+					</li>
+				<?php } ?>
+						<li class="page-item">
+							<a class="page-link" href="allreq.php?page=<?php echo $total_page;?>" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+				</ul>
+				</nav>
+				<!-- Pagination button-->
     </div>
-</div>
 <div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 <script type="text/javascript" src="js/search.js"></script>
 </body>

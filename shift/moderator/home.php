@@ -354,12 +354,21 @@
 								</thead>
 								<tbody>
 										<?php
+										//กำหนดให้แสดงผล 100 ต่อหน้า
+										$perpage = 100;
+											if (isset($_GET['page'])) {
+											$page = $_GET['page'];
+											} else {
+											$page = 1;
+											}
+
+											$start = ($page - 1) * $perpage;
 										/*แสดงทั้งหมด
 										$swapQry = "SELECT * FROM swap ORDER BY c_id desc";
 										$qry = mysqli_query($db, $swapQry); */
 
-										//เลือกแสดงผลจาก status Pending
-										$swapQry = "SELECT * FROM swap WHERE c_status IN ('Approve', 'Cancel') ORDER BY c_id desc";
+										//เลือกแสดงผลทั้งหมดยกเว้น status pending
+										$swapQry = "SELECT * FROM swap WHERE c_status IN ('Approve', 'Cancel') ORDER BY c_id desc limit {$start} , {$perpage}";
 										$qry = mysqli_query($db, $swapQry);
 
 										$i = 1; // รันเลขหน้าตาราง
