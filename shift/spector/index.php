@@ -283,7 +283,7 @@
 	    </tr>
 			<tr align='center'>
 	      <td>B3</td>
-	      <td>Mon 3 (SSUP KM + Hosting)</td>
+	      <td>Mon 6 (Minor)</td>
 	      <td>1</td>
 	    </tr>
 			<tr align='center'>
@@ -298,7 +298,7 @@
 	    </tr>
 			<tr align='center'>
 	      <td>B6</td>
-	      <td>Mon 6 (Minor)</td>
+	      <td>Mon 3 (SSUP KM + Hosting)</td>
 	      <td>1</td>
 	    </tr>
 			<tr align='center'>
