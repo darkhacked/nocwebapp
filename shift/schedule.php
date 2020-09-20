@@ -1133,7 +1133,7 @@
 				  <tr>
 				  <tr>
 						<td style="background-color:#fff" width="20px"></td>
-						<td>Seat A1 / A2 / D1 / D2</td>
+						<td>Seat B-B8</td>
 				  </tr>
 					<tr>
 						<td style="background-color:#ffcccc"></td>
