@@ -283,12 +283,12 @@
 	    </tr>
 			<tr align='center'>
 	      <td>B3</td>
-	      <td>Mon 6 (Minor)</td>
+				<td>Mon 6 (Minor) + MonHelpdesk 8</td>
 	      <td>1</td>
 	    </tr>
 			<tr align='center'>
 	      <td>B4</td>
-	      <td>Mon 4 (Seed)</td>
+	      <td>Mon 4 (Seed) + MonHelpdesk 10</td>
 	      <td>1</td>
 	    </tr>
 			<tr align='center'>
