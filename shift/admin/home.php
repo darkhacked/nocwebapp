@@ -39,6 +39,9 @@
 			<li class="nav-item">
         <a class="nav-link" href="create_user.php">Create New User</a>
       </li>
+			<li class="nav-item">
+				<a class="nav-link" href="../stats.php">สถิติ</a>
+			</li>
     </ul>
 		<ul class="navbar-nav ml-auto">
       <?php  if (isset($_SESSION['user'])) ; ?>

@@ -33,11 +33,14 @@
 			<li class="nav-item">
 				<a class="nav-link" href="index.php">สถานะคำขออนุมัติ</a>
 			</li>
-			<li class="nav-item mr-auto">
+			<li class="nav-item">
 				<a class="nav-link" href="schedule.php">ตารางงาน</a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="ot.php">เบิก OT<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="stats.php">สถิติ</a>
 			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
