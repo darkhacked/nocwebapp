@@ -62,11 +62,45 @@
 <div class="container">
 	<div class="jumbotron">
 		<center>
-		<h4>คัมมึ่งซูนคับ</h4>
-		<h4>(เลี้ยงเบียร์ผมซักลังกำลังดี)</h4>
+		<h4>สถิติการทำ OT ของพนักงานในปี 2020</h4>
+		<br>
+		<table id="table" class="table">
+			<thead class="thead-dark">
+				<tr align='center'>
+					<th width='60px' scope="col">#</th>
+					<th width='100px' scope="col">Code</th>
+					<th width='250px' scope="col">NAME</th>
+					<th scope="col">OD / ON</th>
+					<th width='100px' scope="col">OT ALL</th>
+				</tr>
+		</thead>
 
+	<?php
+	 $in1 = 1;
 
-		</div>
+	 $SQL = "SELECT * FROM stat_all ORDER BY s_otall desc";
+ 	 $qry = mysqli_query($db, $SQL);
+ 	 while($row = mysqli_fetch_array($qry)){
+
+			echo '<tbody>';
+			echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			echo '<th scope="row">'. $in1 .'</th>';
+			echo '<td class="text-nowrap">'.$row["s_code"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_name"].'</td>';
+
+			echo '<td> <div class="progress" style="height: 20px;">';
+			echo '  <div class="progress-bar" role="progressbar" style="width: '.$row["s_od"].'%" aria-valuenow="'.$row["s_od"].'" aria-valuemin="0" aria-valuemax="100">'.$row["s_od"].'</div>';
+			echo '    <div class="progress-bar bg-success" role="progressbar" style="width: '.$row["s_on"].'%" aria-valuenow="'.$row["s_on"].'" aria-valuemin="0" aria-valuemax="100">'.$row["s_on"].'</div>';
+			echo '  </div></td>';
+
+			echo '<td class="text-nowrap">'.$row["s_otall"].'</td>';
+			$in1++;
+		}
+			echo '</tbody>';
+			echo '</tr>';
+			echo '</table>';
+		?>
+	</div>
 </div>
 <div><iframe src="credit.html" width="100%" frameBorder="0"></iframe></div>
 </body>
