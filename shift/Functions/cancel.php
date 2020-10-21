@@ -75,9 +75,9 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress($emailHost);     // TO host
-      $mail->addCC('panyaphol.s@jasmine.com');
-      $mail->addCC('alongkorn.pu@jasmine.com');
-      $mail->addCC('nocchief@ji-net.com');
+      //$mail->addCC('panyaphol.s@jasmine.com');
+      //$mail->addCC('alongkorn.pu@jasmine.com');
+      //$mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
@@ -127,6 +127,10 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 					<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
 					<td style="background-color:#ff0000;"><span><b>Cancel</b></span></td>
 				</tr>
+        <tr>
+          <td align="right" style="background-color:#bababa;"><span>Cancel By :</span></td>
+          <td style="background-color:#00ff00;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
+        </tr>
 			</table>
 			<br><br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
