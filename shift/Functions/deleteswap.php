@@ -20,7 +20,6 @@ mysqli_query($db, $updateStatus);
 $updateStatus2 = "UPDATE work SET w_status = '$statusVisit', w_tools ='' WHERE w_code = '$codeVisit' AND w_date ='$dateVisit'";
 mysqli_query($db, $updateStatus2);
 
-echo $seat;
 //ลบข้อมูลออกจาก database ตาม id ที่ส่งมา
 $sql = "DELETE FROM swap WHERE c_id='$Cid' ";
 $result = mysqli_query($db, $sql) or die ("Error in query: $sql " . mysqli_error());

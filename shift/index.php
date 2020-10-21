@@ -21,6 +21,8 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="js/sweetalert2.min.css">
 </head>
 <body>
 	<!-- Start NAV BAR -->
@@ -115,11 +117,37 @@
 							echo "<td>".$row["c_date_visit"]."</td>";
 							echo "<td>".$row["c_seat_visit"]."</td>";
 				      echo "<td><span class=\"badge badge-".$row["c_badge"]."\">".$row["c_status"]."</span></td>";
-							//echo "<td>".$row["c_status"]."</td>";
-							echo "<td><button type=\"button\" onclick=\"return confirm('คุณต้องการยกเลิกคำขออนุมัตินี้ทิ้งใช่หรือไม่ ?');\" class=\"btn btn-danger btn-sm\">
-<a href=\"Functions/deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
-							echo "</tr>";
+							echo "<td><button type=\"button\" onclick=\"deletedata()\" class=\"btn btn-danger btn-sm\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
+							//button แบบเก่า ไม่ได้เชื่อมกับ sweet alert
+							//echo "<td><button type=\"button\" onclick=\"deletedata()\" class=\"btn btn-danger btn-sm\"><a href=\"Functions/deleteswap.php?c_id=$row[0]\" style=\"color:#FFFFFF; text-decoration:none;\">Cancel</a></button></td>";
+
 							$i++;
+							?>
+							<!-- script sweetalert delete -->
+							<script>
+								function deletedata() {
+									Swal.fire({
+										title: 'คุณต้องการลบคำขออนุมัตินี้หรือไม่ ?',
+									  showDenyButton: true,
+									  confirmButtonText: `ใช่`,
+									  denyButtonText: `ไม่`,
+										allowOutsideClick: false,
+									}).then((result) => {
+									  if (result.isConfirmed) {
+											Swal.fire({
+												title: 'ยกเลิกคำขอเรียบร้อย !',
+												icon: 'success',
+												allowOutsideClick: false,
+											}).then((result) => {
+												if (result.isConfirmed) {
+													<?php echo "window.location = \"Functions/deleteswap.php?c_id=$row[0]\";" ?>
+												}
+											});
+									  }
+									});
+								}
+							</script>
+							<?php
 							}
 							?>
 				  </tbody>

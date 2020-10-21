@@ -15,14 +15,14 @@
 	 <div class="card shadow-lg bg-white rounded" style="width:600px;">
 	      <article class="card-body">
 	          <h4 class="card-title text-primary text-center mt-1">NOC JI-NET WORK SCHEDULE</h4>
-						<h6 class="card-title text-primary text-center">Version 2.0.0 | <a href="changelog.html" target="_blank"><font color="lightblue">Changelog</font></a></h6>
+						<h6 class="card-title text-primary text-center">Version 2.1.0 | <a href="changelog.html" target="_blank"><font color="lightblue">Changelog</font></a></h6>
 	          <hr>
 	          <!--<p class="text-primary small">V0.1.1 <a href="changelog.md" target="_blank">Changelog</a></p>-->
 	          <!--<div class="alert alert-warning">
 	                <p class="mb-0">สามารถเข้าใช้งานได้แล้วโดย user = รหัสพนง / pass = 1234<br>Login แล้วเข้าไปเปลี่ยนรหัสผ่านกันเองนะครับ<br></p>
 	          </div>-->
 	          <form method="POST" action="login.php">
-							<?php echo display_error(); ?>
+						<p><h6><?php echo display_error(); ?></h6></p>
 	          <div class="form-group">
 	          <div class="input-group">
 	              <input name="username" id="username" type="text" onkeyup="this.value = this.value.toUpperCase();" placeholder="รหัสพนักงาน" class="form-control">

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	error_reporting(0);  // disable notice error message
 
 	// Import PHPMailer classes into the global namespace
 	// These must be at the top of your script, not inside a function
@@ -13,6 +14,7 @@
 	require 'PHPMailer/src/SMTP.php';
 
 	$db = mysqli_connect('localhost', 'root', 'toor', 'shift');
+
 
 	if (isset($_POST['swapmenu1'])) {
 		$codeHost    =  ($_POST['c_code_host']);
@@ -29,6 +31,174 @@
 		$color = "#ffff00";
 
 		$dateHost = $year.$month.$day;
+
+
+		//ตรวจสอบก่อนว่ามีวันที่ทำงานหรือไม่
+		$check = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+		$qry = mysqli_query($db, $check);
+		$num = mysqli_num_rows($qry);
+
+		$check2 = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost'";
+		$qry = mysqli_query($db, $check2);
+		$num2 = mysqli_num_rows($qry);
+
+		//ตรวจสอบว่ามีการแลกไว้อยู่แล้วไหม
+		$checkswaphost = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+		$qry = mysqli_query($db, $checkswaphost);
+		$num3 = mysqli_num_rows($qry);
+
+		$checkswapvisit = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+		$qry = mysqli_query($db, $checkswapvisit);
+		$num4 = mysqli_num_rows($qry);
+
+
+		if ($label == "") {
+			?>
+			<!DOCTYPE html>
+			<html>
+			<head>
+				<script src="../js/jquery.js"></script>
+				<script src="../js/bootstrap.min.js"></script>
+				<script src="../js/sweetalert2.min.js"></script>
+				<link href="../css/bootstrap.css" rel="stylesheet">
+				<link rel="stylesheet" href="../js/sweetalert2.min.css">
+			</head>
+			<body>
+				<script>
+				setTimeout(function() {
+					Swal.fire({
+						title: "โปรดทำรายการใหม่ !",
+						text: 'ท่านไม่ได้ระบุประเภทของการลา',
+						icon: "error",
+						allowOutsideClick: false,
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location = "../schedule.php";
+						}
+					});
+				}, 100);
+				</script>
+			</body>
+		<?php
+		}elseif ($num < 1) {
+
+			?>
+			<!DOCTYPE html>
+			<html>
+			<head>
+				<script src="../js/jquery.js"></script>
+				<script src="../js/bootstrap.min.js"></script>
+				<script src="../js/sweetalert2.min.js"></script>
+				<link href="../css/bootstrap.css" rel="stylesheet">
+				<link rel="stylesheet" href="../js/sweetalert2.min.css">
+			</head>
+			<body>
+				<script>
+				setTimeout(function() {
+					Swal.fire({
+						title: "โปรดทำรายการใหม่ !",
+						text: 'วันที่ท่านเลือก ไม่ใช่วันทำงานของท่าน',
+						icon: "error",
+						allowOutsideClick: false,
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location = "../schedule.php";
+						}
+					});
+				}, 100);
+				</script>
+			</body>
+		<?php
+
+	}elseif ($num2 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'พนักงานที่ท่านเลือกมีวันทำงานอยู่แล้ว ไม่สามารถแทนได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+	} elseif ($num3 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+}elseif ($num4 > 0) {
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/sweetalert2.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/sweetalert2.min.css">
+	</head>
+	<body>
+		<script>
+		setTimeout(function() {
+			Swal.fire({
+				title: "โปรดทำรายการใหม่ !",
+				text: 'พนักงานที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+				icon: "error",
+				allowOutsideClick: false,
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location = "../schedule.php";
+				}
+			});
+		}, 100);
+		</script>
+	</body>
+<?php
+
+} else{
+
 
 		// function ดึงชื่อพนักงานมาใส่ field c_name_visit
 		$selectNamevisit = "SELECT user_name, email FROM users WHERE username = '$codeVisit'";
@@ -55,8 +225,9 @@
 		$updateStatus = "UPDATE work SET w_status ='$color', w_tools ='$label $nameVisit มาแทน' WHERE w_code = '$codeHost' AND w_date ='$dateHost'";
 		mysqli_query($db, $updateStatus);
 
-		$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='มาแทน $nameHost $label' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
-		mysqli_query($db, $updateStatus2);
+		//ลองปิดดูก่อนน่าจะไม่มีผล
+		//$updateStatus2 = "UPDATE work SET w_status ='$color', w_tools ='มาแทน $nameHost $label' WHERE w_code = '$codeVisit' AND w_date ='$dateHost'";
+		//mysqli_query($db, $updateStatus2);
 
 
 		if ($codeVisit == "-") {
@@ -238,13 +409,9 @@
 			} catch (Exception $e) {
 					echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 			}
-
-
-
 		}
-
 	}
-
+}
 
 
 
@@ -265,6 +432,107 @@ if (isset($_POST['swapmenu2'])) {
 
 	$dateHost = $year.$month.$day;
 	$remark  = $re." - ".$re2;
+
+
+	//ตรวจสอบก่อนว่ามีวันที่ทำงานหรือไม่
+	$check = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check);
+	$num = mysqli_num_rows($qry);
+
+	//ตรวจสอบว่ามีการแลกไว้อยู่แล้วไหม
+	$checkswaphost = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswaphost);
+	$num3 = mysqli_num_rows($qry);
+
+
+	if ($label == "") {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'ท่านไม่ได้ระบุประเภทของการลา',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+	}elseif ($num < 1) {
+
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือก ไม่ใช่วันทำงานของท่าน',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+}elseif ($num3 > 0) {
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/sweetalert2.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/sweetalert2.min.css">
+	</head>
+	<body>
+		<script>
+		setTimeout(function() {
+			Swal.fire({
+				title: "โปรดทำรายการใหม่ !",
+				text: 'วันที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+				icon: "error",
+				allowOutsideClick: false,
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location = "../schedule.php";
+				}
+			});
+		}, 100);
+		</script>
+	</body>
+<?php
+
+} else{
 
 	// select seat + status host
 	$selectSeathost = "SELECT w_type, w_status FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
@@ -370,11 +638,10 @@ if (isset($_POST['swapmenu2'])) {
 			header('location: ../index.php');
 	} catch (Exception $e) {
 			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
 	}
-
-
-
 }
+
 
 
 if (isset($_POST['swapmenu3'])){
@@ -391,6 +658,144 @@ if (isset($_POST['swapmenu3'])){
 	$color = "#ffff00";
 
 	$dateHost = $year.$month.$day;
+
+
+	//ตรวจสอบวันทำงาน host
+	$check = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check);
+	$num = mysqli_num_rows($qry);
+
+	//ตรวจสอบวันทำงาน visit
+	$check2 = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check2);
+	$num2 = mysqli_num_rows($qry);
+
+	//ตรวจสอบว่ามีการแลกไว้อยู่แล้วไหม
+	$checkswaphost = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswaphost);
+	$num3 = mysqli_num_rows($qry);
+
+	$checkswapvisit = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswapvisit);
+	$num4 = mysqli_num_rows($qry);
+
+
+	if ($num < 1) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือก ไม่ใช่วันทำงานของท่าน',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+		}elseif ($num2 < 1) {
+				?>
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<script src="../js/jquery.js"></script>
+					<script src="../js/bootstrap.min.js"></script>
+					<script src="../js/sweetalert2.min.js"></script>
+					<link href="../css/bootstrap.css" rel="stylesheet">
+					<link rel="stylesheet" href="../js/sweetalert2.min.css">
+				</head>
+				<body>
+					<script>
+					setTimeout(function() {
+						Swal.fire({
+							title: "โปรดทำรายการใหม่ !",
+							text: 'พนักงานที่ท่านเลือกหยุด ไม่สามารถเลือกได้',
+							icon: "error",
+							allowOutsideClick: false,
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location = "../schedule.php";
+							}
+						});
+					}, 100);
+					</script>
+				</body>
+			<?php
+
+	}elseif ($num3 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+}elseif ($num4 > 0) {
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/sweetalert2.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/sweetalert2.min.css">
+	</head>
+	<body>
+		<script>
+		setTimeout(function() {
+			Swal.fire({
+				title: "โปรดทำรายการใหม่ !",
+				text: 'พนักงานที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+				icon: "error",
+				allowOutsideClick: false,
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location = "../schedule.php";
+				}
+			});
+		}, 100);
+		</script>
+	</body>
+<?php
+
+} else{
 
 	// function ดึงชื่อพนักงานมาใส่ field c_name_visit
 	$selectNamevisit = "SELECT user_name, email FROM users WHERE username = '$codeVisit'";
@@ -515,10 +920,8 @@ if (isset($_POST['swapmenu3'])){
 			header('location: ../index.php');
 	} catch (Exception $e) {
 			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
 	}
-
-
-
 }
 
 
@@ -543,6 +946,143 @@ if (isset($_POST['swapmenu4'])) {
 
 	$dateHost = $year.$month.$day;
 	$dateVisit = $year2.$month2.$day2;
+
+	//ตรวจสอบวันทำงาน host
+	$check = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check);
+	$num = mysqli_num_rows($qry);
+
+	//ตรวจสอบวันทำงาน visit
+	$check2 = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateVisit'";
+	$qry = mysqli_query($db, $check2);
+	$num2 = mysqli_num_rows($qry);
+
+	//ตรวจสอบว่ามีการแลกไว้อยู่แล้วไหม
+	$checkswaphost = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswaphost);
+	$num3 = mysqli_num_rows($qry);
+
+	$checkswapvisit = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateVisit' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswapvisit);
+	$num4 = mysqli_num_rows($qry);
+
+
+	if ($num < 1) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือก ไม่ใช่วันทำงานของท่าน',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+		}elseif ($num2 < 1) {
+				?>
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<script src="../js/jquery.js"></script>
+					<script src="../js/bootstrap.min.js"></script>
+					<script src="../js/sweetalert2.min.js"></script>
+					<link href="../css/bootstrap.css" rel="stylesheet">
+					<link rel="stylesheet" href="../js/sweetalert2.min.css">
+				</head>
+				<body>
+					<script>
+					setTimeout(function() {
+						Swal.fire({
+							title: "โปรดทำรายการใหม่ !",
+							text: 'พนักงานที่ท่านเลือกหยุด ไม่สามารถเลือกได้',
+							icon: "error",
+							allowOutsideClick: false,
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location = "../schedule.php";
+							}
+						});
+					}, 100);
+					</script>
+				</body>
+			<?php
+
+	}elseif ($num3 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+}elseif ($num4 > 0) {
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/sweetalert2.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/sweetalert2.min.css">
+	</head>
+	<body>
+		<script>
+		setTimeout(function() {
+			Swal.fire({
+				title: "โปรดทำรายการใหม่ !",
+				text: 'พนักงานที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+				icon: "error",
+				allowOutsideClick: false,
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location = "../schedule.php";
+				}
+			});
+		}, 100);
+		</script>
+	</body>
+<?php
+
+} else{
 
 // select seat + status host
 $selectSeathost = "SELECT w_type, w_status FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
@@ -670,10 +1210,8 @@ try {
 		header('location: ../index.php');
 } catch (Exception $e) {
 		echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-
-
-
+		}
+	}
 }
 
 
@@ -693,6 +1231,143 @@ if (isset($_POST['swapmenu5'])) {
 	$color = "#ffff00";
 
 	$dateHost = $year.$month.$day;
+
+	//ตรวจสอบวันทำงาน host
+	$check = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check);
+	$num = mysqli_num_rows($qry);
+
+	//ตรวจสอบวันทำงาน visit
+	$check2 = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost'";
+	$qry = mysqli_query($db, $check2);
+	$num2 = mysqli_num_rows($qry);
+
+	//ตรวจสอบว่ามีการแลกไว้อยู่แล้วไหม
+	$checkswaphost = "SELECT w_code,w_date FROM work WHERE w_code='$codeHost' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswaphost);
+	$num3 = mysqli_num_rows($qry);
+
+	$checkswapvisit = "SELECT w_code,w_date FROM work WHERE w_code='$codeVisit' AND w_date='$dateHost' AND w_status LIKE '%ffff00'";
+	$qry = mysqli_query($db, $checkswapvisit);
+	$num4 = mysqli_num_rows($qry);
+
+
+	if ($num < 1) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือก ไม่ใช่วันทำงานของท่าน',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+	}elseif ($num2 > 0) {
+				?>
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<script src="../js/jquery.js"></script>
+					<script src="../js/bootstrap.min.js"></script>
+					<script src="../js/sweetalert2.min.js"></script>
+					<link href="../css/bootstrap.css" rel="stylesheet">
+					<link rel="stylesheet" href="../js/sweetalert2.min.css">
+				</head>
+				<body>
+					<script>
+					setTimeout(function() {
+						Swal.fire({
+							title: "โปรดทำรายการใหม่ !",
+							text: 'พนักงานที่ท่านเลือก มีวันทำงานอยู่แล้ว',
+							icon: "error",
+							allowOutsideClick: false,
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location = "../schedule.php";
+							}
+						});
+					}, 100);
+					</script>
+				</body>
+			<?php
+
+	}elseif ($num3 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'วันที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+}elseif ($num4 > 0) {
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/sweetalert2.min.js"></script>
+			<link href="../css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet" href="../js/sweetalert2.min.css">
+		</head>
+		<body>
+			<script>
+			setTimeout(function() {
+				Swal.fire({
+					title: "โปรดทำรายการใหม่ !",
+					text: 'พนักงานที่ท่านเลือกมีรายการขออนุมัติอยู่ ไม่สามารถเลือกซ้ำได้',
+					icon: "error",
+					allowOutsideClick: false,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						window.location = "../schedule.php";
+					}
+				});
+			}, 100);
+			</script>
+		</body>
+	<?php
+
+} else{
 
 	// function ดึงชื่อพนักงานแทน
 	$selectNamevisit = "SELECT user_name, email FROM users WHERE username = '$codeVisit'";
@@ -803,10 +1478,10 @@ if (isset($_POST['swapmenu5'])) {
 			header('location: ../index.php');
 	} catch (Exception $e) {
 			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
 	}
-
-
 }
+
 
 
 ?>

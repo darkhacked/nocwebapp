@@ -18,6 +18,8 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="js/sweetalert2.min.css">
 </head>
 <body>
 	<script>
@@ -741,7 +743,7 @@
 								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								<input type="hidden" name="c_labelmain" value="สลับกะ">
 								<input type="hidden" name="c_remark" value="กะเดียวกัน">
-								ระบุวันที่ต้องการสลับ
+								ระบุวันทำงานที่ต้องการสลับของท่าน
 							 <div class="form-row">
 								 <div class="col-md-3">
 								 <select name="day_host" class="custom-select custom-select-sm">
@@ -860,7 +862,7 @@
 								<input type="hidden" name="email" value="<?php echo $_SESSION['user']['email']; ?>">
 								<input type="hidden" name="c_labelmain" value="สลับกะ">
 								<input type="hidden" name="c_remark" value="ระหว่างกะ">
-							 ระบุวันทำงานของท่าน
+							 ระบุวันทำงานของท่านที่ต้องการจะสลับ
 							 <div class="form-row">
 								 <div class="col-md-3">
 								 <select name="day_host" class="custom-select custom-select-sm">
@@ -950,7 +952,7 @@
 									 </select>
 									 </div>
 								 </div><br>
-								 ระบุวันทำงานของพนักงานที่ต้องการสลับกะ
+								 ระบุวันทำงานของพนักงานที่ต้องการสลับ
 							 <div class="form-row">
 								 <div class="col-md-3">
 								 <select name="day_visit" class="custom-select custom-select-sm">
@@ -1189,6 +1191,7 @@
 			$ic = 1;
 			$id = 1;
 
+			//select employee function
 			$allEmpDataA = array();
 			$SQL = "SELECT * FROM users WHERE shift='A' ORDER BY shift , remark";
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
@@ -1215,6 +1218,14 @@
 			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
 			while($row = mysqli_fetch_assoc($qry)){
 			 $allEmpDataD[$row['username']] = $row['user_name'];
+			}
+
+			//select all employee
+			$allEmp = array();
+			$SQL = "SELECT username, user_name FROM users";
+			$qry = mysqli_query($db, $SQL) or die('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ Error : '. mysqli_error());
+			while($row = mysqli_fetch_assoc($qry)){
+			 $allEmp[$row['username']] = $row['user_name'];
 			}
 
 
@@ -1390,7 +1401,7 @@
 	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
-		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
+		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้ช่องตารางเป็นสีเทา
 		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
