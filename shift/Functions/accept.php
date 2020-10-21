@@ -105,7 +105,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
       </head>
       <body>
       <span>เรียน คุณ'.$nameHost.'</span><br>
-      <span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameVisit.'</span><br>
+      <span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameVisit.'</span>
       <br><br>
       <span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
       <table>
@@ -134,10 +134,10 @@ while ($qrydata = mysqli_fetch_array($qry)) {
         </tr>
         <tr>
           <td align="right" style="background-color:#bababa;"><span>Approve By :</span></td>
-          <td style="background-color:#00ff00;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
+          <td style="background-color:#bababa;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
         </tr>
       </table>
-      <br><br><br>
+      <br><br>
       <span>This is an automated email, please don\'t reply.</span><br>
       <span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
       </body>

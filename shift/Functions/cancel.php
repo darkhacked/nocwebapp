@@ -1,5 +1,5 @@
 <?php
-
+include('functions.php');
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -75,9 +75,9 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			//Recipients
 			$mail->setFrom('webapp@ji-net.com', 'NOC-JINET WEBAPP');   // ชื่อที่จะให้โชว์ตั้งเองได้
 			$mail->addAddress($emailHost);     // TO host
-      //$mail->addCC('panyaphol.s@jasmine.com');
-      //$mail->addCC('alongkorn.pu@jasmine.com');
-      //$mail->addCC('nocchief@ji-net.com');
+      $mail->addCC('panyaphol.s@jasmine.com');
+      $mail->addCC('alongkorn.pu@jasmine.com');
+      $mail->addCC('nocchief@ji-net.com');
 
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
@@ -104,7 +104,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 				</style>
 			</head>
 			<body>
-			<span>เรียน คุณ'.$nameHost.'</span><br>
+			<span>เรียน คุณ'.$nameHost.'</span>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -129,10 +129,10 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 				</tr>
         <tr>
           <td align="right" style="background-color:#bababa;"><span>Cancel By :</span></td>
-          <td style="background-color:#00ff00;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
+          <td style="background-color:#bababa;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
         </tr>
 			</table>
-			<br><br><br>
+			<br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
@@ -197,7 +197,7 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			</head>
 			<body>
 			<span>เรียน คุณ'.$nameHost.'</span><br>
-			<span>สำเนาเรียน คุณ'.$nameVisit.'</span><br>
+			<span>สำเนาเรียน คุณ'.$nameVisit.'</span>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -224,8 +224,12 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 					<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
 					<td style="background-color:#ff0000;"><span><b>Cancel</b></span></td>
 				</tr>
+        <tr>
+          <td align="right" style="background-color:#bababa;"><span>Cancel By :</span></td>
+          <td style="background-color:#bababa;"><span><b>'.$_SESSION['user']['user_name'].'</b></span></td>
+        </tr>
 			</table>
-			<br><br><br>
+			<br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
@@ -238,9 +242,8 @@ while ($qrydata = mysqli_fetch_array($qry)) {
 			header('location: ../moderator/home.php');
 	} catch (Exception $e) {
 			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-	}
-}
-
+  	}
+  }
 }
 
 
