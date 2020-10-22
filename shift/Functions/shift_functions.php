@@ -275,7 +275,7 @@
 			    </head>
 			    <body>
 			    <span>เรียน คุณปรัชญา สีทอง</span><br>
-			    <span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span><br>
+			    <span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span>
 			    <br><br>
 			    <span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			    <table>
@@ -303,7 +303,7 @@
 					    <td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 					  </tr>
 			    </table>
-			    <br><br><br>
+			    <br><br>
 			    <span>This is an automated email, please don\'t reply.</span><br>
 			    <span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			    </body>
@@ -364,7 +364,7 @@
 					</head>
 					<body>
 					<span>เรียน คุณปรัชญา สีทอง</span><br>
-					<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+					<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span>
 					<br><br>
 					<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 					<table>
@@ -396,7 +396,7 @@
 					    <td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 					  </tr>
 					</table>
-					<br><br><br>
+					<br><br>
 					<span>This is an automated email, please don\'t reply.</span><br>
 					<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 					</body>
@@ -594,7 +594,7 @@ if (isset($_POST['swapmenu2'])) {
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.'</span>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -626,7 +626,7 @@ if (isset($_POST['swapmenu2'])) {
 					<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 				</tr>
 			</table>
-			<br><br><br>
+			<br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
@@ -876,7 +876,7 @@ if (isset($_POST['swapmenu3'])){
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -908,7 +908,7 @@ if (isset($_POST['swapmenu3'])){
 					<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 				</tr>
 			</table>
-			<br><br><br>
+			<br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
@@ -1166,7 +1166,7 @@ try {
 		</head>
 		<body>
 		<span>เรียน คุณปรัชญา สีทอง</span><br>
-		<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+		<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span>
 		<br><br>
 		<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 		<table>
@@ -1198,7 +1198,7 @@ try {
 				<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 			</tr>
 		</table>
-		<br><br><br>
+		<br><br>
 		<span>This is an automated email, please don\'t reply.</span><br>
 		<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 		</body>
@@ -1438,7 +1438,7 @@ if (isset($_POST['swapmenu5'])) {
 			</head>
 			<body>
 			<span>เรียน คุณปรัชญา สีทอง</span><br>
-			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span><br>
+			<span>สำเนาเรียน คุณอลงกรณ์ พุฒิธนสมบัติ, คุณ'.$nameHost.', คุณ'.$nameVisit.'</span>
 			<br><br>
 			<span>แจ้งรายการขออนุมัติดังนี้</span><br><br>
 			<table>
@@ -1466,7 +1466,7 @@ if (isset($_POST['swapmenu5'])) {
 					<td style="background-color:#ffff00;"><span><b>Pending</b></span></td>
 				</tr>
 			</table>
-			<br><br><br>
+			<br><br>
 			<span>This is an automated email, please don\'t reply.</span><br>
 			<span>Sent by NOC-JINET WORK SCHEDULE WEBAPP.</span>
 			</body>
