@@ -61,8 +61,7 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<center>
-		<h4>สถิติการทำ OT ของพนักงานในปี 2020</h4>
+		<center><h4>สถิติการทำ OT ของพนักงานในปี 2020</h4></center>
 		<br>
 		<table id="table" class="table">
 			<thead class="thead-dark">
@@ -94,6 +93,48 @@
 			echo '  </div></td>';
 
 			echo '<td class="text-nowrap">'.$row["s_otall"].'</td>';
+			$in1++;
+		}
+			echo '</tbody>';
+			echo '</tr>';
+			echo '</table>';
+		?>
+		<hr><br>
+		<center><h4>สถิติการลาหยุด ของพนักงานในปี 2020</h4></center>
+		<br>
+		<table id="table" class="table table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr align='center'>
+					<th width='60px' scope="col">#</th>
+					<th width='100px' scope="col">Code</th>
+					<th width='250px' scope="col">NAME</th>
+					<th scope="col">ลาป่วย</th>
+					<th scope="col">ลาพักผ่อน</th>
+					<th scope="col">ลากิจ</th>
+					<th scope="col">ลาสมรส</th>
+					<th scope="col">ลาอื่นๆ</th>
+					<th width='100px' scope="col">รวม</th>
+				</tr>
+		</thead>
+
+	<?php
+	 $in1 = 1;
+
+	 $SQL = "SELECT * FROM stat_all ORDER BY s_sum desc";
+ 	 $qry = mysqli_query($db, $SQL);
+ 	 while($row = mysqli_fetch_array($qry)){
+
+			echo '<tbody>';
+			echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			echo '<th scope="row">'. $in1 .'</th>';
+			echo '<td class="text-nowrap">'.$row["s_code"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_name"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_sick"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_holiday"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_bussiness"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_married"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_other"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_sum"].'</td>';
 			$in1++;
 		}
 			echo '</tbody>';
