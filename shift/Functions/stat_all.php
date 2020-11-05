@@ -30,7 +30,13 @@ while($C2 = mysqli_fetch_array($Cqry2)){
   $qc2 = $C2['COUNT(w_type)'];
 }
 
-$CountOTDay = $qc1 + $qc2;
+$count3 = "SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'OD%' AND w_date LIKE '2020%'";
+$Cqry3 = mysqli_query($db, $count3);
+while($C3 = mysqli_fetch_array($Cqry3)){
+  $qc3 = $C3['COUNT(w_type)'];
+}
+
+$CountOTDay = $qc1 + $qc2 + $qc3;
 
 $SQL3 = "UPDATE stat_all SET stat_all.s_od='$CountOTDay' WHERE s_code='$member'";
 $qry3 = mysqli_query($db, $SQL3);
