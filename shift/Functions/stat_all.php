@@ -8,6 +8,11 @@ $db = mysqli_connect('localhost', 'root', 'toor', 'shift');
 //DELETE FROM stat_month
 //INSERT INTO stat_month (s_code, s_name) SELECT username, user_name FROM users WHERE shift IN ('A','B','C','D')
 
+//Update times
+$time = strtotime("Now");
+$SQL = "UPDATE stat_all SET s_remark = '$time' WHERE stat_all.id = 1";
+$qry = mysqli_query($db, $SQL);
+
 // query OT
 $SQL = "SELECT username FROM users WHERE username AND shift IN ('A','B','C','D') ORDER BY shift , remark";
 $qry = mysqli_query($db, $SQL);
@@ -103,7 +108,7 @@ $CountLeave = $S_sick + $S_holi + $S_bussi + $S_marr + $S_oth;
 $AllLeave= "UPDATE stat_all SET stat_all.s_sum='$CountLeave' WHERE s_code='$member'";
 $qry10 = mysqli_query($db, $AllLeave);
 
-
+header("location:../stats.php");
 }
 
 ?>

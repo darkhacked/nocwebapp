@@ -61,6 +61,19 @@
 
 <div class="container">
 	<div class="jumbotron">
+		<center><h5>UPDATE ล่าสุด <span style="color:red">
+			<?php
+				date_default_timezone_set("Asia/Bangkok");
+				$SQL = "SELECT s_remark FROM stat_all WHERE id = '1'";
+				$qry = mysqli_query($db, $SQL);
+					while($qrytime = mysqli_fetch_array($qry)){
+						$time = $qrytime["s_remark"];
+					}
+						echo date("d-m-Y h:i:s A", $time);
+			?>
+		</span>
+		<button type="button" class="btn btn-primary btn-sm"><a href="functions/stat_all.php"><span style="color:white">กดเพื่อ Update ข้อมูลใหม่</span></a></button>
+		</h5></center>
 		<center><h4>สถิติการทำ OT ของพนักงานในปี 2020</h4></center>
 		<br>
 		<table id="table" class="table">
