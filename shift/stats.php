@@ -69,7 +69,7 @@
 					while($qrytime = mysqli_fetch_array($qry)){
 						$time = $qrytime["s_remark"];
 					}
-						echo date("d-m-Y h:i:s A", $time);
+						echo date("d/m/Y H:i:s A", $time);
 			?>
 		</span>
 		<button type="button" class="btn btn-primary btn-sm"><a href="functions/stat_all.php"><span style="color:white">กดเพื่อ Update ข้อมูลใหม่</span></a></button>
