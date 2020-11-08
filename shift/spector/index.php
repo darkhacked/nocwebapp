@@ -348,54 +348,60 @@
 	<div class="row">
 		<!-- menu swap -->
 		<div class="col-3">
-			 <div class="alert alert-dismissible alert-info">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
+			 <div class="alert alert-info">
+				 <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
 					<center><h5>ลาป่วย/ลากิจ/ลาพักผ่อน</h5>
 					<h5>ต้องไปกรอกในระบบ JPM ด้วยนะครับ</h5></center><hr>
 					<h5>Status color</h5>
 					<table>
 				  <tr>
-						<tr>
-							<td style="background-color:#fff" width="20px"></td>
-							<td>Seat B - B8</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ffcccc"></td>
-							<td>Seat N</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ff96ff"></td>
-							<td>OD / ON จัดสรร</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ff66cc"></td>
-							<td>OT Training</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ffff00"></td>
-							<td>คำขออยู่ระหว่างพิจารณา</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#00ff00"></td>
-							<td>คำขออนุมัติแล้ว / OT ที่ได้จากการแลกหรือลา</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#00a2ff"></td>
-							<td>ลากิจ / OT มาแทนคนที่ลากิจ</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ff7b00"></td>
-							<td>ลาไม่มีคนแทน / ลาระบุเวลา</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#ff0000"></td>
-							<td>ขาดงาน</td>
-					  </tr>
-						<tr>
-							<td style="background-color:#d3d3d3"></td>
-							<td>วันหยุด</td>
-					  </tr>
+						<td style="background-color:#fff" width="20px"></td>
+						<td>Seat B-B8</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ffcccc"></td>
+						<td>Seat N</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff96ff"></td>
+						<td>OD (OT Day) / ON (OT Night) จัดสรร</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff66cc"></td>
+						<td>TR (Training ไม่ได้ OT)</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff66cc"></td>
+						<td>OTR (Training ได้ OT)</td>
+				  </tr>
 					</table>
+					<hr>
+					<table>
+					<tr>
+						<td style="background-color:#ffff00" width="20px"></td>
+						<td>คำขออยู่ระหว่างพิจารณา</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#00ff00"></td>
+						<td>คำขออนุมัติแล้ว</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#00a2ff"></td>
+						<td>ลากิจ / OT มาแทนคนที่ลากิจ</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff7b00"></td>
+						<td>ลาไม่มีคนแทน / ลาระบุเวลา</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#ff0000"></td>
+						<td>ขาดงาน</td>
+				  </tr>
+					<tr>
+						<td style="background-color:#d3d3d3"></td>
+						<td>วันหยุด</td>
+				  </tr>
+				</table>
 					</div>  <!-- End menu swap-->
 		</div> <!-- end menu swap -->
 
