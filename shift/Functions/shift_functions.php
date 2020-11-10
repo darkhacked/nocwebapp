@@ -288,7 +288,7 @@
 			      </tr>
 			      <tr>
 			        <td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-			        <td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+			        <td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 			      </tr>
 			      <tr>
 			        <td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
@@ -377,7 +377,7 @@
 						</tr>
 						<tr>
 							<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-							<td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+							<td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 						</tr>
 						<tr>
 							<td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
@@ -607,7 +607,7 @@ if (isset($_POST['swapmenu2'])) {
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-					<td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+					<td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>ช่วงเวลา :</span></td>
@@ -889,7 +889,7 @@ if (isset($_POST['swapmenu3'])){
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-					<td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+					<td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
@@ -901,7 +901,7 @@ if (isset($_POST['swapmenu3'])){
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-					<td style="background-color:#d4d4d4;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatVisit.')</b></span></td>
+					<td style="background-color:#d4d4d4;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatVisit.')</b></span></td>
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
@@ -1179,7 +1179,7 @@ try {
 			</tr>
 			<tr>
 				<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-				<td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+				<td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 			</tr>
 			<tr>
 				<td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>
@@ -1191,7 +1191,7 @@ try {
 			</tr>
 			<tr>
 				<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-				<td style="background-color:#d4d4d4;"><span>'.$day2.'-'.$month2.'-'.$year2.' <b>('.$seatVisit.')</b></span></td>
+				<td style="background-color:#d4d4d4;"><span>'.$year2.'-'.$month2.'-'.$day2.' <b>('.$seatVisit.')</b></span></td>
 			</tr>
 			<tr>
 				<td align="right" style="background-color:#bababa;"><span>สถานะ :</span></td>
@@ -1451,7 +1451,7 @@ if (isset($_POST['swapmenu5'])) {
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>วันที่ปฏิบัติงาน :</span></td>
-					<td style="background-color:#e3e3e3;"><span>'.$day.'-'.$month.'-'.$year.' <b>('.$seatHost.')</b></span></td>
+					<td style="background-color:#e3e3e3;"><span>'.$year.'-'.$month.'-'.$day.' <b>('.$seatHost.')</b></span></td>
 				</tr>
 				<tr>
 					<td align="right" style="background-color:#bababa;"><span>ผู้ขออนุมัติ :</span></td>

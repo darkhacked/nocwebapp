@@ -146,6 +146,44 @@
 			<div class="modal-body">
 				<div class="accordion" id="accordionExample">
 					  <div class="card">
+							<div class="card-header" id="heading6">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+					          <h5>เดือนพฤศจิกายน</h5>
+					        </button>
+					      </h2>
+					    </div>
+							<div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
+					      <div class="card-body">
+									<b>เดือน พฤศจิกายน 2563 เพิ่มเงื่อนไข การจัดอบรมพนักงานเรียนรู้วงจรเช่า 3BB และ JI-net</b><br>
+									<b>คนละ 2 รอบกะและแทนอัตราโอนย้ายไปหน่วยงาน BU</b><br>
+									<small>รายละเอียดการจัดสรร ดังนี้</small><br>
+									<small>1.	สุรศักดิ์ Monitor ลูกค้า ธกส. Seat D6</small><br>
+									<small>2.	รายละเอียดการเรียนงาน ดังนี้</small><br>
+									<small>&emsp;&emsp;4 – 6/11/63&ensp;&ensp;&emsp;&emsp;&emsp;กชกร B3, กุลสิริ B4, สุมิตร D4</small><br>
+									<small>&emsp;&emsp;7 – 10/11/63&ensp;&emsp;&emsp;&emsp;ภัทรศยา B3, สถิตา B4, กำพล D4, จิรัสย์ D5</small><br>
+									<small>&emsp;&emsp;11 – 14/11/63&emsp;&emsp;&emsp;กชกร B4, กุลสิริ B3, สุมิตร D5</small><br>
+									<small>&emsp;&emsp;15 – 18/11/63&emsp;&emsp;&emsp;ภัทรศยา B4, สถิตา B3, กำพล D5, จิรัสย์ D4</small><br>
+									<small>&emsp;&emsp;19 – 22/11/63&emsp;&emsp;&emsp;ปฐมภพ B3, นพวิทย์ B4, บุญฤทธิ์ D4 </small><br>
+									<small>&emsp;&emsp;23 – 26/11/63&emsp;&emsp;&emsp;ภิญญาภัทร B3, นรานิน B4, ปาริชาติ (อุ๊) D4, นที D5</small><br>
+									<small>&emsp;&emsp;27 – 30/11/63&emsp;&emsp;&emsp;ปฐมภพ B4, นพวิทย์ B3, บุญฤทธิ์ D5</small><br>
+									<small>หมายเหตุ : B3 minor, B4 Seed, D4 BBL, D5 SCB</small><br>
+									<img src="images/11-63.png"><br>
+									<b>** เนื่องจาก NOC JI-net มี OT แทนอัตราพนักงานโอนย้ายและแทนพนักงานอบรม ทำให้มี OT คนละ 4-6 วัน หากมีความจำเป็นต้องลาเพิ่มเติม ขออนุมัติให้พนักงานติดต่อพนักงาน Helpdesk ปฏิบัติงานแทนนะครับ **</b>
+								</div>
+							</div>
+							<div class="card-header" id="heading5">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+					          <h5>เดือนตุลาคม</h5>
+					        </button>
+					      </h2>
+					    </div>
+							<div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+					      <div class="card-body">
+									<small>ปรับ Seat Daytime 10 Seat เป็น 9 Seat, จัดพนักงานปฏิบัติงาน Seat Kbank (3BB เดิมปฏิบัติงาน Seat Minor)</small><br>
+								</div>
+							</div>
 							<div class="card-header" id="heading4">
 					      <h2 class="mb-0">
 					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
