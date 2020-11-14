@@ -146,6 +146,36 @@
 			<div class="modal-body">
 				<div class="accordion" id="accordionExample">
 					  <div class="card">
+							<div class="card-header" id="heading7">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+					          <h5>เดือนธันวาคม</h5>
+					        </button>
+					      </h2>
+					    </div>
+							<div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionExample">
+					      <div class="card-body">
+									<small>พนักงาน Helpdesk 3BB ไม่สะดวกทำ OT วันที่ 2 และ 16 ธันวาคม 2563 ติดต่อพนักงาน JI-net แทน รายละเอียด ดังนี้</small><br>
+									<small>	•	2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
+									<small>	•	16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
+									<b>เดือน ธันวาคม 2563 เพิ่มเงื่อนไข การจัดอบรมพนักงานเรียนรู้วงจรเช่า 3BB และ JI-net คนละ 2 รอบกะเพื่อให้พนักงานสามารถปฏิบัติงานร่วมกันได้</b><br>
+									<b>และแทนอัตราโอนย้ายไปหน่วยงาน BU</b><br>
+									<small>รายละเอียดการจัดสรร ดังนี้</small><br>
+									<small>1.	สุรศักดิ์ Monitor ลูกค้า ธกส. Seat D6</small><br>
+									<small>2.	ปรับลด N วงจรเช่า JI-net เป็น 2 คน</small><br>
+									<small>3.	รายละเอียดการเรียนงาน ดังนี้</small><br>
+									<small>&emsp;&emsp;1 - 4/12/63&ensp;&ensp;&emsp;&emsp;&emsp;ภิญญาภัทร B4, นรานิน B3, ปาริชาติ (อุ๊) D5, นที D4</small><br>
+									<small>&emsp;&emsp;5 – 8/12/63&ensp;&ensp;&emsp;&emsp;&emsp;แผ่นดิน B3, สุรชัย B4, เสถียรพงษ์ B1, ภูวนัย D4, ชาตรี D5</small><br>
+									<small>&emsp;&emsp;9 – 12/12/63&ensp;&ensp;&emsp;&emsp;&emsp;ธนพงศ์ B3, พุทธินันท์ B4, ศุภณัฐ D4, วริศ D5</small><br>
+									<small>&emsp;&emsp;13 – 16/12/63&emsp;&emsp;&emsp;แผ่นดิน B4, สุรชัย B3, เสถียรพงษ์ B5, ภูวนัย D5, ชาตรี D4</small><br>
+									<small>&emsp;&emsp;17 – 20/12/63&emsp;&emsp;&emsp;ธนพงศ์ B4, พุทธินันท์ B3, ศุภณัฐ D5, วริศ D4</small><br>
+									<small>&emsp;&emsp;21 – 23/12/63&emsp;&emsp;&emsp;วรัญญู B4, จีราพร B3, กิตติ D5</small><br>
+									<small>&emsp;&emsp;24 – 26/12/63&emsp;&emsp;&emsp;วรัญญู B3, จีราพร B4</small><br>
+									<small>&emsp;&emsp;3-4, 24/12/63&emsp;&emsp;&emsp;กิตติ D1 (OT เรียนรู้งาน)</small><br>
+									<small>4.	รัฐพลและวงศพัทธ์ ลากิจ แต่งงาน 21-24 ธันวาคม 2563</small><br><br>
+									<small>หมายเหตุ : B1 = HQ วงจรเช่า JI-net, B3 = minor, B4 = Seed, B5 = Shell, D1 = HQ 3BB, D4 = BBL, D5 = SCB</small><br>
+								</div>
+							</div>
 							<div class="card-header" id="heading6">
 					      <h2 class="mb-0">
 					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
@@ -298,8 +328,6 @@
 					    </div>
 					  </div>
 					</div>
-
-
 			</div>
 		</div>
 	</div>
