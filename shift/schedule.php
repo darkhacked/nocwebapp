@@ -155,6 +155,23 @@
 					    </div>
 							<div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionExample">
 					      <div class="card-body">
+									<b>Update 2 : Mail Tuesday, November 17, 2020 2:10 PM</b><br>
+									<small>ปรับวันทำงานเพื่อเข้าร่วมงานปอ ณกรพัฒน์ พี่ดูรายละเอียดวันทำงาน สามารถดำเนินการได้ตามนี้</small><br>
+									<small>ขอให้ปรับตารางและบันทึกลาโดยด่วนครับ</small><br><br>
+									<b>ณัฐวุฒิ	19-20/12/63</b><br>
+									<small>&ensp;&ensp;ปรับ วริศ TR > B4 (จะชดเชยอบรมให้ แต่น้องเข้า N ตลอด)</small><br>
+									<small>&ensp;&ensp;ปลด OB4 บุญฤทธิ์</small><br>
+									<small>&ensp;&ensp;ณัฐวุฒิ (B) ลาพักผ่อน คุณ บุญฤทธิ์ แทน เป็น OB</small><br><br>
+									<b>อนพัทย์	19-20/12/63</b><br>
+									<small>&ensp;&ensp;สลับกะ อนพัทย์ N กับ ศุภาวุธ (B1)</small><br>
+									<small>&ensp;&ensp;ปรับ ศุภณัฐ TR > B6 (**)</small><br>
+									<small>&ensp;&ensp;ปลด OB6 ชาตรี</small><br>
+									<small>&ensp;&ensp;อนพัทย์ (B1) ลาพักผ่อน ชาตรีแทน เป็น OB1</small><br><br>
+									<b>25-26/12/63</b><br>
+									<small>&ensp;&ensp;ปรับ ศุภณัฐ B2 > TR  (**อบรม Seat D5)</small><br>
+									<small>&ensp;&ensp;เพิ่ม OB2 พัชร์ดนัย แทน ศุภณัฐ อบรม</small><br>
+									<hr>
+									<b>Update 1 : Mail Friday, November 13, 2020 5:01 PM</b><br>
 									<small>พนักงาน Helpdesk 3BB ไม่สะดวกทำ OT วันที่ 2 และ 16 ธันวาคม 2563 ติดต่อพนักงาน JI-net แทน รายละเอียด ดังนี้</small><br>
 									<small>	•	2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
 									<small>	•	16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
@@ -166,9 +183,9 @@
 									<small>3.	รายละเอียดการเรียนงาน ดังนี้</small><br>
 									<small>&emsp;&emsp;1 - 4/12/63&ensp;&ensp;&emsp;&emsp;&emsp;ภิญญาภัทร B4, นรานิน B3, ปาริชาติ (อุ๊) D5, นที D4</small><br>
 									<small>&emsp;&emsp;5 – 8/12/63&ensp;&ensp;&emsp;&emsp;&emsp;แผ่นดิน B3, สุรชัย B4, เสถียรพงษ์ B1, ภูวนัย D4, ชาตรี D5</small><br>
-									<small>&emsp;&emsp;9 – 12/12/63&ensp;&ensp;&emsp;&emsp;&emsp;ธนพงศ์ B3, พุทธินันท์ B4, ศุภณัฐ D4, วริศ D5</small><br>
+									<small>&emsp;&emsp;9 – 12/12/63&ensp;&ensp;&emsp;&emsp;&emsp;ธนพงศ์ B3, พุทธินันท์ B4, ศุภณัฐ D5, วริศ D4</small><br>
 									<small>&emsp;&emsp;13 – 16/12/63&emsp;&emsp;&emsp;แผ่นดิน B4, สุรชัย B3, เสถียรพงษ์ B5, ภูวนัย D5, ชาตรี D4</small><br>
-									<small>&emsp;&emsp;17 – 20/12/63&emsp;&emsp;&emsp;ธนพงศ์ B4, พุทธินันท์ B3, ศุภณัฐ D5, วริศ D4</small><br>
+									<small>&emsp;&emsp;17 – 20/12/63&emsp;&emsp;&emsp;ธนพงศ์ B4, พุทธินันท์ B3, ศุภณัฐ D4, วริศ D5</small><br>
 									<small>&emsp;&emsp;21 – 23/12/63&emsp;&emsp;&emsp;วรัญญู B4, จีราพร B3, กิตติ D5</small><br>
 									<small>&emsp;&emsp;24 – 26/12/63&emsp;&emsp;&emsp;วรัญญู B3, จีราพร B4</small><br>
 									<small>&emsp;&emsp;3-4, 24/12/63&emsp;&emsp;&emsp;กิตติ D1 (OT เรียนรู้งาน)</small><br>
