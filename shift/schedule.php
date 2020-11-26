@@ -155,6 +155,13 @@
 					    </div>
 							<div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionExample">
 					      <div class="card-body">
+									<b>Update 3 : Mail Thursday, November 26, 2020 11:56 AM</b><br>
+									<small>คุณ ชาตรี ขออนุมัติลา เพื่อพาคุณพ่อไปหาหมอ วันที่ 16/12/63</small><br>
+									<small>ปรับ Seat ทำงาน ดังนี้</small><br>
+									<small>&ensp;&ensp;16/11/63 ชาตรี ปรับ TR เป็น B4</small><br>
+									<small>&ensp;&ensp;ปลด OB4 อนพัทย์</small><br>
+									<small>&ensp;&ensp;ชาตรี บันทึกลา อนพัทย์ แทน</small><br>
+									<hr>
 									<b>Update 2 : Mail Tuesday, November 17, 2020 2:10 PM</b><br>
 									<small>ปรับวันทำงานเพื่อเข้าร่วมงานปอ ณกรพัฒน์ พี่ดูรายละเอียดวันทำงาน สามารถดำเนินการได้ตามนี้</small><br>
 									<small>ขอให้ปรับตารางและบันทึกลาโดยด่วนครับ</small><br><br>
@@ -202,6 +209,11 @@
 					    </div>
 							<div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
 					      <div class="card-body">
+									<b>Update 1 : Mail Wednesday, November 25, 2020 10:50 AM</b><br>
+									<small>คุณ สุมิตร ของดปฏิบัติ OT 25-26/11/63 เนื่องจากคุณแม่ป่วยดูแลคุณแม่ที่โรงพยาบาล</small><br>
+									<small>ปรับ Seat ทำงาน ดังนี้</small><br>
+									<small>&emsp;&emsp;25/11/63 นที ปรับ TR เป็น B6</small><br>
+									<small>&emsp;&emsp;26/11/63 อนพัทย์ OB6</small><br><br>
 									<b>เดือน พฤศจิกายน 2563 เพิ่มเงื่อนไข การจัดอบรมพนักงานเรียนรู้วงจรเช่า 3BB และ JI-net</b><br>
 									<b>คนละ 2 รอบกะและแทนอัตราโอนย้ายไปหน่วยงาน BU</b><br>
 									<small>รายละเอียดการจัดสรร ดังนี้</small><br>
