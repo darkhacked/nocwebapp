@@ -85,7 +85,7 @@
 			<?php
 			//Dropdown ปี
 			$txtYear = (isset($_POST['txt_year']) && $_POST['txt_year'] != '') ? $_POST['txt_year'] : date('Y');
-			$yearStart = date('Y');
+			$yearStart = date('Y')+1;
 			$yearEnd = $txtYear-2;
 			for($year=$yearStart;$year > $yearEnd;$year--){
 			 $selected = '';
