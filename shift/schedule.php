@@ -146,6 +146,84 @@
 			<div class="modal-body">
 				<div class="accordion" id="accordionExample">
 					  <div class="card">
+							<!--	template card
+								<div class="card-header" id="headingXXX">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseXXX" aria-expanded="true" aria-controls="collapseXXX">
+					          <h5>เดือนธันวาคม</h5>
+					        </button>
+					      </h2>
+					    </div>
+							<div id="collapseXXX" class="collapse" aria-labelledby="headingXXX" data-parent="#accordionExample">
+					      <div class="card-body">
+									<small>เนื้อหา</small><br>
+								</div>
+							</div>
+							<div class="card-header" id="heading7">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+					          <h5>เดือนธันวาคม</h5>
+					        </button>
+					      </h2>
+					    </div>
+								end template card -->
+								<div class="card-header" id="heading8">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+					          <h5>เดือนมกราคม 2021</h5>
+					        </button>
+					      </h2>
+					    </div>
+							<div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordionExample">
+					      <div class="card-body">
+									<b>Update 1 : Mail Monday, December 21, 2020 4:03 PM</b><br>
+									<small>เนื่องจากสภาวะเสี่ยงติดเชื้อ Covid 19 อาจมีความจำเป็นต้อง Work from home เพื่อให้เกิดการคล่องตัวในการแก้ไขเหตุเสียให้ลูกค้าองค์กร</small><br>
+									<small>ขอแจ้งปรับ Seat ตารางงานมกราคม ที่สลับเพื่อเรียนรู้งานก่อนหน้านี้ และให้คุณ สุรศักดิ์ ดูแล Seat ธกส. เหมือนเดิม</small><br>
+									<small>รายละเอียด Seat และวันทำงานที่ปรับ ดังนี้</small><br>
+									<b>2-5/01/64</b><br>
+									<small>&ensp;&ensp;• พิมพ์พันธุ์ B3 > D1</small><br>
+									<small>&ensp;&ensp;• หทัยทิพย์ B4 > D5 </small><br>
+									<small>&ensp;&ensp;• อนพัทย์ D5 > B3</small><br>
+									<small>&ensp;&ensp;• วริศ D6 > B4</small><br>
+									<b>6-9/01/64</b><br>
+									<small>&ensp;&ensp;• นพวิทย์ B3 > D1</small><br>
+									<small>&ensp;&ensp;• รัฐพล B4 > D5</small><br>
+									<small>&ensp;&ensp;• สุมิตร D5 > B3</small><br>
+									<small>&ensp;&ensp;• เจษฏาพร D6 > B4</small><br>
+									<b>10-13/01/64</b><br>
+									<small>&ensp;&ensp;• วุฒิชัย B3 > D1</small><br>
+									<small>&ensp;&ensp;• นัฐพล B4 > D5</small><br>
+									<small>&ensp;&ensp;• วริศ D5 > B3</small><br>
+									<small>&ensp;&ensp;• สกลชัย D6 > B4</small><br>
+									<b>14-17/01/64</b><br>
+									<small>&ensp;&ensp;• ธนวรรณ B3 > D1</small><br>
+									<small>&ensp;&ensp;• นาวิน B4 > D5</small><br>
+									<small>&ensp;&ensp;• ภูวนัย D5 > B3</small><br>
+									<small>&ensp;&ensp;• พัชร์ดนัย D6 > B4</small><br>
+									<b>18-21/01/64</b><br>
+									<small>&ensp;&ensp;• ภิญญาภัทร B3 > D1</small><br>
+									<small>&ensp;&ensp;• อภิชาติ B4 > D5</small><br>
+									<small>&ensp;&ensp;• ณัฐวุฒิ D5 > B3</small><br>
+									<small>&ensp;&ensp;• นที D6 > B4</small><br>
+									<b>22-25/01/64</b><br>
+									<small>&ensp;&ensp;• กนกฉัตร B3 > D1</small><br>
+									<small>&ensp;&ensp;• เสฐียรพงษ์ B4 > D5</small><br>
+									<small>&ensp;&ensp;• กิตติ D5 > B3</small><br>
+									<small>&ensp;&ensp;• ชินกฤต D6 > B4</small><br>
+									<b>26-29/01/64</b><br>
+									<small>&ensp;&ensp;• ธนพงศ์ B3 > D1</small><br>
+									<small>&ensp;&ensp;• สถิตา B4 > D5</small><br>
+									<small>&ensp;&ensp;• นที D5 > B3</small><br>
+									<small>&ensp;&ensp;• อรรถสิทธิ์ D6 > B4</small><br>
+									<b>30/01 – 2/02/64</b><br>
+									<small>&ensp;&ensp;• วัชรินทร์ B3 > D1</small><br>
+									<small>&ensp;&ensp;• สุรชัย B4 > D5</small><br>
+									<small>&ensp;&ensp;• พัชร์ดนัย D5 > B3</small><br>
+									<small>&ensp;&ensp;• วงศพัทย์ D6 > B4</small><br>
+									<small>กรณีพนักงานรายชื่อข้างต้นลา/สลับกะ มอบหมายให้พนักงานที่รับแทนปฏิบัติงาน Seat นั้น</small><br>
+									<img src="images/2021-1.png"><br>
+								</div>
+							</div>
 							<div class="card-header" id="heading7">
 					      <h2 class="mb-0">
 					        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
@@ -180,8 +258,8 @@
 									<hr>
 									<b>Update 1 : Mail Friday, November 13, 2020 5:01 PM</b><br>
 									<small>พนักงาน Helpdesk 3BB ไม่สะดวกทำ OT วันที่ 2 และ 16 ธันวาคม 2563 ติดต่อพนักงาน JI-net แทน รายละเอียด ดังนี้</small><br>
-									<small>	•	2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
-									<small>	•	16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
+									<small>	<small>&ensp;&ensp;2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
+									<small>	<small>&ensp;&ensp;16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
 									<b>เดือน ธันวาคม 2563 เพิ่มเงื่อนไข การจัดอบรมพนักงานเรียนรู้วงจรเช่า 3BB และ JI-net คนละ 2 รอบกะเพื่อให้พนักงานสามารถปฏิบัติงานร่วมกันได้</b><br>
 									<b>และแทนอัตราโอนย้ายไปหน่วยงาน BU</b><br>
 									<small>รายละเอียดการจัดสรร ดังนี้</small><br>
