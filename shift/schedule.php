@@ -258,8 +258,8 @@
 									<hr>
 									<b>Update 1 : Mail Friday, November 13, 2020 5:01 PM</b><br>
 									<small>พนักงาน Helpdesk 3BB ไม่สะดวกทำ OT วันที่ 2 และ 16 ธันวาคม 2563 ติดต่อพนักงาน JI-net แทน รายละเอียด ดังนี้</small><br>
-									<small>	<small>&ensp;&ensp;2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
-									<small>	<small>&ensp;&ensp;16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
+									<small>&ensp;&ensp;2/12/63 คุณ ชินกฤต Seat D3 Kbank, ยกเลิก OT คุณ แผ่นดิน และปรับ Seat คุณ พิมพ์พันธุ์ เป็น D4</small><br>
+									<small>&ensp;&ensp;16/12/63 คุณ อรรถสิทธิ์ Seat D3 Kbank, ปรับคุณ นพวิทย์ เป็น Seat รับ Call</small><br><br>
 									<b>เดือน ธันวาคม 2563 เพิ่มเงื่อนไข การจัดอบรมพนักงานเรียนรู้วงจรเช่า 3BB และ JI-net คนละ 2 รอบกะเพื่อให้พนักงานสามารถปฏิบัติงานร่วมกันได้</b><br>
 									<b>และแทนอัตราโอนย้ายไปหน่วยงาน BU</b><br>
 									<small>รายละเอียดการจัดสรร ดังนี้</small><br>
