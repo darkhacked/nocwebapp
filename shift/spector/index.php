@@ -546,8 +546,8 @@
 
 			//HTML TABLE HEAD SHIFT A
 			echo "<table class=\"table table-bordered table-hover\" align='center'>";
-			echo "<thead>";
-			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่
+			echo "<thead class=\"table-primary\">";
+			echo "<tr align='center'>";//เปิดแถวใหม่
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
@@ -566,7 +566,7 @@
 
 
 
-			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
+			echo "<tr align='center'>";//เปิดแถวใหม่ ตาราง HTML
 
 			// ตารางวัน
 			$Dday=date('w',strtotime($year.'-'.$month.'-01'));
@@ -686,7 +686,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<td id="tdfix" style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 				echo $workDay;
@@ -705,7 +705,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<td id="tdfix" style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 				echo $workDay;
@@ -722,8 +722,8 @@
 
 
 			//HTML TABLE HEAD SHIFT B
-			echo "<thead>";
-			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
+			echo "<thead class=\"table-primary\" >";
+			echo "<tr align='center'>";//เปิดแถวใหม่ ตาราง HTML
 			echo "<th rowspan=\"2\" scope=\"col\">No.</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">Sft</th>";
 			echo "<th rowspan=\"2\" scope=\"col\">CODE</th>";
@@ -741,7 +741,7 @@
 			echo "</tr>";
 
 
-			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
+			echo "<tr align='center'>";//เปิดแถวใหม่ ตาราง HTML
 
 			// ตารางวัน
 			$Dday=date('w',strtotime($year.'-'.$month.'-01'));
@@ -862,7 +862,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-					$workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
+					$workDay = isset($allReportData[$empCode][$d]) ? '<td id="tdfix" style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					echo $workDay;
 
 					}
@@ -880,7 +880,7 @@
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้เป็นว่าง
-					$workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
+					$workDay = isset($allReportData[$empCode][$d]) ? '<td id="tdfix" style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					echo $workDay;
 
 					}
