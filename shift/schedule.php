@@ -1757,7 +1757,7 @@
 	    foreach($allEmpDataC as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
 			 echo '<td><b>'. $in2 .'</b></td>';
-			 echo '<td><font color=\'orange\'><b>B'. $ic .'</b></td>';
+			 echo '<td><font color=\'orange\'><b>C'. $ic .'</b></td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -1775,7 +1775,7 @@
 			foreach($allEmpDataD as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
 			 echo '<td><b>'. $in2 .'</b></td>';
-			 echo '<td><font color=\'green\'><b>B'. $id .'</b></td>';
+			 echo '<td><font color=\'green\'><b>D'. $id .'</b></td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
