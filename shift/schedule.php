@@ -1469,108 +1469,108 @@
 
 			echo "<tr align='center'>";//เปิดแถวใหม่ ตาราง HTML
 
-			// ตารางวัน
+			// ตารางวัน อา - ส ++ css td fix
 			$Dday=date('w',strtotime($year.'-'.$month.'-01'));
 			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
 			$numsday = date("t", $timeDate);                //จำนวนวันของเดือน
 			for($day=1;$day<=$numsday;$day++); //หาวันที่ 1 ถึงวันที่สุดท้ายของดือน  เพื่อตัดวัน ( อา , จ, ..., ส ) ให้พอดีกับวันที่สุดท้าย (28, 29, 30, 31) ของเดือน
 			//1
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//2
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//3
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//4
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//5
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//6
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//7
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//8
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//9
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//10
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//11
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//12
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//13
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//14
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//15
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//16
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//17
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//18
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//19
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//20
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//21
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//22
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//23
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//24
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//25
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//26
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//27
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//28
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//29
 			if ($numsday<=28){echo" ";} else {
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//30
 			if ($numsday<=29){echo" ";} else {
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//31
 			if ($numsday<=30){echo" ";} else {
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";};};};}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";};};};}
 			echo '</th>';
-			// ตารางวัน
+			// ตารางวัน อา - ส ++ css td fix
 
 
 
@@ -1580,14 +1580,14 @@
 			//Loopสร้างตารางตามจำนวนรายชื่อพนักงานใน Array
 	    foreach($allEmpDataA as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $in1 .'</td>';
-			 echo '<td>A'. $ia .'</td>';
+			 echo '<td><b>'. $in1 .'</b></td>';
+			 echo '<td><font color=\'red\'><b>A'. $ia .'</b></font></td>';
 	     echo '<td class="text-nowrap">'. $empCode .'</td>';
 	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
 		     for($d=1;$d<=$lastDay;$d++){
 		      //ตรวจสอบว่าวันที่แต่ละวัน $d ของ พนักงานแต่ละรหัส  $empCode มีข้อมูลใน  $allReportData หรือไม่ ถ้ามีให้แสดงจำนวนในอาร์เรย์ออกมา ถ้าไม่มีให้ช่องตารางเป็นสีเทา
-		      $workDay = isset($allReportData[$empCode][$d]) ? '<td id="tdfix" style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
+		      $workDay = isset($allReportData[$empCode][$d]) ? '<td style="background-color:'.$allColor[$empCode][$d].'"><b><span data-toggle="tooltip" data-placement="top" title="'.$tools[$empCode][$d].'">'.$allReportData[$empCode][$d].'</span></b></td>' : '<td style="background-color:lightgray"></td>';
 					// ทำที่บ้านเบ้น $workDay = isset($allReportData[$empCode][$d]) ? '<div style="background-color:'.$tablecl.'">'.$allReportData[$empCode][$d].'</div>' : "";
 					//echo "<td style=\"background-color:".$ccolor." \">".$workDay."</td>";
 				echo $workDay;
@@ -1599,8 +1599,8 @@
 
 			foreach($allEmpDataB as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $in1 .'</td>';
-			 echo '<td>B'. $ib .'</td>';
+			 echo '<td><b>'. $in1 .'</b></td>';
+			 echo '<td><font color=\'blue\'><b>B'. $ib .'</b></td>';
 	     echo '<td class="text-nowrap">'. $empCode .'</td>';
 	     echo '<td class="text-nowrap">'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -1644,108 +1644,108 @@
 
 			echo "<tr class=\"table-primary\" align='center'>";//เปิดแถวใหม่ ตาราง HTML
 
-			// ตารางวัน
+			// ตารางวัน อา - ส ++ css td fix
 			$Dday=date('w',strtotime($year.'-'.$month.'-01'));
 			$timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
 			$numsday = date("t", $timeDate);                //จำนวนวันของเดือน
 			for($day=1;$day<=$numsday;$day++); //หาวันที่ 1 ถึงวันที่สุดท้ายของดือน  เพื่อตัดวัน ( อา , จ, ..., ส ) ให้พอดีกับวันที่สุดท้าย (28, 29, 30, 31) ของเดือน
 			//1
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//2
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//3
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//4
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//5
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//6
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//7
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//8
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//9
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//10
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//11
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//12
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//13
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//14
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//15
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//16
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//17
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//18
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//19
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//20
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//21
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//22
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//23
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//24
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//25
-			if($Dday==4){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==5){echo "<th>จ";}else if($Dday==6){echo "<th>อ";}else if($Dday==0){echo "<th>พ";}else if($Dday==1){echo "<th>พฤ</font>";}else if($Dday==2){echo "<th>ศ";}else if($Dday==3){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==4){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==5){echo "<th id=\"tdfix\">จ";}else if($Dday==6){echo "<th id=\"tdfix\">อ";}else if($Dday==0){echo "<th id=\"tdfix\">พ";}else if($Dday==1){echo "<th id=\"tdfix\">พฤ";}else if($Dday==2){echo "<th id=\"tdfix\">ศ";}else if($Dday==3){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//26
-			if($Dday==3){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==4){echo "<th>จ";}else if($Dday==5){echo "<th>อ";}else if($Dday==6){echo "<th>พ";}else if($Dday==0){echo "<th>พฤ</font>";}else if($Dday==1){echo "<th>ศ";}else if($Dday==2){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==3){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==4){echo "<th id=\"tdfix\">จ";}else if($Dday==5){echo "<th id=\"tdfix\">อ";}else if($Dday==6){echo "<th id=\"tdfix\">พ";}else if($Dday==0){echo "<th id=\"tdfix\">พฤ";}else if($Dday==1){echo "<th id=\"tdfix\">ศ";}else if($Dday==2){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//27
-			if($Dday==2){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==3){echo "<th>จ";}else if($Dday==4){echo "<th>อ";}else if($Dday==5){echo "<th>พ";}else if($Dday==6){echo "<th>พฤ</font>";}else if($Dday==0){echo "<th>ศ";}else if($Dday==1){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==2){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==3){echo "<th id=\"tdfix\">จ";}else if($Dday==4){echo "<th id=\"tdfix\">อ";}else if($Dday==5){echo "<th id=\"tdfix\">พ";}else if($Dday==6){echo "<th id=\"tdfix\">พฤ";}else if($Dday==0){echo "<th id=\"tdfix\">ศ";}else if($Dday==1){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//28
-			if($Dday==1){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==2){echo "<th>จ";}else if($Dday==3){echo "<th>อ";}else if($Dday==4){echo "<th>พ";}else if($Dday==5){echo "<th>พฤ</font>";}else if($Dday==6){echo "<th>ศ";}else if($Dday==0){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==1){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==2){echo "<th id=\"tdfix\">จ";}else if($Dday==3){echo "<th id=\"tdfix\">อ";}else if($Dday==4){echo "<th id=\"tdfix\">พ";}else if($Dday==5){echo "<th id=\"tdfix\">พฤ";}else if($Dday==6){echo "<th id=\"tdfix\">ศ";}else if($Dday==0){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//29
 			if ($numsday<=28){echo" ";} else {
-			if($Dday==0){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==1){echo "<th>จ";}else if($Dday==2){echo "<th>อ";}else if($Dday==3){echo "<th>พ";}else if($Dday==4){echo "<th>พฤ</font>";}else if($Dday==5){echo "<th>ศ";}else if($Dday==6){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==0){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==1){echo "<th id=\"tdfix\">จ";}else if($Dday==2){echo "<th id=\"tdfix\">อ";}else if($Dday==3){echo "<th id=\"tdfix\">พ";}else if($Dday==4){echo "<th id=\"tdfix\">พฤ";}else if($Dday==5){echo "<th id=\"tdfix\">ศ";}else if($Dday==6){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//30
 			if ($numsday<=29){echo" ";} else {
-			if($Dday==6){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==0){echo "<th>จ";}else if($Dday==1){echo "<th>อ";}else if($Dday==2){echo "<th>พ";}else if($Dday==3){echo "<th>พฤ</font>";}else if($Dday==4){echo "<th>ศ";}else if($Dday==5){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";}
+			if($Dday==6){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==0){echo "<th id=\"tdfix\">จ";}else if($Dday==1){echo "<th id=\"tdfix\">อ";}else if($Dday==2){echo "<th id=\"tdfix\">พ";}else if($Dday==3){echo "<th id=\"tdfix\">พฤ";}else if($Dday==4){echo "<th id=\"tdfix\">ศ";}else if($Dday==5){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";}
 			echo '</th>';
 			//31
 			if ($numsday<=30){echo" ";} else {
-			if($Dday==5){echo"<th><font color='orange'><b>อา</b></font>";}else if($Dday==6){echo "<th>จ";}else if($Dday==0){echo "<th>อ";}else if($Dday==1){echo "<th>พ";}else if($Dday==2){echo "<th>พฤ</font>";}else if($Dday==3){echo "<th>ศ";}else if($Dday==4){echo "<th align='center'><font color='orange'><b>ส</b></font>";}else{echo " ";};};};}
+			if($Dday==5){echo"<th id=\"tdfix\" style=\"color:orange\">อา</font>";}else if($Dday==6){echo "<th id=\"tdfix\">จ";}else if($Dday==0){echo "<th id=\"tdfix\">อ";}else if($Dday==1){echo "<th id=\"tdfix\">พ";}else if($Dday==2){echo "<th id=\"tdfix\">พฤ";}else if($Dday==3){echo "<th id=\"tdfix\">ศ";}else if($Dday==4){echo "<th id=\"tdfix\" style=\"color:orange\">ส";}else{echo " ";};};};}
 			echo '</th>';
-			// ตารางวัน
+			// ตารางวัน อา - ส ++ css td fix
 
 
 
@@ -1756,8 +1756,8 @@
 
 	    foreach($allEmpDataC as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $in2 .'</td>';
-			 echo '<td>C'. $ic .'</td>';
+			 echo '<td><b>'. $in2 .'</b></td>';
+			 echo '<td><font color=\'orange\'><b>B'. $ic .'</b></td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
@@ -1774,8 +1774,8 @@
 
 			foreach($allEmpDataD as $empCode=>$empName){
 	     echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
-			 echo '<td>'. $in2 .'</td>';
-			 echo '<td>D'. $id .'</td>';
+			 echo '<td><b>'. $in2 .'</b></td>';
+			 echo '<td><font color=\'green\'><b>B'. $id .'</b></td>';
 	     echo '<td>'. $empCode .'</td>';
 	     echo '<td>'. $empName .'</td>';
 	      //เรียกข้อมูลวันทำงานพนักงานแต่ละคน ในเดือนนี้
