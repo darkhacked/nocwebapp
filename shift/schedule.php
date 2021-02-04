@@ -119,7 +119,9 @@
 			?>
 </div>
 	<hr>
-
+	<center>ตารางงานเดือนกุมภาพันธ์เริ่มใช้ผ่าน noc portal <a href="http://noc.3bb.co.th:1000/">http://noc.3bb.co.th:1000/</a> แล้ว<br>
+		ใครที่ลา/แลกกะ ของเดือนนี้ไว้เข้าไปกรอกตามด้วย<br>
+		ขอบคุณที่ใช้บริการครับ จุ๊บๆ..</center><br>
 	<div class="container" align="center">
 		<!-- <div class="alert alert-dismissible alert-warning">
 		  <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -532,7 +534,7 @@
 <!-- start container -->
 <div class="container-fluid">
 	<div class="row">
-		<!-- menu swap -->
+		<!-- menu swap --><?php /*
 		<div class="col-3">
 			<div class="accordion" id="menuall"> <!-- menu accordion -->
 				 <div class="card border-primary"> <!-- menu 1 -->
@@ -1363,9 +1365,9 @@
 				  </tr>
 				</table>
 				</div>  <!-- End menu swap-->
-		</div> <!-- end menu swap -->
+		</div> <!-- end menu swap --> */ ?>
 
-		<div class="col-9"><!-- Shift table -->
+		<div class="col"><!-- Shift table -->
 			<?php
 			//ดึงข้อมูลพนักงานทั้งหมด
 			//ในส่วนนี้จะเก็บข้อมูลโดยใช้คีย์ เป็นรหัสพนักงาน และ value คือชื่อพนักงาน
