@@ -119,8 +119,9 @@
 			?>
 </div>
 	<hr>
-	<center>ตารางงานเดือนกุมภาพันธ์เริ่มใช้ผ่าน noc portal <a href="http://noc.3bb.co.th:1000/">http://noc.3bb.co.th:1000/</a> แล้ว<br>
-		ใครที่ลา/แลกกะ ของเดือนนี้ไว้เข้าไปกรอกตามด้วย<br>
+	<center>ตารางงานเดือนกุมภาพันธ์เริ่มใช้ผ่าน <a href="http://noc.3bb.co.th:1000/">http://noc.3bb.co.th:1000/</a> แล้ว<br>
+		User ให้ reset เอาใหม่ที่หน้า Login เลย (user = รหัสพนงใหม่)<br>
+		ใครที่ลา/แลกกะ ของเดือนนี้ไว้เข้าไปกรอกตามด้วยนะ<br>
 		ขอบคุณที่ใช้บริการครับ จุ๊บๆ..</center><br>
 	<div class="container" align="center">
 		<!-- <div class="alert alert-dismissible alert-warning">
