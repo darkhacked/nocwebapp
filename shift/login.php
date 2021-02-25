@@ -1,5 +1,6 @@
 <?php
-	include('Functions/functions.php')
+	header('location: home.html');
+	//include('Functions/functions.php')
 ?>
 <!DOCTYPE html>
 <html>
