@@ -1,6 +1,6 @@
 <?php
-	header('location: home.html');
-	//include('Functions/functions.php')
+	//header('location: home.html');  redirect to web ตารางกะพี่พน
+	include('Functions/functions.php')
 ?>
 <!DOCTYPE html>
 <html>
