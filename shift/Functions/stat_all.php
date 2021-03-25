@@ -10,9 +10,9 @@ $db = mysqli_connect('localhost', 'root', 'toor', 'shift');
 
 
 //Update times
-$time = strtotime("Now");
-$SQL = "UPDATE stat_all SET s_remark = '$time' WHERE stat_all.id = 1";
-$qry = mysqli_query($db, $SQL);
+//$time = strtotime("Now");
+//$SQL = "UPDATE stat_all SET s_remark = '$time' WHERE stat_all.id = 1";
+//$qry = mysqli_query($db, $SQL);
 
 // query OT
 $SQL = "SELECT username FROM users WHERE username AND shift IN ('A','B','C','D') ORDER BY shift , remark";
@@ -204,6 +204,44 @@ $qryNOV = mysqli_query($db, $NOV);
 $DEC = "UPDATE stat_ot_training SET stat_ot_training.12=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'O%' AND w_date LIKE '2020-12%' AND w_status LIKE '%ff66cc') WHERE s_code='$member'";
 $qryDEC = mysqli_query($db, $DEC);
 
+
+
+// query training
+$JAN = "UPDATE stat_training SET stat_training.01=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-01%') WHERE s_code='$member'";
+$qryJAN = mysqli_query($db, $JAN);
+
+$FEB = "UPDATE stat_training SET stat_training.02=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-02%') WHERE s_code='$member'";
+$qryFEB = mysqli_query($db, $FEB);
+
+$MAR = "UPDATE stat_training SET stat_training.03=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-03%') WHERE s_code='$member'";
+$qryMAR = mysqli_query($db, $MAR);
+
+$APR = "UPDATE stat_training SET stat_training.04=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-04%') WHERE s_code='$member'";
+$qryAPR = mysqli_query($db, $APR);
+
+$MAY = "UPDATE stat_training SET stat_training.05=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-05%') WHERE s_code='$member'";
+$qryMAY = mysqli_query($db, $MAY);
+
+$JUN = "UPDATE stat_training SET stat_training.06=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-06%') WHERE s_code='$member'";
+$qryJUN = mysqli_query($db, $JUN);
+
+$JUL = "UPDATE stat_training SET stat_training.07=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-07%') WHERE s_code='$member'";
+$qryJUL = mysqli_query($db, $JUL);
+
+$AUG = "UPDATE stat_training SET stat_training.08=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-08%') WHERE s_code='$member'";
+$qryAUG = mysqli_query($db, $AUG);
+
+$SEP = "UPDATE stat_training SET stat_training.09=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-09%') WHERE s_code='$member'";
+$qrySEP = mysqli_query($db, $SEP);
+
+$OCT = "UPDATE stat_training SET stat_training.10=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-10%') WHERE s_code='$member'";
+$qryOCT = mysqli_query($db, $OCT);
+
+$NOV = "UPDATE stat_training SET stat_training.11=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-11%') WHERE s_code='$member'";
+$qryNOV = mysqli_query($db, $NOV);
+
+$DEC = "UPDATE stat_training SET stat_training.12=(SELECT COUNT(w_type) FROM work WHERE w_code='$member' AND w_type LIKE 'TR' AND w_date LIKE '2020-12%') WHERE s_code='$member'";
+$qryDEC = mysqli_query($db, $DEC);
 
 
 
