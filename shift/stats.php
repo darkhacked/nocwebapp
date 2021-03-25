@@ -112,7 +112,9 @@
 			echo '</tr>';
 			echo '</table>';
 		?>
-
+		<!-- start table -->
+		<br>
+		<center><h4>OT รวมทั้งหมดแยกเป็นรายเดือน</h4></center>
 		<table id="table" class="table table-bordered table-hover">
 			<thead class="thead-dark">
 				<tr align='center'>
@@ -160,6 +162,163 @@
 				echo '</tbody>';
 			echo '</table>';
 	?>
+<!-- end table -->
+
+<!-- start table -->
+<br>
+<center><h4>OT ปกติ</h4></center>
+<table id="table" class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr align='center'>
+			<th width='60px' scope="col">#</th>
+			<th width='100px' scope="col">Code</th>
+			<th width='250px' scope="col">NAME</th>
+			<th scope="col">01</th>
+			<th scope="col">02</th>
+			<th scope="col">03</th>
+			<th scope="col">04</th>
+			<th scope="col">05</th>
+			<th scope="col">06</th>
+			<th scope="col">07</th>
+			<th scope="col">08</th>
+			<th scope="col">09</th>
+			<th scope="col">10</th>
+			<th scope="col">11</th>
+			<th scope="col">12</th>
+		</tr>
+</thead>
+
+<?php
+ $SQL = "SELECT * FROM stat_ot";
+ $qry = mysqli_query($db, $SQL);
+ while($row = mysqli_fetch_array($qry)){
+
+		echo '<tbody>';
+		echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			echo '<th scope="row">'.$row["id"].'</th>';
+			echo '<td class="text-nowrap">'.$row["s_code"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_name"].'</td>';
+			echo '<td class="text-nowrap">'.$row["01"].'</td>';
+			echo '<td class="text-nowrap">'.$row["02"].'</td>';
+			echo '<td class="text-nowrap">'.$row["03"].'</td>';
+			echo '<td class="text-nowrap">'.$row["04"].'</td>';
+			echo '<td class="text-nowrap">'.$row["05"].'</td>';
+			echo '<td class="text-nowrap">'.$row["06"].'</td>';
+			echo '<td class="text-nowrap">'.$row["07"].'</td>';
+			echo '<td class="text-nowrap">'.$row["08"].'</td>';
+			echo '<td class="text-nowrap">'.$row["09"].'</td>';
+			echo '<td class="text-nowrap">'.$row["10"].'</td>';
+			echo '<td class="text-nowrap">'.$row["11"].'</td>';
+			echo '<td class="text-nowrap">'.$row["12"].'</td>';
+			}
+		echo '</tbody>';
+	echo '</table>';
+?>
+<!-- end table -->
+
+<!-- start table -->
+<br>
+<center><h4>OT จากการแลกลา</h4></center>
+<table id="table" class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr align='center'>
+			<th width='60px' scope="col">#</th>
+			<th width='100px' scope="col">Code</th>
+			<th width='250px' scope="col">NAME</th>
+			<th scope="col">01</th>
+			<th scope="col">02</th>
+			<th scope="col">03</th>
+			<th scope="col">04</th>
+			<th scope="col">05</th>
+			<th scope="col">06</th>
+			<th scope="col">07</th>
+			<th scope="col">08</th>
+			<th scope="col">09</th>
+			<th scope="col">10</th>
+			<th scope="col">11</th>
+			<th scope="col">12</th>
+		</tr>
+</thead>
+
+<?php
+ $SQL = "SELECT * FROM stat_ot_swap";
+ $qry = mysqli_query($db, $SQL);
+ while($row = mysqli_fetch_array($qry)){
+
+		echo '<tbody>';
+		echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			echo '<th scope="row">'.$row["id"].'</th>';
+			echo '<td class="text-nowrap">'.$row["s_code"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_name"].'</td>';
+			echo '<td class="text-nowrap">'.$row["01"].'</td>';
+			echo '<td class="text-nowrap">'.$row["02"].'</td>';
+			echo '<td class="text-nowrap">'.$row["03"].'</td>';
+			echo '<td class="text-nowrap">'.$row["04"].'</td>';
+			echo '<td class="text-nowrap">'.$row["05"].'</td>';
+			echo '<td class="text-nowrap">'.$row["06"].'</td>';
+			echo '<td class="text-nowrap">'.$row["07"].'</td>';
+			echo '<td class="text-nowrap">'.$row["08"].'</td>';
+			echo '<td class="text-nowrap">'.$row["09"].'</td>';
+			echo '<td class="text-nowrap">'.$row["10"].'</td>';
+			echo '<td class="text-nowrap">'.$row["11"].'</td>';
+			echo '<td class="text-nowrap">'.$row["12"].'</td>';
+			}
+		echo '</tbody>';
+	echo '</table>';
+?>
+<!-- end table -->
+
+<!-- start table -->
+<br>
+<center><h4>OT จากการ training</h4></center>
+<table id="table" class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr align='center'>
+			<th width='60px' scope="col">#</th>
+			<th width='100px' scope="col">Code</th>
+			<th width='250px' scope="col">NAME</th>
+			<th scope="col">01</th>
+			<th scope="col">02</th>
+			<th scope="col">03</th>
+			<th scope="col">04</th>
+			<th scope="col">05</th>
+			<th scope="col">06</th>
+			<th scope="col">07</th>
+			<th scope="col">08</th>
+			<th scope="col">09</th>
+			<th scope="col">10</th>
+			<th scope="col">11</th>
+			<th scope="col">12</th>
+		</tr>
+</thead>
+
+<?php
+ $SQL = "SELECT * FROM stat_ot_training";
+ $qry = mysqli_query($db, $SQL);
+ while($row = mysqli_fetch_array($qry)){
+
+		echo '<tbody>';
+		echo "<tr align='center'>"; //เปิดแถวใหม่ ตาราง HTML
+			echo '<th scope="row">'.$row["id"].'</th>';
+			echo '<td class="text-nowrap">'.$row["s_code"].'</td>';
+			echo '<td class="text-nowrap">'.$row["s_name"].'</td>';
+			echo '<td class="text-nowrap">'.$row["01"].'</td>';
+			echo '<td class="text-nowrap">'.$row["02"].'</td>';
+			echo '<td class="text-nowrap">'.$row["03"].'</td>';
+			echo '<td class="text-nowrap">'.$row["04"].'</td>';
+			echo '<td class="text-nowrap">'.$row["05"].'</td>';
+			echo '<td class="text-nowrap">'.$row["06"].'</td>';
+			echo '<td class="text-nowrap">'.$row["07"].'</td>';
+			echo '<td class="text-nowrap">'.$row["08"].'</td>';
+			echo '<td class="text-nowrap">'.$row["09"].'</td>';
+			echo '<td class="text-nowrap">'.$row["10"].'</td>';
+			echo '<td class="text-nowrap">'.$row["11"].'</td>';
+			echo '<td class="text-nowrap">'.$row["12"].'</td>';
+			}
+		echo '</tbody>';
+	echo '</table>';
+?>
+<!-- end table -->
 
 		<hr><br>
 		<center><h4>สถิติการลาหยุด ของพนักงานในปี 2020</h4></center>
