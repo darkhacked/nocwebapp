@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -7,18 +8,18 @@
 <title>Super</title>
 </head>
 <body>
- <h1>ssee</h1>
+ <h1>TEST</h1>
  <br>
 <!--start navbar-->
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+      <a class="nav-link active" data-toggle="tab" href="#home">Check User Online</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+      <a class="nav-link" data-toggle="tab" href="#profile">Find User Interrim</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link " href="#">Change Profile</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
