@@ -30,7 +30,7 @@
 		register();
 	}
 
-	// call the login() function if register_btn is clicked
+	// call the login() function if login_btn is clicked
 	if (isset($_POST['login_btn'])) {
 		login();
 	}
@@ -258,8 +258,7 @@
 
 	// escape string
 	function e($val) {
-		global $db;
-		return mysqli_real_escape_string($db, trim($val));
+		return mysqli_real_escape_string(trim($val));
 	}
 
 	function display_error() {
