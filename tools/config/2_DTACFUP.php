@@ -22,7 +22,7 @@
 
 ?><pre><h6>#############################
 # UserVPN   : <?php echo "$VPN\n"; ?>
-# UserAIS   : <?php echo "$SIM\n"; ?>
+# UserDTAC   : <?php echo "$SIM\n"; ?>
 # Lan       : <?php echo "$LAN\n"; ?>
 <?php
 if ($LAN2 == "") {
@@ -59,12 +59,12 @@ interface ethernet set numbers=4 name=ether5-Lan
 #
 interface ppp-client remove 0
 interface ppp-client remove 1
-interface ppp-client add add-default-route=no allow=pap apn=ji.fup dial-on-demand=no disabled=no \
+interface ppp-client add add-default-route=no allow=pap apn=corp.jivpn dial-on-demand=no disabled=no \
     mrru=1600 name=<?php echo "$SIM"; ?> password=123456 phone=*99***1# port=usb1 \
     use-peer-dns=no user=<?php echo "$SIM"; ?>@jivpn
 interface enable 6
 #
-interface l2tp-client add add-default-route=yes connect-to=172.29.4.172 disabled=no max-mru=1400 \
+interface l2tp-client add add-default-route=yes connect-to=172.30.234.15 disabled=no max-mru=1400 \
     max-mtu=1400 mrru=1550 name=Wan password=123456 user=<?php echo "$VPN"; ?>@jivpn
 #
 ip address add address=<?php echo "$LAN"; ?> interface=Lan comment=Lan-Cus
@@ -175,9 +175,8 @@ system note set note="\
     \n#\
     \n# This system is the property of Jasmine Internet Co., Ltd.\
     \n# Tel : 02-1021199 (24 Hr.)\
-    \n# Email : noc@ji-net.com\
     \n# \
-    \n# Solution : L2TP Over VPN (AIS_FUP)\
+    \n# Solution : L2TP Over VPN (DTAC_FUP)\
     \n# Date : 2019-08-16 15:00\
     \n# Router Model : Mikrotik_951Ui-2nD\
     \n# \
