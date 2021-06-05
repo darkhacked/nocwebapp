@@ -8,24 +8,27 @@
  <link href="css/bootstrap.css" rel="stylesheet">
  <link href="css/mystyle.css" rel="stylesheet">
  <script src="Functions/jquery-3.6.0.js"></script>
-<title>TOOL อิอิ</title>
+<title>ติด 3G อีกและ</title>
 </head>
 <body>
   <h1>Make Config Router GGEZ</h1>
+	<h5>Config อันไหนทำแล้วไม่ Up หรือมี Config ตัวใหม่จาก TSD เพิ่มเติมบอกด้วยนะเดี๋ยว Update ให้</h5>
  <br>
 <!--start navbar-->
+<div class="row">
+<div class="col-4">
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#mik">Mikrotik</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" data-toggle="tab" href="#hong">Hongdian กำลังทำหยุนะ</a>
+      <a class="nav-link" data-toggle="tab" href="#hong">Hongdian</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Change Profile</a>
+    <!--<li class="nav-item">
+      <a class="nav-link disabled" href="#">-</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ทำไว้ก่อนยังนึกไม่ออกจะใส่อะไร</a>
+      <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">-</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">1</a>
         <a class="dropdown-item" href="#">1</a>
@@ -33,16 +36,13 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">4</a>
       </div>
-    </li>
+    </li>-->
   </ul>
   <!--end navbar-->
   <!--start myTabContent-->
   <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade show active" id="mik"><br>
-
-
-  <div class="row">
-    <div class="col-4">
+    <div class="col">
       <div class="form-group">
 
           <div class="input-group mb-3">
@@ -79,26 +79,21 @@
                               <input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
                           </div>
 
-                      <div class="form-check mb-3">
-                              <input class="form-check-input" type="checkbox" id="addlan2" onclick="add_lan2(this.id);">
-                              <label class="form-check-label" for="addlan2">Add Lan 2 ?</label>
+                      <div>
+                              Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
                       </div>
 
-                      <div id="lan2" style="display:none">
+                      <div>
                           <div class="input-group mb-3">
                               <span class="input-group-text">Input LAN 2/Subnet</span>
                               <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
                       		</div>
-                          <div class="form-check mb-3">
-                            	<input class="form-check-input" type="checkbox" id="addlan3" onclick="add_lan3(this.id);">
-                            	<label class="form-check-label" for="addlan3">Want more ?</label>
-                          </div>
-                      </div>
 
-                  	<div class="input-group mb-3" id="lan3" style="display:none">
-                        <span class="input-group-text">Input LAN 3/Subnet</span>
-                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
-                    </div>
+													<div class="input-group mb-3">
+			                        <span class="input-group-text">Input LAN 3/Subnet</span>
+			                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+			                    </div>
+                      </div>
 
                     <div class="btn">
                         <button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
@@ -130,27 +125,21 @@
 			                        <input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
 			                  </div>
 
-			                  <div class="form-check mb-3">
-			                        <input class="form-check-input" type="checkbox" id="addlan2" onclick="add_lan2(this.id);">
-			                        <label class="form-check-label" for="addlan2">Add Lan 2 ?</label>
-			                  </div>
+												<div>
+	                              Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+	                      </div>
 
-			                  <div id="lan2" style="display:none">
-			                    <div class="input-group mb-3">
-			                        <span class="input-group-text">Input LAN 2/Subnet</span>
-			                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
-			                    </div>
+	                      <div>
+	                          <div class="input-group mb-3">
+	                              <span class="input-group-text">Input LAN 2/Subnet</span>
+	                              <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+	                      		</div>
 
-			                  	<div class="form-check mb-3">
-			                        <input class="form-check-input" type="checkbox" id="addlan3" onclick="add_lan3(this.id);">
-			                        <label class="form-check-label" for="addlan3">Want more ?</label>
-			                  	</div>
-			                  </div>
-
-			                  <div class="input-group mb-3" id="lan3" style="display:none">
-			                        <span class="input-group-text">Input LAN 3/Subnet</span>
-			                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
-			                  </div>
+														<div class="input-group mb-3">
+				                        <span class="input-group-text">Input LAN 3/Subnet</span>
+				                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+				                    </div>
+	                      </div>
 
 			                  <div class="btn">
 			                        <button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
@@ -176,26 +165,20 @@
 													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
 										</div>
 
-										<div class="form-check mb-3">
-													<input class="form-check-input" type="checkbox" id="addlan2" onclick="add_lan2(this.id);">
-													<label class="form-check-label" for="addlan2">Add Lan 2 ?</label>
+										<div>
+														Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
 										</div>
 
-										<div id="lan2" style="display:none">
-											<div class="input-group mb-3">
-													<span class="input-group-text">Input LAN 2/Subnet</span>
-													<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
-										</div>
+										<div>
+												<div class="input-group mb-3">
+														<span class="input-group-text">Input LAN 2/Subnet</span>
+														<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+												</div>
 
-										<div class="form-check mb-3">
-													<input class="form-check-input" type="checkbox" id="addlan3" onclick="add_lan3(this.id);">
-													<label class="form-check-label" for="addlan3">Want more ?</label>
-											</div>
-										</div>
-
-										<div class="input-group mb-3" id="lan3" style="display:none">
-											<span class="input-group-text">Input LAN 3/Subnet</span>
-													<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+												<div class="input-group mb-3">
+														<span class="input-group-text">Input LAN 3/Subnet</span>
+														<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+												</div>
 										</div>
 
 										<div class="btn">
@@ -230,50 +213,235 @@
 															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
 													</div>
 
+													<div>
+		                              Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+		                      </div>
 
-													<div class="form-check mb-3">
-															<input class="form-check-input" type="checkbox" id="addlan2" onclick="add_lan2(this.id);">
-															<label class="form-check-label" for="addlan2">Add Lan 2 ?</label>
-													</div>
+		                      <div>
+		                          <div class="input-group mb-3">
+		                              <span class="input-group-text">Input LAN 2/Subnet</span>
+		                              <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+		                      		</div>
 
-										<div id="lan2" style="display:none">
-											<div class="input-group mb-3">
-														<span class="input-group-text">Input LAN 2/Subnet</span>
-														<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
-											</div>
+															<div class="input-group mb-3">
+					                        <span class="input-group-text">Input LAN 3/Subnet</span>
+					                        <input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+					                    </div>
+		                      </div>
 
-											<div class="form-check mb-3">
-														<input class="form-check-input" type="checkbox" id="addlan3" onclick="add_lan3(this.id);">
-														<label class="form-check-label" for="addlan3">Want more ?</label>
-											</div>
+														<div class="btn">
+																	<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
+														</div>
+												</form>
 										</div>
+				        </div>
+				    </div>
+				  </div>
 
-										<div class="input-group mb-3" id="lan3" style="display:none">
+
+    <div class="tab-pane fade" id="hong">
+		    <div class="col">
+		      <div class="form-group">
+						<br>
+		          <div class="input-group mb-3">
+		            <select class="custom-select" name="config" id="configlist2">
+		              <option selected>Select Config</option>
+		              <option value="H1_AISFUP">Hongddian + 3G AISFUP</option>
+		              <option value="H2_AISVPN">Hongddian + 3G AISVPN (tempa)</option>
+		              <option value="H3_DTACFUP">Hongddian + 3G DTACFUP</option>
+									<option value="H4_4GNET">Hongddian + SIM 3G&4G INTERNET (VPN)</option>
+		            </select>
+		          </div>
+
+								<div id="H1_AISFUP" style="display:none">
+									<form class="was-validated" method="post" action="index.php">
+										<input type="hidden" name="config" value="H1_AISFUP">
+												<div class="input-group is-invalid mb-3">
+														<div class="input-group-prepend">
+																<span class="input-group-text" id="validatedInputGroupPrepend">Input USER VPN</span>
+														</div>
+																<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. l2temp1097" name="user">
+												</div>
+
+												<div class="input-group is-invalid mb-3">
+														<div class="input-group-prepend">
+																<span class="input-group-text" id="validatedInputGroupPrepend">Input USER Aisfup</span>
+														</div>
+																<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. aisfup1022" name="usersim">
+												</div>
+
+												<div class="input-group is-invalid mb-3">
+														<div class="input-group-prepend">
+																<span class="input-group-text" id="validatedInputGroupPrepend">Input LAN/Subnet</span>
+															</div>
+																<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
+														</div>
+
+												<div>
+																Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+												</div>
+
+												<div>
+														<div class="input-group mb-3">
+																<span class="input-group-text">Input LAN 2/Subnet</span>
+																<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+														</div>
+
+														<div class="input-group mb-3">
+																<span class="input-group-text">Input LAN 3/Subnet</span>
+																<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+														</div>
+												</div>
+
+									<div class="btn">
+											<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
+									</div>
+							</form>
+					</div>
+
+
+					<div id="H2_AISVPN" style="display:none">
+						<form class="was-validated" method="post" action="index.php">
+							<input type="hidden" name="config" value="H2_AISVPN">
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">Input USER VPN</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. l2temp1097" name="user">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">Input USER Aisfup</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. tempa66" name="usersim">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">Input LAN/Subnet</span>
+												</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
+											</div>
+
+									<div>
+													Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+									</div>
+
+									<div>
+											<div class="input-group mb-3">
+													<span class="input-group-text">Input LAN 2/Subnet</span>
+													<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+											</div>
+
+											<div class="input-group mb-3">
 													<span class="input-group-text">Input LAN 3/Subnet</span>
 													<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
-										</div>
+											</div>
+									</div>
 
 										<div class="btn">
-													<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
+												<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
 										</div>
 								</form>
 						</div>
-        </div>
-    </div>
 
-		<div>
-			<!-- <button class="btn btn-primary" onclick="CopyToClipboard('showconfig')">Click to copy</button>
-	     <div id="showconfig" class="col bg"><font style="color:lightgreen"><?php //include($ConURL); ?></font></div> -->
-			<div><?php include($ConURL);?>
+
+
+						<div id="H3_DTACFUP" style="display:none">
+							<form class="was-validated" method="post" action="index.php">
+								<input type="hidden" name="config" value="H3_DTACFUP">
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">Input USER VPN</span>
+												</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. l2temp1097" name="user">
+										</div>
+
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">Input USER dtacfup</span>
+												</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. dtacfup1004" name="usersim">
+										</div>
+
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">Input LAN/Subnet</span>
+													</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
+												</div>
+
+										<div>
+														Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+										</div>
+
+										<div>
+												<div class="input-group mb-3">
+														<span class="input-group-text">Input LAN 2/Subnet</span>
+														<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+												</div>
+
+												<div class="input-group mb-3">
+														<span class="input-group-text">Input LAN 3/Subnet</span>
+														<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+												</div>
+										</div>
+
+											<div class="btn">
+													<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
+											</div>
+									</form>
+							</div>
+
+
+
+							<div id="H4_4GNET" style="display:none">
+								<form class="was-validated" method="post" action="index.php">
+									<input type="hidden" name="config" value="H4_4GNET">
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">Input USER VPN</span>
+													</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. l2temp1097" name="user">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">Input LAN/Subnet</span>
+														</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.21.197.254/24" name="lan">
+													</div>
+
+											<div>
+															Option Lan 2-3 จะใส่ไม่ใส่ก็ได้
+											</div>
+
+											<div>
+													<div class="input-group mb-3">
+															<span class="input-group-text">Input LAN 2/Subnet</span>
+															<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan2">
+													</div>
+
+													<div class="input-group mb-3">
+															<span class="input-group-text">Input LAN 3/Subnet</span>
+															<input type="text" class="form-control" placeholder="Ex. 10.21.197.254/24" name="lan3">
+													</div>
+											</div>
+
+												<div class="btn">
+														<button type="submit" class="btn btn-primary" name="submit_btn">โอม จง Upๆ</button>
+												</div>
+										</form>
+								</div>
+
+
+				</div>
 			</div>
+    </div>
+
+
 		</div>
-  </div>
-
-
-    </div>
-    <div class="tab-pane fade" id="hong">
-      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-    </div>
     <div class="tab-pane fade" id="dropdown1">
       <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
     </div>
@@ -281,7 +449,17 @@
       <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
     </div>
   </div>
-  <!--end myTabContent-->
+	<!--end myTabContent-->
+
+	<div class="col">
+		<!-- <button class="btn btn-primary" onclick="CopyToClipboard('showconfig')">Click to copy</button>
+				 <div id="showconfig" class="col bg"><font style="color:lightgreen"><?php //include($ConURL); ?></font></div> -->
+		<div><?php include($ConURL);?></div>
+	</div>
+
+</div>  <!--end row-->
+
+
   <!--start footer-->
   <div class="credit">
 	<hr>
@@ -305,27 +483,14 @@
         $("#"+viewID).show();
         })
 
-        function add_lan2(id){
-              if(id=='addlan2'){
-              if($('#'+id).is(':checked')==false)
-              $('#lan2').css({'display':"none"});
-
-              else {
-                $('#lan2').css({'display':""});
-              }
-            }
-          }
-
-          function add_lan3(id){
-                if(id=='addlan3'){
-                if($('#'+id).is(':checked')==false)
-                $('#lan3').css({'display':"none"});
-
-                else {
-                  $('#lan3').css({'display':""});
-                }
-              }
-            }
+				$("#configlist2").change(function(){
+				var viewID = $("#configlist2 option:selected").val();
+				$("#configlist2 option").each(function(){
+					var hideID = $(this).val();
+					$("#"+hideID).hide();
+				});
+				$("#"+viewID).show();
+				})
 
 
 						function CopyToClipboard(containerid) {

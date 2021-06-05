@@ -72,7 +72,7 @@ if ($LAN2 == "") {
 }
 
 if ($LAN3 == "") {
-  echo "";
+  echo "ip address add address=192.168.88.1/24 interface=Lan comment=Lan-Default\n";
 }else {
   echo "$AddLAN3\n";
 }
