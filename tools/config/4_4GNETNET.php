@@ -12,7 +12,7 @@
   $AddLAN2  = "ip address add address=$LAN2 interface=Lan comment=Lan-Cus2";
   $AddLAN3  = "ip address add address=$LAN3 interface=Lan comment=Lan-Cus3";
 
-?><div id="showconfig" class="col bg" font style="color:lightgreen"><pre><h6>#############################
+?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
 # UserVPN   : <?php echo "$VPN\n"; ?>
 # PassVPN   : <?php echo "$PASS\n"; ?>
 # Lan       : <?php echo "$LAN\n"; ?>

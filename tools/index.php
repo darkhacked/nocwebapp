@@ -455,7 +455,6 @@
 		<button class="btn btn-primary btn-sm mb-3" onclick="CopyToClipboard('showconfig')">Click to Copy</button>&nbsp;&nbsp;&nbsp;☜(ﾟヮﾟ☜)
 		<div><?php include($ConURL);?></div>
 	</div>
-
 </div>  <!--end row-->
 
 
@@ -491,21 +490,35 @@
 				$("#"+viewID).show();
 				})
 
+				//ฟังชั่น copy text in pre tag
+				function CopyToClipboard() {
+				  const copyText = document.getElementById("showconfig").textContent;
+				  const textArea = document.createElement('textarea');
+				  textArea.textContent = copyText;
+				  document.body.append(textArea);
+				  textArea.select();
+				  document.execCommand("copy");
+					alert("Copy Config เรียบร้อย")
+				}
 
-						function CopyToClipboard(containerid) {
-					  if (document.selection) {
-					    var range = document.body.createTextRange();
-					    range.moveToElementText(document.getElementById(containerid));
-					    range.select().createTextRange();
-					    document.execCommand("copy");
-					  } else if (window.getSelection) {
-					    var range = document.createRange();
-					    range.selectNode(document.getElementById(containerid));
-					    window.getSelection().addRange(range);
-					    document.execCommand("copy");
-					    alert("Copy Config เรียบร้อย")
-					  }
-					}
+				document.getElementById('button').addEventListener('click', copyFunction);
+
+
+//ฟังชั่น copy text in div tag มี bug ไม่แสดงผลกับ chrome
+//						function CopyToClipboard(containerid) {
+//					  if (document.selection) {
+//					    var range = document.body.createTextRange();
+//					    range.moveToElementText(document.getElementById(containerid));
+//					    range.select().createTextRange();
+//					    document.execCommand("copy");
+//					  } else if (window.getSelection) {
+//					    var range = document.createRange();
+//					    range.selectNode(document.getElementById(containerid));
+//					    window.getSelection().addRange(range);
+//					    document.execCommand("copy");
+//					    alert("Copy Config เรียบร้อย")
+//					  }
+//					}
 
 
       </script>

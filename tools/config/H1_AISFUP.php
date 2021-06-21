@@ -12,7 +12,7 @@
   $AddLAN2  = "ip address $LAN2 label br0:2";
   $AddLAN3  = "ip address $LAN3 label br0:3";
 
-?><div id="showconfig" class="col bg" font style="color:lightgreen"><pre><h6>#############################
+?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
 # UserVPN   : <?php echo "$VPN\n"; ?>
 # UserAIS   : <?php echo "$SIM\n"; ?>
 # Lan       : <?php echo "$LAN\n"; ?>
