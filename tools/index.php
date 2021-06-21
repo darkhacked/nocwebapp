@@ -452,8 +452,7 @@
 	<!--end myTabContent-->
 
 	<div class="col">
-		<!-- <button class="btn btn-primary" onclick="CopyToClipboard('showconfig')">Click to copy</button>
-				 <div id="showconfig" class="col bg"><font style="color:lightgreen"><?php //include($ConURL); ?></font></div> -->
+		<button class="btn btn-primary btn-sm mb-3" onclick="CopyToClipboard('showconfig')">Click to Copy</button>&nbsp;&nbsp;&nbsp;☜(ﾟヮﾟ☜)
 		<div><?php include($ConURL);?></div>
 	</div>
 
@@ -507,8 +506,6 @@
 					    alert("Copy Config เรียบร้อย")
 					  }
 					}
-
-
 
 
       </script>

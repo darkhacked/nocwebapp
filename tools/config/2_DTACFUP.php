@@ -12,15 +12,7 @@
   $AddLAN2  = "ip address add address=$LAN2 interface=Lan comment=Lan-Cus2";
   $AddLAN3  = "ip address add address=$LAN3 interface=Lan comment=Lan-Cus3";
 
-	echo "<button class=\"btn btn-primary btn-sm mb-3\" onclick=\"CopyToClipboard('showconfig')\">Click to Copy</button>";
-	echo "☜(ﾟヮﾟ☜)";
-	//echo "☜(ﾟヮﾟ☜) &nbsp; (☞ﾟヮﾟ)☞";
-	//echo "<button class=\"btn btn-primary btn-sm mb-3\" id=\"SaveAs\" onclick=\"saveTextAsFile()\">Click to Save file</button>";
-
-	echo "<div id=\"showconfig\" class=\"col bg\"><font style=\"color:lightgreen\">";
-	echo "<div id=\"TextToSave\">";
-
-?><pre><h6>#############################
+?><div id="showconfig" class="col bg" font style="color:lightgreen"><pre><h6>#############################
 # UserVPN   : <?php echo "$VPN\n"; ?>
 # UserDTAC   : <?php echo "$SIM\n"; ?>
 # Lan       : <?php echo "$LAN\n"; ?>
@@ -195,4 +187,4 @@ interface bridge port add interface=ether4-Lan bridge=Lan
 interface bridge port add interface=ether5-Lan bridge=Lan
 #
 system reboot
-y</h6></pre></div></font></div>
+y</h6></pre></div>

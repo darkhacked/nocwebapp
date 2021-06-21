@@ -11,15 +11,7 @@
   $AddLAN2  = "ip address $LAN2 label br0:2";
   $AddLAN3  = "ip address $LAN3 label br0:3";
 
-	echo "<button class=\"btn btn-primary btn-sm mb-3\" onclick=\"CopyToClipboard('showconfig')\">Click to Copy</button>";
-	echo "☜(ﾟヮﾟ☜)";
-	//echo "☜(ﾟヮﾟ☜) &nbsp; (☞ﾟヮﾟ)☞";
-	//echo "<button class=\"btn btn-primary btn-sm mb-3\" id=\"SaveAs\" onclick=\"saveTextAsFile()\">Click to Save file</button>";
-
-	echo "<div id=\"showconfig\" class=\"col bg\"><font style=\"color:lightgreen\">";
-	echo "<div id=\"TextToSave\">";
-
-?><pre><h6>#############################
+?><div id="showconfig" class="col bg" font style="color:lightgreen"><pre><h6>#############################
 # UserVPN   : <?php echo "$VPN\n"; ?>
 # Lan       : <?php echo "$LAN\n"; ?>
 <?php
@@ -155,4 +147,4 @@ check interval 40 retry 5
 service webadmin
 admin username admin password admin
 guest username guest password guest
-!</h6></pre></div></font></div>
+!</h6></pre></div>
