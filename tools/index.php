@@ -246,10 +246,10 @@
 		          <div class="input-group mb-3">
 		            <select class="custom-select" name="config" id="configlist2">
 		              <option selected>Select Config</option>
-		              <option value="H1_AISFUP">Hongddian + 3G AISFUP</option>
-		              <option value="H2_AISVPN">Hongddian + 3G AISVPN (tempa)</option>
-		              <option value="H3_DTACFUP">Hongddian + 3G DTACFUP</option>
-									<option value="H4_4GNET">Hongddian + SIM 3G&4G INTERNET (VPN)</option>
+		              <option value="H1_AISFUP">Hongdian + 3G AISFUP</option>
+		              <option value="H2_AISVPN">Hongdian + 3G AISVPN (tempa)</option>
+		              <option value="H3_DTACFUP">Hongdian + 3G DTACFUP</option>
+									<option value="H4_4GNET">Hongdian + SIM 3G&4G INTERNET (VPN)</option>
 		            </select>
 		          </div>
 
