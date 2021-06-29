@@ -8,6 +8,7 @@
  <link href="css/bootstrap.css" rel="stylesheet">
  <link href="css/mystyle.css" rel="stylesheet">
  <script src="Functions/jquery-3.6.0.js"></script>
+ <script src="Functions/FileSaver.js"></script>
 <title>ติด 3G อีกและ</title>
 </head>
 <body>
@@ -41,10 +42,10 @@
   <!--end navbar-->
   <!--start myTabContent-->
   <div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade show active" id="mik"><br>
+    <div class="tab-pane fade show active" id="mik">
     <div class="col">
       <div class="form-group">
-
+				<br>
           <div class="input-group mb-3">
             <select class="custom-select" name="config" id="configlist">
               <option selected>Select Config</option>
@@ -434,7 +435,7 @@
 												</div>
 										</form>
 								</div>
-
+								<div class="alert alert-danger" role="alert">ต้อง Save ไฟล์เป็นนามสกุล .conf เท่านั้น ไม่งั้น Router มัน Import ไม่ได้เด้อ!!</div>
 
 				</div>
 			</div>
@@ -452,7 +453,8 @@
 	<!--end myTabContent-->
 
 	<div class="col">
-		<button class="btn btn-primary btn-sm mb-3" onclick="CopyToClipboard('showconfig')">Click to Copy</button>&nbsp;&nbsp;&nbsp;☜(ﾟヮﾟ☜)
+		<button class="btn btn-primary btn-sm mb-3" onclick="CopyToClipboard('showconfig')">Click to Copy</button>&nbsp;&nbsp;&nbsp;☜(⌒▽⌒)☞&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-primary btn-sm mb-3" type="button" onclick="saveStaticDataToFile();">Click to Save File</button>
 		<div><?php include($ConURL);?></div>
 	</div>
 </div>  <!--end row-->
@@ -504,22 +506,12 @@
 				document.getElementById('button').addEventListener('click', copyFunction);
 
 
-//ฟังชั่น copy text in div tag มี bug ไม่แสดงผลกับ chrome
-//						function CopyToClipboard(containerid) {
-//					  if (document.selection) {
-//					    var range = document.body.createTextRange();
-//					    range.moveToElementText(document.getElementById(containerid));
-//					    range.select().createTextRange();
-//					    document.execCommand("copy");
-//					  } else if (window.getSelection) {
-//					    var range = document.createRange();
-//					    range.selectNode(document.getElementById(containerid));
-//					    window.getSelection().addRange(range);
-//					    document.execCommand("copy");
-//					    alert("Copy Config เรียบร้อย")
-//					  }
-//					}
-
+				function saveStaticDataToFile() {
+						var output = document.getElementById("showconfig").textContent;
+            var blob = new Blob([output], {
+							type: "text/plain;charset=utf-8" });
+            saveAs(blob, "config");
+        }
 
       </script>
   <!-- end script ซ่อนเมนู -->
