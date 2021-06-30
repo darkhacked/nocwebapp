@@ -1,21 +1,15 @@
 <?php
 	include('Functions/functions.php');
-  $config    =  $_POST['config'];
-  $VPN       =  $_POST['user'];
-  $PASS      =  $_POST['passvpn'];
-  $LAN       =  $_POST['lan'];
-  $LAN2      =  $_POST['lan2'];
-  $LAN3      =  $_POST['lan3'];
 
-  $LabelLAN2  = "# Lan2      : $LAN2";
-  $LabelLAN3  = "# Lan3      : $LAN3";
-  $AddLAN2  = "ip address add address=$LAN2 interface=Lan comment=Lan-Cus2";
-  $AddLAN3  = "ip address add address=$LAN3 interface=Lan comment=Lan-Cus3";
+	$LabelLAN2  = "# Lan2      : " . trim(preg_replace('/\s+/', '', $LAN2));
+  $LabelLAN3  = "# Lan3      : " . trim(preg_replace('/\s+/', '', $LAN3));
+  $AddLAN2  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN2)) . " interface=Lan comment=Lan-Cus2";
+  $AddLAN3  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN3)) . " interface=Lan comment=Lan-Cus3";
 
 ?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
-# UserVPN   : <?php echo "$VPN\n"; ?>
-# PassVPN   : <?php echo "$PASS\n"; ?>
-# Lan       : <?php echo "$LAN\n"; ?>
+# UserVPN   : <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
+# PassVPN   : <?php echo trim(preg_replace('/\s+/', '', $PASS)) . "\n";?>
+# Lan       : <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";?>
 <?php
 if ($LAN2 == "") {
   echo "";
@@ -31,7 +25,7 @@ if ($LAN3 == "") {
 ?>
 #############################
 #
-system identity set name=<?php echo "$VPN\n"; ?>
+system identity set name=<?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 #
 user add name=noa password=:jvogihonoa group=full disabled=no
 user remove 0
@@ -55,9 +49,9 @@ interface enable 6
 interface ppp-client remove 1
 #
 interface l2tp-client add add-default-route=yes connect-to=203.147.8.133 disabled=no max-mru=1400 max-mtu=1400 \
-mrru=1550 name=Wan password=<?php echo "$PASS"; ?> user=<?php echo "$VPN\n"; ?>
+mrru=1550 name=Wan password=<?php echo trim(preg_replace('/\s+/', '', $PASS));?> user=<?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 #
-ip address add address=<?php echo "$LAN"; ?> interface=Lan comment=Lan-Cus
+ip address add address=<?php echo trim(preg_replace('/\s+/', '', $LAN));?> interface=Lan comment=Lan-Cus
 <?php
 if ($LAN2 == "") {
   echo "";

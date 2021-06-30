@@ -1,19 +1,14 @@
 <?php
 	include('Functions/functions.php');
-  $config    =  $_POST['config'];
-  $VPN       =  $_POST['user'];
-  $LAN       =  $_POST['lan'];
-  $LAN2      =  $_POST['lan2'];
-  $LAN3      =  $_POST['lan3'];
 
-  $LabelLAN2  = "# Lan2      : $LAN2";
-  $LabelLAN3  = "# Lan3      : $LAN3";
-  $AddLAN2  = "ip address $LAN2 label br0:2";
-  $AddLAN3  = "ip address $LAN3 label br0:3";
+  $LabelLAN2  = "# Lan2      : " . trim(preg_replace('/\s+/', '', $LAN2));
+  $LabelLAN3  = "# Lan3      : " . trim(preg_replace('/\s+/', '', $LAN3));
+  $AddLAN2  = "ip address " . trim(preg_replace('/\s+/', '', $LAN2)) . " label br0:2";
+  $AddLAN3  = "ip address " . trim(preg_replace('/\s+/', '', $LAN3)) . " label br0:3";
 
 ?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
-# UserVPN   : <?php echo "$VPN\n"; ?>
-# Lan       : <?php echo "$LAN\n"; ?>
+# UserVPN   : <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
+# Lan       : <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";?>
 <?php
 if ($LAN2 == "") {
   echo "";
@@ -29,7 +24,7 @@ if ($LAN3 == "") {
 ?>
 #############################
 !
-hostname <?php echo "$VPN\n"; ?>
+hostname <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 password admin
 !
 interface lo
@@ -43,8 +38,7 @@ interface gre0
 interface vlan0
 !
 interface br0
-ip address <?php echo "$LAN\n"; ?>
-<?php
+ip address <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";
 if ($LAN2 == "") {
   echo "";
 }else {
@@ -52,7 +46,7 @@ if ($LAN2 == "") {
 }
 
 if ($LAN3 == "") {
-  echo "ip address 192.168.8.1/24 label br0:2\n";
+  echo "ip address 192.168.8.1/24 label br0:3\n";
 }else {
   echo "$AddLAN3\n";
 }
@@ -116,7 +110,7 @@ time zone bangkok/hanoi/jakarta
 !
 !
 interface vpdn L2Sim1
-username <?php echo "$VPN"; ?>@jivpn password 123456
+username <?php echo trim(preg_replace('/\s+/', '', $VPN));?>@jivpn password 123456
 destination 203.147.63.147
 protocol l2tp
 ppp advance authernication refuse-chap refuse-mschap refuse-mschap-v2 refuse-eap

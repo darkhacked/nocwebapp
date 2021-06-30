@@ -25,19 +25,15 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#hong">Hongdian</a>
     </li>
-    <!--<li class="nav-item">
-      <a class="nav-link disabled" href="#">-</a>
-    </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">-</a>
+      <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cisco</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">1</a>
-        <a class="dropdown-item" href="#">1</a>
-        <a class="dropdown-item" href="#">1</a>
+        <a class="dropdown-item" data-toggle="tab" href="#scb">Template SCB</a>
+        <a class="dropdown-item" data-toggle="tab" href="#bbl">Template BBL</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">4</a>
+        <a class="dropdown-item disabled" href="#">Orther</a>
       </div>
-    </li>-->
+    </li>
   </ul>
   <!--end navbar-->
   <!--start myTabContent-->
@@ -442,13 +438,16 @@
     </div>
 
 
+		<div class="tab-pane fade" id="scb">
+			<br>
+			<p>รอก่อนสิ๊ ยังไม่เสร็จ ใช้ Mikrotik กับ Hongdian ไปก่อน</p>
 		</div>
-    <div class="tab-pane fade" id="dropdown1">
-      <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-    </div>
-    <div class="tab-pane fade" id="dropdown2">
-      <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
-    </div>
+		<div class="tab-pane fade" id="bbl">
+			<br>
+			<p>รอก่อนสิ๊ ยังไม่เสร็จ ใช้ Mikrotik กับ Hongdian ไปก่อน</p>
+		</div>
+
+		</div>
   </div>
 	<!--end myTabContent-->
 
@@ -510,7 +509,7 @@
 						var output = document.getElementById("showconfig").textContent;
             var blob = new Blob([output], {
 							type: "text/plain;charset=utf-8" });
-            saveAs(blob, "config");
+            saveAs(blob, "config_GGEZ.txt");
         }
 
       </script>

@@ -1,21 +1,15 @@
 <?php
 	include('Functions/functions.php');
-  $config    =  $_POST['config'];
-  $VPN       =  $_POST['user'];
-  $SIM       =  $_POST['usersim'];
-  $LAN       =  $_POST['lan'];
-  $LAN2      =  $_POST['lan2'];
-  $LAN3      =  $_POST['lan3'];
 
-  $LabelLAN2  = "# Lan2      : $LAN2";
-  $LabelLAN3  = "# Lan3      : $LAN3";
-  $AddLAN2  = "ip address add address=$LAN2 interface=Lan comment=Lan-Cus2";
-  $AddLAN3  = "ip address add address=$LAN3 interface=Lan comment=Lan-Cus3";
+	$LabelLAN2  = "# Lan2      : " . trim(preg_replace('/\s+/', '', $LAN2));
+  $LabelLAN3  = "# Lan3      : " . trim(preg_replace('/\s+/', '', $LAN3));
+  $AddLAN2  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN2)) . " interface=Lan comment=Lan-Cus2";
+  $AddLAN3  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN3)) . " interface=Lan comment=Lan-Cus3";
 
 ?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
-# UserVPN   : <?php echo "$VPN\n"; ?>
-# UserDTAC   : <?php echo "$SIM\n"; ?>
-# Lan       : <?php echo "$LAN\n"; ?>
+# UserVPN   : <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
+# UserDTAC  : <?php echo trim(preg_replace('/\s+/', '', $SIM)) . "\n";?>
+# Lan       : <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";?>
 <?php
 if ($LAN2 == "") {
   echo "";
@@ -31,7 +25,7 @@ if ($LAN3 == "") {
 ?>
 #############################
 #
-system identity set name=<?php echo "$VPN\n"; ?>
+system identity set name=<?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 #
 user add name=noa password=:jvogihonoa group=full disabled=no
 user add name=kcs password=kcssck group=write disabled=no
@@ -52,14 +46,14 @@ interface ethernet set numbers=4 name=ether5-Lan
 interface ppp-client remove 0
 interface ppp-client remove 1
 interface ppp-client add add-default-route=no allow=pap apn=corp.jivpn dial-on-demand=no disabled=no \
-    mrru=1600 name=<?php echo "$SIM"; ?> password=123456 phone=*99***1# port=usb1 \
-    use-peer-dns=no user=<?php echo "$SIM"; ?>@jivpn
+    mrru=1600 name=<?php echo trim(preg_replace('/\s+/', '', $SIM));?> password=123456 phone=*99***1# port=usb1 \
+    use-peer-dns=no user=<?php echo trim(preg_replace('/\s+/', '', $SIM));?>@jivpn
 interface enable 6
 #
 interface l2tp-client add add-default-route=yes connect-to=172.30.234.15 disabled=no max-mru=1400 \
-    max-mtu=1400 mrru=1550 name=Wan password=123456 user=<?php echo "$VPN"; ?>@jivpn
+    max-mtu=1400 mrru=1550 name=Wan password=123456 user=<?php echo trim(preg_replace('/\s+/', '', $VPN));?>@jivpn
 #
-ip address add address=<?php echo "$LAN"; ?> interface=Lan comment=Lan-Cus
+ip address add address=<?php echo trim(preg_replace('/\s+/', '', $LAN));?> interface=Lan comment=Lan-Cus
 <?php
 if ($LAN2 == "") {
   echo "";
@@ -77,8 +71,8 @@ if ($LAN3 == "") {
 ip route add check-gateway=ping distance=1 dst-address=10.0.0.0/8 gateway=Wan
 ip route add check-gateway=ping distance=1 dst-address=172.16.0.0/12 gateway=Wan
 ip route add check-gateway=ping distance=1 dst-address=192.168.0.0/16 gateway=Wan
-ip route add check-gateway=ping comment=AIS-PPTP distance=1 dst-address=172.29.4.0/24 gateway=<?php echo "$SIM\n"; ?>
-ip route add check-gateway=ping comment=DTAC-PPTP distance=1 dst-address=172.30.234.0/24 gateway=<?php echo "$SIM\n"; ?>
+ip route add check-gateway=ping comment=AIS-PPTP distance=1 dst-address=172.29.4.0/24 gateway=<?php echo trim(preg_replace('/\s+/', '', $SIM)) . "\n";?>
+ip route add check-gateway=ping comment=DTAC-PPTP distance=1 dst-address=172.30.234.0/24 gateway=<?php echo trim(preg_replace('/\s+/', '', $SIM)) . "\n";?>
 #
 ip dhcp-client remove 0
 ip pool remove 0
