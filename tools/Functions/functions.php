@@ -15,6 +15,30 @@ if (isset($_POST['submit_btn'])) {
 }
 
 
+if (isset($_POST['submit_scb'])) {
+  $config    =  $_POST['config'];
+  $SO       =  $_POST['user'];
+  $WAN       =  $_POST['wan'];
+  $LAN       =  $_POST['lan'];
+
+  $f0 = trim(preg_replace('/\s+/', '', $WAN));
+  $f1 = strrchr($f0,"."); // ตัด ip 3 ชุดหน้าออก
+  $f2 = substr($f1,1); // ตัด . เพื่อเอาเลขเพียวๆ
+  $f3 = $f2 -2;
+  $f4 = $f2 -1;
+
+  $f5 = strrev($f0); // สลับหน้าหลังเพื่อตัดชุดสุดท้ายออก
+  $f6 = strstr($f5,"."); // ตัดชุดแรกออก
+  $f7 = strrev($f6); // สลับกลับ
+
+  $NETWORK = $f7.$f3;
+  $GATEWAY = $f7.$f4;
+
+  $ConURL = "config/$config.php";
+
+}
+
+
 //echo "$config";
 //echo "$VPN";
 //echo "$SIM";

@@ -31,7 +31,7 @@
         <a class="dropdown-item" data-toggle="tab" href="#scb">Template SCB</a>
         <a class="dropdown-item" data-toggle="tab" href="#bbl">Template BBL</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item disabled" href="#">Orther</a>
+        <a class="dropdown-item disabled" href="#">Other</a>
       </div>
     </li>
   </ul>
@@ -439,12 +439,149 @@
 
 
 		<div class="tab-pane fade" id="scb">
-			<br>
-			<p>รอก่อนสิ๊ ยังไม่เสร็จ ใช้ Mikrotik กับ Hongdian ไปก่อน</p>
-		</div>
+			<div class="col">
+				<div class="form-group">
+					<br>
+						<div class="input-group mb-3">
+							<select class="custom-select" name="config" id="scblist">
+								<option selected>Select Config</option>
+								<option value="Cisco_1SCB_copper_867">Copper + Cisco 867</option>
+								<option value="Cisco_2SCB_copper_877887">Copper + Cisco 877 & 887</option>
+								<option value="Cisco_3SCB_fttx_867">FTTX + Cisco 867</option>
+								<option value="Cisco_4SCB_fttx_877887">FTTX + Cisco 877 & 887</option>
+							</select>
+						</div>
+
+							<div id="Cisco_1SCB_copper_867" style="display:none">
+								<form class="was-validated" method="post" action="index.php">
+									<input type="hidden" name="config" value="Cisco_1SCB_copper_867">
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+													</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1160079" name="user">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+													</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.2.76.154" name="wan">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">IP LAN</span>
+														</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.181.6.150" name="lan">
+													</div>
+
+								<div class="btn">
+										<button type="submit" class="btn btn-primary" name="submit_scb">โอม จง Upๆ</button>
+								</div>
+						</form>
+				</div>
+
+
+						<div id="Cisco_2SCB_copper_877887" style="display:none">
+							<form class="was-validated" method="post" action="index.php">
+								<input type="hidden" name="config" value="Cisco_2SCB_copper_877887">
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+												</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1160079" name="user">
+										</div>
+
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+												</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.2.76.154" name="wan">
+										</div>
+
+										<div class="input-group is-invalid mb-3">
+												<div class="input-group-prepend">
+														<span class="input-group-text" id="validatedInputGroupPrepend">IP LAN</span>
+													</div>
+														<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.181.6.150" name="lan">
+												</div>
+
+							<div class="btn">
+									<button type="submit" class="btn btn-primary" name="submit_scb">โอม จง Upๆ</button>
+							</div>
+						</form>
+					</div>
+
+
+					<div id="Cisco_3SCB_fttx_867" style="display:none">
+						<form class="was-validated" method="post" action="index.php">
+							<input type="hidden" name="config" value="Cisco_3SCB_fttx_867">
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1160079" name="user">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.2.76.154" name="wan">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">IP LAN</span>
+												</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.181.6.150" name="lan">
+											</div>
+
+						<div class="btn">
+								<button type="submit" class="btn btn-primary" name="submit_scb">โอม จง Upๆ</button>
+						</div>
+					</form>
+					</div>
+
+
+					<div id="Cisco_4SCB_fttx_877887" style="display:none">
+						<form class="was-validated" method="post" action="index.php">
+							<input type="hidden" name="config" value="Cisco_4SCB_fttx_877887">
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1160079" name="user">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+											</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.2.76.154" name="wan">
+									</div>
+
+									<div class="input-group is-invalid mb-3">
+											<div class="input-group-prepend">
+													<span class="input-group-text" id="validatedInputGroupPrepend">IP LAN</span>
+												</div>
+													<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.181.6.150" name="lan">
+											</div>
+
+						<div class="btn">
+								<button type="submit" class="btn btn-primary" name="submit_scb">โอม จง Upๆ</button>
+						</div>
+					</form>
+					</div>
+
+
+		</div></div></div>
+
+
 		<div class="tab-pane fade" id="bbl">
 			<br>
-			<p>รอก่อนสิ๊ ยังไม่เสร็จ ใช้ Mikrotik กับ Hongdian ไปก่อน</p>
+			<p>Coming soon!!</p>
 		</div>
 
 		</div>
@@ -491,7 +628,16 @@
 				$("#"+viewID).show();
 				})
 
-				//ฟังชั่น copy text in pre tag
+				$("#scblist").change(function(){
+				var viewID = $("#scblist option:selected").val();
+				$("#scblist option").each(function(){
+					var hideID = $(this).val();
+					$("#"+hideID).hide();
+				});
+				$("#"+viewID).show();
+				})
+
+				//ฟังชั่น copy text in custom tag
 				function CopyToClipboard() {
 				  const copyText = document.getElementById("showconfig").textContent;
 				  const textArea = document.createElement('textarea');
@@ -500,6 +646,7 @@
 				  textArea.select();
 				  document.execCommand("copy");
 					alert("Copy Config เรียบร้อย")
+					document.body.removeChild(textArea);
 				}
 
 				document.getElementById('button').addEventListener('click', copyFunction);
