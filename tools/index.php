@@ -5,15 +5,16 @@
 <html>
  <head>
  <meta charset="utf-8">
+ <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
  <link href="css/bootstrap.css" rel="stylesheet">
  <link href="css/mystyle.css" rel="stylesheet">
  <script src="Functions/jquery-3.6.0.js"></script>
  <script src="Functions/FileSaver.js"></script>
-<title>ติด 3G อีกและ</title>
+<title>Make Config Router GGEZ</title>
 </head>
-<body>
-  <h1>Make Config Router GGEZ</h1>
-	<h5>Config อันไหนทำแล้วไม่ Up หรือมี Config ตัวใหม่จาก TSD เพิ่มเติมบอกด้วยนะเดี๋ยว Update ให้</h5>
+<body><center>
+  <h1><img src="image/beer.png" width="50" height="50" > <a href="http://10.11.61.54/app/tools/">Make Config Router GGEZ </a><img src="image/beer.png" width="50" height="50" ></h1>
+	<h5>Config อันไหนทำแล้วไม่ Up หรือมี Config Version ออกมาใหม่บอกด้วยนะเดี๋ยว Update ให้ จุ๊บๆ...</h5></center>
  <br>
 <!--start navbar-->
 <div class="row">
