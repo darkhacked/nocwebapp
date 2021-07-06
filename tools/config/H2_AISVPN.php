@@ -6,7 +6,8 @@
   $AddLAN2  = "ip address " . trim(preg_replace('/\s+/', '', $LAN2)) . " label br0:2";
   $AddLAN3  = "ip address " . trim(preg_replace('/\s+/', '', $LAN3)) . " label br0:3";
 
-?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
+?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>########################################
+# Type   : Config Hongdian + AISVPN
 # UserVPN   : <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 # UserAIS  : <?php echo trim(preg_replace('/\s+/', '', $SIM)) . "\n";?>
 # Lan       : <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";?>
@@ -23,7 +24,7 @@ if ($LAN3 == "") {
   echo "$LabelLAN3\n";
 }
 ?>
-#############################
+########################################
 !
 hostname <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 password admin

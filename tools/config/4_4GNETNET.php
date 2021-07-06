@@ -6,7 +6,8 @@
   $AddLAN2  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN2)) . " interface=Lan comment=Lan-Cus2";
   $AddLAN3  = "ip address add address=" . trim(preg_replace('/\s+/', '', $LAN3)) . " interface=Lan comment=Lan-Cus3";
 
-?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>#############################
+?><div class="col bg" font style="color:lightgreen"><pre id="showconfig"><h6>####################################################
+# Type   : Config Mikrotik + 4G INTERNET(NET)
 # UserVPN   : <?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 # PassVPN   : <?php echo trim(preg_replace('/\s+/', '', $PASS)) . "\n";?>
 # Lan       : <?php echo trim(preg_replace('/\s+/', '', $LAN)) . "\n";?>
@@ -23,7 +24,7 @@ if ($LAN3 == "") {
   echo "$LabelLAN3\n";
 }
 ?>
-#############################
+####################################################
 #
 system identity set name=<?php echo trim(preg_replace('/\s+/', '', $VPN)) . "\n";?>
 #
