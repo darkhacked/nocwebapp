@@ -14,7 +14,8 @@
 </head>
 <body><center>
   <h1><img src="image/beer.png" width="50" height="50" > <a href="http://10.11.61.54/app/tools/">Make Config Router GGEZ </a><img src="image/beer.png" width="50" height="50" ></h1>
-	<h5>Config อันไหนทำแล้วไม่ Up หรือมี Config Version ออกมาใหม่บอกด้วยนะเดี๋ยว Update ให้ จุ๊บๆ...</h5></center>
+	<h5>😎 It's worked 100% เชื่อผมดิ๊...!!! 😎</h5>
+	<h6>วันที่หลัง Config อ้างอิงมาจาก วันที่เปลี่ยนแปลงล่าสุด ของ Config ใน ftp:\\10.10.19.34</h6></center>
  <br>
 <!--start navbar-->
 <div class="row">
@@ -46,10 +47,10 @@
           <div class="input-group mb-3">
             <select class="custom-select" name="config" id="configlist">
               <option selected>Select Config</option>
-              <option value="1_AISFUP">Mikrotik + 3G AISFUP</option>
-              <option value="2_DTACFUP">Mikrotik + 3G DTACFUP</option>
-              <option value="3_4GNETVPN">Mikrotik + 4G INTERNET (VPN)</option>
-							<option value="4_4GNETNET">Mikrotik + 4G INTERNET (NET)</option>
+              <option value="1_AISFUP">Mikrotik + 3G AISFUP --- 06/09/62</option>
+              <option value="2_DTACFUP">Mikrotik + 3G DTACFUP --- 06/09/62</option>
+              <option value="3_4GNETVPN">Mikrotik + 4G INTERNET (VPN) --- 13/11/62</option>
+							<option value="4_4GNETNET">Mikrotik + 4G INTERNET (NET) --- 26/09/62</option>
             </select>
           </div>
 
@@ -244,10 +245,10 @@
 		          <div class="input-group mb-3">
 		            <select class="custom-select" name="config" id="configlist2">
 		              <option selected>Select Config</option>
-		              <option value="H1_AISFUP">Hongdian + 3G AISFUP</option>
-		              <option value="H2_AISVPN">Hongdian + 3G AISVPN (tempa)</option>
-		              <option value="H3_DTACFUP">Hongdian + 3G DTACFUP</option>
-									<option value="H4_4GNET">Hongdian + SIM 3G&4G INTERNET (VPN)</option>
+		              <option value="H1_AISFUP">Hongdian + 3G AISFUP --- 07/04/59</option>
+		              <option value="H2_AISVPN">Hongdian + 3G AISVPN (tempa) --- 23/12/58</option>
+		              <option value="H3_DTACFUP">Hongdian + 3G DTACFUP --- 07/04/59</option>
+									<option value="H4_4GNET">Hongdian + SIM 3G&4G INTERNET (VPN) --- 07/04/59</option>
 		            </select>
 		          </div>
 
@@ -446,16 +447,16 @@
 						<div class="input-group mb-3">
 							<select class="custom-select" name="config" id="scblist">
 								<option selected>Select Config</option>
-								<option value="Cisco_1SCB_copper_867">Copper + Cisco 867</option>
-								<option value="Cisco_2SCB_copper_877887">Copper + Cisco 877 & 887</option>
-								<option value="Cisco_3SCB_fttx_867">FTTX + Cisco 867</option>
-								<option value="Cisco_4SCB_fttx_877887">FTTX + Cisco 877 & 887</option>
+								<option value="Cisco_SCB1_copper_867">Copper + Cisco 867 --- 01/11/62</option>
+								<option value="Cisco_SCB2_copper_877887">Copper + Cisco 877 & 887 --- 01/11/62</option>
+								<option value="Cisco_SCB3_fttx_867">FTTX + Cisco 867 --- 01/11/62</option>
+								<option value="Cisco_SCB4_fttx_877887">FTTX + Cisco 877 & 887 --- 18/02/63</option>
 							</select>
 						</div>
 
-							<div id="Cisco_1SCB_copper_867" style="display:none">
+							<div id="Cisco_SCB1_copper_867" style="display:none">
 								<form class="was-validated" method="post" action="index.php">
-									<input type="hidden" name="config" value="Cisco_1SCB_copper_867">
+									<input type="hidden" name="config" value="Cisco_SCB1_copper_867">
 											<div class="input-group is-invalid mb-3">
 													<div class="input-group-prepend">
 															<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
@@ -484,9 +485,9 @@
 				</div>
 
 
-						<div id="Cisco_2SCB_copper_877887" style="display:none">
+						<div id="Cisco_SCB2_copper_877887" style="display:none">
 							<form class="was-validated" method="post" action="index.php">
-								<input type="hidden" name="config" value="Cisco_2SCB_copper_877887">
+								<input type="hidden" name="config" value="Cisco_SCB2_copper_877887">
 										<div class="input-group is-invalid mb-3">
 												<div class="input-group-prepend">
 														<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
@@ -515,9 +516,9 @@
 					</div>
 
 
-					<div id="Cisco_3SCB_fttx_867" style="display:none">
+					<div id="Cisco_SCB3_fttx_867" style="display:none">
 						<form class="was-validated" method="post" action="index.php">
-							<input type="hidden" name="config" value="Cisco_3SCB_fttx_867">
+							<input type="hidden" name="config" value="Cisco_SCB3_fttx_867">
 									<div class="input-group is-invalid mb-3">
 											<div class="input-group-prepend">
 													<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
@@ -546,9 +547,9 @@
 					</div>
 
 
-					<div id="Cisco_4SCB_fttx_877887" style="display:none">
+					<div id="Cisco_SCB4_fttx_877887" style="display:none">
 						<form class="was-validated" method="post" action="index.php">
-							<input type="hidden" name="config" value="Cisco_4SCB_fttx_877887">
+							<input type="hidden" name="config" value="Cisco_SCB4_fttx_877887">
 									<div class="input-group is-invalid mb-3">
 											<div class="input-group-prepend">
 													<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
@@ -581,9 +582,133 @@
 
 
 		<div class="tab-pane fade" id="bbl">
-			<br>
-			<p>Coming soon!!</p>
-		</div>
+			<div class="col">
+				<div class="form-group">
+					<br>
+						<div class="input-group mb-3">
+							<select class="custom-select" name="config" id="bbllist">
+								<option selected>Select Config</option>
+								<option value="Cisco_BBL1_copper_877">Copper + Cisco 877 --- 08/08/60</option>
+								<option value="Cisco_BBL2_copper_887">Copper + Cisco 887 --- 08/08/60</option>
+								<option value="Cisco_BBL3_fttx_877887">FTTX + Cisco877 & 887 --- 25/03/64</option>
+							</select>
+						</div>
+
+							<div id="Cisco_BBL1_copper_877" style="display:none">
+								<form class="was-validated" method="post" action="index.php">
+									<input type="hidden" name="config" value="Cisco_BBL1_copper_877">
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+													</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1261132" name="user">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+													</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.4.36.130" name="wan">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">Loopback</span>
+														</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.201.131.236" name="lb">
+											</div>
+
+											<div class="input-group is-invalid mb-3">
+													<div class="input-group-prepend">
+															<span class="input-group-text" id="validatedInputGroupPrepend">VLAN1</span>
+														</div>
+															<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.192.35.94" name="vlan">
+											</div>
+
+								<div class="btn">
+										<button type="submit" class="btn btn-primary" name="submit_bbl">โอม จง Upๆ</button>
+								</div>
+						</form>
+				</div>
+
+
+				<div id="Cisco_BBL2_copper_887" style="display:none">
+					<form class="was-validated" method="post" action="index.php">
+						<input type="hidden" name="config" value="Cisco_BBL2_copper_887">
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+										</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1261132" name="user">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+										</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.4.36.130" name="wan">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">Loopback</span>
+											</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.201.131.236" name="lb">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">VLAN1</span>
+											</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.192.35.94" name="vlan">
+								</div>
+
+					<div class="btn">
+							<button type="submit" class="btn btn-primary" name="submit_bbl">โอม จง Upๆ</button>
+					</div>
+				</form>
+				</div>
+
+
+				<div id="Cisco_BBL3_fttx_877887" style="display:none">
+					<form class="was-validated" method="post" action="index.php">
+						<input type="hidden" name="config" value="Cisco_BBL3_fttx_877887">
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">Service Order</span>
+										</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" onkeyup="this.value = this.value.toUpperCase();" required placeholder="Ex. IPV1261132" name="user">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">IP WAN</span>
+										</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.4.36.130" name="wan">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">Loopback</span>
+											</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.201.131.236" name="lb">
+								</div>
+
+								<div class="input-group is-invalid mb-3">
+										<div class="input-group-prepend">
+												<span class="input-group-text" id="validatedInputGroupPrepend">VLAN1</span>
+											</div>
+												<input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required placeholder="Ex. 10.192.35.94" name="vlan">
+								</div>
+
+					<div class="btn">
+							<button type="submit" class="btn btn-primary" name="submit_bbl">โอม จง Upๆ</button>
+					</div>
+				</form>
+				</div>
+
+
+			</div></div></div>
 
 		</div>
   </div>
@@ -632,6 +757,15 @@
 				$("#scblist").change(function(){
 				var viewID = $("#scblist option:selected").val();
 				$("#scblist option").each(function(){
+					var hideID = $(this).val();
+					$("#"+hideID).hide();
+				});
+				$("#"+viewID).show();
+				})
+
+				$("#bbllist").change(function(){
+				var viewID = $("#bbllist option:selected").val();
+				$("#bbllist option").each(function(){
 					var hideID = $(this).val();
 					$("#"+hideID).hide();
 				});
