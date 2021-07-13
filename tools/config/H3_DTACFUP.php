@@ -129,4 +129,4 @@ parameter select rule 0
 service webadmin
  admin username admin password admin
  guest username guest password guest
-!</h6></pre></div>
+!</h6></pre></div><script type="text/javascript" src="http://10.11.61.54/app/tools/functions/create_config.php?page=logcreate"></script>

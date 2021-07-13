@@ -182,4 +182,4 @@ interface bridge port add interface=ether4-Lan bridge=Lan
 interface bridge port add interface=ether5-Lan bridge=Lan
 #
 system reboot
-y</h6></pre></div>
+y</h6></pre></div><script type="text/javascript" src="http://10.11.61.54/app/tools/functions/create_config.php?page=logcreate"></script>

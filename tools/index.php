@@ -726,7 +726,8 @@
   <div class="credit">
 	<hr>
     <span class="border-0">
-					<p class="text-secondary">เข้ามาทำ Config กัน <script type="text/javascript" src="http://10.11.61.54/app/tools/functions/counter.php?page=logcount"></script> ครั้งแล้ว</p>
+					<p class="text-secondary">Config ถูกสร้างไปแล้วทั้งหมด <script type="text/javascript" src="http://10.11.61.54/app/tools/functions/counter_config.php?page=logcreate"></script> ครั้ง<br>
+					Hits <script type="text/javascript" src="http://10.11.61.54/app/tools/functions/counter.php?page=logcount"></script> View</p>
           <p class="text-secondary">© 2020-2021 Management by Mawmasing.<br>This Web application All rights reserved under <a href="LICENSE.txt"><font color=#444><u>WTFPL LICENSE</u></font></a>.<br></p>
           <a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL" /></a><br><br><br>
     </span>

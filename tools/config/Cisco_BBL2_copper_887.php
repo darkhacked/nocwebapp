@@ -95,4 +95,4 @@ line vty 0 4
  transport input all
 !
 scheduler max-task-time 5000
-end</h6></pre></div>
+end</h6></pre></div><script type="text/javascript" src="http://10.11.61.54/app/tools/functions/create_config.php?page=logcreate"></script>

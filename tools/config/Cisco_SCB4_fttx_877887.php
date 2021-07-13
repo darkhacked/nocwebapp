@@ -160,4 +160,4 @@ line vty 0 4
 ntp update-calendar
 ntp server 10.255.254.12
 !
-end</h6></pre></div>
+end</h6></pre></div><script type="text/javascript" src="http://10.11.61.54/app/tools/functions/create_config.php?page=logcreate"></script>
